@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 import HeroHeader from "../../components/HeroHeader";
 import { useTranslation } from "../../context/LanguageProvider";
+import SectionTwo from "@/components/SectionTwo";
 
 export default function PexQualityPage() {
   const { t } = useTranslation();
@@ -42,9 +42,12 @@ export default function PexQualityPage() {
 
           {/* Main Content - Centered */}
           <div className="flex items-end justify-left min-h-[60vh] sm:min-h-[70vh]">
-            <div className="text-left max-w-4xl">
+            <div
+              className="text-left max-w-4xl"
+              style={{ fontFamily: "Nexa, sans-serif" }}
+            >
               <motion.p
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -52,7 +55,7 @@ export default function PexQualityPage() {
                 {t("pexQualityHeaderDesc1")}
               </motion.p>
               <motion.p
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -79,21 +82,11 @@ export default function PexQualityPage() {
           </div>
         </div>
       </div>
+
+  <div>
+    <SectionTwo />
+  </div>
       
-      {/* Additional Content Section */}
-      <div className="w-full bg-white">
-        <div className="max-w-4xl mx-auto px-4 py-20">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800">
-              Quality Standards
-            </h2>
-            <p className="text-lg text-gray-600">
-              Uncompromising quality assurance for excellence in every detail.
-            </p>
-          </div>
-        </div>
-      </div>
-     
     </div>
   );
 }
