@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         primary: '#0e685b',
       },
+      fontFamily: {
+        secondary: ['NexaSecondary', 'sans-serif'],
+      },
     },
   },
   plugins: [],

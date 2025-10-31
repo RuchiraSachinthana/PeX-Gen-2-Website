@@ -1,10 +1,11 @@
 "use client";
 
+import SectionTwo from "@/components/SectionTwo";
 import { motion } from "framer-motion";
 import HeroHeader from "../../components/HeroHeader";
 import { useTranslation } from "../../context/LanguageProvider";
-import SectionTwo from "@/components/SectionTwo";
 
+import SectionThree from "@/components/SectionThree";
 export default function PexQualityPage() {
   const { t } = useTranslation();
   return (
@@ -83,10 +84,9 @@ export default function PexQualityPage() {
         </div>
       </div>
 
-  <div>
-    <SectionTwo />
-  </div>
-      
+      <SectionTwo />
+
+      <SectionThree />
     </div>
   );
 }

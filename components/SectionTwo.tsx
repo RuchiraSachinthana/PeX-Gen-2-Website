@@ -5,7 +5,7 @@ import SectionTwoCard from "./SectionTwoCard";
 export default function SectionTwo() {
   return (
     <div
-      className="p-8 my-12 text-gray-900"
+      className="py-10 text-gray-900"
       style={{ backgroundColor: "#bae2e0" }}
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2  justify-around items-center">
