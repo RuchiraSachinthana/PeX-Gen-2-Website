@@ -11,7 +11,7 @@ export default function PexFoodPage() {
     <PageWrapper>
       <div className="text-center">
         <motion.h1
-          className="text-5xl font-bold mb-4 text-indigo-600"
+          className="text-5xl mb-4 text-indigo-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >

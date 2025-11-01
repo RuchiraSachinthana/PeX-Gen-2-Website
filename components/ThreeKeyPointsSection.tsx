@@ -4,7 +4,9 @@ import { useTranslation } from "../context/LanguageProvider";
 
 // Content data structure - decoupled from the component
 const SECTION_CONTENT = {
+  // Main title and key points data for the section
   mainTitle: {
+    // Title lines displayed at the top of the section
     line1: "Three key points why",
     line2: "you need to consider",
     line3: "PEx Software™ as a solution for food safety",
@@ -13,6 +15,7 @@ const SECTION_CONTENT = {
     {
       id: "01",
       painPoint: {
+        // Pain point details for the first key point
         label: "Pain Point",
         title: "Documentation overload",
         challengeLabel: "Traditional Challenge",
@@ -20,18 +23,20 @@ const SECTION_CONTENT = {
           "Paper-heavy, time-consuming, error-prone compliance records",
       },
       solution: {
+        // Solution details for the first key point
         label: "How PEx Solves It",
         description:
           "PEx streamlines documentation, making it faster and more accurate",
       },
       images: {
+        // Image paths for the first key point
         main: "/s7_c1.svg",
         pain: "/s7_p1.svg",
         solution: "/s7_c1_1.svg",
         icon: "/Asset 6.svg",
         line: "/l1.svg",
       },
-      aiPowered: true,
+      aiPowered: true, // Indicates if AI is used for this solution
     },
     {
       id: "02",
@@ -82,18 +87,19 @@ const SECTION_CONTENT = {
   ],
 };
 
-// Main section for displaying three key points about PEx Software
+// Component: Main ThreeKeyPointsSection - Displays three key points about PEx Software with animations
 export default function ThreeKeyPointsSection() {
   const { t } = useTranslation();
   const content = SECTION_CONTENT;
 
   // Render the main layout and animated content
   return (
+    // Component: Main Section Container - Full width white background with overflow hidden
     <div className="w-full bg-white pt-40 mb-[-250] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* left content */}
+        {/* Component: Left Title Section - Displays the main title and navigation buttons */}
         <div className="absolute  top-[100] w-100 ">
-          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-normal text-teal-800 mb-6">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl  text-teal-800 mb-6">
             {content.mainTitle.line1} <br /> {content.mainTitle.line2} <br />
             {content.mainTitle.line3}
           </h2>
@@ -109,9 +115,11 @@ export default function ThreeKeyPointsSection() {
           </div>
         </div>
 
+        {/* Component: Right Animated Content Container - Contains all the animated key point sections */}
         <div className="relative w-full h-[1700px]">
           <div className="absolute top-[-50] right-0 w-[65%]">
             <div className="relative ">
+              {/* Component: First Key Point Animation - Documentation overload section */}
               <motion.div
                 className="relative overflow-hidden rounded-lg"
                 initial={{ opacity: 0, y: 40 }}
@@ -119,6 +127,7 @@ export default function ThreeKeyPointsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
+                {/* Main image for the first key point */}
                 <Image
                   src="/s7_c1.svg"
                   alt={t("benefit1Title")}
@@ -127,6 +136,7 @@ export default function ThreeKeyPointsSection() {
                   className="w-full h-auto object-cover"
                 />
 
+                {/* Component: First Key Point Pain Point Details - Left overlay with pain point info */}
                 <motion.div
                   className="absolute w-[425px] left-[-30] top-[-25] p-10 inset-0 z-10 "
                   initial={{ opacity: 0, x: -40 }}
@@ -146,7 +156,7 @@ export default function ThreeKeyPointsSection() {
                   <div className="absolute top-[25%] text-yellow-500 text-md left-[60]">
                     {content.keyPoints[0].painPoint.label}
                   </div>
-                  <div className="absolute top-[35%] font-semibold text-xl left-[60]">
+                  <div className="absolute top-[35%]  text-xl left-[60]">
                     {content.keyPoints[0].painPoint.title}
                   </div>
                   <div className="absolute top-[55%] text-yellow-500 text-md left-[60]">
@@ -165,6 +175,7 @@ export default function ThreeKeyPointsSection() {
                   />
                 </motion.div>
 
+                {/* Component: First Key Point Solution Details - Right overlay with solution info */}
                 <motion.div
                   className="absolute w-[65%] top-10 left-60 p-10 inset-0 z-10 "
                   initial={{ opacity: 0, x: 40 }}
@@ -173,7 +184,7 @@ export default function ThreeKeyPointsSection() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   {content.keyPoints[0].aiPowered && (
-                    <button className="bg-yellow-400 absolute right-6 text-gray-900 py-3 px-6 rounded-xl text-xl font-semibold hover:bg-yellow-300 transition-colors">
+                    <button className="bg-yellow-400 absolute right-6 text-gray-900 py-3 px-6 rounded-xl text-xl hover:bg-yellow-300 transition-colors">
                       ai
                     </button>
                   )}
@@ -187,6 +198,7 @@ export default function ThreeKeyPointsSection() {
                 </motion.div>
               </motion.div>
 
+              {/* Component: First Key Point Solution Description - Text overlay for solution */}
               <div className="absolute z-10 top-[45%] text-yellow-500 text-md left-[400]">
                 {content.keyPoints[0].solution.label}
               </div>
@@ -194,6 +206,7 @@ export default function ThreeKeyPointsSection() {
                 {content.keyPoints[0].solution.description}
               </div>
 
+              {/* Component: Decorative Line and Navigation - Connecting line with navigation buttons */}
               <motion.div
                 className="absolute w-[110%] top-50  p-10 inset-0 z-[-10]"
                 initial={{ opacity: 0 }}
@@ -216,6 +229,7 @@ export default function ThreeKeyPointsSection() {
                 </button>
               </motion.div>
 
+              {/* Component: Second Key Point Animation - Lack of Strategic Value section */}
               <motion.div
                 className="absolute w-[80%] top-100 left-[-60%] p-10 inset-0 z-10 "
                 initial={{ opacity: 0, x: -40 }}
@@ -226,13 +240,13 @@ export default function ThreeKeyPointsSection() {
                 <div className="absolute top-25 left-20 text-yellow-500 text-md">
                   {content.keyPoints[1].painPoint.label}
                 </div>
-                <div className="absolute top-30 left-20 ">
+                <div className="absolute top-30 left-20 text-xl">
                   {content.keyPoints[1].painPoint.title}
                 </div>
                 <div className="absolute top-40 left-20 text-yellow-500 text-md">
                   {content.keyPoints[1].painPoint.challengeLabel}
                 </div>
-                <div className="absolute top-45 left-20">
+                <div className="absolute top-45 left-20 text-xl max-w-xs break-words">
                   {content.keyPoints[1].painPoint.challenge}
                 </div>
 
@@ -245,6 +259,7 @@ export default function ThreeKeyPointsSection() {
                 />
               </motion.div>
 
+              {/* Component: Second Key Point Icon Button - Icon overlay for second point */}
               <motion.div
                 className="absolute w-[70%] top-110 left-[-55%] p-10 inset-0 z-10 "
                 initial={{ opacity: 0, x: 40 }}
@@ -270,6 +285,7 @@ export default function ThreeKeyPointsSection() {
                 />
               </motion.div>
 
+              {/* Component: Second Key Point Solution Overlay - Solution details for second point */}
               <motion.div
                 className="absolute w-[72%] top-160 left-[-55%] p-10 inset-0 z-10 "
                 initial={{ opacity: 0 }}
@@ -277,9 +293,9 @@ export default function ThreeKeyPointsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <div className="absolute top-20 left-15 z-20 text-yellow-500 text-m">
+                <div className="absolute top-12 left-15 z-20 text-yellow-500 text-m">
                   <div className=" ">{content.keyPoints[1].solution.label}</div>
-                  <div className="text-white">
+                  <div className="text-white text-xl  max-w-xs break-words">
                     {content.keyPoints[1].solution.description}
                   </div>
                 </div>
@@ -301,6 +317,7 @@ export default function ThreeKeyPointsSection() {
                 />
               </motion.div>
 
+              {/* Component: Second Key Point Navigation - Navigation button for third point */}
               <motion.div
                 className="absolute w-[70%] top-120 left-[7%] p-10 inset-0 z-10 "
                 initial={{ opacity: 0 }}
@@ -320,6 +337,7 @@ export default function ThreeKeyPointsSection() {
                 />
               </motion.div>
 
+              {/* Component: Third Key Point Animation - Time consuming to maintain section */}
               <motion.div
                 className="absolute w-[80%] top-140 left-[30%] p-10 inset-0 z-10 "
                 initial={{ opacity: 0, x: -40 }}
@@ -331,13 +349,13 @@ export default function ThreeKeyPointsSection() {
                   <div className="absolute top-25 left-20 text-yellow-500 text-md">
                     {content.keyPoints[2].painPoint.label}
                   </div>
-                  <div className="absolute top-30 left-20 ">
+                  <div className="absolute top-30 text-xl left-20 ">
                     {content.keyPoints[2].painPoint.title}
                   </div>
                   <div className="absolute top-40 left-20 text-yellow-500 text-md">
                     {content.keyPoints[2].painPoint.challengeLabel}
                   </div>
-                  <div className="absolute top-45 left-20">
+                  <div className="absolute top-45 text-xl  max-w-xs break-words left-20">
                     {content.keyPoints[2].painPoint.challenge}
                   </div>
                 </div>
@@ -350,6 +368,7 @@ export default function ThreeKeyPointsSection() {
                 />
               </motion.div>
 
+              {/* Component: Third Key Point Icon Button - Icon overlay for third point */}
               <motion.div
                 className="absolute w-[70%] top-150 left-[35%] p-10 inset-0 z-10 "
                 initial={{ opacity: 0, x: 40 }}
@@ -375,6 +394,7 @@ export default function ThreeKeyPointsSection() {
                 />
               </motion.div>
 
+              {/* Component: Third Key Point Solution Overlay - Solution details for third point */}
               <motion.div
                 className="absolute w-[72%] top-200 left-[35%] p-10 inset-0 z-10 "
                 initial={{ opacity: 0 }}
@@ -384,12 +404,12 @@ export default function ThreeKeyPointsSection() {
               >
                 <div className="absolute top-25 left-15 z-20 text-yellow-500 text-m">
                   <div className=" ">{content.keyPoints[2].solution.label}</div>
-                  <div className="text-white">
+                  <div className="text-white  max-w-xs text-xl break-words">
                     {content.keyPoints[2].solution.description}
                   </div>
                 </div>
                 {content.keyPoints[2].aiPowered && (
-                  <button className="bg-yellow-400 font-sembold absolute right-7 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                  <button className="bg-yellow-400  absolute right-7 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
                     ai
                   </button>
                 )}

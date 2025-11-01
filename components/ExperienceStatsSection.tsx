@@ -29,9 +29,9 @@ const content = {
     connectLabel: "LET'S CONNECT",
   },
 };
-// --- END DECOUPLED CONTENT ---
 
-export const OfficePromoSection: FC = () => {
+
+export const ExperienceStatsSection: FC = () => {
   return (
     <section
       className="w-full h-[400px] bg-cover bg-center bg-no-repeat relative overflow-hidden" // Added overflow-hidden
@@ -55,7 +55,7 @@ export const OfficePromoSection: FC = () => {
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <motion.div
-                    className="text-5xl  text-white mb-2"
+                    className="text-5xl text-white mb-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.5 }}
@@ -90,7 +90,7 @@ export const OfficePromoSection: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
             >
-              <button className="bg-cyan-500 text-white py-2.5 px-6 rounded-full flex items-center gap-2 text-sm hover:bg-cyan-600 transition-colors">
+              <button className="bg-cyan-500 text-white  py-2.5 px-6 rounded-full flex items-center gap-2 text-sm hover:bg-cyan-600 transition-colors">
                 <span>{content.buttons.readMore}</span>
                 <span>→</span>
               </button>
@@ -144,7 +144,7 @@ export const OfficePromoSection: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.5 }}
             >
-              <h3 className="text-3xl  mb-2">
+              <h3 className="text-3xl text-teal-700 mb-2">
                 {content.demoCard.titleLines.map((line, index) => (
                   <Fragment key={index}>
                     {line}
@@ -161,10 +161,10 @@ export const OfficePromoSection: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.5 }}
             >
-              <span className="text-gray-900  uppercase text-sm">
+              <span className="text-teal-700 uppercase text-sm">
                 {content.demoCard.connectLabel}
               </span>
-              <button className="bg-teal-700 text-white  py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-teal-800 transition-colors text-sm">
+              <button className="bg-teal-700 text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-teal-800 transition-colors text-sm">
                 <span>{content.buttons.bookNow}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

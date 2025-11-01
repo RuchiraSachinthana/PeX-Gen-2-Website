@@ -16,7 +16,7 @@ interface NavLinkProps {
 const NavLink = ({ href, currentPath, children, layoutId }: NavLinkProps) => (
   <Link
     href={href}
-    className={`relative font-medium text-sm text-white/80 hover:text-white transition-colors duration-200
+    className={`relative  text-sm text-white/80 hover:text-white transition-colors duration-200
       ${currentPath === href ? "text-white" : ""}
     `}
   >
@@ -75,7 +75,7 @@ export default function HomeNavbar() {
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="relative font-medium text-sm text-white/80 hover:text-white transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5">
+            <button className="relative  text-sm text-white/80 hover:text-white transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5">
               {currentPageName}
               <motion.svg
                 className="w-4 h-4 ml-1.5"

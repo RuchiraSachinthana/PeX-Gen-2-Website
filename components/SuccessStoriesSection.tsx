@@ -87,7 +87,7 @@ const CaseStudyButton: FC = () => (
   </motion.div>
 );
 
-const SectionFour: FC = () => {
+const SuccessStoriesSection: FC = () => {
   return (
     <section
       className="w-full py-16 bg-cover bg-center bg-no-repeat overflow-hidden" // Added overflow-hidden
@@ -148,7 +148,7 @@ const SectionFour: FC = () => {
             {/* Using min-h to make sure it has space */}
             <div className="min-h-[150px] flex items-end justify-start">
               <motion.h4
-                className="text-2xl  text-left max-w-xs"
+                className="text-2xl text-left max-w-xs"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
@@ -205,4 +205,4 @@ const SectionFour: FC = () => {
   );
 };
 
-export default SectionFour;
+export default SuccessStoriesSection;

@@ -43,7 +43,7 @@ export default function PexGenPage() {
           <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[70vh]">
             <div className="text-center max-w-4xl">
               <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white drop-shadow-lg"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  mb-4 sm:mb-6 text-white drop-shadow-lg"
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -59,7 +59,7 @@ export default function PexGenPage() {
                 {t("pexGenDesc")}
               </motion.p>
               <motion.button
-                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base"
+                className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-blue-600  rounded-full hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
@@ -75,7 +75,7 @@ export default function PexGenPage() {
       <div className="w-full bg-white">
         <div className="max-w-4xl mx-auto px-4 py-20">
           <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800">
+            <h2 className="text-4xl mb-4 text-gray-800">
               Next-Generation Innovation
             </h2>
             <p className="text-lg text-gray-600">

@@ -37,7 +37,7 @@ export default function SectionTwoCard({
         />
       </div>
       <div className="absolute left-7 top-4">
-        <h3 className="text-yellow-400 text-md  font-bold">{title}</h3>
+        <h3 className="text-yellow-400 text-md  ">{title}</h3>
         <p className="text-white text-sm mt-1 w-35">{subtitle}</p>
       </div>
       <YellowArrowButton text={buttonText} />

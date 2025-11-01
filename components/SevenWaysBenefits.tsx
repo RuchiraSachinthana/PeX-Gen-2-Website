@@ -10,7 +10,7 @@ export default function SevenWaysBenefits() {
       <div className="max-w-6xl py-16  mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="absolute left-35  top-[100] w-100 ">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-teal-800 mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-teal-800 mb-6">
             {t("sevenWaysTitle")}
           </h2>
         </div>
@@ -26,7 +26,7 @@ export default function SevenWaysBenefits() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="relative ">
-              <div className="absolute right-1  bg-yellow-400 text-teal-900 font-bold rounded-lg px-4 py-2 text-lg z-20">
+              <div className="absolute right-1  bg-yellow-400 text-teal-900 rounded-lg px-4 py-2 text-lg z-20">
                 01
               </div>
               <div className="relative overflow-hidden rounded-lg">
@@ -38,10 +38,10 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-base  font-normal mb-3">
+                  <h3 className="text-yellow-400 text-base   mb-3">
                     {t("benefit1Title")}
                   </h3>
-                  <p className="text-white text-sm  font-normal ">
+                  <p className="text-white text-sm   ">
                     {t("benefit1Desc")}
                   </p>
                 </div>
@@ -58,7 +58,7 @@ export default function SevenWaysBenefits() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative">
-              <div className="absolute top-[-3] left-[-15] bg-yellow-400 text-teal-900 font-bold rounded-lg px-4 py-2 text-lg z-20">
+              <div className="absolute top-[-3] left-[-15] bg-yellow-400 text-teal-900  rounded-lg px-4 py-2 text-lg z-20">
                 02
               </div>
               <div className="relative overflow-hidden rounded-lg">
@@ -70,10 +70,10 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto"
                 />
                 <div className="absolute top-5 inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h2 className="text-yellow-400  font-normal text-basefont-bold mb-3">
+                  <h2 className="text-yellow-400   text-base mb-3">
                     {t("benefit2Title")}
                   </h2>
-                  <p className="text-white text-sm  font-normal">
+                  <p className="text-white text-sm  ">
                     {t("benefit2Desc")}
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export default function SevenWaysBenefits() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="relative">
-              <div className="absolute -top- -right-2 bg-yellow-400 text-teal-900 font-bold rounded-lg px-4 py-2 text-lg z-20">
+              <div className="absolute -top- -right-2 bg-yellow-400 text-teal-900  rounded-lg px-4 py-2 text-lg z-20">
                 03
               </div>
               <div className="relative overflow-hidden rounded-lg">
@@ -101,10 +101,10 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute mt-12 inset-0 p-6 z-10 flex flex-col justify-center items-right text-right">
-                  <p className="text-yellow-400 text-base  font-normal mb-3">
+                  <p className="text-yellow-400 text-base   mb-3">
                     {t("benefit3Title")}
                   </p>
-                  <p className="text-white text-sm  font-normal">
+                  <p className="text-white text-sm  ">
                     {t("benefit3Desc")}
                   </p>
                 </div>
@@ -120,7 +120,7 @@ export default function SevenWaysBenefits() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="relative">
-              <div className="absolute -top-2 -right-3 bg-yellow-400 text-teal-900 font-bold rounded-lg px-4 py-2 text-lg z-20">
+              <div className="absolute -top-2 -right-3 bg-yellow-400 text-teal-900  rounded-lg px-4 py-2 text-lg z-20">
                 04
               </div>
               <div className="relative overflow-hidden rounded-lg">
@@ -132,10 +132,10 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-base  font-normal mb-3">
+                  <h3 className="text-yellow-400 text-base   mb-3">
                     {t("benefit4Title")}
                   </h3>
-                  <p className="text-white text-sm  font-normal">
+                  <p className="text-white text-sm  ">
                     {t("benefit4Desc")}
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function SevenWaysBenefits() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <div className="relative">
-              <div className="absolute -top-1 -right-2 bg-yellow-400 text-teal-900 font-bold rounded-lg px-4 py-2 text-lg z-20">
+              <div className="absolute -top-1 -right-2 bg-yellow-400 text-teal-900  rounded-lg px-4 py-2 text-lg z-20">
                 05
               </div>
               <div className="relative overflow-hidden rounded-lg">
@@ -163,10 +163,10 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-base  font-normal mb-3">
+                  <h3 className="text-yellow-400 text-base   mb-3">
                     {t("benefit5Title")}
                   </h3>
-                  <p className="text-white text-sm  font-normal">
+                  <p className="text-white text-sm  ">
                     {t("benefit5Desc")}
                   </p>
                 </div>
@@ -182,7 +182,7 @@ export default function SevenWaysBenefits() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="relative">
-              <div className="absolute left-[-15] bg-yellow-400 text-teal-900 font-bold rounded-lg px-4 py-2 text-lg z-20">
+              <div className="absolute left-[-15] bg-yellow-400 text-teal-900  rounded-lg px-4 py-2 text-lg z-20">
                 06
               </div>
               <div className="relative overflow-hidden rounded-lg">
@@ -194,10 +194,10 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-base  font-normal mb-3">
+                  <h3 className="text-yellow-400 text-base   mb-3">
                     {t("benefit6Title")}
                   </h3>
-                  <p className="text-white text-sm  font-normal">
+                  <p className="text-white text-sm  ">
                     {t("benefit6Desc")}
                   </p>
                 </div>
@@ -213,7 +213,7 @@ export default function SevenWaysBenefits() {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <div className="relative">
-              <div className="absolute top-[2] -right-2 bg-yellow-400 text-teal-900 font-bold rounded-lg px-4 py-2 text-lg z-20">
+              <div className="absolute top-[2] -right-2 bg-yellow-400 text-teal-900  rounded-lg px-4 py-2 text-lg z-20">
                 07
               </div>
               <div className="relative overflow-hidden rounded-lg">
@@ -225,10 +225,10 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-base  font-normal mb-3">
+                  <h3 className="text-yellow-400 text-base   mb-3">
                     {t("benefit7Title")}
                   </h3>
-                  <p className="text-white text-sm  font-normal">
+                  <p className="text-white text-sm  ">
                     {t("benefit7Desc")}
                   </p>
                 </div>

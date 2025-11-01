@@ -25,13 +25,21 @@ export default function SocialSection() {
   };
 
   return (
-    <section className="w-full py-12 px-6 lg:px-20 bg-white relative overflow-hidden">
+    <section
+    style={{  
+        backgroundImage: "url('/qs4 (6).webp')",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "100%",
+        
+      }}
+      className="w-full py-12 px-6 lg:px-20 bg-white relative  overflow-hidden">
       {/* Layer image on the right side */}
 
       {/* Content with relative positioning to stay above the background layer */}
       <div className="relative z-10">
         <motion.h2
-          className="text-center text-3xl font-semibold text-emerald-900 mb-10"
+          className="text-center text-3xl  text-emerald-900 mb-10"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -96,7 +104,7 @@ export default function SocialSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <div
-              className="bg-white p-4 rounded-3xl min-h-80 shadow-md bg-contain bg-right bg-no-repeat relative flex items-center justify-end"
+              className=" p-4 rounded-3xl min-h-80  bg-contain bg-right bg-no-repeat relative flex items-center justify-end"
               style={{ backgroundImage: "url('/Asset 4.svg')" }}
             >
               <div className="absolute top-0 right-0">

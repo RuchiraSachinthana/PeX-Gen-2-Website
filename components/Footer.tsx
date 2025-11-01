@@ -25,13 +25,13 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-lg font-semibold mb-4 text-yellow-300">
+          <h3 className="text-lg mb-4 text-yellow-300">
             Contact us
           </h3>
           <ul className="space-y-3 text-sm">
             {/* Contact 1 */}
             <li>
-              <p className="font-medium">Malik</p>
+              <p className="">Malik</p>
               <p className="flex items-center gap-2">
                 <Phone size={14} />
                 +94 777 347 122
@@ -43,7 +43,7 @@ export default function Footer() {
             </li>
             {/* Contact 2 */}
             <li>
-              <p className="font-medium">Dinusha</p>
+              <p >Dinusha</p>
               <p className="flex items-center gap-2">
                 <Phone size={14} />
                 +94 777 420 504
@@ -55,7 +55,7 @@ export default function Footer() {
             </li>
             {/* Contact 3 */}
             <li>
-              <p className="font-medium">Binuri</p>
+              <p >Binuri</p>
               <p className="flex items-center gap-2">
                 <Phone size={14} />
                 +94 719 727 837
@@ -86,7 +86,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <h3 className="text-lg font-semibold mb-4 text-yellow-300">
+          <h3 className="text-lg mb-4 text-yellow-300">
             Explore
           </h3>
           <ul className="space-y-2 text-sm">
@@ -110,7 +110,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h3 className="text-lg font-semibold mb-4 text-yellow-300">Menu</h3>
+          <h3 className="text-lg  mb-4 text-yellow-300">Menu</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <a href="#" className="hover:text-yellow-400">
@@ -195,7 +195,7 @@ export default function Footer() {
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-yellow-400 text-emerald-900 font-semibold py-3 rounded-lg hover:bg-yellow-300 transition"
+              className="w-full flex items-center justify-center gap-2 bg-yellow-400 text-emerald-900  py-3 rounded-lg hover:bg-yellow-300 transition"
             >
               E-mail us
               <ArrowRight size={18} />

@@ -93,7 +93,7 @@ export default function SimpleCard({
           }}
         >
           {header && (
-            <h3 className="text-yellow-400 text-2xl font-bold mb-4">
+            <h3 className="text-yellow-400 text-2xl  mb-4">
               {header}
             </h3>
           )}

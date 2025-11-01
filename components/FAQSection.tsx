@@ -83,11 +83,11 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       >
         <div className="flex items-center space-x-3">
           <div className="flex h-12 w-12  items-center justify-center rounded-full bg-yellow-400 text-teal-900">
-            <span className="font-bold text-base">
+            <span className="text-base">
               {item.id.replace("q", "Q")}
             </span>
           </div>
-          <span className="font-semibold">{item.question}</span>
+          <span>{item.question}</span>
         </div>
         <ChevronDown
           className={`h-6 w-6 shrink-0 transform transition-transform duration-300 ${
@@ -123,7 +123,7 @@ const FAQSection: React.FC = () => {
   return (
     <div className="w-full mx-auto h-full px-4 sm:px-6 py-10 lg:px-8 relative z-10 bg-lime-50">
       <motion.h2
-        className="mb-8 text-3xl font-bold text-teal-900 max-w-full sm:max-w-2xl mx-auto"
+        className="mb-8 text-3xl  text-teal-900 max-w-full sm:max-w-2xl mx-auto"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

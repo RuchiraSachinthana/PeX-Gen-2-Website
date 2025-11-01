@@ -245,7 +245,7 @@ export default function CustomSVGShape({
   cutoutStyle,
   header,
   description,
-  headerClassName = "text-yellow-400 text-2xl font-bold mb-4",
+  headerClassName = "text-yellow-400 text-2xl mb-4",
   descriptionClassName = "text-white text-base leading-relaxed",
   foldWidth = 70.9,
   foldHeight = 81.84,
