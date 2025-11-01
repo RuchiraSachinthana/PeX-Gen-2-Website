@@ -5,10 +5,13 @@ import Image from "next/image";
 import HeroHeader from "../components/HeroHeader";
 
 import LinkedInFollowSection from "@/components/LinkedInFollowSection";
+import SectionFour from "@/components/SectionFour";
 import SevenWaysBenefits from "@/components/SevenWaysBenefits";
 import { useTranslation } from "../context/LanguageProvider";
 
 import ThreeKeyPointsSection from "@/components/ThreeKeyPointsSection";
+import PExSoftwareBenefits from "@/components/PExSoftwareBenefits";
+
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -196,8 +199,11 @@ export default function HomePage() {
 
       {/* LinkedIn Follow Section */}
       <LinkedInFollowSection />
-      <ThreeKeyPointsSection />
-    
+
+      <SectionFour />
+      <PExSoftwareBenefits/>
+
+      
     </div>
   );
 }

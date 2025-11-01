@@ -6,6 +6,9 @@ import HeroHeader from "../../components/HeroHeader";
 import { useTranslation } from "../../context/LanguageProvider";
 
 import SectionThree from "@/components/SectionThree";
+import SectionFour from "@/components/SectionFour";
+import ThreeKeyPointsSection from "@/components/ThreeKeyPointsSection";
+import PExSoftwareBenefits from "@/components/PExSoftwareBenefits";
 export default function PexQualityPage() {
   const { t } = useTranslation();
   return (
@@ -87,6 +90,9 @@ export default function PexQualityPage() {
       <SectionTwo />
 
       <SectionThree />
+      <SectionFour/>
+      <ThreeKeyPointsSection />
+      
     </div>
   );
 }
