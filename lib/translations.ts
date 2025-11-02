@@ -274,6 +274,40 @@ export const translations = {
       }
     },
 
+    // Footer Component translations
+    footer: {
+      sections: {
+        contactUs: "Contact us",
+        explore: "Explore",
+        menu: "Menu"
+      },
+      explore: {
+        pexTraining: "PEx Training",
+        isoTraining: "ISO Training"
+      },
+      menu: {
+        blog: "Blog",
+        aboutUs: "About us",
+        services: "Services"
+      },
+      contactForm: {
+        placeholders: {
+          company: "Company",
+          name: "Name",
+          email: "E-mail",
+          country: "Country",
+          phone: "Phone"
+        },
+        countries: {
+          sriLanka: "Sri Lanka",
+          india: "India",
+          singapore: "Singapore",
+          other: "Other"
+        },
+        submitButton: "E-mail us"
+      }
+    },
+
     aboutTitle: "About Us",
     aboutContent: "We are a team dedicated to pushing boundaries.",
     featuresTitle: "Our Features",
@@ -472,6 +506,40 @@ export const translations = {
       }
     },
 
+    // Footer Component translations
+    footer: {
+      sections: {
+        contactUs: "Contáctanos",
+        explore: "Explorar",
+        menu: "Menú"
+      },
+      explore: {
+        pexTraining: "Entrenamiento PEx",
+        isoTraining: "Entrenamiento ISO"
+      },
+      menu: {
+        blog: "Blog",
+        aboutUs: "Sobre nosotros",
+        services: "Servicios"
+      },
+      contactForm: {
+        placeholders: {
+          company: "Empresa",
+          name: "Nombre",
+          email: "Correo electrónico",
+          country: "País",
+          phone: "Teléfono"
+        },
+        countries: {
+          sriLanka: "Sri Lanka",
+          india: "India",
+          singapore: "Singapur",
+          other: "Otro"
+        },
+        submitButton: "Envíanos un email"
+      }
+    },
+
     aboutTitle: "Sobre Nosotros",
     aboutContent: "Somos un equipo dedicado a superar los límites.",
     featuresTitle: "Nuestras Características",
@@ -484,7 +552,7 @@ export const translations = {
   fr: {
     navAbout: "À propos",
     navFeatures: "Fonctionnalités",
-    navBlog: "Blog",
+    navBlog: "Blogue",
     navContact: "Contact",
     navPex: "Solutions PEX",
     pexGen: "PEX Gen",
@@ -667,6 +735,40 @@ export const translations = {
           followersCount: "1000+",
           followersText: "abonnés"
         }
+      }
+    },
+
+    // Footer Component translations
+    footer: {
+      sections: {
+        contactUs: "Contactez-nous",
+        explore: "Explorer",
+        menu: "Menu"
+      },
+      explore: {
+        pexTraining: "Formation PEx",
+        isoTraining: "Formation ISO"
+      },
+      menu: {
+        blog: "Blog",
+        aboutUs: "À propos de nous",
+        services: "Services"
+      },
+      contactForm: {
+        placeholders: {
+          company: "Entreprise",
+          name: "Nom",
+          email: "E-mail",
+          country: "Pays",
+          phone: "Téléphone"
+        },
+        countries: {
+          sriLanka: "Sri Lanka",
+          india: "Inde",
+          singapore: "Singapour",
+          other: "Autre"
+        },
+        submitButton: "Envoyez-nous un email"
       }
     },
 
@@ -868,6 +970,40 @@ export const translations = {
       }
     },
 
+    // Footer Component translations
+    footer: {
+      sections: {
+        contactUs: "Kontaktieren Sie uns",
+        explore: "Entdecken",
+        menu: "Menü"
+      },
+      explore: {
+        pexTraining: "PEx Schulung",
+        isoTraining: "ISO Schulung"
+      },
+      menu: {
+        blog: "Blog",
+        aboutUs: "Über uns",
+        services: "Dienstleistungen"
+      },
+      contactForm: {
+        placeholders: {
+          company: "Unternehmen",
+          name: "Name",
+          email: "E-Mail",
+          country: "Land",
+          phone: "Telefon"
+        },
+        countries: {
+          sriLanka: "Sri Lanka",
+          india: "Indien",
+          singapore: "Singapur",
+          other: "Andere"
+        },
+        submitButton: "E-Mail senden"
+      }
+    },
+
     aboutTitle: "Über uns",
     aboutContent: "Wir sind ein Team, das sich der Grenzüberschreitung verschrieben hat.",
     featuresTitle: "Unsere Funktionen",
@@ -881,7 +1017,7 @@ export const translations = {
     // Navigation translations
     navAbout: "概要",
     navFeatures: "特徴",
-    navBlog: "Blog",
+    navBlog: "ブログ",
     navContact: "お問い合わせ",
     navPex: "PEXソリューション",
 
@@ -1148,6 +1284,40 @@ export const translations = {
           followersCount: "1000+",
           followersText: "フォロワー"
         }
+      }
+    },
+
+    // Footer Component translations
+    footer: {
+      sections: {
+        contactUs: "お問い合わせ",
+        explore: "探す",
+        menu: "メニュー"
+      },
+      explore: {
+        pexTraining: "PExトレーニング",
+        isoTraining: "ISOトレーニング"
+      },
+      menu: {
+        blog: "ブログ",
+        aboutUs: "私たちについて",
+        services: "サービス"
+      },
+      contactForm: {
+        placeholders: {
+          company: "会社",
+          name: "名前",
+          email: "メールアドレス",
+          country: "国",
+          phone: "電話番号"
+        },
+        countries: {
+          sriLanka: "スリランカ",
+          india: "インド",
+          singapore: "シンガポール",
+          other: "その他"
+        },
+        submitButton: "メールを送る"
       }
     },
 

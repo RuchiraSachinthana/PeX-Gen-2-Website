@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Globe, Phone } from "lucide-react";
 import Image from "next/image";
+import { useTranslation } from "../context/LanguageProvider";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-linear-to-r  from-emerald-900 to-teal-700 text-white px-8 py-12 lg:px-20 relative overflow-hidden">
       {/* Decorative gradient shapes from the image */}
@@ -26,7 +28,7 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-lg mb-4 text-yellow-300">
-            Contact us
+            {String(t("footer.sections.contactUs"))}
           </h3>
           <ul className="space-y-3 text-sm">
             {/* Contact 1 */}
@@ -43,7 +45,7 @@ export default function Footer() {
             </li>
             {/* Contact 2 */}
             <li>
-              <p >Dinusha</p>
+              <p>Dinusha</p>
               <p className="flex items-center gap-2">
                 <Phone size={14} />
                 +94 777 420 504
@@ -55,7 +57,7 @@ export default function Footer() {
             </li>
             {/* Contact 3 */}
             <li>
-              <p >Binuri</p>
+              <p>Binuri</p>
               <p className="flex items-center gap-2">
                 <Phone size={14} />
                 +94 719 727 837
@@ -87,17 +89,17 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <h3 className="text-lg mb-4 text-yellow-300">
-            Explore
+            {String(t("footer.sections.explore"))}
           </h3>
           <ul className="space-y-2 text-sm">
             <li>
               <a href="#" className="hover:text-yellow-400">
-                PEx Training
+                {String(t("footer.explore.pexTraining"))}
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-yellow-400">
-                ISO Training
+                {String(t("footer.explore.isoTraining"))}
               </a>
             </li>
           </ul>
@@ -110,21 +112,23 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h3 className="text-lg  mb-4 text-yellow-300">Menu</h3>
+          <h3 className="text-lg  mb-4 text-yellow-300">
+            {String(t("footer.sections.menu"))}
+          </h3>
           <ul className="space-y-2 text-sm">
             <li>
               <a href="#" className="hover:text-yellow-400">
-                Blog
+                {String(t("footer.menu.blog"))}
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-yellow-400">
-                About us
+                {String(t("footer.menu.aboutUs"))}
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-yellow-400">
-                Services
+                {String(t("footer.menu.services"))}
               </a>
             </li>
           </ul>
@@ -141,17 +145,17 @@ export default function Footer() {
           <form className="space-y-3">
             <input
               type="text"
-              placeholder="Company"
+              placeholder={String(t("footer.contactForm.placeholders.company"))}
               className="w-full px-4 py-3 rounded-lg bg-emerald-800/60 text-white placeholder-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <input
               type="text"
-              placeholder="Name"
+              placeholder={String(t("footer.contactForm.placeholders.name"))}
               className="w-full px-4 py-3 rounded-lg bg-emerald-800/60 text-white placeholder-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <input
               type="email"
-              placeholder="E-mail"
+              placeholder={String(t("footer.contactForm.placeholders.email"))}
               className="w-full px-4 py-3 rounded-lg bg-emerald-800/60 text-white placeholder-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             {/* Custom Select Wrapper */}
@@ -161,12 +165,20 @@ export default function Footer() {
                 className="w-full px-4 py-3 rounded-lg bg-emerald-800/60 text-white text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 appearance-none"
               >
                 <option value="" disabled>
-                  Country
+                  {String(t("footer.contactForm.placeholders.country"))}
                 </option>
-                <option value="Sri Lanka">Sri Lanka</option>
-                <option value="India">India</option>
-                <option value="Singapore">Singapore</option>
-                <option value="Other">Other</option>
+                <option value="Sri Lanka">
+                  {String(t("footer.contactForm.countries.sriLanka"))}
+                </option>
+                <option value="India">
+                  {String(t("footer.contactForm.countries.india"))}
+                </option>
+                <option value="Singapore">
+                  {String(t("footer.contactForm.countries.singapore"))}
+                </option>
+                <option value="Other">
+                  {String(t("footer.contactForm.countries.other"))}
+                </option>
               </select>
               {/* Chevron Icon */}
               <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
@@ -189,7 +201,7 @@ export default function Footer() {
 
             <input
               type="text"
-              placeholder="Phone"
+              placeholder={String(t("footer.contactForm.placeholders.phone"))}
               className="w-full px-4 py-3 rounded-lg bg-emerald-800/60 text-white placeholder-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
 
@@ -197,7 +209,7 @@ export default function Footer() {
               type="submit"
               className="w-full flex items-center justify-center gap-2 bg-yellow-400 text-emerald-900  py-3 rounded-lg hover:bg-yellow-300 transition"
             >
-              E-mail us
+              {String(t("footer.contactForm.submitButton"))}
               <ArrowRight size={18} />
             </button>
           </form>

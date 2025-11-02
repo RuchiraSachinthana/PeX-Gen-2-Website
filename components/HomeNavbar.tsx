@@ -37,26 +37,31 @@ export default function HomeNavbar() {
 
   const navItems = useMemo(
     () => [
-      { key: "about", label: t("navAbout"), href: "/about" },
-      { key: "features", label: t("navFeatures"), href: "/features" },
-      { key: "blog", label: t("navBlog"), href: "/blog" },
-      { key: "contact", label: t("navContact"), href: "/contact" },
+      { key: "about", label: String(t("navAbout")), href: "/about" },
+      { key: "features", label: String(t("navFeatures")), href: "/features" },
+      { key: "blog", label: String(t("navBlog")), href: "/blog" },
+      { key: "contact", label: String(t("navContact")), href: "/contact" },
     ],
     [t]
   );
 
   const allPages = useMemo(
     () => [
-      { key: "home", label: t("pexFood"), href: "/" },
-      { key: "pexQuality", label: t("pexQuality"), href: "/pex-quality" },
-      { key: "pexGen", label: t("pexGen"), href: "/pex-gen" },
+      { key: "home", label: String(t("pexFood")), href: "/" },
+      {
+        key: "pexQuality",
+        label: String(t("pexQuality")),
+        href: "/pex-quality",
+      },
+      { key: "pexGen", label: String(t("pexGen")), href: "/pex-gen" },
     ],
     [t]
   );
 
   const currentPageName = useMemo(
     () =>
-      allPages.find((page) => page.href === pathname)?.label || t("pexFood"),
+      allPages.find((page) => page.href === pathname)?.label ||
+      String(t("pexFood")),
     [pathname, allPages, t]
   );
 
