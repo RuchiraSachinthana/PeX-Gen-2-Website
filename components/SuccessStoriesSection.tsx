@@ -1,5 +1,7 @@
 "use client";
+"use client";
 // Import motion from framer-motion
+import { useTranslation } from "@/context/LanguageProvider";
 import { motion } from "framer-motion";
 import type { FC } from "react"; // Added FC type
 
@@ -70,7 +72,7 @@ const ArrowIcon: FC = () => (
 
 // I also made a component for the "Read more" button.
 // Added motion for a slide-up animation
-const CaseStudyButton: FC = () => (
+const CaseStudyButton: FC<{ t: (key: string) => unknown }> = ({ t }) => (
   <motion.div
     className="flex items-center space-x-4"
     initial={{ opacity: 0, y: 20 }}
@@ -78,16 +80,19 @@ const CaseStudyButton: FC = () => (
     transition={{ delay: 1.2, duration: 0.5 }}
   >
     <span className="text-xs  uppercase text-white">
-      {content.caseStudyButton.label}
+      {String(t("successStoriesSection.caseStudyButton.label"))}
     </span>
     <button className="bg-yellow-400 text-gray-900  py-2 px-4 rounded-3xl flex items-center space-x-1">
-      <span>{content.caseStudyButton.buttonText}</span>
+      <span>
+        {String(t("successStoriesSection.caseStudyButton.buttonText"))}
+      </span>
       <span>→</span>
     </button>
   </motion.div>
 );
 
 const SuccessStoriesSection: FC = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="w-full py-16 bg-cover bg-center bg-no-repeat overflow-hidden" // Added overflow-hidden
@@ -111,8 +116,12 @@ const SuccessStoriesSection: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <h3 className="text-6xl ">{content.column1.stat}</h3>
-            <p className="text-2xl">{content.column1.statDescription}</p>
+            <h3 className="text-6xl ">
+              {String(t("successStoriesSection.column1.stat"))}
+            </h3>
+            <p className="text-2xl">
+              {String(t("successStoriesSection.column1.statDescription"))}
+            </p>
           </motion.div>
           {/* Banner at the bottom */}
           <motion.div
@@ -122,7 +131,7 @@ const SuccessStoriesSection: FC = () => {
             transition={{ delay: 0.7, duration: 0.5 }}
           >
             <span className="text-xs  uppercase tracking-widest">
-              {content.column1.bannerText}
+              {String(t("successStoriesSection.column1.bannerText"))}
             </span>
           </motion.div>
         </motion.div>
@@ -137,7 +146,7 @@ const SuccessStoriesSection: FC = () => {
         >
           {/* The title is just text, not a red box */}
           <h2 className="text-3xl  text-gray-800">
-            {content.column2.title}
+            {String(t("successStoriesSection.column2.title"))}
           </h2>
 
           {/* The ISO 9001 Case Study Card */}
@@ -153,10 +162,10 @@ const SuccessStoriesSection: FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
               >
-                {content.column2.card.title}
+                {String(t("successStoriesSection.column2.card.title"))}
               </motion.h4>
             </div>
-            <CaseStudyButton />
+            <CaseStudyButton t={t} />
           </div>
         </motion.div>
 
@@ -194,10 +203,10 @@ const SuccessStoriesSection: FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
               >
-                {content.column3.card.title}
+                {String(t("successStoriesSection.column3.card.title"))}
               </motion.h4>
             </div>
-            <CaseStudyButton />
+            <CaseStudyButton t={t} />
           </div>
         </motion.div>
       </div>

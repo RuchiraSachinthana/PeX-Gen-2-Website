@@ -2,95 +2,58 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslation } from "../context/LanguageProvider";
 
-// Content data structure - decoupled from the component
-const SECTION_CONTENT = {
-  // Main title and key points data for the section
-  mainTitle: {
-    // Title lines displayed at the top of the section
-    line1: "Three key points why",
-    line2: "you need to consider",
-    line3: "PEx Software™ as a solution for food safety",
-  },
-  keyPoints: [
-    {
-      id: "01",
-      painPoint: {
-        // Pain point details for the first key point
-        label: "Pain Point",
-        title: "Documentation overload",
-        challengeLabel: "Traditional Challenge",
-        challenge:
-          "Paper-heavy, time-consuming, error-prone compliance records",
-      },
-      solution: {
-        // Solution details for the first key point
-        label: "How PEx Solves It",
-        description:
-          "PEx streamlines documentation, making it faster and more accurate",
-      },
-      images: {
-        // Image paths for the first key point
-        main: "/s7_c1.svg",
-        pain: "/s7_p1.svg",
-        solution: "/s7_c1_1.svg",
-        icon: "/Asset 6.svg",
-        line: "/l1.svg",
-      },
-      aiPowered: true, // Indicates if AI is used for this solution
-    },
-    {
-      id: "02",
-      painPoint: {
-        label: "Pain Point",
-        title: "Lack of Strategic Value",
-        challengeLabel: "Traditional Challenge",
-        challenge:
-          "ISO seen as a tick-bix exercise disconnected from business goals",
-      },
-      solution: {
-        label: "How PEx Solves It",
-        description:
-          "PEx streamlines documentation, making it faster and more accurate",
-      },
-      images: {
-        main: "/s7_c2.svg",
-        pain: "/s7_p2.svg",
-        solution: "/s7_c2_1.svg",
-        icon: "/Asset 8.svg",
-        solutionIcon: "/Asset 10.svg",
-        line: "/l2.svg",
-      },
-      aiPowered: false,
-    },
-    {
-      id: "03",
-      painPoint: {
-        label: "Pain Point",
-        title: "Time consuming to maintain",
-        challengeLabel: "Traditional Challenge",
-        challenge:
-          "Manual documentation, missing records, last-minute scrambling",
-      },
-      solution: {
-        label: "How PEx Solves It",
-        description:
-          "Removes unproductive documentation work and waste activities",
-      },
-      images: {
-        main: "/s7_c3.svg",
-        pain: "/s7_p2.svg",
-        solution: "/s7_c3_1.svg",
-        icon: "/Asset 11.svg",
-      },
-      aiPowered: true,
-    },
-  ],
-};
-
 // Component: Main ThreeKeyPointsSection - Displays three key points about PEx Software with animations
 export default function ThreeKeyPointsSection() {
   const { t } = useTranslation();
-  const content = SECTION_CONTENT;
+
+  // Get content from translations
+  const mainTitle = {
+    line1: String(t("threeKeyPointsSection.mainTitle.line1")),
+    line2: String(t("threeKeyPointsSection.mainTitle.line2")),
+    line3: String(t("threeKeyPointsSection.mainTitle.line3")),
+  };
+
+  const keyPoints = t("threeKeyPointsSection.keyPoints") as Array<{
+    painPoint: {
+      label: string;
+      title: string;
+      challengeLabel: string;
+      challenge: string;
+    };
+    solution: {
+      label: string;
+      description: string;
+    };
+  }>;
+
+  // Static images data (not translated)
+  const imagesData = [
+    {
+      main: "/s7_c1.svg",
+      pain: "/s7_p1.svg",
+      solution: "/s7_c1_1.svg",
+      icon: "/Asset 6.svg",
+      line: "/l1.svg",
+      aiPowered: true,
+    },
+    {
+      main: "/s7_c2.svg",
+      pain: "/s7_p2.svg",
+      solution: "/s7_c2_1.svg",
+      icon: "/Asset 8.svg",
+      solutionIcon: "/Asset 10.svg",
+      line: "/l2.svg",
+      aiPowered: false,
+    },
+    {
+      main: "/s7_c3.svg",
+      pain: "/s7_p2.svg",
+      solution: "/s7_c3_1.svg",
+      icon: "/Asset 11.svg",
+      line: "", // No line for third point
+      aiPowered: true,
+    },
+  ];
 
   // Render the main layout and animated content
   return (
@@ -100,16 +63,16 @@ export default function ThreeKeyPointsSection() {
         {/* Component: Left Title Section - Displays the main title and navigation buttons */}
         <div className="absolute  top-[100] w-100 ">
           <h2 className="text-2xl sm:text-2xl lg:text-3xl  text-teal-800 mb-6">
-            {content.mainTitle.line1} <br /> {content.mainTitle.line2} <br />
-            {content.mainTitle.line3}
+            {mainTitle.line1} <br /> {mainTitle.line2} <br />
+            {mainTitle.line3}
           </h2>
           <div className="absolute flex gap-4  ">
-            {content.keyPoints.map((point) => (
+            {keyPoints.map((point, index) => (
               <button
-                key={point.id}
+                key={index}
                 className="bg-yellow-400 top-40 right-100 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors"
               >
-                {point.id}
+                {(index + 1).toString().padStart(2, "0")}
               </button>
             ))}
           </div>
@@ -129,8 +92,8 @@ export default function ThreeKeyPointsSection() {
               >
                 {/* Main image for the first key point */}
                 <Image
-                  src="/s7_c1.svg"
-                  alt={t("benefit1Title")}
+                  src={imagesData[0].main}
+                  alt={keyPoints[0].painPoint.title}
                   width={300}
                   height={200}
                   className="w-full h-auto object-cover"
@@ -146,7 +109,7 @@ export default function ThreeKeyPointsSection() {
                 >
                   <div className=" absolute top-7 left-58 text-gray-900 py-3 px-6  hover:bg-yellow-300 transition-colors">
                     <Image
-                      src={content.keyPoints[0].images.icon}
+                      src={imagesData[0].icon}
                       alt="Icon"
                       width={24}
                       height={24}
@@ -154,21 +117,21 @@ export default function ThreeKeyPointsSection() {
                     />
                   </div>
                   <div className="absolute top-[25%] text-yellow-500 text-md left-[60]">
-                    {content.keyPoints[0].painPoint.label}
+                    {keyPoints[0].painPoint.label}
                   </div>
                   <div className="absolute top-[35%]  text-xl left-[60]">
-                    {content.keyPoints[0].painPoint.title}
+                    {keyPoints[0].painPoint.title}
                   </div>
                   <div className="absolute top-[55%] text-yellow-500 text-md left-[60]">
-                    {content.keyPoints[0].painPoint.challengeLabel}
+                    {keyPoints[0].painPoint.challengeLabel}
                   </div>
                   <div className="absolute top-[65%] text-xl left-[60]">
-                    {content.keyPoints[0].painPoint.challenge}
+                    {keyPoints[0].painPoint.challenge}
                   </div>
 
                   <Image
-                    src={content.keyPoints[0].images.pain}
-                    alt={t("benefit1Title")}
+                    src={imagesData[0].pain}
+                    alt={keyPoints[0].painPoint.title}
                     width={300}
                     height={300}
                     className="w-full h-auto object-cover"
@@ -183,14 +146,14 @@ export default function ThreeKeyPointsSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  {content.keyPoints[0].aiPowered && (
+                  {imagesData[0].aiPowered && (
                     <button className="bg-yellow-400 absolute right-6 text-gray-900 py-3 px-6 rounded-xl text-xl hover:bg-yellow-300 transition-colors">
                       ai
                     </button>
                   )}
                   <Image
-                    src={content.keyPoints[0].images.solution}
-                    alt={t("benefit1Title")}
+                    src={imagesData[0].solution}
+                    alt={keyPoints[0].solution.description}
                     width={300}
                     height={300}
                     className="w-full h-auto object-cover"
@@ -200,10 +163,10 @@ export default function ThreeKeyPointsSection() {
 
               {/* Component: First Key Point Solution Description - Text overlay for solution */}
               <div className="absolute z-10 top-[45%] text-yellow-500 text-md left-[400]">
-                {content.keyPoints[0].solution.label}
+                {keyPoints[0].solution.label}
               </div>
               <div className="absolute z-10 top-[55%] text-xl left-[400]">
-                {content.keyPoints[0].solution.description}
+                {keyPoints[0].solution.description}
               </div>
 
               {/* Component: Decorative Line and Navigation - Connecting line with navigation buttons */}
@@ -215,8 +178,8 @@ export default function ThreeKeyPointsSection() {
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <Image
-                  src="/l1.svg"
-                  alt={t("benefit1Title")}
+                  src={imagesData[0].line}
+                  alt="Decorative line"
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"
@@ -238,21 +201,21 @@ export default function ThreeKeyPointsSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <div className="absolute top-25 left-20 text-yellow-500 text-md">
-                  {content.keyPoints[1].painPoint.label}
+                  {keyPoints[1].painPoint.label}
                 </div>
                 <div className="absolute top-30 left-20 text-xl">
-                  {content.keyPoints[1].painPoint.title}
+                  {keyPoints[1].painPoint.title}
                 </div>
                 <div className="absolute top-40 left-20 text-yellow-500 text-md">
-                  {content.keyPoints[1].painPoint.challengeLabel}
+                  {keyPoints[1].painPoint.challengeLabel}
                 </div>
                 <div className="absolute top-45 left-20 text-xl max-w-xs break-words">
-                  {content.keyPoints[1].painPoint.challenge}
+                  {keyPoints[1].painPoint.challenge}
                 </div>
 
                 <Image
-                  src={content.keyPoints[1].images.main}
-                  alt={t("benefit1Title")}
+                  src={imagesData[1].main}
+                  alt={keyPoints[1].painPoint.title}
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"
@@ -269,16 +232,16 @@ export default function ThreeKeyPointsSection() {
               >
                 <button className=" absolute right-0 top-5 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
                   <Image
-                    src={content.keyPoints[1].images.icon}
-                    alt={t("benefit1Title")}
+                    src={imagesData[1].icon}
+                    alt="Icon"
                     width={24}
                     height={24}
                     className="w-15 h-15"
                   />
                 </button>
                 <Image
-                  src={content.keyPoints[1].images.pain}
-                  alt={t("benefit1Title")}
+                  src={imagesData[1].pain}
+                  alt={keyPoints[1].painPoint.title}
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"
@@ -294,23 +257,23 @@ export default function ThreeKeyPointsSection() {
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <div className="absolute top-12 left-15 z-20 text-yellow-500 text-m">
-                  <div className=" ">{content.keyPoints[1].solution.label}</div>
+                  <div className=" ">{keyPoints[1].solution.label}</div>
                   <div className="text-white text-xl  max-w-xs break-words">
-                    {content.keyPoints[1].solution.description}
+                    {keyPoints[1].solution.description}
                   </div>
                 </div>
                 <button className="bg-yellow-400 absolute right-8 text-gray-900 p-2 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
                   <Image
-                    src={content.keyPoints[1].images.solutionIcon || ""}
-                    alt={t("benefit1Title")}
+                    src={imagesData[1].solutionIcon || ""}
+                    alt="Solution icon"
                     width={24}
                     height={24}
                     className="w-10 h-10"
                   />
                 </button>
                 <Image
-                  src={content.keyPoints[1].images.solution}
-                  alt={t("benefit1Title")}
+                  src={imagesData[1].solution}
+                  alt={keyPoints[1].solution.description}
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"
@@ -329,8 +292,8 @@ export default function ThreeKeyPointsSection() {
                   03
                 </button>
                 <Image
-                  src="/l2.svg"
-                  alt={t("benefit1Title")}
+                  src={imagesData[1].line}
+                  alt="Decorative line"
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"
@@ -347,21 +310,21 @@ export default function ThreeKeyPointsSection() {
               >
                 <div>
                   <div className="absolute top-25 left-20 text-yellow-500 text-md">
-                    {content.keyPoints[2].painPoint.label}
+                    {keyPoints[2].painPoint.label}
                   </div>
                   <div className="absolute top-30 text-xl left-20 ">
-                    {content.keyPoints[2].painPoint.title}
+                    {keyPoints[2].painPoint.title}
                   </div>
                   <div className="absolute top-40 left-20 text-yellow-500 text-md">
-                    {content.keyPoints[2].painPoint.challengeLabel}
+                    {keyPoints[2].painPoint.challengeLabel}
                   </div>
                   <div className="absolute top-45 text-xl  max-w-xs break-words left-20">
-                    {content.keyPoints[2].painPoint.challenge}
+                    {keyPoints[2].painPoint.challenge}
                   </div>
                 </div>
                 <Image
-                  src={content.keyPoints[2].images.main}
-                  alt={t("benefit1Title")}
+                  src={imagesData[2].main}
+                  alt={keyPoints[2].painPoint.title}
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"
@@ -378,16 +341,16 @@ export default function ThreeKeyPointsSection() {
               >
                 <button className="absolute right-6 text-gray-900   rounded-xl text-lg hover:bg-yellow-300 transition-colors">
                   <Image
-                    src={content.keyPoints[2].images.icon}
-                    alt={t("benefit1Title")}
+                    src={imagesData[2].icon}
+                    alt="Icon"
                     width={24}
                     height={24}
                     className="w-15 h-15"
                   />
                 </button>
                 <Image
-                  src={content.keyPoints[2].images.pain}
-                  alt={t("benefit1Title")}
+                  src={imagesData[2].pain}
+                  alt={keyPoints[2].painPoint.title}
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"
@@ -403,19 +366,19 @@ export default function ThreeKeyPointsSection() {
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
                 <div className="absolute top-25 left-15 z-20 text-yellow-500 text-m">
-                  <div className=" ">{content.keyPoints[2].solution.label}</div>
+                  <div className=" ">{keyPoints[2].solution.label}</div>
                   <div className="text-white  max-w-xs text-xl break-words">
-                    {content.keyPoints[2].solution.description}
+                    {keyPoints[2].solution.description}
                   </div>
                 </div>
-                {content.keyPoints[2].aiPowered && (
+                {imagesData[2].aiPowered && (
                   <button className="bg-yellow-400  absolute right-7 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
                     ai
                   </button>
                 )}
                 <Image
-                  src={content.keyPoints[2].images.solution}
-                  alt={t("benefit1Title")}
+                  src={imagesData[2].solution}
+                  alt={keyPoints[2].solution.description}
                   width={300}
                   height={300}
                   className="w-full h-auto object-cover"

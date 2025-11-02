@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import React, { useState } from "react";
+import { useTranslation } from "../context/LanguageProvider";
 
 // Define the data structure for each FAQ item
 type FAQItem = {
@@ -9,46 +10,7 @@ type FAQItem = {
   answer: string;
 };
 
-// Data extracted from your image
-const faqData: FAQItem[] = [
-  {
-    id: "q1",
-    question: "Who is PEX Software designed for?",
-    answer:
-      "PEX Software is purpose-built for ISO 9001 certified organizations, as well as CEOs and Quality Managers seeking to elevate their compliance programs into performance-driven systems. It also supports organizations preparing for ISO certification by streamlining documentation, workflows, and audit readiness.",
-  },
-  {
-    id: "q2",
-    question: "Can PEX Software support other international standards?",
-    answer:
-      "Yes, PEX Software is designed to be flexible and can support various other international standards beyond ISO 9001, including ISO 14001, ISO 45001, and more.",
-  },
-  {
-    id: "q3",
-    question: "Can PEX Software integrate with existing enterprise systems?",
-    answer:
-      "Absolutely. We offer robust API capabilities to ensure PEX Software can seamlessly integrate with your existing ERP, CRM, HRIS, and other critical enterprise systems.",
-  },
-  {
-    id: "q4",
-    question: "How does AI enhance the capabilities of PEX Software?",
-    answer:
-      "AI powers intelligent document analysis, automates compliance checks, provides predictive insights into potential non-conformities, and assists in optimizing workflows for continuous improvement.",
-  },
-  {
-    id: "q5",
-    question:
-      "Is PEX Software suitable for small and medium-sized enterprises (SMEs)?",
-    answer:
-      "Yes, PEX Software is scalable and offers flexible pricing tiers, making it a suitable and cost-effective solution for SMEs as well as large corporations.",
-  },
-  {
-    id: "q6",
-    question: "How secure is our data within PEX Software?",
-    answer:
-      "Data security is our top priority. We employ end-to-end encryption, regular security audits, and comply with international data protection regulations like GDPR to ensure your data is always secure.",
-  },
-];
+// Main FAQ Section Component
 
 // Reusable Accordion Item Component
 interface AccordionItemProps {
@@ -83,9 +45,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       >
         <div className="flex items-center space-x-3">
           <div className="flex h-12 w-12  items-center justify-center rounded-full bg-yellow-400 text-teal-900">
-            <span className="text-base">
-              {item.id.replace("q", "Q")}
-            </span>
+            <span className="text-base">{item.id.replace("q", "Q")}</span>
           </div>
           <span>{item.question}</span>
         </div>
@@ -112,6 +72,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
 // Main FAQ Section Component
 const FAQSection: React.FC = () => {
+  const { t } = useTranslation();
+  const faqData = t("faqSection.faqs") as FAQItem[];
+
   // State to track the currently open item. 'q1' is open by default per your image.
   const [openId, setOpenId] = useState<string | null>("q1");
 
@@ -129,7 +92,7 @@ const FAQSection: React.FC = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        FAQs
+        {String(t("faqSection.title"))}
       </motion.h2>
       <div>
         {faqData.map((item, index) => (

@@ -127,6 +127,153 @@ export const translations = {
       ]
     },
 
+    // SuccessStoriesSection Component translations
+    successStoriesSection: {
+      caseStudyButton: {
+        label: "Case Study",
+        buttonText: "Read more"
+      },
+      column1: {
+        stat: "90%",
+        statDescription: "document reduction",
+        bannerText: "This Months Success Story"
+      },
+      column2: {
+        title: "Businesses that have grown with us",
+        card: {
+          title: "Small company and how PEx solution"
+        }
+      },
+      column3: {
+        card: {
+          title: "How PEx solution saved 1.6 million in the first quarter"
+        }
+      }
+    },
+
+    // ThreeKeyPointsSection Component translations
+    threeKeyPointsSection: {
+      mainTitle: {
+        line1: "Three key points why",
+        line2: "you need to consider",
+        line3: "PEx Software™ as a solution for food safety"
+      },
+      keyPoints: [
+        {
+          painPoint: {
+            label: "Pain Point",
+            title: "Documentation overload",
+            challengeLabel: "Traditional Challenge",
+            challenge: "Paper-heavy, time-consuming, error-prone compliance records"
+          },
+          solution: {
+            label: "How PEx Solves It",
+            description: "PEx streamlines documentation, making it faster and more accurate"
+          }
+        },
+        {
+          painPoint: {
+            label: "Pain Point",
+            title: "Lack of Strategic Value",
+            challengeLabel: "Traditional Challenge",
+            challenge: "ISO seen as a tick-box exercise disconnected from business goals"
+          },
+          solution: {
+            label: "How PEx Solves It",
+            description: "PEx streamlines documentation, making it faster and more accurate"
+          }
+        },
+        {
+          painPoint: {
+            label: "Pain Point",
+            title: "Time consuming to maintain",
+            challengeLabel: "Traditional Challenge",
+            challenge: "Manual documentation, missing records, last-minute scrambling"
+          },
+          solution: {
+            label: "How PEx Solves It",
+            description: "Removes unproductive documentation work and waste activities"
+          }
+        }
+      ]
+    },
+
+    // ExperienceStatsSection Component translations
+    experienceStatsSection: {
+      stats: {
+        years: {
+          value: "+24",
+          labelLine1: "YEARS",
+          labelLine2: "EXPERIENCE"
+        },
+        clients: {
+          value: "+200",
+          label: "CLIENTS"
+        }
+      },
+      buttons: {
+        readMore: "Read more",
+        learnMore: "Learn more",
+        bookNow: "Book now"
+      },
+      promoText: "← Free seminar",
+      demoCard: {
+        titleLines: ["Request", "demo"],
+        connectLabel: "LET'S CONNECT"
+      }
+    },
+
+    // FAQSection Component translations
+    faqSection: {
+      title: "FAQs",
+      faqs: [
+        {
+          id: "q1",
+          question: "Who is PEX Software designed for?",
+          answer: "PEX Software is purpose-built for ISO 9001 certified organizations, as well as CEOs and Quality Managers seeking to elevate their compliance programs into performance-driven systems. It also supports organizations preparing for ISO certification by streamlining documentation, workflows, and audit readiness."
+        },
+        {
+          id: "q2",
+          question: "Can PEX Software support other international standards?",
+          answer: "Yes, PEX Software is designed to be flexible and can support various other international standards beyond ISO 9001, including ISO 14001, ISO 45001, and more."
+        },
+        {
+          id: "q3",
+          question: "Can PEX Software integrate with existing enterprise systems?",
+          answer: "Absolutely. We offer robust API capabilities to ensure PEX Software can seamlessly integrate with your existing ERP, CRM, HRIS, and other critical enterprise systems."
+        },
+        {
+          id: "q4",
+          question: "How does AI enhance the capabilities of PEX Software?",
+          answer: "AI powers intelligent document analysis, automates compliance checks, provides predictive insights into potential non-conformities, and assists in optimizing workflows for continuous improvement."
+        },
+        {
+          id: "q5",
+          question: "Is PEX Software suitable for small and medium-sized enterprises (SMEs)?",
+          answer: "Yes, PEX Software is scalable and offers flexible pricing tiers, making it a suitable and cost-effective solution for SMEs as well as large corporations."
+        },
+        {
+          id: "q6",
+          question: "How secure is our data within PEX Software?",
+          answer: "Data security is our top priority. We employ end-to-end encryption, regular security audits, and comply with international data protection regulations like GDPR to ensure your data is always secure."
+        }
+      ]
+    },
+
+    // SocialSection Component translations
+    socialSection: {
+      title: "What's on social",
+      partnerSection: {
+        title: "Your reliable partner in business growth",
+        followUs: "Follow us",
+        linkedinButton: {
+          platform: "Linkedin",
+          followersCount: "1000+",
+          followersText: "followers"
+        }
+      }
+    },
+
     aboutTitle: "About Us",
     aboutContent: "We are a team dedicated to pushing boundaries.",
     featuresTitle: "Our Features",
@@ -177,6 +324,153 @@ export const translations = {
     benefit6Desc: "PEx transforma la seguridad alimentaria de una carga de cumplimiento en una ventaja estratégica. Al integrar ISO 22000 en las operaciones diarias, los propietarios de hoteles pueden demostrar excelencia, ganar la confianza de los huéspedes y diferenciar su marca en un mercado competitivo.",
     benefit7Title: "Impulsa la Mejora Continua",
     benefit7Desc: "Con conocimientos de IA y análisis de rendimiento, PEx ayuda a los hoteles a identificar tendencias, predecir riesgos e implementar mejoras de procesos. Esto asegura no solo el cumplimiento, sino una cultura de excelencia e innovación en seguridad alimentaria.",
+
+    // SuccessStoriesSection Component translations
+    successStoriesSection: {
+      caseStudyButton: {
+        label: "Caso de Estudio",
+        buttonText: "Leer más"
+      },
+      column1: {
+        stat: "90%",
+        statDescription: "reducción de documentos",
+        bannerText: "Historia de Éxito de Este Mes"
+      },
+      column2: {
+        title: "Empresas que han crecido con nosotros",
+        card: {
+          title: "Pequeña empresa y cómo la solución PEx"
+        }
+      },
+      column3: {
+        card: {
+          title: "Cómo la solución PEx ahorró 1.6 millones en el primer trimestre"
+        }
+      }
+    },
+
+    // ThreeKeyPointsSection Component translations
+    threeKeyPointsSection: {
+      mainTitle: {
+        line1: "Tres puntos clave por qué",
+        line2: "debes considerar",
+        line3: "PEx Software™ como solución para la seguridad alimentaria"
+      },
+      keyPoints: [
+        {
+          painPoint: {
+            label: "Punto de Dolor",
+            title: "Sobrecarga de documentación",
+            challengeLabel: "Desafío Tradicional",
+            challenge: "Registros de cumplimiento pesados en papel, que consumen tiempo y propensos a errores"
+          },
+          solution: {
+            label: "Cómo PEx lo Resuelve",
+            description: "PEx agiliza la documentación, haciéndola más rápida y precisa"
+          }
+        },
+        {
+          painPoint: {
+            label: "Punto de Dolor",
+            title: "Falta de Valor Estratégico",
+            challengeLabel: "Desafío Tradicional",
+            challenge: "ISO visto como un ejercicio de marcar casillas desconectado de los objetivos comerciales"
+          },
+          solution: {
+            label: "Cómo PEx lo Resuelve",
+            description: "PEx agiliza la documentación, haciéndola más rápida y precisa"
+          }
+        },
+        {
+          painPoint: {
+            label: "Punto de Dolor",
+            title: "Consume tiempo mantenerlo",
+            challengeLabel: "Desafío Tradicional",
+            challenge: "Documentación manual, registros faltantes, improvisación de último minuto"
+          },
+          solution: {
+            label: "Cómo PEx lo Resuelve",
+            description: "Elimina el trabajo improductivo de documentación y actividades de desperdicio"
+          }
+        }
+      ]
+    },
+
+    // ExperienceStatsSection Component translations
+    experienceStatsSection: {
+      stats: {
+        years: {
+          value: "+24",
+          labelLine1: "AÑOS",
+          labelLine2: "EXPERIENCIA"
+        },
+        clients: {
+          value: "+200",
+          label: "CLIENTES"
+        }
+      },
+      buttons: {
+        readMore: "Leer más",
+        learnMore: "Aprender más",
+        bookNow: "Reservar ahora"
+      },
+      promoText: "← Seminario gratuito",
+      demoCard: {
+        titleLines: ["Solicitar", "demo"],
+        connectLabel: "CONECTEMOS"
+      }
+    },
+
+    // FAQSection Component translations
+    faqSection: {
+      title: "Preguntas Frecuentes",
+      faqs: [
+        {
+          id: "q1",
+          question: "¿Para quién está diseñado PEX Software?",
+          answer: "PEX Software está diseñado específicamente para organizaciones certificadas ISO 9001, así como para CEOs y Gerentes de Calidad que buscan elevar sus programas de cumplimiento a sistemas impulsados por el rendimiento. También apoya a las organizaciones que se preparan para la certificación ISO al agilizar la documentación, los flujos de trabajo y la preparación para auditorías."
+        },
+        {
+          id: "q2",
+          question: "¿Puede PEX Software apoyar otras normas internacionales?",
+          answer: "Sí, PEX Software está diseñado para ser flexible y puede apoyar varias otras normas internacionales más allá de ISO 9001, incluyendo ISO 14001, ISO 45001, y más."
+        },
+        {
+          id: "q3",
+          question: "¿Puede PEX Software integrarse con sistemas empresariales existentes?",
+          answer: "Absolutamente. Ofrecemos capacidades robustas de API para asegurar que PEX Software pueda integrarse perfectamente con sus sistemas ERP, CRM, HRIS y otros sistemas empresariales críticos existentes."
+        },
+        {
+          id: "q4",
+          question: "¿Cómo mejora la IA las capacidades de PEX Software?",
+          answer: "La IA potencia el análisis inteligente de documentos, automatiza las verificaciones de cumplimiento, proporciona perspectivas predictivas sobre posibles no conformidades y ayuda a optimizar los flujos de trabajo para la mejora continua."
+        },
+        {
+          id: "q5",
+          question: "¿Es PEX Software adecuado para pequeñas y medianas empresas (PYMEs)?",
+          answer: "Sí, PEX Software es escalable y ofrece niveles de precios flexibles, lo que lo hace una solución adecuada y rentable para PYMEs así como para grandes corporaciones."
+        },
+        {
+          id: "q6",
+          question: "¿Qué tan seguro están nuestros datos dentro de PEX Software?",
+          answer: "La seguridad de los datos es nuestra máxima prioridad. Empleamos encriptación de extremo a extremo, auditorías de seguridad regulares y cumplimos con regulaciones internacionales de protección de datos como GDPR para asegurar que sus datos estén siempre seguros."
+        }
+      ]
+    },
+
+    // SocialSection Component translations
+    socialSection: {
+      title: "Qué hay en redes sociales",
+      partnerSection: {
+        title: "Tu socio confiable en el crecimiento empresarial",
+        followUs: "Síguenos",
+        linkedinButton: {
+          platform: "LinkedIn",
+          followersCount: "1000+",
+          followersText: "seguidores"
+        }
+      }
+    },
 
     aboutTitle: "Sobre Nosotros",
     aboutContent: "Somos un equipo dedicado a superar los límites.",
@@ -229,6 +523,153 @@ export const translations = {
     benefit7Title: "Stimule l'Amélioration Continue",
     benefit7Desc: "Avec des informations IA et des analyses de performance, PEx aide les hôtels à identifier les tendances, prédire les risques et mettre en œuvre des améliorations de processus. Cela garantit non seulement la conformité, mais une culture d'excellence et d'innovation en matière de sécurité alimentaire.",
 
+    // SuccessStoriesSection Component translations
+    successStoriesSection: {
+      caseStudyButton: {
+        label: "Étude de Cas",
+        buttonText: "En savoir plus"
+      },
+      column1: {
+        stat: "90%",
+        statDescription: "réduction de documents",
+        bannerText: "Histoire de Réussite du Mois"
+      },
+      column2: {
+        title: "Entreprises qui ont grandi avec nous",
+        card: {
+          title: "Petite entreprise et comment la solution PEx"
+        }
+      },
+      column3: {
+        card: {
+          title: "Comment la solution PEx a économisé 1,6 million au premier trimestre"
+        }
+      }
+    },
+
+    // ThreeKeyPointsSection Component translations
+    threeKeyPointsSection: {
+      mainTitle: {
+        line1: "Trois points clés pourquoi",
+        line2: "vous devez considérer",
+        line3: "PEx Software™ comme solution pour la sécurité alimentaire"
+      },
+      keyPoints: [
+        {
+          painPoint: {
+            label: "Point de Douleur",
+            title: "Surcharge de documentation",
+            challengeLabel: "Défi Traditionnel",
+            challenge: "Registres de conformité lourds en papier, chronophages et sujets aux erreurs"
+          },
+          solution: {
+            label: "Comment PEx le Résout",
+            description: "PEx rationalise la documentation, la rendant plus rapide et précise"
+          }
+        },
+        {
+          painPoint: {
+            label: "Point de Douleur",
+            title: "Manque de Valeur Stratégique",
+            challengeLabel: "Défi Traditionnel",
+            challenge: "ISO vu comme un exercice de cocher des cases déconnecté des objectifs commerciaux"
+          },
+          solution: {
+            label: "Comment PEx le Résout",
+            description: "PEx rationalise la documentation, la rendant plus rapide et précise"
+          }
+        },
+        {
+          painPoint: {
+            label: "Point de Douleur",
+            title: "Prend du temps à maintenir",
+            challengeLabel: "Défi Traditionnel",
+            challenge: "Documentation manuelle, registres manquants, improvisation de dernière minute"
+          },
+          solution: {
+            label: "Comment PEx le Résout",
+            description: "Élimine le travail improductif de documentation et les activités de gaspillage"
+          }
+        }
+      ]
+    },
+
+    // ExperienceStatsSection Component translations
+    experienceStatsSection: {
+      stats: {
+        years: {
+          value: "+24",
+          labelLine1: "ANNÉES",
+          labelLine2: "EXPÉRIENCE"
+        },
+        clients: {
+          value: "+200",
+          label: "CLIENTS"
+        }
+      },
+      buttons: {
+        readMore: "En savoir plus",
+        learnMore: "Apprendre plus",
+        bookNow: "Réserver maintenant"
+      },
+      promoText: "← Séminaire gratuit",
+      demoCard: {
+        titleLines: ["Demander", "demo"],
+        connectLabel: "CONNECTONS-NOUS"
+      }
+    },
+
+    // FAQSection Component translations
+    faqSection: {
+      title: "FAQ",
+      faqs: [
+        {
+          id: "q1",
+          question: "Pour qui PEX Software est-il conçu ?",
+          answer: "PEX Software est spécialement conçu pour les organisations certifiées ISO 9001, ainsi que pour les PDG et les responsables qualité cherchant à élever leurs programmes de conformité en systèmes axés sur la performance. Il soutient également les organisations se préparant à la certification ISO en rationalisant la documentation, les flux de travail et la préparation aux audits."
+        },
+        {
+          id: "q2",
+          question: "PEX Software peut-il supporter d'autres normes internationales ?",
+          answer: "Oui, PEX Software est conçu pour être flexible et peut supporter diverses autres normes internationales au-delà d'ISO 9001, y compris ISO 14001, ISO 45001, et plus encore."
+        },
+        {
+          id: "q3",
+          question: "PEX Software peut-il s'intégrer avec les systèmes d'entreprise existants ?",
+          answer: "Absolument. Nous offrons des capacités API robustes pour assurer que PEX Software puisse s'intégrer parfaitement avec vos systèmes ERP, CRM, HRIS et autres systèmes d'entreprise critiques existants."
+        },
+        {
+          id: "q4",
+          question: "Comment l'IA améliore-t-elle les capacités de PEX Software ?",
+          answer: "L'IA alimente l'analyse intelligente des documents, automatise les vérifications de conformité, fournit des insights prédictifs sur les non-conformités potentielles et aide à optimiser les flux de travail pour l'amélioration continue."
+        },
+        {
+          id: "q5",
+          question: "PEX Software est-il adapté aux petites et moyennes entreprises (PME) ?",
+          answer: "Oui, PEX Software est évolutif et offre des niveaux de tarification flexibles, ce qui en fait une solution adaptée et rentable pour les PME ainsi que pour les grandes entreprises."
+        },
+        {
+          id: "q6",
+          question: "À quel point nos données sont-elles sécurisées dans PEX Software ?",
+          answer: "La sécurité des données est notre priorité absolue. Nous employons un cryptage de bout en bout, des audits de sécurité réguliers et nous conformons aux réglementations internationales de protection des données comme le RGPD pour assurer que vos données sont toujours sécurisées."
+        }
+      ]
+    },
+
+    // SocialSection Component translations
+    socialSection: {
+      title: "Quoi de neuf sur les réseaux sociaux",
+      partnerSection: {
+        title: "Votre partenaire fiable dans la croissance de l'entreprise",
+        followUs: "Suivez-nous",
+        linkedinButton: {
+          platform: "LinkedIn",
+          followersCount: "1000+",
+          followersText: "abonnés"
+        }
+      }
+    },
+
     aboutTitle: "À propos de nous",
     aboutContent: "Nous sommes une équipe dédiée à repousser les limites.",
     featuresTitle: "Nos Fonctionnalités",
@@ -279,6 +720,153 @@ export const translations = {
     benefit6Desc: "PEx verwandelt Lebensmittelsicherheit von einer Compliance-Last in einen strategischen Vorteil. Durch die Integration von ISO 22000 in den täglichen Betrieb können Hotelbesitzer Exzellenz demonstrieren, das Vertrauen der Gäste gewinnen und ihre Marke in einem wettbewerbsintensiven Markt differenzieren.",
     benefit7Title: "Treibt Kontinuierliche Verbesserung voran",
     benefit7Desc: "Mit KI-Einblicken und Leistungsanalysen hilft PEx Hotels, Trends zu identifizieren, Risiken vorherzusagen und Prozessverbesserungen umzusetzen. Dies gewährleistet nicht nur Compliance, sondern eine Kultur der Exzellenz und Innovation in der Lebensmittelsicherheit.",
+
+    // SuccessStoriesSection Component translations
+    successStoriesSection: {
+      caseStudyButton: {
+        label: "Fallstudie",
+        buttonText: "Mehr lesen"
+      },
+      column1: {
+        stat: "90%",
+        statDescription: "Dokumentenreduktion",
+        bannerText: "Erfolgsgeschichte Dieses Monats"
+      },
+      column2: {
+        title: "Unternehmen, die mit uns gewachsen sind",
+        card: {
+          title: "Kleines Unternehmen und wie die PEx-Lösung"
+        }
+      },
+      column3: {
+        card: {
+          title: "Wie die PEx-Lösung im ersten Quartal 1,6 Millionen sparte"
+        }
+      }
+    },
+
+    // ThreeKeyPointsSection Component translations
+    threeKeyPointsSection: {
+      mainTitle: {
+        line1: "Drei Schlüsselpunkte warum",
+        line2: "Sie sollten in Betracht ziehen",
+        line3: "PEx Software™ als Lösung für Lebensmittelsicherheit"
+      },
+      keyPoints: [
+        {
+          painPoint: {
+            label: "Schmerzpunkt",
+            title: "Dokumentationsüberlastung",
+            challengeLabel: "Traditionelle Herausforderung",
+            challenge: "Papierlastige, zeitaufwendige, fehleranfällige Compliance-Aufzeichnungen"
+          },
+          solution: {
+            label: "Wie PEx es Löst",
+            description: "PEx rationalisiert die Dokumentation, macht sie schneller und genauer"
+          }
+        },
+        {
+          painPoint: {
+            label: "Schmerzpunkt",
+            title: "Mangel an Strategischem Wert",
+            challengeLabel: "Traditionelle Herausforderung",
+            challenge: "ISO als Häkchen-Übung gesehen, losgelöst von Geschäftsziele"
+          },
+          solution: {
+            label: "Wie PEx es Löst",
+            description: "PEx rationalisiert die Dokumentation, macht sie schneller und genauer"
+          }
+        },
+        {
+          painPoint: {
+            label: "Schmerzpunkt",
+            title: "Zeitaufwendig zu warten",
+            challengeLabel: "Traditionelle Herausforderung",
+            challenge: "Manuelle Dokumentation, fehlende Aufzeichnungen, letztminütiges Improvisieren"
+          },
+          solution: {
+            label: "Wie PEx es Löst",
+            description: "Entfernt unproduktive Dokumentationsarbeit und Verschwendungsaktivitäten"
+          }
+        }
+      ]
+    },
+
+    // ExperienceStatsSection Component translations
+    experienceStatsSection: {
+      stats: {
+        years: {
+          value: "+24",
+          labelLine1: "JAHRE",
+          labelLine2: "ERFAHRUNG"
+        },
+        clients: {
+          value: "+200",
+          label: "KUNDEN"
+        }
+      },
+      buttons: {
+        readMore: "Mehr lesen",
+        learnMore: "Mehr lernen",
+        bookNow: "Jetzt buchen"
+      },
+      promoText: "← Kostenloses Seminar",
+      demoCard: {
+        titleLines: ["Demo", "anfordern"],
+        connectLabel: "LASS UNS VERBINDEN"
+      }
+    },
+
+    // FAQSection Component translations
+    faqSection: {
+      title: "Häufig gestellte Fragen",
+      faqs: [
+        {
+          id: "q1",
+          question: "Für wen ist PEX Software konzipiert?",
+          answer: "PEX Software ist speziell für ISO 9001 zertifizierte Organisationen konzipiert, sowie für CEOs und Qualitätsmanager, die ihre Compliance-Programme zu leistungsorientierten Systemen weiterentwickeln möchten. Es unterstützt auch Organisationen bei der Vorbereitung auf die ISO-Zertifizierung durch Rationalisierung der Dokumentation, Workflows und Audit-Bereitschaft."
+        },
+        {
+          id: "q2",
+          question: "Kann PEX Software andere internationale Standards unterstützen?",
+          answer: "Ja, PEX Software ist flexibel gestaltet und kann verschiedene andere internationale Standards jenseits von ISO 9001 unterstützen, einschließlich ISO 14001, ISO 45001 und mehr."
+        },
+        {
+          id: "q3",
+          question: "Kann PEX Software sich in bestehende Unternehmenssysteme integrieren?",
+          answer: "Absolut. Wir bieten robuste API-Funktionen, um sicherzustellen, dass PEX Software nahtlos in Ihre bestehenden ERP-, CRM-, HRIS- und anderen kritischen Unternehmenssysteme integriert werden kann."
+        },
+        {
+          id: "q4",
+          question: "Wie verbessert KI die Fähigkeiten von PEX Software?",
+          answer: "KI ermöglicht intelligente Dokumentenanalyse, automatisiert Compliance-Prüfungen, bietet prädiktive Einblicke in potenzielle Nichtkonformitäten und unterstützt bei der Optimierung von Workflows für kontinuierliche Verbesserung."
+        },
+        {
+          id: "q5",
+          question: "Ist PEX Software für kleine und mittlere Unternehmen (KMU) geeignet?",
+          answer: "Ja, PEX Software ist skalierbar und bietet flexible Preismodelle, wodurch es eine geeignete und kosteneffiziente Lösung für KMU sowie große Unternehmen darstellt."
+        },
+        {
+          id: "q6",
+          question: "Wie sicher sind unsere Daten in PEX Software?",
+          answer: "Datensicherheit hat für uns höchste Priorität. Wir verwenden Ende-zu-Ende-Verschlüsselung, regelmäßige Sicherheitsaudits und halten uns an internationale Datenschutzvorschriften wie DSGVO, um sicherzustellen, dass Ihre Daten immer sicher sind."
+        }
+      ]
+    },
+
+    // SocialSection Component translations
+    socialSection: {
+      title: "Was gibt's in den sozialen Medien",
+      partnerSection: {
+        title: "Ihr zuverlässiger Partner beim Geschäftswachstum",
+        followUs: "Folgen Sie uns",
+        linkedinButton: {
+          platform: "LinkedIn",
+          followersCount: "1000+",
+          followersText: "Follower"
+        }
+      }
+    },
 
     aboutTitle: "Über uns",
     aboutContent: "Wir sind ein Team, das sich der Grenzüberschreitung verschrieben hat.",
@@ -414,6 +1002,153 @@ export const translations = {
           desc: "AIの洞察とパフォーマンス分析により、PExはホテルがトレンドを特定し、リスクを予測し、プロセス改善を実装するのを支援します。これは、コンプライアンスだけでなく、食品安全における卓越性と革新の文化を確実にします。"
         }
       ]
+    },
+
+    // SuccessStoriesSection Component translations
+    successStoriesSection: {
+      caseStudyButton: {
+        label: "ケーススタディ",
+        buttonText: "続きを読む"
+      },
+      column1: {
+        stat: "90%",
+        statDescription: "文書削減",
+        bannerText: "今月の成功事例"
+      },
+      column2: {
+        title: "私たちと共に成長した企業",
+        card: {
+          title: "中小企業とPExソリューションの活用方法"
+        }
+      },
+      column3: {
+        card: {
+          title: "PExソリューションが第1四半期に160万を節約した方法"
+        }
+      }
+    },
+
+    // ThreeKeyPointsSection Component translations
+    threeKeyPointsSection: {
+      mainTitle: {
+        line1: "考慮すべき3つの重要なポイント",
+        line2: "食品安全のためのソリューションとして",
+        line3: "PEx Software™を"
+      },
+      keyPoints: [
+        {
+          painPoint: {
+            label: "ペインポイント",
+            title: "文書処理の過負荷",
+            challengeLabel: "従来の課題",
+            challenge: "紙ベースで時間のかかり、エラーが発生しやすいコンプライアンス記録"
+          },
+          solution: {
+            label: "PExがどのように解決するか",
+            description: "PExは文書処理を効率化し、より迅速かつ正確にします"
+          }
+        },
+        {
+          painPoint: {
+            label: "ペインポイント",
+            title: "戦略的価値の欠如",
+            challengeLabel: "従来の課題",
+            challenge: "ISOがビジネス目標から切り離されたチェックボックス演習として見なされる"
+          },
+          solution: {
+            label: "PExがどのように解決するか",
+            description: "PExは文書処理を効率化し、より迅速かつ正確にします"
+          }
+        },
+        {
+          painPoint: {
+            label: "ペインポイント",
+            title: "維持に時間がかかる",
+            challengeLabel: "従来の課題",
+            challenge: "手動文書化、欠落記録、最後の瞬間の混乱"
+          },
+          solution: {
+            label: "PExがどのように解決するか",
+            description: "非生産的な文書作業と無駄な活動を除去します"
+          }
+        }
+      ]
+    },
+
+    // ExperienceStatsSection Component translations
+    experienceStatsSection: {
+      stats: {
+        years: {
+          value: "+24",
+          labelLine1: "年",
+          labelLine2: "経験"
+        },
+        clients: {
+          value: "+200",
+          label: "クライアント"
+        }
+      },
+      buttons: {
+        readMore: "続きを読む",
+        learnMore: "もっと学ぶ",
+        bookNow: "今すぐ予約"
+      },
+      promoText: "← 無料セミナー",
+      demoCard: {
+        titleLines: ["デモ", "リクエスト"],
+        connectLabel: "つながりましょう"
+      }
+    },
+
+    // FAQSection Component translations
+    faqSection: {
+      title: "よくある質問",
+      faqs: [
+        {
+          id: "q1",
+          question: "PEXソフトウェアは誰向けに設計されていますか？",
+          answer: "PEXソフトウェアは、ISO 9001認定を受けた組織、およびコンプライアンスプログラムをパフォーマンス指向のシステムに進化させたいCEOと品質マネージャー向けに特別に設計されています。また、ドキュメント、ワークフロー、監査準備を合理化することで、ISO認定の準備を支援します。"
+        },
+        {
+          id: "q2",
+          question: "PEXソフトウェアは他の国際基準をサポートできますか？",
+          answer: "はい、PEXソフトウェアは柔軟に設計されており、ISO 9001以外にもISO 14001、ISO 45001など、さまざまな国際基準をサポートできます。"
+        },
+        {
+          id: "q3",
+          question: "PEXソフトウェアは既存の企業システムに統合できますか？",
+          answer: "もちろんです。堅牢なAPI機能を備えており、PEXソフトウェアが既存のERP、CRM、HRIS、その他の重要な企業システムにシームレスに統合できるようにしています。"
+        },
+        {
+          id: "q4",
+          question: "AIはPEXソフトウェアの機能をどのように向上させますか？",
+          answer: "AIにより、インテリジェントなドキュメント分析が可能になり、コンプライアンスチェックの自動化、潜在的な不適合への予測的洞察の提供、継続的改善のためのワークフロー最適化を支援します。"
+        },
+        {
+          id: "q5",
+          question: "PEXソフトウェアは中小企業（SME）に適していますか？",
+          answer: "はい、PEXソフトウェアはスケーラブルで柔軟な価格モデルを提供しており、中小企業だけでなく大企業にも適したコスト効果の高いソリューションです。"
+        },
+        {
+          id: "q6",
+          question: "PEXソフトウェアでのデータはどの程度安全ですか？",
+          answer: "データセキュリティは私たちの最優先事項です。エンドツーエンド暗号化、定期的なセキュリティ監査を使用し、GDPRなどの国際データ保護規制を遵守して、データが常に安全であることを保証します。"
+        }
+      ]
+    },
+
+    // SocialSection Component translations
+    socialSection: {
+      title: "ソーシャルメディアで見るもの",
+      partnerSection: {
+        title: "ビジネス成長における信頼できるパートナー",
+        followUs: "フォローしてください",
+        linkedinButton: {
+          platform: "LinkedIn",
+          followersCount: "1000+",
+          followersText: "フォロワー"
+        }
+      }
     },
 
     aboutTitle: "私たちについて",

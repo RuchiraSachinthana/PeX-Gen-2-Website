@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
+import { useTranslation } from "../context/LanguageProvider";
 
 const posts = [
   { id: 1, img: "/social (1).webp" },
@@ -13,6 +14,7 @@ const posts = [
 ];
 
 export default function SocialSection() {
+  const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -26,14 +28,14 @@ export default function SocialSection() {
 
   return (
     <section
-    style={{  
+      style={{
         backgroundImage: "url('/qs4 (6).webp')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "100%",
-        
       }}
-      className="w-full py-12 px-6 lg:px-20 bg-white relative  overflow-hidden">
+      className="w-full py-12 px-6 lg:px-20 bg-white relative  overflow-hidden"
+    >
       {/* Layer image on the right side */}
 
       {/* Content with relative positioning to stay above the background layer */}
@@ -45,7 +47,7 @@ export default function SocialSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          What&apos;s on social
+          {String(t("socialSection.title"))}
         </motion.h2>
 
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
@@ -122,17 +124,31 @@ export default function SocialSection() {
                 {/* Title and Subtitle */}
                 <div>
                   <h3 className="text-white text-secondary text-2xl mb-4">
-                    Your reliable <br /> partner in <br /> business growth
+                    {String(t("socialSection.partnerSection.title"))}
                   </h3>
-                  <p className="text-white text-2xl mt-6">Follow us</p>
+                  <p className="text-white text-2xl mt-6">
+                    {String(t("socialSection.partnerSection.followUs"))}
+                  </p>
                 </div>
 
                 {/* Yellow Button */}
                 <button className="bg-yellow-400 px-6 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors">
                   <div className="flex justify-between items-center gap-2">
-                    Linkedin
-                    <span>1000+</span>
-                    followers
+                    {String(
+                      t("socialSection.partnerSection.linkedinButton.platform")
+                    )}
+                    <span>
+                      {String(
+                        t(
+                          "socialSection.partnerSection.linkedinButton.followersCount"
+                        )
+                      )}
+                    </span>
+                    {String(
+                      t(
+                        "socialSection.partnerSection.linkedinButton.followersText"
+                      )
+                    )}
                   </div>
                 </button>
 
