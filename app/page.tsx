@@ -11,7 +11,6 @@ import { useTranslation } from "../context/LanguageProvider";
 
 import PExSoftwareBenefits from "@/components/PExSoftwareBenefits";
 
-
 export default function HomePage() {
   const { t } = useTranslation();
 
@@ -200,9 +199,7 @@ export default function HomePage() {
       <LinkedInFollowSection />
 
       <SectionFour />
-      <PExSoftwareBenefits/>
-
-      
+      <PExSoftwareBenefits />
     </div>
   );
 }

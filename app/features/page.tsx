@@ -67,9 +67,7 @@ export default function FeaturesPage() {
       <div className="w-full bg-white">
         <div className="max-w-4xl mx-auto px-4 py-20">
           <div className="text-center">
-            <h2 className="text-4xl mb-4 text-gray-800">
-              Key Capabilities
-            </h2>
+            <h2 className="text-4xl mb-4 text-gray-800">Key Capabilities</h2>
             <p className="text-lg text-gray-600">
               Powerful features designed to exceed your expectations.
             </p>
