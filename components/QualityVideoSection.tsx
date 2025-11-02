@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslation } from "../context/LanguageProvider";
 import SectionTwoCard from "./SectionTwoCard";
 
 // DEFINE ANIMATION VARIANTS
@@ -22,37 +23,37 @@ const itemVariants = {
   },
 };
 
-// DECOUPLED CONTENT
-const content = {
-  title:
-    "Watch video how PEx Software™ can help your business improve productivity",
-  cards: [
-    {
-      id: "updates",
-      iconSrc: "/bell_icon.svg",
-      iconWidth: 50,
-      iconHeight: 50,
-      title: "Get the latest updates",
-      subtitle: "Stay informed with notifications",
-      buttonText: "Sign up",
-    },
-    {
-      id: "demo",
-      iconSrc: "/rocket_icon.svg",
-      iconWidth: 50,
-      iconHeight: 50,
-      title: "Request Demo",
-      subtitle: "See PEx Software in action",
-      buttonText: "Book Now",
-    },
-  ],
-  video: {
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    title: "PEx Software Productivity Video",
-  },
-};
-
 export default function QualityVideoSection() {
+  const { t } = useTranslation();
+
+  // DECOUPLED CONTENT using translations
+  const content = {
+    title: t("qualityVideoSection.title"),
+    cards: [
+      {
+        id: "updates",
+        iconSrc: "/bell_icon.svg",
+        iconWidth: 50,
+        iconHeight: 50,
+        title: t("qualityVideoSection.cards.updates.title"),
+        subtitle: t("qualityVideoSection.cards.updates.subtitle"),
+        buttonText: t("qualityVideoSection.cards.updates.buttonText"),
+      },
+      {
+        id: "demo",
+        iconSrc: "/rocket_icon.svg",
+        iconWidth: 50,
+        iconHeight: 50,
+        title: t("qualityVideoSection.cards.demo.title"),
+        subtitle: t("qualityVideoSection.cards.demo.subtitle"),
+        buttonText: t("qualityVideoSection.cards.demo.buttonText"),
+      },
+    ],
+    video: {
+      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      title: t("qualityVideoSection.video.title"),
+    },
+  };
   return (
     <div className="py-10 text-gray-900 bg-[#bae2e0] px-6 overflow-hidden">
       <motion.div
@@ -65,7 +66,7 @@ export default function QualityVideoSection() {
         {/* Left section */}
         <motion.div className="flex flex-col gap-10" variants={itemVariants}>
           <div className="text-left">
-            <h2 className="text-2xl mb-4 text-primary">{content.title}</h2>
+            <h2 className="text-2xl mb-4 text-primary">{String(content.title)}</h2>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -75,9 +76,9 @@ export default function QualityVideoSection() {
                 iconSrc={card.iconSrc}
                 iconWidth={card.iconWidth}
                 iconHeight={card.iconHeight}
-                title={card.title}
-                subtitle={card.subtitle}
-                buttonText={card.buttonText}
+                title={String(card.title)}
+                subtitle={String(card.subtitle)}
+                buttonText={String(card.buttonText)}
               />
             ))}
           </div>
@@ -97,7 +98,7 @@ export default function QualityVideoSection() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-2xl"
                 src={content.video.url}
-                title={content.video.title}
+                title={String(content.video.title)}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

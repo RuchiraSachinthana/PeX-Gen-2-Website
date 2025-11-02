@@ -1,19 +1,90 @@
+// Component-wise translations - organized by component for better maintainability
 export const translations = {
   en: {
+    // Navigation translations
     navAbout: "About",
     navFeatures: "Features",
     navBlog: "Blog",
     navContact: "Contact",
     navPex: "PEX Solutions",
-    pexGen: "PEX Gen",
-    pexGenDesc: "Next-generation solutions for modern challenges.",
-    pexQuality: "PEX Quality",
-    pexQualityDesc: "Uncompromising quality assurance.",
-    pexQualityHeaderDesc1: `Reduce your ISO 9001`,
-    pexQualityHeaderDesc2: `Paper documentation by 90%`,
-    pexQualityHeaderDesc3: `PEx Software™ for `,
-    pexQualityHeaderDesc4: `Quality management`,
-    pexFood: "PEX Food",
+
+    // PexQualityHeader Component translations
+    pexQualityHeader: {
+      desc1: "Reduce your ISO 9001",
+      desc2: "Paper documentation by 90%",
+      desc3: "PEx Software™ for",
+      desc4: "Quality management"
+    },
+
+    // QualityVideoSection Component translations
+    qualityVideoSection: {
+      title: "Watch video how PEx Software™ can help your business improve productivity",
+      cards: {
+        updates: {
+          title: "Get the latest updates",
+          subtitle: "Stay informed with notifications",
+          buttonText: "Sign up"
+        },
+        demo: {
+          title: "Request Demo",
+          subtitle: "See PEx Software in action",
+          buttonText: "Book Now"
+        }
+      },
+      video: {
+        title: "PEx Software Productivity Video"
+      }
+    },
+
+    // BusinessImprovementSlider Component translations
+    businessImprovementSlider: {
+      leftSection: {
+        title: {
+          line1: "Your reliable",
+          line2: "partner in",
+          line3: "business growth"
+        },
+        subtitle: "Follow us",
+        linkedinButton: "Linkedin",
+        followers: "followers"
+      },
+      topButton: "How PEx Software™ can improve business process",
+      readMoreButton: "Read More",
+      slides: [
+        {
+          id: "strategy",
+          title: "Turn compliance into strategy",
+          content: "Align ISO 9001 with business goals, making it a CEO's decision-making toolkit."
+        },
+        {
+          id: "paperless",
+          title: "Go fully paperless",
+          content: "Eliminate manual documentation with automated workflows and digital records."
+        },
+        {
+          id: "efficiency",
+          title: "Boost efficiency",
+          content: "Reduce audit preparation time, and free Quality Managers to focus on improvements."
+        },
+        {
+          id: "visibility",
+          title: "Enhance visibility",
+          content: "Real-time dashboards and AI insights give leaders clarity on performance and risks."
+        },
+        {
+          id: "improvement",
+          title: "Drive continuous improvement",
+          content: "Built-in Lean management and best practices in management ensure processes evolve with the business."
+        }
+      ]
+    },
+
+    // LinkedInFollowSection Component translations
+    linkedInFollowSection: {
+      title: "Your reliable partner in food safety management",
+      alt: "LinkedIn Follow Section",
+      buttonText: "LinkedIn 100+ followers"
+    },
     pexFoodHeaderDesc1: `Safe Food`,
     pexFoodHeaderDesc2: `Smarter System`,
     pexFoodHeaderDesc3: `PEx Software™`,
@@ -21,25 +92,40 @@ export const translations = {
 
     pexFoodAdditionalContent: `PEx Software™ for Food Safety transforms HACCP & ISO 22000 compliance into a seamless, AI-powered system — reducing paper documentation by 90%, automating monitoring, and giving hotel & restaurant owners peace of mind that every meal served is safe, consistent, and brand-protecting.`,
 
-    linkedInSectionTitle: "Your reliable partner in food safety management",
-    linkedInSectionAlt: "LinkedIn Follow Section",
-    linkedInButtonText: "LinkedIn 100+ followers",
-
-    sevenWaysTitle: "7 Ways PEx Transforms Hotel Food Safety Compliance",
-    benefit1Title: "Safeguards Brand Reputation in the Social Media Era",
-    benefit1Desc: "A single food safety incident today can become tomorrow's viral headline. PEx ensures every meal is safe, every record is traceable and your hotel's reputation stays protected.",
-    benefit2Title: "Reduces Paperwork by 90%",
-    benefit2Desc: "Say goodbye to endless logs and filing cabinets. PEx digitizes all food safety documentation into a smart, searchable system - saving time, reducing errors, and simplifying compliance.",
-    benefit3Title: "Automates Monitoring with IoT Devices",
-    benefit3Desc: "PEx integrates with IoT sensors for real-time temperature and safety monitoring. Automated alerts mean no more manual checks - just instant peace of mind.",
-    benefit4Title: "Empowers Chefs and Hygiene Managers",
-    benefit4Desc: "PEx empowers your team to work smarter with real-time guidance, mobile access and instant insights. This keeps them focused on delivering great food, not chasing paperwork.",
-    benefit5Title: "Streamlines Audit Readiness",
-    benefit5Desc: "Preparing for audits is often stressful and time-consuming. With PEx, all compliance data is centralized, digital and instantly retrievable making audits smooth, transparent and stress-free.",
-    benefit6Title: "Aligns Food Safety with Business Strategy",
-    benefit6Desc: "PEx transforms food safety from a compliance burden into a strategic advantage. By integrating ISO 22000 into daily operations, hotel owners can demonstrate excellence, win guest trust, and differentiate their brand in a competitive market.",
-    benefit7Title: "Drives Continuous Improvement",
-    benefit7Desc: "With AI insights and performance analytics, PEx helps hotels identify trends, predict risks, and implement process improvements. This ensures not just compliance, but a culture of excellence and innovation in food safety.",
+    // SevenWaysBenefits Component translations
+    sevenWaysBenefits: {
+      title: "7 Ways PEx Transforms Hotel Food Safety Compliance",
+      benefits: [
+        {
+          title: "Safeguards Brand Reputation in the Social Media Era",
+          desc: "A single food safety incident today can become tomorrow's viral headline. PEx ensures every meal is safe, every record is traceable and your hotel's reputation stays protected."
+        },
+        {
+          title: "Reduces Paperwork by 90%",
+          desc: "Say goodbye to endless logs and filing cabinets. PEx digitizes all food safety documentation into a smart, searchable system - saving time, reducing errors, and simplifying compliance."
+        },
+        {
+          title: "Automates Monitoring with IoT Devices",
+          desc: "PEx integrates with IoT sensors for real-time temperature and safety monitoring. Automated alerts mean no more manual checks - just instant peace of mind."
+        },
+        {
+          title: "Empowers Chefs and Hygiene Managers",
+          desc: "PEx empowers your team to work smarter with real-time guidance, mobile access and instant insights. This keeps them focused on delivering great food, not chasing paperwork."
+        },
+        {
+          title: "Streamlines Audit Readiness",
+          desc: "Preparing for audits is often stressful and time-consuming. With PEx, all compliance data is centralized, digital and instantly retrievable making audits smooth, transparent and stress-free."
+        },
+        {
+          title: "Aligns Food Safety with Business Strategy",
+          desc: "PEx transforms food safety from a compliance burden into a strategic advantage. By integrating ISO 22000 into daily operations, hotel owners can demonstrate excellence, win guest trust, and differentiate their brand in a competitive market."
+        },
+        {
+          title: "Drives Continuous Improvement",
+          desc: "With AI insights and performance analytics, PEx helps hotels identify trends, predict risks, and implement process improvements. This ensures not just compliance, but a culture of excellence and innovation in food safety."
+        }
+      ]
+    },
 
     aboutTitle: "About Us",
     aboutContent: "We are a team dedicated to pushing boundaries.",
@@ -204,20 +290,90 @@ export const translations = {
     contactContent: "Nehmen Sie noch heute Kontakt mit uns auf!",
   },
   jp: {
+    // Navigation translations
     navAbout: "概要",
     navFeatures: "特徴",
     navBlog: "Blog",
     navContact: "お問い合わせ",
     navPex: "PEXソリューション",
-    pexGen: "PEX Gen",
-    pexGenDesc: "現代の課題に対する次世代ソリューション。",
-    pexQuality: "PEX 品質",
-    pexQualityDesc: "妥協のない品質保証。",
-    pexQualityHeaderDesc1: `ISO 9001を削減`,
-    pexQualityHeaderDesc2: `紙の文書を90%`,
-    pexQualityHeaderDesc3: `PEx Software™ for `,
-    pexQualityHeaderDesc4: `品質管理`,
-    pexFood: "PEX 食品",
+
+    // PexQualityHeader Component translations
+    pexQualityHeader: {
+      desc1: "ISO 9001を削減",
+      desc2: "紙の文書を90%",
+      desc3: "PEx Software™ for",
+      desc4: "品質管理"
+    },
+
+    // QualityVideoSection Component translations
+    qualityVideoSection: {
+      title: "PEx Software™がどのようにあなたのビジネスを生産性向上させるか動画をご覧ください",
+      cards: {
+        updates: {
+          title: "最新情報を入手",
+          subtitle: "通知で最新情報を入手",
+          buttonText: "サインアップ"
+        },
+        demo: {
+          title: "デモをリクエスト",
+          subtitle: "PEx Softwareを実際に見る",
+          buttonText: "今すぐ予約"
+        }
+      },
+      video: {
+        title: "PEx Software生産性向上動画"
+      }
+    },
+
+    // BusinessImprovementSlider Component translations
+    businessImprovementSlider: {
+      leftSection: {
+        title: {
+          line1: "信頼できる",
+          line2: "パートナー",
+          line3: "ビジネス成長のために"
+        },
+        subtitle: "フォローする",
+        linkedinButton: "LinkedIn",
+        followers: "フォロワー"
+      },
+      topButton: "PEx Software™がビジネスプロセスをどのように改善できるか",
+      readMoreButton: "続きを読む",
+      slides: [
+        {
+          id: "strategy",
+          title: "コンプライアンスを戦略に変える",
+          content: "ISO 9001をビジネス目標と整合させ、CEOの意思決定ツールキットにします。"
+        },
+        {
+          id: "paperless",
+          title: "完全なペーパーレス化",
+          content: "自動化されたワークフローとデジタル記録で手動文書を排除します。"
+        },
+        {
+          id: "efficiency",
+          title: "効率性の向上",
+          content: "監査準備時間を削減し、品質マネージャーが改善に集中できるようにします。"
+        },
+        {
+          id: "visibility",
+          title: "可視性の向上",
+          content: "リアルタイムダッシュボードとAIインサイトがリーダーにパフォーマンスとリスクの明確性を提供します。"
+        },
+        {
+          id: "improvement",
+          title: "継続的な改善の推進",
+          content: "組み込まれたリーン管理と管理のベストプラクティスにより、プロセスがビジネスとともに進化することを保証します。"
+        }
+      ]
+    },
+
+    // LinkedInFollowSection Component translations
+    linkedInFollowSection: {
+      title: "食品安全管理における信頼できるパートナー",
+      alt: "LinkedInフォローセクション",
+      buttonText: "LinkedIn 100+ フォロワー"
+    },
     pexFoodHeaderDesc1: `安全な食品`,
     pexFoodHeaderDesc2: `スマートなシステム`,
     pexFoodHeaderDesc3: `PEx Software™`,
@@ -225,25 +381,40 @@ export const translations = {
 
     pexFoodAdditionalContent: `PEx Software™ for Food Safety は、HACCP および ISO 22000 のコンプライアンスをシームレスな AI 駆動システムに変換します — 紙の文書を 90% 削減し、監視を自動化し、ホテルおよびレストランのオーナーに、提供されるすべての食事の安全性、一貫性、ブランド保護が保証される安心を提供します。`,
 
-    linkedInSectionTitle: "食品安全管理における信頼できるパートナー",
-    linkedInSectionAlt: "LinkedInフォローセクション",
-    linkedInButtonText: "LinkedIn 100+ フォロワー",
-
-    sevenWaysTitle: "PExがホテルの食品安全コンプライアンスを変革する7つの方法",
-    benefit1Title: "ソーシャルメディア時代のブランド評判を保護",
-    benefit1Desc: "今日の食品安全インシデントは明日のバイラルヘッドラインになる可能性があります。PExは、すべての食事が安全で、すべての記録が追跡可能であり、ホテルの評判が保護されることを保証します。",
-    benefit2Title: "ペーパーワークを90%削減",
-    benefit2Desc: "終わりのないログとファイリングキャビネットに別れを告げましょう。PExは、すべての食品安全文書をスマートで検索可能なシステムにデジタル化し、時間を節約し、エラーを削減し、コンプライアンスを簡素化します。",
-    benefit3Title: "IoTデバイスで監視を自動化",
-    benefit3Desc: "PExはIoTセンサーと統合し、リアルタイムの温度と安全性の監視を行います。自動アラートは、手動チェックが不要になり、即座の安心感を提供します。",
-    benefit4Title: "シェフと衛生管理者を支援",
-    benefit4Desc: "PExは、リアルタイムのガイダンス、モバイルアクセス、即座の洞察により、チームがよりスマートに働くことを可能にします。これにより、彼らは素晴らしい料理の提供に集中でき、ペーパーワークを追いかける必要がありません。",
-    benefit5Title: "監査準備を合理化",
-    benefit5Desc: "監査の準備はしばしばストレスがかかり、時間がかかります。PExでは、すべてのコンプライアンスデータが集中化され、デジタル化され、即座に取得可能であり、監査をスムーズで透明性があり、ストレスフリーにします。",
-    benefit6Title: "食品安全をビジネス戦略と整合",
-    benefit6Desc: "PExは、食品安全をコンプライアンスの負担から戦略的な利点に変えます。ISO 22000を日常業務に統合することで、ホテルオーナーは卓越性を示し、ゲストの信頼を獲得し、競争市場でブランドを差別化できます。",
-    benefit7Title: "継続的な改善を推進",
-    benefit7Desc: "AIの洞察とパフォーマンス分析により、PExはホテルがトレンドを特定し、リスクを予測し、プロセス改善を実装するのを支援します。これは、コンプライアンスだけでなく、食品安全における卓越性と革新の文化を確実にします。",
+    // SevenWaysBenefits Component translations
+    sevenWaysBenefits: {
+      title: "PExがホテルの食品安全コンプライアンスを変革する7つの方法",
+      benefits: [
+        {
+          title: "ソーシャルメディア時代のブランド評判を保護",
+          desc: "今日の食品安全インシデントは明日のバイラルヘッドラインになる可能性があります。PExは、すべての食事が安全で、すべての記録が追跡可能であり、ホテルの評判が保護されることを保証します。"
+        },
+        {
+          title: "ペーパーワークを90%削減",
+          desc: "終わりのないログとファイリングキャビネットに別れを告げましょう。PExは、すべての食品安全文書をスマートで検索可能なシステムにデジタル化し、時間を節約し、エラーを削減し、コンプライアンスを簡素化します。"
+        },
+        {
+          title: "IoTデバイスで監視を自動化",
+          desc: "PExはIoTセンサーと統合し、リアルタイムの温度と安全性の監視を行います。自動アラートは、手動チェックが不要になり、即座の安心感を提供します。"
+        },
+        {
+          title: "シェフと衛生管理者を支援",
+          desc: "PExは、リアルタイムのガイダンス、モバイルアクセス、即座の洞察により、チームがよりスマートに働くことを可能にします。これにより、彼らは素晴らしい料理の提供に集中でき、ペーパーワークを追いかける必要がありません。"
+        },
+        {
+          title: "監査準備を合理化",
+          desc: "監査の準備はしばしばストレスがかかり、時間がかかります。PExでは、すべてのコンプライアンスデータが集中化され、デジタル化され、即座に取得可能であり、監査をスムーズで透明性があり、ストレスフリーにします。"
+        },
+        {
+          title: "食品安全をビジネス戦略と整合",
+          desc: "PExは、食品安全をコンプライアンスの負担から戦略的な利点に変えます。ISO 22000を日常業務に統合することで、ホテルオーナーは卓越性を示し、ゲストの信頼を獲得し、競争市場でブランドを差別化できます。"
+        },
+        {
+          title: "継続的な改善を推進",
+          desc: "AIの洞察とパフォーマンス分析により、PExはホテルがトレンドを特定し、リスクを予測し、プロセス改善を実装するのを支援します。これは、コンプライアンスだけでなく、食品安全における卓越性と革新の文化を確実にします。"
+        }
+      ]
+    },
 
     aboutTitle: "私たちについて",
     aboutContent: "私たちは限界を押し広げることに専念するチームです。",

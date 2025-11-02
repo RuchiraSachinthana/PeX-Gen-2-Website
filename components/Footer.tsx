@@ -6,14 +6,14 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r  from-emerald-900 to-teal-700 text-white px-8 py-12 lg:px-20 relative overflow-hidden">
+    <footer className="bg-linear-to-r  from-emerald-900 to-teal-700 text-white px-8 py-12 lg:px-20 relative overflow-hidden">
       {/* Decorative gradient shapes from the image */}
       <div
         className="absolute -right-20 -top-20 w-80 h-80 bg-teal-600/30 rounded-full blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="absolute -right-0 top-1/2 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"
+        className="absolute right-0 top-1/2 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"
         aria-hidden="true"
       />
 

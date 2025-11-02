@@ -1,89 +1,42 @@
 "use client";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-// Removed: import Image from "next/image";
-import type { FC } from "react"; // Added FC type
-import { Fragment, useEffect, useState } from "react"; // Added Fragment
-// Import motion and AnimatePresence from framer-motion
+import { useTranslation } from "@/context/LanguageProvider";
 import { AnimatePresence, motion } from "framer-motion";
-
-// --- DECOUPLED CONTENT ---
-interface Slide {
-  id: string;
-  title: string;
-  content: string;
-}
-
-interface Avatar {
-  src: string;
-  alt: string;
-}
-
-const content = {
-  leftCard: {
-    titleLines: ["Your reliable", "partner in", "business growth"],
-    subtitle: "Follow us",
-    button: {
-      platform: "Linkedin",
-      count: "1000+",
-      label: "followers",
-    },
-    avatars: [
-      { src: "/avatar.jpg", alt: "Avatar 1" },
-      { src: "/avatar.jpg", alt: "Avatar 2" },
-      { src: "/avatar.jpg", alt: "Avatar 3" },
-    ] as Avatar[], // Type assertion for avatars
-    rocketIcon: {
-      src: "/Asset 5.svg",
-      alt: "Rocket icon",
-    },
-  },
-  rightCard: {
-    topButtonText: "How PEx Software™ can improve business process",
-    readMoreButtonText: "Read More",
-    slides: [
-      {
-        id: "strategy",
-        title: "Turn compliance into strategy",
-        content:
-          "Align ISO 9001 with business goals, making it a CEO’s decision-making toolkit.",
-      },
-      {
-        id: "paperless",
-        title: "Go fully paperless",
-        content:
-          "Eliminate manual documentation with automated workflows and digital records.",
-      },
-      {
-        id: "efficiency",
-        title: "Boost efficiency",
-        content:
-          "Reduce audit preparation time, and free Quality Managers to focus on improvements.",
-      },
-      {
-        id: "visibility",
-        title: "Enhance visibility",
-        content:
-          "Real-time dashboards and AI insights give leaders clarity on performance and risks.",
-      },
-      {
-        id: "improvement",
-        title: "Drive continuous improvement",
-        content:
-          "Built-in Lean management and best practices in management ensure processes evolve with the business.",
-      },
-    ] as Slide[], // Type assertion for slides
-  },
-};
-// --- END DECOUPLED CONTENT ---
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import type { FC } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const BusinessImprovementSlider: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { t } = useTranslation();
 
-  // Use the decoupled slides
-  const slides = content.rightCard.slides;
+  // Get slides from translations
+  const slidesData = t("businessImprovementSlider.slides");
+
+  // Debug: Log the slides data
+  useEffect(() => {
+    console.log("Slides data:", slidesData);
+    console.log("Type:", typeof slidesData);
+    console.log("Is array:", Array.isArray(slidesData));
+
+    // Try to see what the full businessImprovementSlider object looks like
+    const fullData = t("businessImprovementSlider");
+    console.log("Full businessImprovementSlider:", fullData);
+  }, [slidesData, t]);
+
+  const slides = Array.isArray(slidesData)
+    ? slidesData.map(
+        (slide: { id: string; title: string; content: string }) => ({
+          id: slide.id,
+          title: slide.title,
+          content: slide.content,
+        })
+      )
+    : [];
 
   // Auto-slide effect
   useEffect(() => {
+    if (slides.length === 0) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 3000); // Change slide every 3 seconds
@@ -98,6 +51,23 @@ const BusinessImprovementSlider: FC = () => {
   const handleNext = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
+
+  // Show loading state if slides are not loaded yet
+  if (slides.length === 0) {
+    return (
+      <div
+        className="py-10 text-gray-900 min-h-[400px] flex items-center justify-center"
+        style={{ backgroundColor: "#ffffff" }}
+      >
+        <div className="text-center">
+          <p className="text-gray-500">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Ensure currentSlide is valid
+  const currentSlideData = slides[currentSlide] || slides[0];
 
   return (
     <div
@@ -125,8 +95,8 @@ const BusinessImprovementSlider: FC = () => {
             >
               {/* Replaced Next.js Image with standard img tag */}
               <img
-                src={content.leftCard.rocketIcon.src}
-                alt={content.leftCard.rocketIcon.alt}
+                src="/Asset 5.svg"
+                alt="Rocket icon"
                 width={50}
                 height={50}
                 className="w-15 h-15"
@@ -145,12 +115,13 @@ const BusinessImprovementSlider: FC = () => {
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
                   {/* Mapped title lines */}
-                  {content.leftCard.titleLines.map((line, index) => (
-                    <Fragment key={index}>
-                      {line}
-                      {index < content.leftCard.titleLines.length - 1 && <br />}
-                    </Fragment>
-                  ))}
+                  <Fragment>
+                    {String(t("businessImprovementSlider.leftSection.title.line1"))}
+                    <br />
+                    {String(t("businessImprovementSlider.leftSection.title.line2"))}
+                    <br />
+                    {String(t("businessImprovementSlider.leftSection.title.line3"))}
+                  </Fragment>
                 </motion.h3>
                 {/* Animated Subtitle */}
                 <motion.p
@@ -159,7 +130,7 @@ const BusinessImprovementSlider: FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.5 }}
                 >
-                  {content.leftCard.subtitle}
+                  {String(t("businessImprovementSlider.leftSection.subtitle"))}
                 </motion.p>
               </div>
 
@@ -171,9 +142,9 @@ const BusinessImprovementSlider: FC = () => {
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
                 <div className="flex justify-between items-center gap-2">
-                  {content.leftCard.button.platform}
-                  <span>{content.leftCard.button.count}</span>
-                  {content.leftCard.button.label}
+                  {String(t("businessImprovementSlider.leftSection.linkedinButton"))}
+                  <span>{"1000+"}</span>
+                  {String(t("businessImprovementSlider.leftSection.followers"))}
                 </div>
               </motion.button>
 
@@ -184,22 +155,34 @@ const BusinessImprovementSlider: FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
               >
-                {/* Mapped avatars */}
-                {content.leftCard.avatars.map((avatar, index) => (
-                  <div
-                    key={index}
-                    className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden"
-                  >
-                    {/* Replaced Next.js Image with standard img tag */}
-                    <img
-                      src={avatar.src}
-                      alt={avatar.alt}
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
+                {/* Hardcoded avatars */}
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                  <img
+                    src="/avatar.jpg"
+                    alt="Avatar 1"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                  <img
+                    src="/avatar.jpg"
+                    alt="Avatar 2"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                  <img
+                    src="/avatar.jpg"
+                    alt="Avatar 3"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -225,7 +208,7 @@ const BusinessImprovementSlider: FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              {content.rightCard.topButtonText}
+              {String(t("businessImprovementSlider.topButton"))}
             </motion.button>
 
             <div className="p-10 flex flex-col h-full">
@@ -243,10 +226,10 @@ const BusinessImprovementSlider: FC = () => {
                       transition={{ duration: 0.4 }}
                     >
                       <h3 className="text-yellow-500 text-3xl mb-4 text-primary">
-                        {slides[currentSlide].title}
+                        {currentSlideData.title}
                       </h3>
                       <p className="text-3xl text-white mb-6">
-                        {slides[currentSlide].content}
+                        {currentSlideData.content}
                       </p>
                     </motion.div>
                   </AnimatePresence>
@@ -261,7 +244,7 @@ const BusinessImprovementSlider: FC = () => {
                   transition={{ delay: 0.8, duration: 0.5 }}
                 >
                   <span className="text-sm text-white">
-                    {content.rightCard.readMoreButtonText}
+                    {String(t("businessImprovementSlider.readMoreButton"))}
                   </span>
                   <ArrowRight className="w-5 h-5 text-white " />
                 </motion.button>

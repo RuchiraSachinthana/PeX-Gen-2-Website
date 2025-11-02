@@ -48,7 +48,7 @@ export default function PexGenPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                {t("pexGen")}
+                {String(t("pexGen"))}
               </motion.h1>
               <motion.p
                 className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-md mb-8"
@@ -56,7 +56,7 @@ export default function PexGenPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {t("pexGenDesc")}
+                {String(t("pexGenDesc"))}
               </motion.p>
               <motion.button
                 className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-blue-600  rounded-full hover:bg-gray-100 transition-colors duration-200 text-sm sm:text-base"

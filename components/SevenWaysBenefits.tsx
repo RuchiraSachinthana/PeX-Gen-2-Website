@@ -11,7 +11,7 @@ export default function SevenWaysBenefits() {
         {/* Header */}
         <div className="absolute left-35  top-[100] w-100 ">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-teal-800 mb-6">
-            {t("sevenWaysTitle")}
+            {t("sevenWaysBenefits.title")}
           </h2>
         </div>
 
@@ -32,17 +32,17 @@ export default function SevenWaysBenefits() {
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/section_4_card1.svg"
-                  alt={t("benefit1Title")}
+                  alt={t("sevenWaysBenefits.benefits.0.title")}
                   width={300}
                   height={200}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
                   <h3 className="text-yellow-400 text-base   mb-3">
-                    {t("benefit1Title")}
+                    {t("sevenWaysBenefits.benefits.0.title")}
                   </h3>
                   <p className="text-white text-sm   ">
-                    {t("benefit1Desc")}
+                    {t("sevenWaysBenefits.benefits.0.desc")}
                   </p>
                 </div>
               </div>
@@ -64,17 +64,17 @@ export default function SevenWaysBenefits() {
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/section_4_card2.svg"
-                  alt={t("benefit2Title")}
+                  alt={t("sevenWaysBenefits.benefits.1.title")}
                   width={280}
                   height={240}
                   className="w-full h-auto"
                 />
                 <div className="absolute top-5 inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
                   <h2 className="text-yellow-400   text-base mb-3">
-                    {t("benefit2Title")}
+                    {t("sevenWaysBenefits.benefits.1.title")}
                   </h2>
                   <p className="text-white text-sm  ">
-                    {t("benefit2Desc")}
+                    {t("sevenWaysBenefits.benefits.1.desc")}
                   </p>
                 </div>
               </div>
@@ -95,17 +95,17 @@ export default function SevenWaysBenefits() {
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/section_4_card3.svg"
-                  alt={t("benefit3Title")}
+                  alt={t("sevenWaysBenefits.benefits.2.title")}
                   width={280}
                   height={200}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute mt-12 inset-0 p-6 z-10 flex flex-col justify-center items-right text-right">
                   <p className="text-yellow-400 text-base   mb-3">
-                    {t("benefit3Title")}
+                    {t("sevenWaysBenefits.benefits.2.title")}
                   </p>
                   <p className="text-white text-sm  ">
-                    {t("benefit3Desc")}
+                    {t("sevenWaysBenefits.benefits.2.desc")}
                   </p>
                 </div>
               </div>
@@ -126,17 +126,17 @@ export default function SevenWaysBenefits() {
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/section_4_card4.svg"
-                  alt={t("benefit4Title")}
+                  alt={t("sevenWaysBenefits.benefits.3.title")}
                   width={280}
                   height={200}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
                   <h3 className="text-yellow-400 text-base   mb-3">
-                    {t("benefit4Title")}
+                    {t("sevenWaysBenefits.benefits.3.title")}
                   </h3>
                   <p className="text-white text-sm  ">
-                    {t("benefit4Desc")}
+                    {t("sevenWaysBenefits.benefits.3.desc")}
                   </p>
                 </div>
               </div>
@@ -157,17 +157,17 @@ export default function SevenWaysBenefits() {
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/section_4_card5.svg"
-                  alt={t("benefit5Title")}
+                  alt={t("sevenWaysBenefits.benefits.4.title")}
                   width={280}
                   height={200}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
                   <h3 className="text-yellow-400 text-base   mb-3">
-                    {t("benefit5Title")}
+                    {t("sevenWaysBenefits.benefits.4.title")}
                   </h3>
                   <p className="text-white text-sm  ">
-                    {t("benefit5Desc")}
+                    {t("sevenWaysBenefits.benefits.4.desc")}
                   </p>
                 </div>
               </div>
@@ -188,17 +188,17 @@ export default function SevenWaysBenefits() {
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/section_4_card6.svg"
-                  alt={t("benefit6Title")}
+                  alt={t("sevenWaysBenefits.benefits.5.title")}
                   width={280}
                   height={200}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
                   <h3 className="text-yellow-400 text-base   mb-3">
-                    {t("benefit6Title")}
+                    {t("sevenWaysBenefits.benefits.5.title")}
                   </h3>
                   <p className="text-white text-sm  ">
-                    {t("benefit6Desc")}
+                    {t("sevenWaysBenefits.benefits.5.desc")}
                   </p>
                 </div>
               </div>
@@ -219,17 +219,17 @@ export default function SevenWaysBenefits() {
               <div className="relative overflow-hidden rounded-lg">
                 <Image
                   src="/section_4_card7.svg"
-                  alt={t("benefit7Title")}
+                  alt={t("sevenWaysBenefits.benefits.6.title")}
                   width={280}
                   height={200}
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
                   <h3 className="text-yellow-400 text-base   mb-3">
-                    {t("benefit7Title")}
+                    {t("sevenWaysBenefits.benefits.6.title")}
                   </h3>
                   <p className="text-white text-sm  ">
-                    {t("benefit7Desc")}
+                    {t("sevenWaysBenefits.benefits.6.desc")}
                   </p>
                 </div>
               </div>

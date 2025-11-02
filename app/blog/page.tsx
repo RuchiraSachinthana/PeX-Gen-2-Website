@@ -48,7 +48,7 @@ export default function BlogPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                {t("blogTitle")}
+                {String(t("blogTitle"))}
               </motion.h1>
               <motion.p
                 className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-md mb-8"
@@ -56,7 +56,7 @@ export default function BlogPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {t("blogContent")}
+                {String(t("blogContent"))}
               </motion.p>
             </div>
           </div>

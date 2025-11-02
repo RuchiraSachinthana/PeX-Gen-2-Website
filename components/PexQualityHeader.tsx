@@ -48,7 +48,7 @@ export default function PexQualityHeader() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {t("pexQualityHeaderDesc1")}
+              {t("pexQualityHeader.desc1")}
             </motion.p>
             <motion.p
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -56,7 +56,7 @@ export default function PexQualityHeader() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {t("pexQualityHeaderDesc2")}
+              {t("pexQualityHeader.desc2")}
             </motion.p>
             <motion.p
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -64,7 +64,7 @@ export default function PexQualityHeader() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {t("pexQualityHeaderDesc3")}
+              {t("pexQualityHeader.desc3")}
             </motion.p>
             <motion.p
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
@@ -72,7 +72,7 @@ export default function PexQualityHeader() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {t("pexQualityHeaderDesc4")}
+              {t("pexQualityHeader.desc4")}
             </motion.p>
           </div>
         </div>

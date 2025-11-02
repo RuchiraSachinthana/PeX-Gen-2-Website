@@ -9,7 +9,6 @@ import SectionFour from "@/components/SectionFour";
 import SevenWaysBenefits from "@/components/SevenWaysBenefits";
 import { useTranslation } from "../context/LanguageProvider";
 
-import ThreeKeyPointsSection from "@/components/ThreeKeyPointsSection";
 import PExSoftwareBenefits from "@/components/PExSoftwareBenefits";
 
 
@@ -58,7 +57,7 @@ export default function HomePage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {t("pexFoodHeaderDesc1")}
+                {String(t("pexFoodHeaderDesc1"))}
               </motion.p>
               <motion.p
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -66,7 +65,7 @@ export default function HomePage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {t("pexFoodHeaderDesc2")}
+                {String(t("pexFoodHeaderDesc2"))}
               </motion.p>
               <motion.p
                 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -74,7 +73,7 @@ export default function HomePage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {t("pexFoodHeaderDesc3")}
+                {String(t("pexFoodHeaderDesc3"))}
               </motion.p>
               <motion.p
                 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
@@ -82,7 +81,7 @@ export default function HomePage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {t("pexFoodHeaderDesc4")}
+                {String(t("pexFoodHeaderDesc4"))}
               </motion.p>
             </div>
           </div>
@@ -112,7 +111,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg text-gray-800 ">
-              {t("pexFoodAdditionalContent")}
+              {String(t("pexFoodAdditionalContent"))}
             </p>
           </motion.div>
         </div>

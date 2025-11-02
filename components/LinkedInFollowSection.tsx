@@ -19,12 +19,12 @@ export default function LinkedInFollowSection() {
         >
           <div className="absolute top-5 left-6 w-full z-10 pointer-events-none">
             <h4 className="text-left text-md  sm:text2xl lg:text-2xl text-yellow-400 drop-shadow-lg mt-6">
-              {t("linkedInSectionTitle")}
+              {t("linkedInFollowSection.title")}
             </h4>
           </div>
           <Image
             src="/section_5_image.svg"
-            alt={t("linkedInSectionAlt")}
+            alt={t("linkedInFollowSection.alt")}
             width={1200}
             height={200}
             className="w-full h-auto"
@@ -77,7 +77,7 @@ export default function LinkedInFollowSection() {
             </div>
           </div>
           <button className="absolute bottom-6 right-6  bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-full shadow-lg z-20">
-            {t("linkedInButtonText")}
+            {t("linkedInFollowSection.buttonText")}
           </button>
         </motion.div>
       </div>
