@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 import { useTranslation } from "../context/LanguageProvider";
+import ReusableShape from "./ReusableShape";
 
 const posts = [
   { id: 1, img: "/social (1).webp" },
@@ -105,23 +106,31 @@ export default function SocialSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div
-              className=" p-4 rounded-3xl min-h-80  bg-contain bg-right bg-no-repeat relative flex items-center justify-start"
-              style={{ backgroundImage: "url('/Asset 4.svg')" }}
+            <ReusableShape
+              width={360}
+              height={400}
+              color="#0e685b"
+              radius={28}
+              cutoutWidth={100}
+              cutoutHeight={110}
+              cutoutBgColor="#d6ecbe"
+              cutoutPosition="top-right"
+              cutoutRadius={20}
+              className="relative flex items-center justify-start"
             >
-              <div className="absolute top-0 right-0">
+              {/* Rocket */}
+              <div className="absolute top-[-5] right-0">
                 <Image
                   src="/Asset 5.svg"
                   alt="Rocket icon"
                   width={50}
                   height={50}
-                  className="w-15 h-15"
+                  className="w-20 h-20"
                 />
               </div>
 
-              {/* Content wrapper - right aligned */}
+              {/* Content wrapper - left aligned */}
               <div className="flex flex-col items-start justify-center gap-4 text-left">
-                {/* Title and Subtitle */}
                 <div>
                   <h3 className="text-white text-secondary text-2xl mb-4 max-w-[250px]">
                     {String(t("socialSection.partnerSection.title"))}
@@ -131,7 +140,6 @@ export default function SocialSection() {
                   </p>
                 </div>
 
-                {/* Yellow Button */}
                 <button className="bg-yellow-400 px-6 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors">
                   <div className="flex justify-between items-center gap-2">
                     {String(
@@ -152,7 +160,6 @@ export default function SocialSection() {
                   </div>
                 </button>
 
-                {/* Bottom Round Avatars */}
                 <div className="flex gap-2">
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
@@ -183,7 +190,7 @@ export default function SocialSection() {
                   </div>
                 </div>
               </div>
-            </div>
+            </ReusableShape>
           </motion.div>
         </div>
       </div>

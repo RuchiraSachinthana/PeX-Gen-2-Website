@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import type { FC } from "react";
 import { Fragment, useEffect, useState } from "react";
+import ReusableShape from "./ReusableShape";
+import Image from "next/image";
 
 const BusinessImprovementSlider: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -77,116 +79,98 @@ const BusinessImprovementSlider: FC = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-6 gap-10 items-end">
         {/* Left section - 1/4 - Animated slide-in from left */}
         <motion.div
-          className="col-span-2 text-left flex flex-col gap-4"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div
-            className=" p-4 rounded-3xl min-h-80 bg-contain bg-right bg-no-repeat relative flex items-center justify-end"
-            style={{ backgroundImage: "url('/Asset 4.svg')" }}
+            className="col-span-2 text-left flex flex-col  gap-4"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
-            {/* Animated rocket icon */}
-            <motion.div
-              className="absolute top-0 right-0"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+            <ReusableShape
+              width={360}
+              height={400}
+              color="#0e685b"
+              radius={28}
+              cutoutWidth={100}
+              cutoutHeight={110}
+              cutoutBgColor="#ffffff"
+              cutoutPosition="top-right"
+              cutoutRadius={20}
+              className="relative flex items-center justify-start"
             >
-              {/* Replaced Next.js Image with standard img tag */}
-              <img
-                src="/Asset 5.svg"
-                alt="Rocket icon"
-                width={50}
-                height={50}
-                className="w-15 h-15"
-              />
-            </motion.div>
-
-            {/* Content wrapper - right aligned */}
-            <div className="flex flex-col items-start justify-center gap-4 text-left">
-              {/* Title and Subtitle */}
-              <div>
-                {/* Animated Title */}
-                <motion.h3
-                  className="text-white text-secondary text-2xl mb-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
-                >
-                  {/* Mapped title lines */}
-                  <Fragment>
-                    {String(t("businessImprovementSlider.leftSection.title.line1"))}
-                    <br />
-                    {String(t("businessImprovementSlider.leftSection.title.line2"))}
-                    <br />
-                    {String(t("businessImprovementSlider.leftSection.title.line3"))}
-                  </Fragment>
-                </motion.h3>
-                {/* Animated Subtitle */}
-                <motion.p
-                  className="text-white text-2xl mt-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
-                >
-                  {String(t("businessImprovementSlider.leftSection.subtitle"))}
-                </motion.p>
+              {/* Rocket */}
+              <div className="absolute top-0 right-0">
+                <Image
+                  src="/Asset 5.svg"
+                  alt="Rocket icon"
+                  width={60}
+                  height={60}
+                  className="w-20 h-20"
+                />
               </div>
 
-              {/* Yellow Button - Animated */}
-              <motion.button
-                className="bg-yellow-400 px-6 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-              >
-                <div className="flex justify-between items-center gap-2">
-                  {String(t("businessImprovementSlider.leftSection.linkedinButton"))}
-                  <span>{"1000+"}</span>
-                  {String(t("businessImprovementSlider.leftSection.followers"))}
+              {/* Content wrapper - left aligned */}
+              <div className="flex flex-col items-start justify-center gap-4 text-left">
+                <div>
+                  <h3 className="text-white text-secondary text-2xl mb-4 max-w-[250px]">
+                    {String(t("socialSection.partnerSection.title"))}
+                  </h3>
+                  <p className="text-white text-2xl mt-6">
+                    {String(t("socialSection.partnerSection.followUs"))}
+                  </p>
                 </div>
-              </motion.button>
 
-              {/* Bottom Round Avatars - Animated as a group */}
-              <motion.div
-                className="flex gap-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
-              >
-                {/* Hardcoded avatars */}
-                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-                  <img
-                    src="/avatar.jpg"
-                    alt="Avatar 1"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
-                  />
+                <button className="bg-yellow-400 px-6 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors">
+                  <div className="flex justify-between items-center gap-2">
+                    {String(
+                      t("socialSection.partnerSection.linkedinButton.platform")
+                    )}
+                    <span>
+                      {String(
+                        t(
+                          "socialSection.partnerSection.linkedinButton.followersCount"
+                        )
+                      )}
+                    </span>
+                    {String(
+                      t(
+                        "socialSection.partnerSection.linkedinButton.followersText"
+                      )
+                    )}
+                  </div>
+                </button>
+
+                <div className="flex gap-2">
+                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                    <Image
+                      src="/avatar.jpg"
+                      alt="Avatar 1"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                    <Image
+                      src="/avatar.jpg"
+                      alt="Avatar 2"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                    <Image
+                      src="/avatar.jpg"
+                      alt="Avatar 3"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-                  <img
-                    src="/avatar.jpg"
-                    alt="Avatar 2"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-                  <img
-                    src="/avatar.jpg"
-                    alt="Avatar 3"
-                    width={40}
-                    height={40}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
+              </div>
+            </ReusableShape>
+          </motion.div>
 
         {/* Right section - 3/4 - Animated slide-in from right */}
         <motion.div
