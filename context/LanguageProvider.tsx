@@ -19,10 +19,23 @@ export function useTranslation() {
     throw new Error("useTranslation must be used within a LanguageProvider");
   }
   const { lang, setLang } = context;
-  const t = (key: string) =>
-    translations[lang as keyof typeof translations][
-      key as keyof (typeof translations)[keyof typeof translations]
-    ] || key;
+
+  const t = (key: string): unknown => {
+    const keys = key.split(".");
+    let value: unknown = translations[lang as keyof typeof translations];
+
+    for (const k of keys) {
+      if (value && typeof value === "object" && value !== null && k in value) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key; // Return the key if not found
+      }
+    }
+
+    // Return the value regardless of type (string, array, or object)
+    return value !== undefined ? value : key;
+  };
+
   return { t, setLang, lang };
 }
 

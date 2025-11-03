@@ -46,7 +46,7 @@ export default function InlineLanguageButton() {
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center gap-1.5 bg-white/10 text-white px-2.5 py-1.5 rounded-full backdrop-blur-md border border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl h-9"
         >
-          <span className="text-xs font-medium">{currentLang?.name}</span>
+          <span className="text-xs ">{currentLang?.name}</span>
           <motion.svg
             className="w-3 h-3"
             fill="none"
@@ -82,7 +82,7 @@ export default function InlineLanguageButton() {
                   }}
                   className={`w-full px-3 py-1.5 text-xs text-left transition-all duration-200 ${
                     lang === l.code
-                      ? "bg-white/30 text-white font-semibold"
+                      ? "bg-white/30 text-white "
                       : "text-white/70 hover:bg-white/10 hover:text-white"
                   }`}
                 >

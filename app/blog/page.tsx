@@ -43,12 +43,12 @@ export default function BlogPage() {
           <div className="flex items-center justify-center min-h-[60vh] sm:min-h-[70vh]">
             <div className="text-center max-w-4xl">
               <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white drop-shadow-lg"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  mb-4 sm:mb-6 text-white drop-shadow-lg"
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                {t("blogTitle")}
+                {String(t("blogTitle"))}
               </motion.h1>
               <motion.p
                 className="text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-md mb-8"
@@ -56,7 +56,7 @@ export default function BlogPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {t("blogContent")}
+                {String(t("blogContent"))}
               </motion.p>
             </div>
           </div>
@@ -67,9 +67,7 @@ export default function BlogPage() {
       <div className="w-full bg-white">
         <div className="max-w-4xl mx-auto px-4 py-20">
           <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4 text-gray-800">
-              Latest Articles
-            </h2>
+            <h2 className="text-4xl  mb-4 text-gray-800">Latest Articles</h2>
             <p className="text-lg text-gray-600">
               Insights, updates, and stories from our team.
             </p>

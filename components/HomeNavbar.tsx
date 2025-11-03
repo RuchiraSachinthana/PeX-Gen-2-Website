@@ -16,7 +16,7 @@ interface NavLinkProps {
 const NavLink = ({ href, currentPath, children, layoutId }: NavLinkProps) => (
   <Link
     href={href}
-    className={`relative font-medium text-sm text-white/80 hover:text-white transition-colors duration-200
+    className={`relative  text-sm text-white/80 hover:text-white transition-colors duration-200
       ${currentPath === href ? "text-white" : ""}
     `}
   >
@@ -37,26 +37,31 @@ export default function HomeNavbar() {
 
   const navItems = useMemo(
     () => [
-      { key: "about", label: t("navAbout"), href: "/about" },
-      { key: "features", label: t("navFeatures"), href: "/features" },
-      { key: "blog", label: t("navBlog"), href: "/blog" },
-      { key: "contact", label: t("navContact"), href: "/contact" },
+      { key: "about", label: String(t("navAbout")), href: "/about" },
+      { key: "features", label: String(t("navFeatures")), href: "/features" },
+      { key: "blog", label: String(t("navBlog")), href: "/blog" },
+      { key: "contact", label: String(t("navContact")), href: "/contact" },
     ],
     [t]
   );
 
   const allPages = useMemo(
     () => [
-      { key: "home", label: t("pexFood"), href: "/" },
-      { key: "pexQuality", label: t("pexQuality"), href: "/pex-quality" },
-      { key: "pexGen", label: t("pexGen"), href: "/pex-gen" },
+      { key: "home", label: String(t("pexFood")), href: "/" },
+      {
+        key: "pexQuality",
+        label: String(t("pexQuality")),
+        href: "/pex-quality",
+      },
+      { key: "pexGen", label: String(t("pexGen")), href: "/pex-gen" },
     ],
     [t]
   );
 
   const currentPageName = useMemo(
     () =>
-      allPages.find((page) => page.href === pathname)?.label || t("pexFood"),
+      allPages.find((page) => page.href === pathname)?.label ||
+      String(t("pexFood")),
     [pathname, allPages, t]
   );
 
@@ -75,8 +80,8 @@ export default function HomeNavbar() {
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="relative font-medium text-sm text-white/80 hover:text-white transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5">
-              {currentPageName}
+            <button className="relative  text-sm text-white/80 hover:text-white transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5">
+              {String(currentPageName)}
               <motion.svg
                 className="w-4 h-4 ml-1.5"
                 fill="none"
@@ -109,7 +114,7 @@ export default function HomeNavbar() {
                       href={item.href}
                       className="block px-4 py-2 text-xs text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
                     >
-                      {item.label}
+                      {String(item.label)}
                     </Link>
                   ))}
                 </motion.div>
@@ -126,7 +131,7 @@ export default function HomeNavbar() {
                 currentPath={pathname}
                 layoutId="underline-home"
               >
-                {item.label}
+                {String(item.label)}
               </NavLink>
             ))}
           </div>

@@ -11,11 +11,11 @@ export default function PexFoodPage() {
     <PageWrapper>
       <div className="text-center">
         <motion.h1
-          className="text-5xl font-bold mb-4 text-indigo-600"
+          className="text-5xl mb-4 text-indigo-600"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          {t("pexFood")}
+          {String(t("pexFood"))}
         </motion.h1>
         <motion.p
           className="text-xl text-gray-600"
@@ -23,7 +23,7 @@ export default function PexFoodPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          {t("pexFoodDesc")}
+          {String(  t("pexFoodDesc"))}
         </motion.p>
       </div>
     </PageWrapper>
