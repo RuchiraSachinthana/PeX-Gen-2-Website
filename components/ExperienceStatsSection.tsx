@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { FC } from "react"; // Added FC type
 import { Fragment } from "react"; // Added Fragment for title lines
 import { useTranslation } from "../context/LanguageProvider";
+import ReusableShape from "./ReusableShape";
 
 export const ExperienceStatsSection: FC = () => {
   const { t } = useTranslation();
@@ -94,74 +95,41 @@ export const ExperienceStatsSection: FC = () => {
           </motion.div>
 
           {/* Middle Section - Person Image (empty for now) */}
-          <div className="hidden lg:flex justify-center items-center h-full">
+          <div className="hidden lg:flex  h-full">
             {/* Person image will be positioned here */}
           </div>
 
-          {/* Right Section - Request Demo Card (UPDATED) - Animated */}
+          {/* Right Section - Request Demo Card (ReusableShape) - Animated */}
           <motion.div
-            className="relative bg-yellow-400 p-8 rounded-3xl text-gray-900 w-full lg:w-[500px] h-[280px] flex flex-col justify-between"
+            className="w-full lg:w-[400px]"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {/* This is the top-right arrow box, your code for this was correct */}
-            <motion.div
-              className="absolute -top-3 -right-3 bg-yellow-400 p-4 rounded-2xl shadow-lg"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+            <ReusableShape
+              width="100%"
+              cutoutBgColor="#00786d"
+              height={280}
+              cutoutPosition="top-right"
+              color="#facc15" // Tailwind yellow-400
+              radius={24} // rounded-3xl
+            
+              className="relative text-gray-900 flex flex-col justify-between"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-6 h-6"
+              {/* Top-right arrow box */}
+              <motion.div
+                className="absolute top-[-10] right-0 bg-yellow-400 p-5 rounded-2xl "
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-                />
-              </svg>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-            >
-              <h3 className="text-3xl text-teal-700 mb-2">
-                {demoCard.titleLines.map((line: string, index: number) => (
-                  <Fragment key={index}>
-                    {line}
-                    <br />
-                  </Fragment>
-                ))}
-              </h3>
-            </motion.div>
-
-            {/* --- This is the updated section --- */}
-            <motion.div
-              className="flex items-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-            >
-              <span className="text-teal-700 uppercase text-sm">
-                {demoCard.connectLabel}
-              </span>
-              <button className="bg-teal-700 text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-teal-800 transition-colors text-sm">
-                <span>{buttons.bookNow}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={2.5}
+                  strokeWidth={2}
                   stroke="currentColor"
-                  className="w-4 h-4"
+                  className="w-6 h-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -169,9 +137,52 @@ export const ExperienceStatsSection: FC = () => {
                     d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                   />
                 </svg>
-              </button>
-            </motion.div>
-            {/* --- End of updated section --- */}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+              >
+                <h3 className="text-3xl text-teal-700 mb-2">
+                  {demoCard.titleLines.map((line: string, index: number) => (
+                    <Fragment key={index}>
+                      {line}
+                      <br />
+                    </Fragment>
+                  ))}
+                </h3>
+              </motion.div>
+
+              {/* CTA row */}
+              <motion.div
+                className="flex items-center gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, duration: 0.5 }}
+              >
+                <span className="text-teal-700 uppercase text-sm">
+                  {demoCard.connectLabel}
+                </span>
+                <button className="bg-teal-700 text-white py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-teal-800 transition-colors text-sm">
+                  <span>{buttons.bookNow}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                    />
+                  </svg>
+                </button>
+              </motion.div>
+            </ReusableShape>
           </motion.div>
         </div>
       </div>
