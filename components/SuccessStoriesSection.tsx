@@ -3,48 +3,20 @@
 // Import motion from framer-motion
 import { motion } from "framer-motion";
 import type { FC } from "react"; // Added FC type
+import { useTranslation } from "../context/LanguageProvider";
 import ReusableShape from "./ReusableShape"; // Assuming this component exists in this path
 
-// --- DECOUPLED CONTENT ---
-// All text content is now pulled from here for simplicity.
-const content = {
-  section: {
-    // bgImage removed, we'll use a solid color
-    bgColor: "#d6ecbe", // This color is from your first screenshot
-  },
-  arrowIcon: {
-    // No text content
-  },
-  caseStudyButton: {
-    label: "Case Study",
-    buttonText: "Read more",
-  },
-  column1: {
-    bgImage: "/qs4 (4).webp",
-    stat: "90%",
-    statDescription: "document reduction",
-    bannerText: "This Months Success Story",
-  },
-  column2: {
-    title: "Businesses that have grown with us",
-    card: {
-      title: "Can a small company get ISO 9001 certification?", // Updated from image
-      color: "#0e685b", // teal-800
-    },
-  },
-  column3: {
-    images: [
-      { id: 1, src: "/qs4 (1).webp" },
-      { id: 2, src: "/qs4 (2).webp" },
-      { id: 3, src: "/qs4 (3).webp" },
-    ],
-    card: {
-      title: "How PEx solution saved 1.6 million in the first quarter",
-      color: "#1f2937", // gray-800
-    },
-  },
-};
-// --- END DECOUPLED CONTENT ---
+// --- STATIC (non-translated) CONTENT ---
+const STATIC_BG_COLOR = "#d6ecbe"; // Matches page background
+const COLUMN1_BG_IMAGE = "/qs4 (4).webp";
+const COLUMN3_IMAGES = [
+  { id: 1, src: "/qs4 (1).webp" },
+  { id: 2, src: "/qs4 (2).webp" },
+  { id: 3, src: "/qs4 (3).webp" },
+];
+const TEAL_CARD_COLOR = "#0e685b"; // teal-800
+const DARK_CARD_COLOR = "#1f2937"; // gray-800
+// --- END STATIC CONTENT ---
 
 // ArrowIcon component (unchanged, but included for completeness)
 const ArrowIcon: FC = () => (
@@ -91,18 +63,18 @@ const CaseStudyButton: FC<{ label: string; buttonText: string }> = ({
 );
 
 const SuccessStoriesSection: FC = () => {
-  // const { t } = useTranslation(); // Removed this hook for simplicity
+  const { t } = useTranslation();
   return (
     <section
       className="w-full py-16 overflow-hidden"
       // Use the solid background color from our content object
-      style={{ backgroundColor: content.section.bgColor }}
+      style={{ backgroundColor: STATIC_BG_COLOR }}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 lg:grid-cols-3 items-stretch">
         {/* --- Column 1 (Man image) --- */}
         <motion.div
           className="relative text-white p-8 rounded-3xl bg-cover bg-center min-h-[450px] flex flex-col justify-between"
-          style={{ backgroundImage: `url('${content.column1.bgImage}')` }}
+          style={{ backgroundImage: `url('${COLUMN1_BG_IMAGE}')` }}
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -114,8 +86,12 @@ const SuccessStoriesSection: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <h3 className="text-6xl">{content.column1.stat}</h3>
-            <p className="text-2xl">{content.column1.statDescription}</p>
+            <h3 className="text-6xl">
+              {String(t("successStoriesSection.column1.stat"))}
+            </h3>
+            <p className="text-2xl">
+              {String(t("successStoriesSection.column1.statDescription"))}
+            </p>
           </motion.div>
           {/* Banner at the bottom */}
           <motion.div
@@ -125,7 +101,7 @@ const SuccessStoriesSection: FC = () => {
             transition={{ delay: 0.7, duration: 0.5 }}
           >
             <span className="text-xs uppercase tracking-widest">
-              {content.column1.bannerText}
+              {String(t("successStoriesSection.column1.bannerText"))}
             </span>
           </motion.div>
         </motion.div>
@@ -138,26 +114,28 @@ const SuccessStoriesSection: FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {/* Title */}
-          <h2 className="text-3xl text-gray-800">{content.column2.title}</h2>
+          <h2 className="text-3xl text-gray-800">
+            {String(t("successStoriesSection.column2.title"))}
+          </h2>
 
           {/* The ISO 9001 Case Study Card (Teal) */}
           <ReusableShape
             // No fixed width or height. Added flex-1 to make it grow.
             width={400}
-            color={content.column2.card.color}
+            color={TEAL_CARD_COLOR}
             radius={28}
             cutoutWidth={100}
             cutoutHeight={110}
-            cutoutBgColor={content.section.bgColor} // Use matching bg color
+            cutoutBgColor={STATIC_BG_COLOR} // Use matching bg color
             cutoutPosition="top-right"
             cutoutRadius={20}
             // Use flex-1 to grow, and flex-col justify-end to push content to bottom
             className="relative flex flex-col justify-end  flex-1 text-white"
           >
-            <div className="absolute top-[-80] right-0">
-              {" "}
+            <div className="absolute top-[-120] right-0">
               <ArrowIcon />
             </div>
+
             {/* Content group at the bottom */}
             <div className="flex flex-col gap-4">
               <motion.h4
@@ -166,11 +144,13 @@ const SuccessStoriesSection: FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
               >
-                {content.column2.card.title}
+                {String(t("successStoriesSection.column2.card.title"))}
               </motion.h4>
               <CaseStudyButton
-                label={content.caseStudyButton.label}
-                buttonText={content.caseStudyButton.buttonText}
+                label={String(t("successStoriesSection.caseStudyButton.label"))}
+                buttonText={String(
+                  t("successStoriesSection.caseStudyButton.buttonText")
+                )}
               />
             </div>
           </ReusableShape>
@@ -185,7 +165,7 @@ const SuccessStoriesSection: FC = () => {
         >
           {/* The 3-image grid (Unchanged) */}
           <div className="grid grid-cols-3 gap-4">
-            {content.column3.images.map((image, index) => (
+            {COLUMN3_IMAGES.map((image, index) => (
               <motion.div
                 key={image.id}
                 className="h-24 rounded-lg bg-cover bg-center"
@@ -200,34 +180,35 @@ const SuccessStoriesSection: FC = () => {
           {/* The PEx Solution Case Study Card (Dark Gray) */}
           <ReusableShape
             // No fixed width or height. Added flex-1.
-            color={content.column3.card.color}
+            color={DARK_CARD_COLOR}
             radius={28}
             width={400}
             cutoutWidth={100}
             cutoutHeight={110}
-            cutoutBgColor={content.section.bgColor} // Use matching bg color
+            cutoutBgColor={STATIC_BG_COLOR} // Use matching bg color
             cutoutPosition="top-right"
             cutoutRadius={20}
             // Use flex-1 to grow, and flex-col justify-end to push content to bottom
-            className="relative text-white flex flex-col justify-end  flex-1"
+            className="relative text-white flex flex-col justify-end flex-1"
           >
             <div className="absolute top-[-60] right-0">
-              {" "}
               <ArrowIcon />
             </div>
             {/* Content group at the bottom */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col max-w-xs wrap-break-word gap-4">
               <motion.h4
                 className="text-2xl max-w-sm"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
               >
-                {content.column3.card.title}
+                {String(t("successStoriesSection.column3.card.title"))}
               </motion.h4>
               <CaseStudyButton
-                label={content.caseStudyButton.label}
-                buttonText={content.caseStudyButton.buttonText}
+                label={String(t("successStoriesSection.caseStudyButton.label"))}
+                buttonText={String(
+                  t("successStoriesSection.caseStudyButton.buttonText")
+                )}
               />
             </div>
           </ReusableShape>

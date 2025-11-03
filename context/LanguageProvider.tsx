@@ -20,14 +20,24 @@ export function useTranslation() {
   }
   const { lang, setLang } = context;
 
+  // Fallback to 'en' if an unsupported language code is set
+  const supportedLangs = Object.keys(translations);
+  const effectiveLang = supportedLangs.includes(lang) ? lang : "en";
+
   const t = (key: string): unknown => {
     const keys = key.split(".");
-    let value: unknown = translations[lang as keyof typeof translations];
+    let value: unknown =
+      translations[effectiveLang as keyof typeof translations];
 
     for (const k of keys) {
       if (value && typeof value === "object" && value !== null && k in value) {
         value = (value as Record<string, unknown>)[k];
       } else {
+        if (process.env.NODE_ENV !== "production") {
+          console.warn(
+            `[i18n] Missing translation key: ${key} (lang: ${effectiveLang})`
+          );
+        }
         return key; // Return the key if not found
       }
     }
