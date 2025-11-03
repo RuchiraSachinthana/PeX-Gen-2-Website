@@ -106,7 +106,7 @@ export default function SocialSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <div
-              className=" p-4 rounded-3xl min-h-80  bg-contain bg-right bg-no-repeat relative flex items-center justify-end"
+              className=" p-4 rounded-3xl min-h-80  bg-contain bg-right bg-no-repeat relative flex items-center justify-start"
               style={{ backgroundImage: "url('/Asset 4.svg')" }}
             >
               <div className="absolute top-0 right-0">
@@ -123,7 +123,7 @@ export default function SocialSection() {
               <div className="flex flex-col items-start justify-center gap-4 text-left">
                 {/* Title and Subtitle */}
                 <div>
-                  <h3 className="text-white text-secondary text-2xl mb-4">
+                  <h3 className="text-white text-secondary text-2xl mb-4 max-w-[250px]">
                     {String(t("socialSection.partnerSection.title"))}
                   </h3>
                   <p className="text-white text-2xl mt-6">
