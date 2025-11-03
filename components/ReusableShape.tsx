@@ -7,8 +7,8 @@ export type CutoutPosition =
   | "bottom-right";
 
 export interface ReusableShapeProps {
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
   color?: string;
   radius?: number;
   /** Optional radius for the cutout corner; defaults to `radius` if omitted */
@@ -50,12 +50,19 @@ const ReusableShape: React.FC<ReusableShapeProps> = ({
   // Use provided cutoutRadius if given; otherwise mirror outer radius
   const cr = cutoutRadius ?? radius;
 
+  const toCssSize = (v: number | string | undefined, fallback: number) =>
+    typeof v === "number" || typeof v === "string"
+      ? typeof v === "number"
+        ? `${v}px`
+        : v
+      : `${fallback}px`;
+
   const border =
     borderWidth > 0 ? `inset 0 0 0 ${borderWidth}px ${borderColor}` : "";
 
   const shapeStyle: CSSProperties = {
-    width: `${width}px`,
-    height: `${height}px`,
+    width: toCssSize(width, 300),
+    height: toCssSize(height, 200),
     backgroundColor: color,
     boxShadow: [border].filter(Boolean).join(", "),
     position: "relative",
