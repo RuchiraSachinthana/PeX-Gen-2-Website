@@ -109,11 +109,10 @@ export const ExperienceStatsSection: FC = () => {
             <ReusableShape
               width="100%"
               cutoutBgColor="#00786d"
-              height={280}
+             
               cutoutPosition="top-right"
               color="#facc15" // Tailwind yellow-400
               radius={24} // rounded-3xl
-            
               className="relative text-gray-900 flex flex-col justify-between"
             >
               {/* Top-right arrow box */}
