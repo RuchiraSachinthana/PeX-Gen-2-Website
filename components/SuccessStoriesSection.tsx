@@ -55,7 +55,7 @@ const CaseStudyButton: FC<{ label: string; buttonText: string }> = ({
     transition={{ delay: 1.2, duration: 0.5 }}
   >
     <span className="text-xs uppercase text-white">{label}</span>
-    <button className="bg-yellow-400 text-gray-900 py-2 px-4 rounded-3xl flex items-center space-x-1">
+    <button className="bg-yellow-400 text-gray-900 py-2 px-4 rounded-3xl flex items-center space-x-1 cursor-pointer">
       <span>{buttonText}</span>
       <span>→</span>
     </button>

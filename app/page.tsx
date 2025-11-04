@@ -2,15 +2,13 @@
 
 import LinkedInFollowSection from "@/components/LinkedInFollowSection";
 import SevenWaysBenefits from "@/components/SevenWaysBenefits";
-import { useTranslation } from "../context/LanguageProvider";
 
+import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
+import KeyPointsIntroSection from "@/components/KeyPointsIntroSection";
 import PexFoodHeader from "@/components/PexFoodHeader";
-import ThreeKeyPointsSection from "@/components/ThreeKeyPointsSection";
-import MobileSocialCard from "@/components/MobileSocialCard";
+import VideoPromoSection from "@/components/VideoPromoSection";
 
 export default function HomePage() {
-  const { t } = useTranslation();
-
   return (
     <div className="w-full min-h-screen">
       <PexFoodHeader />
@@ -18,8 +16,9 @@ export default function HomePage() {
       <SevenWaysBenefits />
 
       <LinkedInFollowSection />
-      <ThreeKeyPointsSection />
-<MobileSocialCard/>
+      <KeyPointsIntroSection />
+      <CaseStudiesShowcase />
+      <VideoPromoSection />
       {/* <PExSoftwareBenefits /> */}
     </div>
   );

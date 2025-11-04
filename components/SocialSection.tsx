@@ -14,6 +14,24 @@ const posts = [
   { id: 4, img: "/social (4).webp" },
 ];
 
+// --- ADDED ---
+// Variants for staggering the avatars
+const avatarContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const avatarItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+// --- END ---
+
 export default function SocialSection() {
   const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -28,57 +46,60 @@ export default function SocialSection() {
   };
 
   return (
-    <section
-      style={{
-        backgroundImage: "url('/qs4 (6).webp')",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "100%",
-      }}
-      className="w-full py-12 px-6 lg:px-20 bg-white relative  overflow-hidden"
-    >
-      {/* Layer image on the right side */}
+    <section className="w-full py-10 px-6 lg:px-20 bg-white relative  overflow-hidden">
+      <Image
+        src="/layer.webp"
+        alt="Layer background"
+        width={1500}
+        height={0}
+        className="absolute right-[-800] top-0 z-0 object-cover"
+      />
 
       {/* Content with relative positioning to stay above the background layer */}
       <div className="relative z-10">
-        <motion.h2
-          className="text-center text-3xl  text-emerald-900 mb-10"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {String(t("socialSection.title"))}
-        </motion.h2>
-
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div className="flex flex-col lg:flex-row items-end relative justify-center">
           {/* Carousel */}
           <motion.div
-            className="flex items-center gap-4"
+            className="flex items-center relative gap-4"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <button
+            {/* --- WRAPPED IN MOTION --- */}
+            <motion.div
+              className="text-center text-4xl absolute top-[-100] left-80  text-emerald-900 "
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              {" "}
+              {String(t("socialSection.title"))}
+            </motion.div>
+            
+            <motion.button // --- CONVERTED ---
               onClick={() => scroll("left")}
               className="p-3 rounded-full hover:bg-emerald-50"
+              whileHover={{ scale: 1.1 }} // --- ADDED ---
+              whileTap={{ scale: 0.9 }} // --- ADDED ---
             >
               <ChevronLeft className="text-emerald-700" size={50} />
-            </button>
+            </motion.button>
 
             <div
               ref={scrollRef}
-              className="flex overflow-x-auto gap-6 scroll-smooth no-scrollbar w-[800px] lg:w-[900px]"
+              className="flex overflow-x-auto gap-4  scroll-smooth no-scrollbar w-[800px] lg:w-[900px]"
             >
               {posts.map((post, index) => (
                 <motion.div
                   key={post.id}
-                  className="min-w-[280px] rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition"
+                  className="overflow-hidden shadow-md hover:shadow-lg transition"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  whileHover={{ scale: 1.05 }} // --- ADDED ---
                 >
                   <Image
                     src={post.img}
@@ -91,61 +112,86 @@ export default function SocialSection() {
               ))}
             </div>
 
-            <button
+            <motion.button // --- CONVERTED ---
               onClick={() => scroll("right")}
               className="p-3 rounded-full hover:bg-emerald-50"
+              whileHover={{ scale: 1.1 }} // --- ADDED ---
+              whileTap={{ scale: 0.9 }} // --- ADDED ---
             >
               <ChevronRight className="text-emerald-700" size={50} />
-            </button>
+            </motion.button>
           </motion.div>
 
           <motion.div
-            className="col-span-2 text-left flex flex-col  gap-4"
+            className="text-left flex flex-col"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <ReusableShape
-              width={360}
-              height={400}
+              width={300}
+              height={350}
               color="#0e685b"
               radius={28}
               cutoutWidth={100}
-              cutoutHeight={110}
-              cutoutBgColor="#d6ecbe"
+              cutoutHeight={100}
+              // cutoutBgColor="#32af85"
               cutoutPosition="top-right"
-              cutoutRadius={20}
+              cutoutRadius={18}
               className="relative flex items-center justify-start"
             >
               {/* Rocket */}
-              <div className="absolute top-[-5] right-0">
+              {/* --- WRAPPED IN MOTION --- */}
+              <motion.div
+                className="absolute top-[-18] right-[16]"
+                initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+              >
                 <Image
-                  src="/Asset 5.svg"
+                  src="/Asset 27.svg"
                   alt="Rocket icon"
-                  width={50}
-                  height={50}
-                  className="w-20 h-20"
+                  width={0}
+                  height={0}
+                  className="w-19 h-19"
                 />
-              </div>
+              </motion.div>
 
               {/* Content wrapper - left aligned */}
-              <div className="flex flex-col items-start justify-center gap-4 text-left">
+              <motion.div // --- WRAPPED CONTENT ---
+                className="flex flex-col items-start  gap-1 text-left"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
                 <div>
-                  <h3 className="text-white text-secondary text-2xl mb-4 max-w-[250px]">
-                    {String(t("socialSection.partnerSection.title"))}
-                  </h3>
-                  <p className="text-white text-2xl mt-6">
+                  <p className="text-yellow-400 text-secondary text-xl ">
+                    {String(t("socialSection.partnerSection.title1"))}
+                  </p>
+                  <p className="text-yellow-400 text-secondary text-xl ">
+                    {String(t("socialSection.partnerSection.title2"))}
+                  </p>
+                  <p className="text-yellow-400 text-secondary text-xl ">
+                    {String(t("socialSection.partnerSection.title3"))}
+                  </p>
+                  <p className="text-white text-sm mt-4">
                     {String(t("socialSection.partnerSection.followUs"))}
                   </p>
                 </div>
 
-                <button className="bg-yellow-400 px-6 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors">
-                  <div className="flex justify-between items-center gap-2">
+                <motion.button // --- CONVERTED ---
+                  className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
+                  whileHover={{ scale: 1.05 }} // --- ADDED ---
+                  whileTap={{ scale: 0.95 }} // --- ADDED ---
+                >
+                  <div className="flex justify-between text-sm items-center gap-1">
                     {String(
                       t("socialSection.partnerSection.linkedinButton.platform")
                     )}
-                    <span>
+                    <span className="font-semibold">
                       {String(
                         t(
                           "socialSection.partnerSection.linkedinButton.followersCount"
@@ -158,10 +204,20 @@ export default function SocialSection() {
                       )
                     )}
                   </div>
-                </button>
+                </motion.button>
 
-                <div className="flex gap-2">
-                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                {/* --- WRAPPED AVATARS --- */}
+                <motion.div
+                  className="flex gap-2 mt-2"
+                  variants={avatarContainerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <motion.div // --- ADDED ---
+                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    variants={avatarItemVariants} // --- ADDED ---
+                  >
                     <Image
                       src="/avatar.jpg"
                       alt="Avatar 1"
@@ -169,8 +225,11 @@ export default function SocialSection() {
                       height={40}
                       className="w-full h-full object-cover"
                     />
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                  </motion.div>
+                  <motion.div // --- ADDED ---
+                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    variants={avatarItemVariants} // --- ADDED ---
+                  >
                     <Image
                       src="/avatar.jpg"
                       alt="Avatar 2"
@@ -178,8 +237,11 @@ export default function SocialSection() {
                       height={40}
                       className="w-full h-full object-cover"
                     />
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
+                  </motion.div>
+                  <motion.div // --- ADDED ---
+                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    variants={avatarItemVariants} // --- ADDED ---
+                  >
                     <Image
                       src="/avatar.jpg"
                       alt="Avatar 3"
@@ -187,9 +249,33 @@ export default function SocialSection() {
                       height={40}
                       className="w-full h-full object-cover"
                     />
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                  <motion.div // --- ADDED ---
+                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    variants={avatarItemVariants} // --- ADDED ---
+                  >
+                    <Image
+                      src="/avatar.jpg"
+                      alt="Avatar 3"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                  <motion.div // --- ADDED ---
+                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    variants={avatarItemVariants} // --- ADDED ---
+                  >
+                    <Image
+                      src="/avatar.jpg"
+                      alt="Avatar 3"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </ReusableShape>
           </motion.div>
         </div>

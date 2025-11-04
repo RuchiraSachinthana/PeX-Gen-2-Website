@@ -76,7 +76,7 @@ export default function LinkedInFollowSection() {
               />
             </div>
           </div>
-          <button className="absolute bottom-6 right-6  bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-full shadow-lg z-20">
+          <button className="absolute bottom-6 right-6  bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-full shadow-lg z-20 cursor-pointer">
             {String(t("linkedInFollowSection.buttonText"))}
           </button>
         </motion.div>

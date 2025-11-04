@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1952.66 791.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #00897a;
+      }
+
+      .cls-4 {
+        fill: #d7ecbe;
+      }
+
+      .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-6 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-7 {
+        mix-blend-mode: overlay;
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="1928.16" height="791.15"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-198.75" y1="663.75" x2="1101.95" y2="663.75" gradientTransform="translate(-399.73 -340.19)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00c4bb"/>
+      <stop offset="1" stop-color="#bae2e0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-112.47" y1="663.75" x2="1197.76" y2="663.75" xlink:href="#linear-gradient"/>
+  </defs>
+  <g class="cls-5">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <rect class="cls-4" width="1952.66" height="791.15"/>
+        <g class="cls-9">
+          <g>
+            <g class="cls-7">
+              <polygon class="cls-3" points="-6.14 226.14 -198.28 34.83 -375.34 -144.03 -754.33 -140.21 -387.04 227.08 -194.89 415.95 166.23 791.15 555.91 791.15 -6.14 226.14"/>
+            </g>
+            <g class="cls-6">
+              <polyline class="cls-8" points="-73.24 34.83 -250.3 -144.03 -598.48 -140.21 -231.19 227.08 -48.58 415.95 312.54 791.15 702.22 791.15 140.18 226.14"/>
+            </g>
+            <g class="cls-6">
+              <polygon class="cls-1" points="235.98 226.14 40.82 34.83 -136.24 -144.03 -512.2 -140.21 -144.92 227.08 47.23 415.95 408.35 791.15 798.03 791.15 235.98 226.14"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

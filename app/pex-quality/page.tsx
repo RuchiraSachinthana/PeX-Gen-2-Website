@@ -1,29 +1,23 @@
 "use client";
 
-import QualityVideoSection from "@/components/QualityVideoSection";
-import { useTranslation } from "../../context/LanguageProvider";
-
 import BusinessImprovementSlider from "@/components/BusinessImprovementSlider";
-import SuccessStoriesSection from "@/components/SuccessStoriesSection";
-import ThreeKeyPointsSection from "@/components/ThreeKeyPointsSection";
-
+import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
 import { ExperienceStatsSection } from "@/components/ExperienceStatsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
+import KeyPointsIntroSection from "@/components/KeyPointsIntroSection";
 import SocialsSection from "@/components/SocialSection";
+import VideoPromoSection from "@/components/VideoPromoSection";
 import PexQualityHeader from "./../../components/PexQualityHeader";
 
 export default function PexQualityPage() {
-  const { t } = useTranslation();
   return (
     <div className="w-full min-h-screen">
       <PexQualityHeader />
-
-      <QualityVideoSection />
-
+      <VideoPromoSection />
       <BusinessImprovementSlider />
-      <SuccessStoriesSection />
-      <ThreeKeyPointsSection />
+      <CaseStudiesShowcase />
+      <KeyPointsIntroSection />
       <ExperienceStatsSection />
       <FAQSection />
       <SocialsSection />
