@@ -80,7 +80,7 @@ const CaseStudyButton: FC = () => (
     <span className="text-xs  uppercase text-white">
       {content.caseStudyButton.label}
     </span>
-    <button className="bg-yellow-400 text-gray-900  py-2 px-4 rounded-3xl flex items-center space-x-1">
+    <button className="bg-yellow-400 text-gray-900  py-2 px-4 rounded-3xl flex items-center space-x-1 cursor-pointer">
       <span>{content.caseStudyButton.buttonText}</span>
       <span>→</span>
     </button>
@@ -136,9 +136,7 @@ const SectionFour: FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {/* The title is just text, not a red box */}
-          <h2 className="text-3xl  text-gray-800">
-            {content.column2.title}
-          </h2>
+          <h2 className="text-3xl  text-gray-800">{content.column2.title}</h2>
 
           {/* The ISO 9001 Case Study Card */}
           <div

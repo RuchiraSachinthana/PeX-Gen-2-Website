@@ -58,7 +58,7 @@ const MobileSocialCard: React.FC<MobileSocialCardProps> = ({
             {String(t("socialSection.partnerSection.followUs"))}
           </p>
 
-          <button className="bg-yellow-400 px-5 py-2 rounded-full text-gray-900 text-sm font-medium hover:bg-yellow-500 transition-colors">
+          <button className="bg-yellow-400 px-5 py-2 rounded-full text-gray-900 text-sm font-medium hover:bg-yellow-500 transition-colors cursor-pointer">
             <div className="flex items-center gap-2 ">
               {String(
                 t("socialSection.partnerSection.linkedinButton.platform")

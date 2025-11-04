@@ -40,17 +40,17 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
       <button
         onClick={onToggle}
-        className="flex w-full max-w-full sm:max-w-2xl mx-auto items-center justify-between rounded-full bg-teal-800 pl-0 pr-2 sm:pr-3 py-2 sm:py-3 text-left text-white"
+        className="flex w-full max-w-full sm:max-w-2xl mx-auto items-center justify-between rounded-full bg-teal-800 pl-0 pr-2 sm:pr-3 py-2 sm:py-3 text-left text-white cursor-pointer"
         aria-expanded={isOpen}
       >
         <div className="flex items-center space-x-3">
-          <div className="flex h-12 w-12  items-center justify-center rounded-full bg-yellow-400 text-teal-900">
-            <span className="text-base">{item.id.replace("q", "Q")}</span>
+          <div className="flex h-14 w-14 absolute  items-center justify-center rounded-full bg-yellow-400 text-teal-900">
+            <span className="text-xl">{item.id.replace("q", "Q")}</span>
           </div>
-          <span>{item.question}</span>
+          <span className="ml-17">{item.question}</span>
         </div>
         <ChevronDown
-          className={`h-6 w-6 shrink-0 transform transition-transform duration-300 ${
+          className={`h-6 w-6 text-yellow-400 shrink-0 transform transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -58,11 +58,11 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
       {/* Answer Content (Animated) */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`overflow-hidden  transition-all duration-300  ease-in-out ${
           isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className=" rounded-b-xl bg-white p-6 text-gray-700 shadow-md max-w-full sm:max-w-2xl mx-auto">
+        <div className=" rounded-2xl bg-white px-10 py-10 text-gray-700 shadow-md max-w-full sm:max-w-2xl mx-auto">
           {item.answer}
         </div>
       </div>
@@ -84,7 +84,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full mx-auto h-full px-4 sm:px-6 py-10 lg:px-8 relative z-10 bg-lime-50">
+    <div className="w-full mx-auto h-full px-4 sm:px-6 py-10 lg:px-8 relative z-10 bg-[#d7ecbe]">
       <motion.h2
         className="mb-8 text-3xl  text-teal-900 max-w-full sm:max-w-2xl mx-auto"
         initial={{ opacity: 0, y: -20 }}

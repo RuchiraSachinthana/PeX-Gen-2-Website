@@ -5,8 +5,9 @@ import SevenWaysBenefits from "@/components/SevenWaysBenefits";
 import { useTranslation } from "../context/LanguageProvider";
 
 import PexFoodHeader from "@/components/PexFoodHeader";
-import ThreeKeyPointsSection from "@/components/ThreeKeyPointsSection";
-import MobileSocialCard from "@/components/MobileSocialCard";
+import Temp from "@/components/Temp";
+import Temp1 from "@/components/Temp1";
+import Temp3 from "@/components/Temp3";
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -18,8 +19,9 @@ export default function HomePage() {
       <SevenWaysBenefits />
 
       <LinkedInFollowSection />
-      <ThreeKeyPointsSection />
-<MobileSocialCard/>
+      <Temp />
+<Temp1/>
+<Temp3/>
       {/* <PExSoftwareBenefits /> */}
     </div>
   );

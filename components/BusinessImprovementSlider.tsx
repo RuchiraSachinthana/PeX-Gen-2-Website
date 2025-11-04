@@ -2,10 +2,10 @@
 import { useTranslation } from "@/context/LanguageProvider";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import type { FC } from "react";
-import { Fragment, useEffect, useState } from "react";
-import ReusableShape from "./ReusableShape";
 import Image from "next/image";
+import type { FC } from "react";
+import { useEffect, useState } from "react";
+import ReusableShape from "./ReusableShape";
 
 const BusinessImprovementSlider: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -58,7 +58,7 @@ const BusinessImprovementSlider: FC = () => {
   if (slides.length === 0) {
     return (
       <div
-        className="py-10 text-gray-900 min-h-[400px] flex items-center justify-center"
+        className="py-10 text-gray-900  flex items-center justify-center"
         style={{ backgroundColor: "#ffffff" }}
       >
         <div className="text-center">
@@ -76,105 +76,129 @@ const BusinessImprovementSlider: FC = () => {
       className=" py-10 text-gray-900"
       style={{ backgroundColor: "#ffffff" }}
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-6 gap-10 items-end">
+      <div className="max-w-5xl mx-auto py-20 flex justify-between items-end gap-2">
         {/* Left section - 1/4 - Animated slide-in from left */}
         <motion.div
-            className="col-span-2 text-left flex flex-col  gap-4"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-left flex flex-col"
+          initial={{ opacity: 0, x: -50 }} // UPDATED: Was 50, now -50 to slide from left
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <ReusableShape
+            width={300}
+            height={350}
+            color="#0e685b"
+            radius={28}
+            cutoutWidth={100}
+            cutoutHeight={100}
+            cutoutBgColor="#ffffff"
+            cutoutPosition="top-right"
+            cutoutRadius={18}
+            className="relative flex items-center justify-start"
           >
-            <ReusableShape
-              width={360}
-              height={400}
-              color="#0e685b"
-              radius={28}
-              cutoutWidth={100}
-              cutoutHeight={110}
-              cutoutBgColor="#ffffff"
-              cutoutPosition="top-right"
-              cutoutRadius={20}
-              className="relative flex items-center justify-start"
-            >
-              {/* Rocket */}
-              <div className="absolute top-0 right-0">
-                <Image
-                  src="/Asset 5.svg"
-                  alt="Rocket icon"
-                  width={60}
-                  height={60}
-                  className="w-20 h-20"
-                />
+            {/* Rocket */}
+            <div className="absolute top-[-14] right-[18]">
+              <Image
+                src="/Asset 5.svg"
+                alt="Rocket icon"
+                width={0}
+                height={0}
+                className="w-19 h-19"
+              />
+            </div>
+
+            {/* Content wrapper - left aligned */}
+            <div className="flex flex-col items-start gap-2 text-left">
+              <div>
+                <p className="text-white text-secondary text-xl ">
+                  {String(t("socialSection.partnerSection.title1"))}
+                </p>
+                <p className="text-white text-secondary text-xl ">
+                  {String(t("socialSection.partnerSection.title2"))}
+                </p>
+                <p className="text-white text-secondary text-xl ">
+                  {String(t("socialSection.partnerSection.title3"))}
+                </p>
+                <p className="text-white text-sm mt-6">
+                  {String(t("socialSection.partnerSection.followUs"))}
+                </p>
               </div>
 
-              {/* Content wrapper - left aligned */}
-              <div className="flex flex-col items-start justify-center gap-4 text-left">
-                <div>
-                  <h3 className="text-white text-secondary text-2xl mb-4 max-w-[250px]">
-                    {String(t("socialSection.partnerSection.title"))}
-                  </h3>
-                  <p className="text-white text-2xl mt-6">
-                    {String(t("socialSection.partnerSection.followUs"))}
-                  </p>
-                </div>
-
-                <button className="bg-yellow-400 px-6 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors">
-                  <div className="flex justify-between items-center gap-2">
-                    {String(
-                      t("socialSection.partnerSection.linkedinButton.platform")
-                    )}
-                    <span>
-                      {String(
-                        t(
-                          "socialSection.partnerSection.linkedinButton.followersCount"
-                        )
-                      )}
-                    </span>
+              <button className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer">
+                <div className="flex justify-between text-sm items-center gap-1">
+                  {String(
+                    t("socialSection.partnerSection.linkedinButton.platform")
+                  )}
+                  <span className="font-semibold">
                     {String(
                       t(
-                        "socialSection.partnerSection.linkedinButton.followersText"
+                        "socialSection.partnerSection.linkedinButton.followersCount"
                       )
                     )}
-                  </div>
-                </button>
+                  </span>
+                  {String(
+                    t(
+                      "socialSection.partnerSection.linkedinButton.followersText"
+                    )
+                  )}
+                </div>
+              </button>
 
-                <div className="flex gap-2">
-                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-                    <Image
-                      src="/avatar.jpg"
-                      alt="Avatar 1"
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-                    <Image
-                      src="/avatar.jpg"
-                      alt="Avatar 2"
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
-                    <Image
-                      src="/avatar.jpg"
-                      alt="Avatar 3"
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              <div className="flex gap-2">
+                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                  <Image
+                    src="/avatar.jpg"
+                    alt="Avatar 1"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                  <Image
+                    src="/avatar.jpg"
+                    alt="Avatar 2"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                  <Image
+                    src="/avatar.jpg"
+                    alt="Avatar 3"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                  <Image
+                    src="/avatar.jpg"
+                    alt="Avatar 3"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                  <Image
+                    src="/avatar.jpg"
+                    alt="Avatar 3"
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
-            </ReusableShape>
-          </motion.div>
+            </div>
+          </ReusableShape>
+        </motion.div>
 
         {/* Right section - 3/4 - Animated slide-in from right */}
         <motion.div
-          className="col-span-4 text-center align-center justify-center flex flex-col gap-4"
+          className="flex-1 text-center align-center flex flex-col gap-4"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -185,21 +209,27 @@ const BusinessImprovementSlider: FC = () => {
               backgroundImage: "url('/image_navigator_background.webp')",
             }}
           >
+            <div className="absolute left-22 top-10 border-[#00EEFF] border-2 w-150 h-75 rounded-xl"></div>
+
             {/* Yellow Button - Top Absolute - Animated */}
             <motion.button
-              className="bg-yellow-400 px-6 py-2 rounded-full shadow-lg hover:bg-yellow-500 z-10"
+              className="bg-yellow-400 absolute top-[-20] left-45 px-6 py-2 rounded-full shadow-lg hover:bg-yellow-500 z-10 cursor-pointer"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
+              // --- ADDED ---
+              whileHover={{ scale: 1.05, y: -22 }}
+              whileTap={{ scale: 0.95, y: -20 }}
+              // --- END ---
             >
               {String(t("businessImprovementSlider.topButton"))}
             </motion.button>
 
             <div className="p-10 flex flex-col h-full">
               {/* Content area - takes available space */}
-              <div className="flex-1 flex flex-col items-center justify-center px-16">
+              <div className="flex-1 flex flex-col mt-15  px-16">
                 {/* Content - Added min-h to prevent jank during text transition */}
-                <div className="text-center mb-8 min-h-[220px]">
+                <div className="text-center mb-8 ">
                   {/* AnimatePresence handles the fade-out of old slide and fade-in of new slide */}
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -221,11 +251,14 @@ const BusinessImprovementSlider: FC = () => {
 
                 {/* Read More Button - Below content - Animated */}
                 <motion.button
-                  className="flex items-center gap-2 text-gray-900 px-6 py-3 rounded-full shadow-lg transition-colors mx-auto hover:opacity-90"
+                  className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-gray-900 px-6 py-3 rounded-full shadow-lg transition-colors hover:opacity-100 cursor-pointer"
                   style={{ backgroundColor: "#04afbc" }}
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.8, duration: 0.5 }}
+                  // --- ADDED ---
+                  whileTap={{ scale: 0.95 }}
+                  // --- END ---
                 >
                   <span className="text-sm text-white">
                     {String(t("businessImprovementSlider.readMoreButton"))}
@@ -238,11 +271,15 @@ const BusinessImprovementSlider: FC = () => {
             {/* Left Arrow - Fixed at left side - Animated */}
             <motion.button
               onClick={handlePrevious}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-80 transition-opacity z-20"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
               style={{ backgroundColor: "#0e685b" }}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.0, duration: 0.5 }}
+              // --- ADDED ---
+              whileHover={{ x: -5 }}
+              whileTap={{ scale: 0.9 }}
+              // --- END ---
             >
               <ChevronLeft className="w-8 h-8 text-white" />
             </motion.button>
@@ -250,11 +287,15 @@ const BusinessImprovementSlider: FC = () => {
             {/* Right Arrow - Fixed at right side - Animated */}
             <motion.button
               onClick={handleNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-80 transition-opacity z-20"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
               style={{ backgroundColor: "#0e685b" }}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.0, duration: 0.5 }}
+              // --- ADDED ---
+              whileHover={{ x: 5 }}
+              whileTap={{ scale: 0.9 }}
+              // --- END ---
             >
               <ChevronRight className="w-8 h-8 text-white" />
             </motion.button>
@@ -271,7 +312,7 @@ const BusinessImprovementSlider: FC = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
+                    className={`w-3 h-3 rounded-full transition-all cursor-pointer  ${
                       currentSlide === index ? "w-8 opacity-100" : "opacity-50"
                     }`}
                     style={{ backgroundColor: "#0e685b" }}

@@ -187,13 +187,13 @@ export default function PExSoftwareBenefits() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <button className="bg-yellow-400 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+            <button className="bg-yellow-400 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
               01
             </button>
-            <button className="bg-gray-700 text-gray-200 py-3 px-6 rounded-xl text-lg hover:bg-gray-600 transition-colors">
+            <button className="bg-gray-700 text-gray-200 py-3 px-6 rounded-xl text-lg hover:bg-gray-600 transition-colors cursor-pointer">
               02
             </button>
-            <button className="bg-gray-700 text-gray-200 py-3 px-6 rounded-xl text-lg hover:bg-gray-600 transition-colors">
+            <button className="bg-gray-700 text-gray-200 py-3 px-6 rounded-xl text-lg hover:bg-gray-600 transition-colors cursor-pointer">
               03
             </button>
           </motion.div>

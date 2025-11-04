@@ -70,7 +70,7 @@ export default function ThreeKeyPointsSection() {
             {keyPoints.map((point, index) => (
               <button
                 key={index}
-                className="bg-yellow-400 top-40 right-100 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors"
+                className="bg-yellow-400 top-40 right-100 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer"
               >
                 {(index + 1).toString().padStart(2, "0")}
               </button>
@@ -147,7 +147,7 @@ export default function ThreeKeyPointsSection() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   {imagesData[0].aiPowered && (
-                    <button className="bg-yellow-400 absolute right-6 text-gray-900 py-3 px-6 rounded-xl text-xl hover:bg-yellow-300 transition-colors">
+                    <button className="bg-yellow-400 absolute right-6 text-gray-900 py-3 px-6 rounded-xl text-xl hover:bg-yellow-300 transition-colors cursor-pointer">
                       ai
                     </button>
                   )}
@@ -184,10 +184,10 @@ export default function ThreeKeyPointsSection() {
                   height={300}
                   className="w-full h-auto object-cover"
                 />
-                <button className="bg-yellow-400 absolute top-40 right-100 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                <button className="bg-yellow-400 absolute top-40 right-100 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
                   02
                 </button>
-                <button className="bg-yellow-400 absolute top-30 right-0 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                <button className="bg-yellow-400 absolute top-30 right-0 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
                   01
                 </button>
               </motion.div>
@@ -230,7 +230,7 @@ export default function ThreeKeyPointsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <button className=" absolute right-0 top-5 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                <button className=" absolute right-0 top-5 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
                   <Image
                     src={imagesData[1].icon}
                     alt="Icon"
@@ -262,7 +262,7 @@ export default function ThreeKeyPointsSection() {
                     {keyPoints[1].solution.description}
                   </div>
                 </div>
-                <button className="bg-yellow-400 absolute right-8 text-gray-900 p-2 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                <button className="bg-yellow-400 absolute right-8 text-gray-900 p-2 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
                   <Image
                     src={imagesData[1].solutionIcon || ""}
                     alt="Solution icon"
@@ -288,7 +288,7 @@ export default function ThreeKeyPointsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                <button className="bg-yellow-400 absolute right-6 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                <button className="bg-yellow-400 absolute right-6 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
                   03
                 </button>
                 <Image
@@ -339,7 +339,7 @@ export default function ThreeKeyPointsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <button className="absolute right-6 text-gray-900   rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                <button className="absolute right-6 text-gray-900   rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
                   <Image
                     src={imagesData[2].icon}
                     alt="Icon"
@@ -372,7 +372,7 @@ export default function ThreeKeyPointsSection() {
                   </div>
                 </div>
                 {imagesData[2].aiPowered && (
-                  <button className="bg-yellow-400  absolute right-7 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors">
+                  <button className="bg-yellow-400  absolute right-7 text-gray-900 py-3 px-6 rounded-xl text-lg hover:bg-yellow-300 transition-colors cursor-pointer">
                     ai
                   </button>
                 )}

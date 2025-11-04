@@ -32,18 +32,15 @@ export default function PexQualityHeader() {
       />
 
       {/* Container for Logo, Navbar, and Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Row: Logo, Language Selector, and Navbar */}
         <HeroHeader />
 
         {/* Main Content - Centered */}
-        <div className="flex items-end justify-left min-h-[60vh] sm:min-h-[70vh]">
-          <div
-            className="text-left max-w-4xl"
-            style={{ fontFamily: "Nexa, sans-serif" }}
-          >
+        <div className="flex items-end justify-left px-10 min-h-[60vh] sm:min-h-[70vh]">
+          <div className="text-left max-w-4xl">
             <motion.p
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -51,7 +48,7 @@ export default function PexQualityHeader() {
               {String(t("pexQualityHeader.desc1"))}
             </motion.p>
             <motion.p
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -59,7 +56,7 @@ export default function PexQualityHeader() {
               {String(t("pexQualityHeader.desc2"))}
             </motion.p>
             <motion.p
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -67,12 +64,21 @@ export default function PexQualityHeader() {
               {String(t("pexQualityHeader.desc3"))}
             </motion.p>
             <motion.p
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-3xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               {String(t("pexQualityHeader.desc4"))}
+              
+            </motion.p>
+            <motion.p
+              className="text-xl sm:text-2xl md:text-3xl lg:text-3xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              {String(t("pexQualityHeader.desc5"))}
             </motion.p>
           </div>
         </div>
