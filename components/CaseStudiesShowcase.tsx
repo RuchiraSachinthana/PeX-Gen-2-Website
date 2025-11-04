@@ -1,10 +1,10 @@
 "use client"; // Added for Framer Motion
 
+import { motion } from "framer-motion"; // Import motion
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Import motion
 
-export default function Temp1() {
+export default function CaseStudiesShowcase() {
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
     <div
@@ -13,7 +13,7 @@ export default function Temp1() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full py-20 relative overflow-hidden" // Removed overflow-hidden to allow animations to slide in
+      className="w-full py-20 relative overflow-hidden"
     >
       <div className="max-w-5xl mx-auto relative z-10">
         <div>
@@ -42,13 +42,13 @@ export default function Temp1() {
                   height={0}
                   src="/qs4 (1).webp"
                   alt="Background Decoration"
-                />{" "}
+                />
                 <Image
                   width={130}
                   height={0}
                   src="/qs4 (2).webp"
                   alt="Background Decoration"
-                />{" "}
+                />
                 <Image
                   width={130}
                   height={0}
@@ -117,7 +117,7 @@ export default function Temp1() {
                 <div className="flex flex-row justify-between align-middle items-center gap-4">
                   <p className="text-sm">CASE STUDY</p>
                   <motion.button
-                    className="bg-yellow-500 text-black p-2 px-4 text-sm rounded-full"
+                    className="bg-yellow-500 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -151,7 +151,7 @@ export default function Temp1() {
               <div className="flex absolute top-30 left-15 flex-row justify-between items-center gap-4">
                 <p className="text-sm">CASE STUDY</p>
                 <motion.button
-                  className="bg-yellow-500 text-black p-2 px-4 text-sm rounded-full "
+                  className="bg-yellow-500 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

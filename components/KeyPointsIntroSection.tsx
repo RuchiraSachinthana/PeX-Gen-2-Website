@@ -1,9 +1,8 @@
 "use client"; // Required for Framer Motion
-import Image from "next/image";
-import { useTranslation } from "../context/LanguageProvider";
 import { motion } from "framer-motion"; // Import motion
+import Image from "next/image";
 
-export default function Temp() {
+export default function KeyPointsIntroSection() {
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
     <div className="w-full bg-white pt-30 pb-190 relative overflow-hidden">

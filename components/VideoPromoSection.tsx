@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useTranslation } from "../context/LanguageProvider";
 
-export default function Temp3() {
+export default function VideoPromoSection() {
+  const { t } = useTranslation();
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
     <div
@@ -60,7 +62,7 @@ export default function Temp3() {
                 <p>Latest Updates</p>
               </motion.div>
               <motion.div
-                className="flex absolute justify-between gap-2 items-baseline left-5 top-22"
+                className="flex absolute justify-between gap-2 items-baseline left-5 top-26"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -69,7 +71,7 @@ export default function Temp3() {
                 <p className="text-sm">GET NOTIFICATION</p>
                 {/* --- ADDED motion --- */}
                 <motion.button
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black p-3 px-3 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-3 text-sm rounded-full cursor-pointer transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -104,7 +106,7 @@ export default function Temp3() {
                 <p>Demo</p>
               </motion.div>
               <motion.div
-                className="flex absolute w-full gap-3 items-baseline left-85 top-40"
+                className="flex absolute w-full gap-3 items-baseline left-85 top-43"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -113,7 +115,7 @@ export default function Temp3() {
                 <p className="text-sm">LETS CONNECT</p>
                 {/* --- ADDED motion --- */}
                 <motion.button
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black p-3 px-3 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                  className="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-3 text-sm rounded-full cursor-pointer transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
