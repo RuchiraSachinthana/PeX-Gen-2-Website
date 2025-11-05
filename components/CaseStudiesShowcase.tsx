@@ -15,11 +15,11 @@ export default function CaseStudiesShowcase() {
       }}
       className="w-full py-20 relative overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div>
-          <div className="flex flex-row justify-between items-end">
+          <div className="flex flex-row justify-between gap-6 items-end">
             <motion.div
-              className="absolute top-0 text-[#0e685b] text-3xl left-100"
+              className="absolute top-0 text-[#0e685b] text-3xl left-110"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -36,7 +36,7 @@ export default function CaseStudiesShowcase() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <div className=" flex flex-row gap-4">
+              <div className=" flex flex-row gap-2">
                 <Image
                   width={130}
                   height={0}
@@ -85,7 +85,7 @@ export default function CaseStudiesShowcase() {
                 height={0}
                 src="/Asset 22.svg"
                 alt="Background Decoration"
-                className="absolute top-12 left-33.5"
+                className="absolute top-12 left-40"
               />
               <div className="absolute top-30 left-20">
                 <p className="text-4xl text-yellow-400">90%</p>
@@ -107,7 +107,7 @@ export default function CaseStudiesShowcase() {
                 src="/Asset 19.svg"
                 alt="Background Decoration"
               />
-              <div className="absolute top-20 left-5">
+              <div className="absolute top-20 left-8">
                 <div className="mb-10 text-center text-2xl">
                   <p>Can a small</p>
                   <p>company get</p>
@@ -143,12 +143,12 @@ export default function CaseStudiesShowcase() {
                 src="/Asset 20.svg"
                 alt="Background Decoration"
               />
-              <div className="mb-10 absolute top-4 left-8 text-left text-2xl">
+              <div className="mb-10 absolute top-4 left-12 text-left text-2xl">
                 <p>How PEx solution</p>
                 <p>saved 1.6 million</p>
                 <p>in the first quarter</p>
               </div>
-              <div className="flex absolute top-30 left-15 flex-row justify-between items-center gap-4">
+              <div className="flex absolute top-35 left-15 flex-row justify-between items-center gap-4">
                 <p className="text-sm">CASE STUDY</p>
                 <motion.button
                   className="bg-yellow-500 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"

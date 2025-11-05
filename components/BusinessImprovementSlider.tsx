@@ -76,7 +76,7 @@ const BusinessImprovementSlider: FC = () => {
       className=" py-10 text-gray-900"
       style={{ backgroundColor: "#ffffff" }}
     >
-      <div className="max-w-5xl mx-auto py-20 flex justify-between items-end gap-2">
+      <div className="max-w-6xl mx-auto py-20 flex justify-between items-end gap-2">
         {/* Left section - 1/4 - Animated slide-in from left */}
         <motion.div
           className="text-left flex flex-col"
@@ -98,35 +98,35 @@ const BusinessImprovementSlider: FC = () => {
             className="relative flex items-center justify-start"
           >
             {/* Rocket */}
-            <div className="absolute top-[-14] right-[18]">
+            <div className="absolute top-[-30] right-[-20]">
               <Image
                 src="/Asset 5.svg"
                 alt="Rocket icon"
                 width={0}
                 height={0}
-                className="w-19 h-19"
+                className="w-22 h-22"
               />
             </div>
 
             {/* Content wrapper - left aligned */}
             <div className="flex flex-col items-start gap-2 text-left">
               <div>
-                <p className="text-white text-secondary text-xl ">
+                <p className="text-white text-secondary text-2xl ">
                   {String(t("socialSection.partnerSection.title1"))}
                 </p>
-                <p className="text-white text-secondary text-xl ">
+                <p className="text-white text-secondary text-2xl ">
                   {String(t("socialSection.partnerSection.title2"))}
                 </p>
-                <p className="text-white text-secondary text-xl ">
+                <p className="text-white text-secondary text-2xl ">
                   {String(t("socialSection.partnerSection.title3"))}
                 </p>
-                <p className="text-white text-sm mt-6">
+                <p className="text-white text-md mt-6">
                   {String(t("socialSection.partnerSection.followUs"))}
                 </p>
               </div>
 
               <button className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer">
-                <div className="flex justify-between text-sm items-center gap-1">
+                <div className="flex justify-between text-md items-center gap-1">
                   {String(
                     t("socialSection.partnerSection.linkedinButton.platform")
                   )}
@@ -146,7 +146,7 @@ const BusinessImprovementSlider: FC = () => {
               </button>
 
               <div className="flex gap-2">
-                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                   <Image
                     src="/avatar.jpg"
                     alt="Avatar 1"
@@ -155,7 +155,7 @@ const BusinessImprovementSlider: FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                   <Image
                     src="/avatar.jpg"
                     alt="Avatar 2"
@@ -164,7 +164,7 @@ const BusinessImprovementSlider: FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                   <Image
                     src="/avatar.jpg"
                     alt="Avatar 3"
@@ -173,7 +173,7 @@ const BusinessImprovementSlider: FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                   <Image
                     src="/avatar.jpg"
                     alt="Avatar 3"
@@ -182,7 +182,7 @@ const BusinessImprovementSlider: FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                   <Image
                     src="/avatar.jpg"
                     alt="Avatar 3"
@@ -209,7 +209,7 @@ const BusinessImprovementSlider: FC = () => {
               backgroundImage: "url('/image_navigator_background.webp')",
             }}
           >
-            <div className="absolute left-22 top-10 border-[#00EEFF] border-2 w-150 h-75 rounded-xl"></div>
+            <div className="absolute left-22 top-10 border-[#00EEFF] border-2 w-165 h-75 rounded-xl"></div>
 
             {/* Yellow Button - Top Absolute - Animated */}
             <motion.button

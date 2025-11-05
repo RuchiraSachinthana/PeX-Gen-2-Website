@@ -6,7 +6,7 @@ export default function KeyPointsIntroSection() {
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
     <div className="w-full bg-white pt-30 pb-190 relative overflow-hidden">
-      <div className="max-w-5xl mx-auto p-6 relative px-4 sm:px-6 lg:px-8 mb-100 z-10">
+      <div className="max-w-6xl mx-auto p-6 relative px-4 sm:px-6 lg:px-8 mb-100 z-10">
         <motion.div
           className="absolute left-0 text-[#0e685b] top-0 w-full h-full"
           initial={{ opacity: 0, x: -100 }}
@@ -40,18 +40,18 @@ export default function KeyPointsIntroSection() {
           <Image
             src="/Asset 12.svg"
             alt="Background Decoration"
-            width={730}
+            width={700}
             height={0}
             className=""
           />
-          <div className="absolute top-7 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-10 left-10 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
             <div className="text-2xl font-semibold">
               <p>Documentation</p>
               <p>Overload</p>
             </div>
           </div>
-          <div className="absolute top-29 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-35 left-10 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
             <div className="text-2xl">
               <p>Paper-heavy,</p>
@@ -60,7 +60,7 @@ export default function KeyPointsIntroSection() {
               <p>compliance records</p>
             </div>
           </div>
-          <div className="absolute top-29 left-75 text-left text-lg justify-center leading-8">
+          <div className="absolute top-35 left-95 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
             <div className="text-2xl">
               <p>Automated and</p>
@@ -72,7 +72,7 @@ export default function KeyPointsIntroSection() {
         </motion.div>
         {/* line 1 */}
         <motion.div
-          className="absolute right-0 top-52"
+          className="absolute right-[-15] top-52"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -88,7 +88,7 @@ export default function KeyPointsIntroSection() {
         </motion.div>
         {/* 2nd card */}
         <motion.div
-          className="absolute left-10 top-110"
+          className="absolute left-10 z-10 top-110"
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -97,7 +97,7 @@ export default function KeyPointsIntroSection() {
           <Image
             src="/Asset 14.svg"
             alt="Background Decoration"
-            width={550}
+            width={500}
             height={0}
             className=""
           />
@@ -127,7 +127,7 @@ export default function KeyPointsIntroSection() {
         </motion.div>
         {/* line 2 */}
         <motion.div
-          className="absolute left-120 top-120"
+          className="absolute left-120 z-1 top-120"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -143,7 +143,7 @@ export default function KeyPointsIntroSection() {
         </motion.div>
         {/* 3rd card */}
         <motion.div
-          className="absolute left-160 top-140"
+          className="absolute z-10 left-160 top-140"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -152,7 +152,7 @@ export default function KeyPointsIntroSection() {
           <Image
             src="/Asset 16.svg"
             alt="Background Decoration"
-            width={450}
+            width={400}
             height={0}
             className=""
           />
