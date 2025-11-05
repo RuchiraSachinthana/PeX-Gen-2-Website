@@ -71,7 +71,7 @@ export default function HomeNavbar() {
   );
 
   return (
-    <nav className="w-full mt-7 flex justify-end mb-4 sm:mb-6">
+    <nav className="w-full mt-7 max-w-6xl flex justify-end mb-4 sm:mb-6">
       <div className="flex items-center h-11 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg px-3 sm:px-5">
         <div className="flex items-center space-x-3 sm:space-x-6">
           {/* Page Selector Dropdown */}

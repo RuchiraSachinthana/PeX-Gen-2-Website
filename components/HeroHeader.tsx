@@ -7,7 +7,7 @@ import InlineLanguageButton from "./InlineLanguageButton";
 
 export default function HeroHeader() {
   return (
-    <div className="flex items-center max-w-5xl justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
+    <div className="flex items-center max-w-7xl justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
       {/* Logo */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
@@ -20,7 +20,7 @@ export default function HeroHeader() {
           alt="PEX Logo"
           width={140}
           height={72}
-          className="h-10 w-auto sm:h-11 ml-10"
+          className="h-10 w-auto sm:h-11"
           priority
         />
       </motion.div>
