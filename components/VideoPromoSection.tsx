@@ -17,7 +17,7 @@ export default function VideoPromoSection() {
       }}
       className="w-full pt-20 pb-40  relative overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto relative   z-10">
+      <div className="max-w-6xl mx-auto relative   z-10">
         <div className=" flex gap-2 justify-between ">
           {/* left section */}
           <motion.div
@@ -129,7 +129,7 @@ export default function VideoPromoSection() {
           </motion.div>
           {/* right section */}
           <motion.div
-            className="relative w-3/8 bg-emerald-400 rounded-3xl  p-6"
+            className="relative w-3/7 bg-emerald-400 rounded-3xl  p-6"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
