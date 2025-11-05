@@ -11,24 +11,51 @@ interface NavLinkProps {
   currentPath: string;
   children: ReactNode;
   layoutId: string;
+  disabled?: boolean;
 }
 
-const NavLink = ({ href, currentPath, children, layoutId }: NavLinkProps) => (
-  <Link
-    href={href}
-    className={`relative  text-sm text-white/80 hover:text-white transition-colors duration-200
-      ${currentPath === href ? "text-white" : ""}
-    `}
-  >
-    {children}
-    {currentPath === href && (
-      <motion.div
-        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
-        layoutId={layoutId}
-      />
-    )}
-  </Link>
-);
+const NavLink = ({
+  href,
+  currentPath,
+  children,
+  layoutId,
+  disabled = false,
+}: NavLinkProps) => {
+  const content = (
+    <>
+      {children}
+      {currentPath === href && (
+        <motion.div
+          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
+          layoutId={layoutId}
+        />
+      )}
+    </>
+  );
+
+  if (disabled) {
+    return (
+      <span
+        className={`relative text-sm text-white/80 transition-colors duration-200 ${
+          currentPath === href ? "text-white" : ""
+        }`}
+      >
+        {content}
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className={`relative text-sm text-white/80 hover:text-white transition-colors duration-200 ${
+        currentPath === href ? "text-white" : ""
+      }`}
+    >
+      {content}
+    </Link>
+  );
+};
 
 export default function HomeNavbar() {
   const { t } = useTranslation();
@@ -47,13 +74,13 @@ export default function HomeNavbar() {
 
   const allPages = useMemo(
     () => [
-      { key: "home", label: String(t("pexFood")), href: "/" },
+      { key: "home", label: String(t("PEX Food")), href: "/" },
       {
         key: "pexQuality",
-        label: String(t("pexQuality")),
+        label: String(t("PEX Quality")),
         href: "/pex-quality",
       },
-      { key: "pexGen", label: String(t("pexGen")), href: "/pex-gen" },
+      { key: "pexGen", label: String(t("PEX Gen")), href: "/pex-gen" },
     ],
     [t]
   );
@@ -130,6 +157,7 @@ export default function HomeNavbar() {
                 href={item.href}
                 currentPath={pathname}
                 layoutId="underline-home"
+                disabled={true}
               >
                 {String(item.label)}
               </NavLink>
