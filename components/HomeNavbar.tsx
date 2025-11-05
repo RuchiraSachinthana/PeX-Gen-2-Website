@@ -11,24 +11,51 @@ interface NavLinkProps {
   currentPath: string;
   children: ReactNode;
   layoutId: string;
+  disabled?: boolean;
 }
 
-const NavLink = ({ href, currentPath, children, layoutId }: NavLinkProps) => (
-  <Link
-    href={href}
-    className={`relative  text-sm text-white/80 hover:text-white transition-colors duration-200
-      ${currentPath === href ? "text-white" : ""}
-    `}
-  >
-    {children}
-    {currentPath === href && (
-      <motion.div
-        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
-        layoutId={layoutId}
-      />
-    )}
-  </Link>
-);
+const NavLink = ({
+  href,
+  currentPath,
+  children,
+  layoutId,
+  disabled = false,
+}: NavLinkProps) => {
+  const content = (
+    <>
+      {children}
+      {currentPath === href && (
+        <motion.div
+          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
+          layoutId={layoutId}
+        />
+      )}
+    </>
+  );
+
+  if (disabled) {
+    return (
+      <span
+        className={`relative text-sm text-white/80 transition-colors duration-200 ${
+          currentPath === href ? "text-white" : ""
+        }`}
+      >
+        {content}
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className={`relative text-sm text-white/80 hover:text-white transition-colors duration-200 ${
+        currentPath === href ? "text-white" : ""
+      }`}
+    >
+      {content}
+    </Link>
+  );
+};
 
 export default function HomeNavbar() {
   const { t } = useTranslation();
@@ -47,13 +74,13 @@ export default function HomeNavbar() {
 
   const allPages = useMemo(
     () => [
-      { key: "home", label: String(t("pexFood")), href: "/" },
+      { key: "home", label: String(t("PEX Food")), href: "/" },
       {
         key: "pexQuality",
-        label: String(t("pexQuality")),
+        label: String(t("PEX Quality")),
         href: "/pex-quality",
       },
-      { key: "pexGen", label: String(t("pexGen")), href: "/pex-gen" },
+      { key: "pexGen", label: String(t("PEX Gen")), href: "/pex-gen" },
     ],
     [t]
   );
@@ -72,7 +99,7 @@ export default function HomeNavbar() {
 
   return (
     <nav className="w-full mt-7 max-w-6xl flex justify-end mb-4 sm:mb-6">
-      <div className="flex items-center h-11 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg px-3 sm:px-5">
+      <div className="flex items-center h-11  rounded-full border border-[#04afbc] shadow-lg px-3 sm:px-5">
         <div className="flex items-center space-x-3 sm:space-x-6">
           {/* Page Selector Dropdown */}
           <div
@@ -80,7 +107,7 @@ export default function HomeNavbar() {
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="relative  text-sm text-white/80 hover:text-white transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5 cursor-pointer">
+            <button className="relative  text-sm  hover:text-white transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5 cursor-pointer">
               {String(currentPageName)}
               <motion.svg
                 className="w-4 h-4 ml-1.5"
@@ -106,13 +133,13 @@ export default function HomeNavbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full right-0 mt-2 w-48 bg-white/5 backdrop-blur-sm rounded-md shadow-lg py-1 z-50 border border-white/20 overflow-hidden"
+                  className="absolute top-full right-0 mt-2 w-48 bg-[#9bd4aa] text-[#0e685b]  rounded-md  py-1 z-50  overflow-hidden"
                 >
                   {dropdownItems.map((item) => (
                     <Link
                       key={item.key}
                       href={item.href}
-                      className="block px-4 py-2 text-xs text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200"
+                      className="block px-4 py-2 text-xs text-[#0e685b]  hover:bg-yellow-400 transition-all duration-200"
                     >
                       {String(item.label)}
                     </Link>
@@ -130,6 +157,7 @@ export default function HomeNavbar() {
                 href={item.href}
                 currentPath={pathname}
                 layoutId="underline-home"
+                disabled={true}
               >
                 {String(item.label)}
               </NavLink>

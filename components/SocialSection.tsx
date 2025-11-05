@@ -144,7 +144,7 @@ export default function SocialSection() {
               {/* Rocket */}
               {/* --- WRAPPED IN MOTION --- */}
               <motion.div
-                className="absolute top-[-18] right-[16]"
+                className="absolute top-[-30] right-[-20]"
                 initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
@@ -168,13 +168,13 @@ export default function SocialSection() {
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 <div>
-                  <p className="text-yellow-400 text-secondary text-xl ">
+                  <p className="text-yellow-400 text-secondary text-2xl ">
                     {String(t("socialSection.partnerSection.title1"))}
                   </p>
-                  <p className="text-yellow-400 text-secondary text-xl ">
+                  <p className="text-yellow-400 text-secondary text-2xl ">
                     {String(t("socialSection.partnerSection.title2"))}
                   </p>
-                  <p className="text-yellow-400 text-secondary text-xl ">
+                  <p className="text-yellow-400 text-secondary text-2xl ">
                     {String(t("socialSection.partnerSection.title3"))}
                   </p>
                   <p className="text-white text-sm mt-4">
@@ -183,11 +183,11 @@ export default function SocialSection() {
                 </div>
 
                 <motion.button // --- CONVERTED ---
-                  className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
+                  className="bg-yellow-400 px-4 mt-2 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
                   whileHover={{ scale: 1.05 }} // --- ADDED ---
                   whileTap={{ scale: 0.95 }} // --- ADDED ---
                 >
-                  <div className="flex justify-between text-sm items-center gap-1">
+                  <div className="flex justify-between text-md items-center gap-1">
                     {String(
                       t("socialSection.partnerSection.linkedinButton.platform")
                     )}
@@ -208,14 +208,14 @@ export default function SocialSection() {
 
                 {/* --- WRAPPED AVATARS --- */}
                 <motion.div
-                  className="flex gap-2 mt-2"
+                  className="flex gap-2 mt-4"
                   variants={avatarContainerVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
                   <motion.div // --- ADDED ---
-                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden"
                     variants={avatarItemVariants} // --- ADDED ---
                   >
                     <Image
@@ -227,7 +227,7 @@ export default function SocialSection() {
                     />
                   </motion.div>
                   <motion.div // --- ADDED ---
-                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden"
                     variants={avatarItemVariants} // --- ADDED ---
                   >
                     <Image
@@ -239,7 +239,7 @@ export default function SocialSection() {
                     />
                   </motion.div>
                   <motion.div // --- ADDED ---
-                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden"
                     variants={avatarItemVariants} // --- ADDED ---
                   >
                     <Image
@@ -251,7 +251,7 @@ export default function SocialSection() {
                     />
                   </motion.div>
                   <motion.div // --- ADDED ---
-                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden"
                     variants={avatarItemVariants} // --- ADDED ---
                   >
                     <Image
@@ -263,7 +263,7 @@ export default function SocialSection() {
                     />
                   </motion.div>
                   <motion.div // --- ADDED ---
-                    className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
+                    className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden"
                     variants={avatarItemVariants} // --- ADDED ---
                   >
                     <Image

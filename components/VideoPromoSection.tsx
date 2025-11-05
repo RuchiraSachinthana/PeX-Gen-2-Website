@@ -17,7 +17,7 @@ export default function VideoPromoSection() {
       }}
       className="w-full pt-20 pb-40  relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto relative   z-10">
+      <div className="max-w-7xl mx-auto relative   z-10">
         <div className=" flex gap-2 justify-between ">
           {/* left section */}
           <motion.div
@@ -52,7 +52,7 @@ export default function VideoPromoSection() {
               />
 
               <motion.div
-                className="text-2xl left-5 top-3 absolute text-yellow-400"
+                className="text-3xl left-10 top-8 absolute text-yellow-400"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -62,7 +62,7 @@ export default function VideoPromoSection() {
                 <p>Latest Updates</p>
               </motion.div>
               <motion.div
-                className="flex absolute justify-between gap-2 items-baseline left-5 top-26"
+                className="flex absolute justify-between gap-2 items-baseline left-10 top-30"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -92,11 +92,11 @@ export default function VideoPromoSection() {
                   height={0}
                   src="/Asset 26.svg"
                   alt="PEx Software Video Thumbnail"
-                  className="absolute left-80 top-15"
+                  className="absolute left-95 top-15"
                 />
               </motion.div>
               <motion.div
-                className="text-2xl left-85 top-23 absolute text-yellow-400"
+                className="text-3xl left-105 top-30 absolute text-yellow-400"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -106,7 +106,7 @@ export default function VideoPromoSection() {
                 <p>Demo</p>
               </motion.div>
               <motion.div
-                className="flex absolute w-full gap-3 items-baseline left-85 top-43"
+                className="flex absolute w-full gap-3 items-baseline left-105 top-50"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -129,7 +129,7 @@ export default function VideoPromoSection() {
           </motion.div>
           {/* right section */}
           <motion.div
-            className="relative w-3/7 bg-emerald-400 rounded-3xl  p-6"
+            className="relative w-3/8 bg-emerald-400 rounded-3xl  p-6"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

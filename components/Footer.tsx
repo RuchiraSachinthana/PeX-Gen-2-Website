@@ -38,7 +38,7 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
         {/* Left Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-20">
           {/* Contact Info */}
