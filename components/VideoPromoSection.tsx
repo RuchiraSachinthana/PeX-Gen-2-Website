@@ -129,7 +129,7 @@ export default function VideoPromoSection() {
           </motion.div>
           {/* right section */}
           <motion.div
-            className="relative w-3/7 bg-emerald-400 rounded-3xl  p-4 shadow-2xl "
+            className="relative w-3/7 bg-emerald-400 rounded-3xl p-4 shadow-2xl "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -138,7 +138,7 @@ export default function VideoPromoSection() {
           >
             <iframe
               className=" top-0 left-0 w-full h-full rounded-2xl "
-              src={"https://www.youtube.com/embed/dQw4w9WgXcQ"}
+              src={"https://www.youtube.com/embed/Xpk67YzOn5w"}
               title={"PEx Software Productivity Video"}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -146,16 +146,8 @@ export default function VideoPromoSection() {
             ></iframe>{" "}
             {/* Absolute frame around the video */}
             <div
-              className="absolute inset-0 rounded-3xl pointer-events-none"
-              style={{
-                border: "5px solid transparent",
-                background:
-                  "linear-gradient(90deg, #cde9c9, #10b981) border-box",
-                WebkitMask:
-                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                WebkitMaskComposite: "xor",
-                maskComposite: "exclude",
-              }}
+              className="absolute inset-0 rounded-3xl mb-10 pointer-events-none"
+              
             ></div>
           </motion.div>
         </div>
