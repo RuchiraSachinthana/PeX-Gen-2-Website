@@ -86,25 +86,25 @@ const BusinessImprovementSlider: FC = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <ReusableShape
-            width={300}
-            height={350}
+            width={250}
+            height={300}
             color="#0e685b"
             radius={28}
-            cutoutWidth={100}
-            cutoutHeight={100}
+            cutoutWidth={75}
+            cutoutHeight={75}
             cutoutBgColor="#ffffff"
             cutoutPosition="top-right"
-            cutoutRadius={18}
+            cutoutRadius={10}
             className="relative flex items-center justify-start"
           >
             {/* Rocket */}
-            <div className="absolute top-[-30] right-[-20]">
+            <div className="absolute top-[-7] right-3">
               <Image
                 src="/Asset 5.svg"
                 alt="Rocket icon"
                 width={0}
                 height={0}
-                className="w-22 h-22"
+                className="w-17 h-17"
               />
             </div>
 
@@ -120,16 +120,14 @@ const BusinessImprovementSlider: FC = () => {
                 <p className="text-white text-secondary text-2xl ">
                   {String(t("socialSection.partnerSection.title3"))}
                 </p>
-                <p className="text-white text-md mt-6">
+                <p className="text-white text-sm mt-6">
                   {String(t("socialSection.partnerSection.followUs"))}
                 </p>
               </div>
 
               <button className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer">
-                <div className="flex justify-between text-md items-center gap-1">
-                  {String(
-                    t("socialSection.partnerSection.linkedinButton.platform")
-                  )}
+                <div className="flex justify-between text-sm items-center gap-2">
+                 Linkedin
                   <span className="font-semibold">
                     {String(
                       t(
@@ -145,7 +143,7 @@ const BusinessImprovementSlider: FC = () => {
                 </div>
               </button>
 
-              <div className="flex gap-2">
+              <div className="flex mt-2 gap-1">
                 <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                   <Image
                     src="/avatar.jpg"
@@ -209,11 +207,11 @@ const BusinessImprovementSlider: FC = () => {
               backgroundImage: "url('/image_navigator_background.webp')",
             }}
           >
-            <div className="absolute left-22 top-10 border-[#00EEFF] border-2 w-165 h-75 rounded-xl"></div>
+            <div className="absolute left-25 top-10 border-[#00EEFF] border-2 w-175 h-75 rounded-xl"></div>
 
             {/* Yellow Button - Top Absolute - Animated */}
             <motion.button
-              className="bg-yellow-400 absolute top-[-20] left-45 px-6 py-2 rounded-full shadow-lg hover:bg-yellow-500 z-10 cursor-pointer"
+              className="bg-yellow-400 absolute top-[-20] text-xl left-45 px-6 py-2 rounded-full shadow-lg hover:bg-yellow-500 z-10 cursor-pointer"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}

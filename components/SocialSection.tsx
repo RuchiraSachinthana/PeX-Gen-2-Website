@@ -38,7 +38,7 @@ export default function SocialSection() {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-    const scrollAmount = 320;
+    const scrollAmount = 250;
     scrollRef.current.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
@@ -56,8 +56,8 @@ export default function SocialSection() {
       />
 
       {/* Content with relative positioning to stay above the background layer */}
-      <div className="relative z-10">
-        <div className="flex flex-col lg:flex-row items-end relative justify-center">
+      <div className="relative z-10 w-full">
+        <div className="flex flex-col  lg:flex-row items-end  justify-center">
           {/* Carousel */}
           <motion.div
             className="flex items-center relative gap-4"
@@ -77,7 +77,7 @@ export default function SocialSection() {
               {" "}
               {String(t("socialSection.title"))}
             </motion.div>
-            
+
             <motion.button // --- CONVERTED ---
               onClick={() => scroll("left")}
               className="p-3 rounded-full hover:bg-emerald-50"
@@ -89,7 +89,7 @@ export default function SocialSection() {
 
             <div
               ref={scrollRef}
-              className="flex overflow-x-auto gap-4  scroll-smooth no-scrollbar w-[800px] lg:w-[900px]"
+              className="flex overflow-x-auto gap-4  scroll-smooth no-scrollbar w-[600px] lg:w-[700px]"
             >
               {posts.map((post, index) => (
                 <motion.div
@@ -130,8 +130,8 @@ export default function SocialSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <ReusableShape
-              width={300}
-              height={350}
+              width={255}
+              height={280}
               color="#0e685b"
               radius={28}
               cutoutWidth={100}
@@ -144,7 +144,7 @@ export default function SocialSection() {
               {/* Rocket */}
               {/* --- WRAPPED IN MOTION --- */}
               <motion.div
-                className="absolute top-[-30] right-[-20]"
+                className="absolute top-0 right-2"
                 initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
@@ -155,26 +155,26 @@ export default function SocialSection() {
                   alt="Rocket icon"
                   width={0}
                   height={0}
-                  className="w-19 h-19"
+                  className="w-16 h-16"
                 />
               </motion.div>
 
               {/* Content wrapper - left aligned */}
               <motion.div // --- WRAPPED CONTENT ---
-                className="flex flex-col items-start  gap-1 text-left"
+                className="flex flex-col items-start max-w-4xl gap-2 text-left"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 <div>
-                  <p className="text-yellow-400 text-secondary text-2xl ">
+                  <p className="text-yellow-300 text-secondary text-xl ">
                     {String(t("socialSection.partnerSection.title1"))}
                   </p>
-                  <p className="text-yellow-400 text-secondary text-2xl ">
+                  <p className="text-yellow-300 text-secondary text-xl ">
                     {String(t("socialSection.partnerSection.title2"))}
                   </p>
-                  <p className="text-yellow-400 text-secondary text-2xl ">
+                  <p className="text-yellow-300 text-secondary text-xl ">
                     {String(t("socialSection.partnerSection.title3"))}
                   </p>
                   <p className="text-white text-sm mt-4">
@@ -183,11 +183,11 @@ export default function SocialSection() {
                 </div>
 
                 <motion.button // --- CONVERTED ---
-                  className="bg-yellow-400 px-4 mt-2 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
+                  className="bg-yellow-400 px-2 mt-2 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
                   whileHover={{ scale: 1.05 }} // --- ADDED ---
                   whileTap={{ scale: 0.95 }} // --- ADDED ---
                 >
-                  <div className="flex justify-between text-md items-center gap-1">
+                  <div className="flex justify-between text-sm px-2 items-center gap-2">
                     {String(
                       t("socialSection.partnerSection.linkedinButton.platform")
                     )}
@@ -208,7 +208,7 @@ export default function SocialSection() {
 
                 {/* --- WRAPPED AVATARS --- */}
                 <motion.div
-                  className="flex gap-2 mt-4"
+                  className="flex gap-1 mt-5"
                   variants={avatarContainerVariants}
                   initial="hidden"
                   whileInView="visible"

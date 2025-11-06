@@ -38,7 +38,7 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
         {/* Left Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-20">
           {/* Contact Info */}
@@ -205,14 +205,14 @@ export default function Footer() {
 
         {/* Right Section - Contact Form */}
         <motion.div
-          className="bg-emerald-950/60 backdrop-blur-md px-10 py-8 rounded-4xl shadow-lg w-full max-w-md ml-auto"
+          className="bg-emerald-950/60 backdrop-blur-md px-10 py-4 rounded-4xl shadow-lg w-full max-w-md ml-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <form className="space-y-4">
-            <div className="flex items-center gap-2">
+          <form className="space-y-2">
+            <div className="flex items-center gap-1">
               <label className="text-white text-sm w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.company"))}
               </label>
@@ -221,7 +221,7 @@ export default function Footer() {
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <label className="text-white text-sm w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.name"))}
               </label>
@@ -230,7 +230,7 @@ export default function Footer() {
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <label className="text-white text-sm w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.email"))}
               </label>
@@ -239,7 +239,7 @@ export default function Footer() {
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <label className="text-white text-sm w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.country"))}
               </label>
@@ -279,7 +279,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <label className="text-white text-sm w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.phone"))}
               </label>

@@ -44,7 +44,7 @@ export default function InlineLanguageButton() {
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1.5  mt-8 bg-white/10 text-white px-2.5 py-1.5 rounded-full backdrop-blur-md border border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer"
+          className="flex items-center gap-1.5  bg-white/10 text-white px-2.5 py-1.5 rounded-full backdrop-blur-md border border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer"
         >
           <span className="text-xs ">{currentLang?.name}</span>
           <motion.svg
