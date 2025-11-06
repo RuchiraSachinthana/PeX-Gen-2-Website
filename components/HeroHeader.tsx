@@ -44,11 +44,12 @@ export default function HeroHeader() {
         className="flex-1 flex items-center justify-end h-11"
       >
         <div className="flex gap-4 items-center">
-          <Home
-            className="text-white cursor-pointer"
-            size={30}
+          <button
             onClick={() => router.push("/")}
-          />
+            className="flex items-center gap-1.5 bg-white/10 text-white px-3 py-1 rounded-full hover:scale-110 backdrop-blur-md border border-[#04afbc] hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer"
+          >
+            <Home size={15} />
+          </button>
           <HomeNavbar />
           <InlineLanguageButton />
         </div>
