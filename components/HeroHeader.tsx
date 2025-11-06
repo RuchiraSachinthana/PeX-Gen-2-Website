@@ -21,9 +21,9 @@ export default function HeroHeader() {
         <Image
           src="/logo.webp"
           alt="PEX Logo"
-          width={140}
-          height={72}
-          className="h-10 w-auto sm:h-11"
+          width={180}
+          height={93}
+          className="h-12 w-auto sm:h-14"
           priority
         />
       </motion.div>
