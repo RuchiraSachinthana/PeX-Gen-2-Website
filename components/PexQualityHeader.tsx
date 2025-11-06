@@ -17,7 +17,7 @@ export default function PexQualityHeader() {
       />
 
       {/* Container for Logo, Navbar, and Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto ">
+      <div className="relative z-10 w-full max-w-6xl mx-auto ">
         {/* Top Row: Logo, Language Selector, and Navbar */}
         <HeroHeader />
 

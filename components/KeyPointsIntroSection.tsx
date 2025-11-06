@@ -44,14 +44,14 @@ export default function KeyPointsIntroSection() {
             height={0}
             className=""
           />
-          <div className="absolute top-10 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
             <div className="text-2xl font-semibold">
               <p>Documentation</p>
               <p>Overload</p>
             </div>
           </div>
-          <div className="absolute top-35 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-35 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
             <div className="text-2xl">
               <p>Paper-heavy,</p>
@@ -101,21 +101,21 @@ export default function KeyPointsIntroSection() {
             height={0}
             className=""
           />
-          <div className="absolute top-7 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
             <div className="text-2xl font-semibold">
               <p>Lack of</p>
               <p>Strategic value</p>
             </div>
           </div>
-          <div className="absolute top-30 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-33 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
             <div className="text-2xl">
               <p>ISO seen as a &quot;tick-box&quot; exercise,</p>
               <p>disconnected from business goals</p>
             </div>
           </div>
-          <div className="absolute top-70 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-75 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
             <div className="text-2xl">
               <p>Includes management tools</p>
@@ -156,14 +156,14 @@ export default function KeyPointsIntroSection() {
             height={0}
             className=""
           />
-          <div className="absolute top-7 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
             <div className="text-2xl font-semibold">
               <p>Time consuming</p>
               <p>to maintain</p>
             </div>
           </div>
-          <div className="absolute top-30 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-33 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
             <div className="text-2xl">
               <p>Manual documentation,</p>
@@ -171,7 +171,7 @@ export default function KeyPointsIntroSection() {
               <p>last-minute scrambling</p>
             </div>
           </div>
-          <div className="absolute top-85 left-10 text-left text-lg justify-center leading-8">
+          <div className="absolute top-95 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
             <div className="text-2xl">
               <p>Removes inproductive</p>

@@ -19,7 +19,7 @@ export default function CaseStudiesShowcase() {
         <div>
           <div className="flex flex-row justify-between gap-6 items-end">
             <motion.div
-              className="absolute top-0 text-[#0e685b] text-3xl left-110"
+              className="absolute top-0 text-[#0e685b] text-4xl left-110"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -89,8 +89,8 @@ export default function CaseStudiesShowcase() {
               />
               <div className="absolute top-30 left-20">
                 <p className="text-4xl text-yellow-400">90%</p>
-                <p>document</p>
-                <p>reduction</p>
+                <p className="text-2xl">document</p>
+                <p className="text-2xl">reduction</p>
               </div>
             </motion.div>
             {/* center card */}
@@ -108,21 +108,21 @@ export default function CaseStudiesShowcase() {
                 alt="Background Decoration"
               />
               <div className="absolute top-20 left-8">
-                <div className="mb-10 text-center text-2xl">
+                <div className="mb-10 ml-10 text-left text-2xl">
                   <p>Can a small</p>
                   <p>company get</p>
                   <p>ISO 9001</p>
                   <p>certification?</p>
                 </div>
                 <div className="flex flex-row justify-between align-middle items-center gap-4">
-                  <p className="text-sm">CASE STUDY</p>
+                  <p className="text-sm text-yellow-400">CASE STUDY</p>
                   <motion.button
-                    className="bg-yellow-500 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                    className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <div className="flex">
-                      Read More &nbsp;{" "}
+                      Read More &nbsp;
                       <ArrowRight className="w-5 h-5 text-black" />
                     </div>
                   </motion.button>
@@ -138,20 +138,20 @@ export default function CaseStudiesShowcase() {
               transition={{ duration: 0.7, delay: 0.7 }}
             >
               <Image
-                width={420}
+                width={440}
                 height={0}
                 src="/Asset 20.svg"
                 alt="Background Decoration"
               />
-              <div className="mb-10 absolute top-4 left-12 text-left text-2xl">
+              <div className="mb-10 absolute top-7 left-12 text-left text-2xl">
                 <p>How PEx solution</p>
                 <p>saved 1.6 million</p>
                 <p>in the first quarter</p>
               </div>
-              <div className="flex absolute top-35 left-15 flex-row justify-between items-center gap-4">
-                <p className="text-sm">CASE STUDY</p>
+              <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
+                <p className="text-sm text-yellow-400">CASE STUDY</p>
                 <motion.button
-                  className="bg-yellow-500 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                  className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

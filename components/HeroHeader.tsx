@@ -1,11 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Home } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import HomeNavbar from "./HomeNavbar";
 import InlineLanguageButton from "./InlineLanguageButton";
 
 export default function HeroHeader() {
+  const router = useRouter();
   return (
     <div className="flex items-center max-w-7xl justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
       {/* Logo */}
@@ -31,9 +34,7 @@ export default function HeroHeader() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className="shrink-0 flex items-center h-11"
-      >
-        
-      </motion.div>
+      ></motion.div>
 
       {/* Navbar */}
       <motion.div
@@ -42,9 +43,15 @@ export default function HeroHeader() {
         transition={{ duration: 0.6 }}
         className="flex-1 flex items-center justify-end h-11"
       >
-    <div className="flex gap-4 "><HomeNavbar />
-        <InlineLanguageButton /></div>
-        
+        <div className="flex gap-4 items-center">
+          <Home
+            className="text-white cursor-pointer"
+            size={30}
+            onClick={() => router.push("/")}
+          />
+          <HomeNavbar />
+          <InlineLanguageButton />
+        </div>
       </motion.div>
     </div>
   );
