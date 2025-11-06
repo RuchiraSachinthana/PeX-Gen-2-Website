@@ -56,7 +56,7 @@ export const ExperienceStatsSection: FC = () => {
                     viewport={{ once: true }} // ADDED
                     transition={{ delay: 0.6, duration: 0.5 }}
                   >
-                    {stats.years.value}
+                   <p className="text-yellow-400">{stats.years.value}</p> 
                   </motion.div>
                   <div className="text-2xl text-white uppercase tracking-wide">
                     {stats.years.labelLine1}
@@ -72,7 +72,7 @@ export const ExperienceStatsSection: FC = () => {
                     viewport={{ once: true }} // ADDED
                     transition={{ delay: 0.7, duration: 0.5 }}
                   >
-                    {stats.clients.value}
+                     <p className="text-yellow-400">{stats.clients.value}</p>
                   </motion.div>
                   <div className="text-2xl text-white uppercase tracking-wide">
                     {stats.clients.label}

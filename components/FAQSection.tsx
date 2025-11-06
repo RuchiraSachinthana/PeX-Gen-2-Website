@@ -43,7 +43,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         className="flex w-full max-w-full sm:max-w-4xl mx-auto items-center justify-between rounded-full bg-teal-800 pl-0 pr-2 sm:pr-3 py-2 sm:py-5 text-left text-white cursor-pointer"
         aria-expanded={isOpen}
       >
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center relative space-x-3">
           <div className="flex h-17 w-17 absolute  items-center justify-center rounded-full bg-yellow-400 text-teal-900">
             <span className="text-xl">{item.id.replace("q", "Q")}</span>
           </div>
@@ -84,16 +84,18 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <div className="w-full mx-auto h-full px-4 sm:px-6 py-10 lg:px-8 relative z-10 bg-[#d7ecbe]">
-      <motion.h2
-        className="mb-8 text-3xl  text-teal-900 max-w-full sm:max-w-2xl text-center"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        {String(t("faqSection.title"))}
-      </motion.h2>
+    <div className="w-full mx-auto h-full px-4 relative sm:px-6 py-10 lg:px-8 z-10 bg-[#d7ecbe]">
+      <div className="max-w-4xl mx-auto">
+        <motion.h2
+          className="mb-8 text-3xl text-left text-teal-900"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {String(t("faqSection.title"))}
+        </motion.h2>
+      </div>
       <div>
         {faqData.map((item, index) => (
           <AccordionItem

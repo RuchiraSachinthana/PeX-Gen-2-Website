@@ -108,13 +108,13 @@ export default function CaseStudiesShowcase() {
                 alt="Background Decoration"
               />
               <div className="absolute top-20 left-8">
-                <div className="mb-10 ml-10 text-left text-2xl">
+                <div className="mb-16 ml-7 text-left text-3xl">
                   <p>Can a small</p>
                   <p>company get</p>
                   <p>ISO 9001</p>
                   <p>certification?</p>
                 </div>
-                <div className="flex flex-row justify-between align-middle items-center gap-4">
+                <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                   <p className="text-sm text-yellow-400">CASE STUDY</p>
                   <motion.button
                     className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"

@@ -46,7 +46,7 @@ export default function HeroHeader() {
         <div className="flex gap-4 items-center">
           <button
             onClick={() => router.push("/")}
-            className="flex items-center gap-1.5 bg-white/10 text-white px-3 py-1 rounded-full hover:scale-110 backdrop-blur-md border border-[#04afbc] hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer"
+            className="flex items-center gap-1.5 bg-white/10  text-white px-2.5 py-3 rounded-full hover:scale-110 hover:border-yellow-400 backdrop-blur-md border border-[#04afbc] hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer"
           >
             <Home size={15} />
           </button>
