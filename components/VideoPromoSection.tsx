@@ -34,8 +34,8 @@ export default function VideoPromoSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p>Watch video how PEx Software™</p>
-              <p>Can help your business</p>
-              <p>Improve productivity</p>
+              <p>Can automate ISO compliance</p>
+              <p> management</p>
             </motion.h2>
             <motion.div
               className="flex relative"

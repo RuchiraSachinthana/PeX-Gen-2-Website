@@ -50,7 +50,7 @@ export const translations = {
         linkedinButton: "Linkedin",
         followers: "followers"
       },
-      topButton: "How PEx Software™ can improve business process",
+      topButton: "How PEx Software™ can improve your QMS",
       readMoreButton: "Read More",
       slides: [
         {

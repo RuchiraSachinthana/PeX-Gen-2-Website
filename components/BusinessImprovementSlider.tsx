@@ -35,17 +35,6 @@ const BusinessImprovementSlider: FC = () => {
       )
     : [];
 
-  // Auto-slide effect
-  useEffect(() => {
-    if (slides.length === 0) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 3000); // Change slide every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [slides.length]);
-
   const handlePrevious = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
@@ -127,7 +116,7 @@ const BusinessImprovementSlider: FC = () => {
 
               <button className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer">
                 <div className="flex justify-between text-sm items-center gap-2">
-                 Linkedin
+                  Linkedin
                   <span className="font-semibold">
                     {String(
                       t(
@@ -269,7 +258,7 @@ const BusinessImprovementSlider: FC = () => {
             {/* Left Arrow - Fixed at left side - Animated */}
             <motion.button
               onClick={handlePrevious}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
+              className="absolute left-4 top-1/2  -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
               style={{ backgroundColor: "#0e685b" }}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -279,13 +268,13 @@ const BusinessImprovementSlider: FC = () => {
               whileTap={{ scale: 0.9 }}
               // --- END ---
             >
-              <ChevronLeft className="w-8 h-8 text-white" />
+              <ChevronLeft className="w-8 h-8 hover:text-yellow-400 text-white" />
             </motion.button>
 
             {/* Right Arrow - Fixed at right side - Animated */}
             <motion.button
               onClick={handleNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
+              className="absolute right-4 top-1/2  -translate-y-1/2 rounded-full p-4 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
               style={{ backgroundColor: "#0e685b" }}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -295,7 +284,7 @@ const BusinessImprovementSlider: FC = () => {
               whileTap={{ scale: 0.9 }}
               // --- END ---
             >
-              <ChevronRight className="w-8 h-8 text-white" />
+              <ChevronRight className="w-8 h-8 hover:text-yellow-400 text-white" />
             </motion.button>
 
             {/* Navigation Dots - Fixed at bottom - Animated */}

@@ -174,8 +174,8 @@ export default function KeyPointsIntroSection() {
           <div className="absolute top-95 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
             <div className="text-2xl">
-              <p>Removes inproductive</p>
-              <p>documentation word</p>
+              <p>Removes unproductive</p>
+              <p>documentation work</p>
               <p>and waste activities</p>
             </div>
           </div>
