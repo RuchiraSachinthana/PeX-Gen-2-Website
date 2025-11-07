@@ -17,8 +17,8 @@ export default function LinkedInFollowSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="absolute top-5 left-6 w-full z-10 pointer-events-none">
-            <h4 className="text-left text-md  sm:text2xl lg:text-2xl text-yellow-400 drop-shadow-lg mt-6">
+          <div className="absolute top-0 left-6 w-full z-10 pointer-events-none">
+            <h4 className="text-left text-3xl   text-yellow-400 drop-shadow-lg mt-6">
               {String(t("linkedInFollowSection.title"))}
             </h4>
           </div>
@@ -29,8 +29,10 @@ export default function LinkedInFollowSection() {
             height={200}
             className="w-full h-auto"
           />
-          <div className="absolute bottom-6 left-6 flex gap-4 z-20">
-            <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+         
+          <div className="absolute bottom-6 left-60 flex gap-2 z-20">
+            <div className="w-12 h-12 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
+              
               <Image
                 src="/avatar.jpg"
                 alt="Avatar 1"
@@ -39,6 +41,7 @@ export default function LinkedInFollowSection() {
                 className="w-full h-full object-cover"
               />
             </div>
+            <div className="absolute top-5 left-[-120]">FOLLOW US</div>
             <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
               <Image
                 src="/avatar.jpg"
@@ -76,8 +79,9 @@ export default function LinkedInFollowSection() {
               />
             </div>
           </div>
-          <button className="absolute bottom-6 right-6  bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-full shadow-lg z-20 cursor-pointer">
-            {String(t("linkedInFollowSection.buttonText"))}
+          <button className="absolute bottom-6 right-10  bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-full shadow-lg z-20 cursor-pointer">
+            Linkedin <span className="font-semibold">&nbsp;1000+</span>
+            &nbsp;followers
           </button>
         </motion.div>
       </div>

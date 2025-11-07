@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 963.25 376.22">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Nexa-Light, 'Nexa Light';
+        font-size: 27.18px;
+        font-weight: 300;
+      }
+
+      .cls-2 {
+        fill: #0e685b;
+      }
+
+      .cls-3 {
+        fill: #ffd420;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <path class="cls-2" d="M926.7,171.86h-274.67c-28.81,0-52.16-22.5-52.16-50.26V51.57c0-19.45-16.36-35.22-36.55-35.22H95.08v71.25c-.56,5.27-4.73,9.38-10.15,10.13H11.77v240.73c0,20.85,17.54,37.75,39.18,37.75h875.75c20.18,0,36.55-15.77,36.55-35.22v-133.92c0-19.45-16.36-35.22-36.55-35.22Z"/>
+    <rect class="cls-3" x="0" y="0" width="77.88" height="71.43" rx="22.37" ry="22.37"/>
+    <text class="cls-1" transform="translate(25 43.23)"><tspan x="0" y="0">02</tspan></text>
+  </g>
+</svg>

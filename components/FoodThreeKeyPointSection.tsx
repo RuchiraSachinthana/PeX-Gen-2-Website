@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"; // Import motion
 import Image from "next/image";
 
-export default function KeyPointsIntroSection() {
+export default function FoodThreeKeyPointsIntroSection() {
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
     <div className="w-full bg-white pt-30 pb-190 relative overflow-hidden">
@@ -19,7 +19,7 @@ export default function KeyPointsIntroSection() {
             <p>you need to consider</p>
             <p>PEx Software™</p>
             <p>as a solution for</p>
-            <p>your business</p>
+            <p>food safety</p>
             <Image
               src="/Asset 17.svg"
               alt="Background Decoration"
@@ -38,7 +38,7 @@ export default function KeyPointsIntroSection() {
           transition={{ duration: 0.7, delay: 0.4 }}
         >
           <Image
-            src="/Asset 12.svg"
+            src="/Asset 46.svg"
             alt="Background Decoration"
             width={700}
             height={0}
@@ -47,26 +47,26 @@ export default function KeyPointsIntroSection() {
           <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
             <div className="text-2xl font-semibold">
+              <p>Heavy</p>
               <p>Documentation</p>
-              <p>Overload</p>
             </div>
           </div>
-          <div className="absolute top-35 left-12 text-left text-lg justify-center leading-8">
+          <div className="absolute top-40 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
             <div className="text-2xl">
-              <p>Paper-heavy,</p>
-              <p>time-consuming,</p>
-              <p>error-prone</p>
-              <p>compliance records</p>
+              <p>Staff overwhelmed</p>
+              <p>with HACCP/</p>
+              <p>ISO 22000</p>
+              <p>paperword</p>
             </div>
           </div>
-          <div className="absolute top-35 left-95 text-left text-lg justify-center leading-8">
+          <div className="absolute top-40 left-80 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
             <div className="text-2xl">
-              <p>Automated and</p>
-              <p>Ai powered paperless</p>
-              <p>workflows to</p>
-              <p>manage compliance</p>
+              <p>Automated processes</p>
+              <p>reduce paper documentation</p>
+              <p>by 90%</p>
+             
             </div>
           </div>
         </motion.div>
@@ -95,7 +95,7 @@ export default function KeyPointsIntroSection() {
           transition={{ duration: 0.7, delay: 0.2 }} // Delay resets as it's a new trigger
         >
           <Image
-            src="/Asset 14.svg"
+            src="/Asset 44.svg"
             alt="Background Decoration"
             width={500}
             height={0}
@@ -104,24 +104,23 @@ export default function KeyPointsIntroSection() {
           <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
             <div className="text-2xl font-semibold">
-              <p>Lack of</p>
-              <p>Strategic value</p>
+              <p>Manual</p>
+              <p>Monitoring</p>
             </div>
           </div>
-          <div className="absolute top-33 left-12 text-left text-lg justify-center leading-8">
+          <div className="absolute top-35 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
             <div className="text-2xl">
-              <p>ISO seen as a &quot;tick-box&quot; exercise,</p>
-              <p>disconnected from business goals</p>
+              <p>Temperature checks and logs</p>
+              <p>done by hand are prone to errors</p>
             </div>
           </div>
-          <div className="absolute top-75 left-12 text-left text-lg justify-center leading-8">
+          <div className="absolute top-80 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
             <div className="text-2xl">
-              <p>Includes management tools</p>
-              <p>for CEO&apos;s for planning and</p>
-              <p>monitoring strategic direction</p>
-              <p>of business</p>
+              <p>IOT devices capture and</p>
+              <p>record data in real time</p>
+              
             </div>
           </div>
         </motion.div>
@@ -150,33 +149,33 @@ export default function KeyPointsIntroSection() {
           transition={{ duration: 0.7, delay: 0.2 }} // Delay resets as it's a new trigger
         >
           <Image
-            src="/Asset 16.svg"
+            src="/Asset 45.svg"
             alt="Background Decoration"
             width={400}
             height={0}
             className=""
           />
-          <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
+          <div className="absolute top-12 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
             <div className="text-2xl font-semibold">
-              <p>Time consuming</p>
-              <p>to maintain</p>
+              <p>Compliance</p>
+              <p>Burden</p>
             </div>
           </div>
-          <div className="absolute top-33 left-12 text-left text-lg justify-center leading-8">
+          <div className="absolute top-38 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
             <div className="text-2xl">
-              <p>Manual documentation,</p>
-              <p>missing records,</p>
-              <p>last-minute scrambling</p>
+              <p>Audits and inspection cause</p>
+              <p>stress and extra workload</p>
+            
             </div>
           </div>
-          <div className="absolute top-95 left-12 text-left text-lg justify-center leading-8">
+          <div className="absolute top-75 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
             <div className="text-2xl">
-              <p>Removes unproductive</p>
-              <p>documentation work</p>
-              <p>and waste activities</p>
+              <p>AI dashboards provide</p>
+              <p>instant compliance visibility</p>
+              <p>and audit-ready reports</p>
             </div>
           </div>
         </motion.div>

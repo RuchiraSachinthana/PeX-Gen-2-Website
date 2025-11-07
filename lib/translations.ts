@@ -50,7 +50,7 @@ export const translations = {
         linkedinButton: "Linkedin",
         followers: "followers"
       },
-      topButton: "How PEx Software™ can improve business process",
+      topButton: "How PEx Software™ can improve your QMS",
       readMoreButton: "Read More",
       slides: [
         {
@@ -87,10 +87,10 @@ export const translations = {
       alt: "LinkedIn Follow Section",
       buttonText: "LinkedIn 100+ followers"
     },
-    pexFoodHeaderDesc1: `Safe Food`,
+    pexFoodHeaderDesc1: `Safe Food,`,
     pexFoodHeaderDesc2: `Smarter System`,
-    pexFoodHeaderDesc3: `PEx Software™`,
-    pexFoodHeaderDesc4: `for FOOD SAFETY`,
+    pexFoodHeaderDesc3: `PEx Software™ for`,
+    pexFoodHeaderDesc4: `FOOD SAFETY`,
 
     pexFoodAdditionalContent: `PEx Software™ for Food Safety transforms HACCP & ISO 22000 compliance into a seamless, AI-powered system — reducing paper documentation by 90%, automating monitoring, and giving hotel & restaurant owners peace of mind that every meal served is safe, consistent, and brand-protecting.`,
 

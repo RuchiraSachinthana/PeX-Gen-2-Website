@@ -5,19 +5,12 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useTranslation } from "../context/LanguageProvider";
 
-export default function VideoPromoSection() {
+export default function FoodVideoPromoSection() {
   const { t } = useTranslation();
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
-    <div
-      style={{
-        backgroundImage: 'url("/Asset 24.webp")',
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="w-full pt-20 pb-20  relative overflow-hidden"
-    >
-      <div className="max-w-6xl mx-auto relative   z-10">
+    <div className="w-full pt-20 pb-30 bg-white relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative    z-10">
         <div className=" flex gap-2 justify-between ">
           {/* left section */}
           <motion.div
@@ -27,15 +20,17 @@ export default function VideoPromoSection() {
             transition={{ duration: 0.7 }}
           >
             <motion.h2
-              className="text-4xl  text-[#0e685b] text-left mb-5"
+              className="text-4xl  text-[#0e685b] text-left mb-5 leading-13"
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <p>Watch video how PEx Software™</p>
-              <p>Can automate ISO compliance</p>
-              <p> management</p>
+              <p>PEx Software™</p>
+              <p>for Food safety Management</p>
+              <p>where compliance meets</p>
+              <p>confidence, and kitchens</p>
+              <p>run smarter.</p>
             </motion.h2>
             <motion.div
               className="flex relative"
@@ -49,10 +44,11 @@ export default function VideoPromoSection() {
                 height={0}
                 src="/Asset 25.svg"
                 alt="PEx Software Video Thumbnail"
+                className="absolute left-0 top-0"
               />
 
               <motion.div
-                className="text-2xl left-6 top-6 absolute text-yellow-400"
+                className="text-2xl left-6 top-5 absolute text-yellow-400"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -92,11 +88,11 @@ export default function VideoPromoSection() {
                   height={0}
                   src="/Asset 26.svg"
                   alt="PEx Software Video Thumbnail"
-                  className="absolute left-80 top-15"
+                  className="absolute left-80 top-[-10]"
                 />
               </motion.div>
               <motion.div
-                className="text-2xl left-85 top-25 absolute text-yellow-400"
+                className="text-2xl left-85 top-6 absolute text-yellow-400"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -106,7 +102,7 @@ export default function VideoPromoSection() {
                 <p>Demo</p>
               </motion.div>
               <motion.div
-                className="flex absolute w-full gap-3 items-baseline left-85 top-43"
+                className="flex absolute w-full gap-3 items-baseline left-85 top-26"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -129,7 +125,7 @@ export default function VideoPromoSection() {
           </motion.div>
           {/* right section */}
           <motion.div
-            className="relative w-3/7 h-90 bg-emerald-400 rounded-3xl p-4 shadow-2xl "
+            className="relative w-3/7  h-100 bg-emerald-400 rounded-3xl p-4 shadow-2xl "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -139,16 +135,14 @@ export default function VideoPromoSection() {
             <iframe
               className=" top-0 left-0 w-full h-full rounded-2xl "
               src={"https://www.youtube.com/embed/Xpk67YzOn5w"}
+             
               title={"PEx Software Productivity Video"}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               loading="lazy"
             ></iframe>{" "}
             {/* Absolute frame around the video */}
-            <div
-              className="absolute inset-0 rounded-3xl mb-10 pointer-events-none"
-              
-            ></div>
+            <div className="absolute inset-0 rounded-3xl mb-10 pointer-events-none"></div>
           </motion.div>
         </div>
       </div>
