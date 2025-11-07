@@ -49,7 +49,7 @@ export default function PexQualityHeader() {
               {String(t("pexQualityHeader.desc3"))}
             </motion.p>
             <motion.p
-              className="text-xl sm:text-2xl md:text-3xl lg:text-3xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+              className="text-2xl   mb-2 sm:mb-3 text-[#41c4b7] drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
