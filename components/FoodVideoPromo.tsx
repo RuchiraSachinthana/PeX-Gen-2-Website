@@ -9,8 +9,8 @@ export default function FoodVideoPromoSection() {
   const { t } = useTranslation();
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
-    <div className="w-full pt-20 pb-40 bg-white relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative mb-20   z-10">
+    <div className="w-full pt-20 pb-30 bg-white relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative    z-10">
         <div className=" flex gap-2 justify-between ">
           {/* left section */}
           <motion.div
@@ -125,7 +125,7 @@ export default function FoodVideoPromoSection() {
           </motion.div>
           {/* right section */}
           <motion.div
-            className="relative w-3/7 bg-emerald-400 rounded-3xl p-4 shadow-2xl "
+            className="relative w-3/7  h-100 bg-emerald-400 rounded-3xl p-4 shadow-2xl "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -135,6 +135,7 @@ export default function FoodVideoPromoSection() {
             <iframe
               className=" top-0 left-0 w-full h-full rounded-2xl "
               src={"https://www.youtube.com/embed/Xpk67YzOn5w"}
+             
               title={"PEx Software Productivity Video"}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
