@@ -13,9 +13,9 @@ export const translations = {
       desc1: "REDUCE YOUR ISO 9001",
       desc2: "PAPER DOCUMENTATION",
       desc3: "BY 90%",
-      desc4: "PEx Software™ for",
+      desc4: "PEx Software™ for Quality management",
      
-      desc5: "Quality management"
+      desc5: ""
     },
 
     // QualityVideoSection Component translations
