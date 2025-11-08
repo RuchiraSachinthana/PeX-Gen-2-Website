@@ -50,7 +50,7 @@ export default function QualityVideoSection() {
       },
     ],
     video: {
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      url: "https://www.youtube.com/embed/9RjT0j7LtrY?si=run9EXq-vCZfCc6a",
       title: t("qualityVideoSection.video.title"),
     },
   };
@@ -93,7 +93,7 @@ export default function QualityVideoSection() {
           <div className="absolute inset-0 rounded-full blur-3xl opacity-40 scale-[1.2] bg-[radial-gradient(circle,rgba(254,240,138,0.8)_0%,rgba(254,240,138,0)_70%)]"></div>
 
           {/* Video Wrapper */}
-          <div className="relative w-4/5 rounded-3xl shadow-2xl p-4 z-10 bg-[linear-gradient(to_bottom_right,#0e685b,#10b981,#0e685b)]">
+          <div className="relative w-4/5 rounded-3xl shadow-2xl p-2 z-10 bg-[linear-gradient(to_bottom_right,#0e685b,#10b981,#0e685b)]">
             <div className="relative w-full aspect-video">
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-2xl"

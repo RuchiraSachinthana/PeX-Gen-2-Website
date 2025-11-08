@@ -125,7 +125,7 @@ export default function FoodVideoPromoSection() {
           </motion.div>
           {/* right section */}
           <motion.div
-            className="relative w-3/7  h-100 bg-emerald-400 rounded-3xl p-4 shadow-2xl "
+            className="relative w-3/7  h-100 bg-emerald-400 rounded-3xl p-2 shadow-2xl "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -134,9 +134,8 @@ export default function FoodVideoPromoSection() {
           >
             <iframe
               className=" top-0 left-0 w-full h-full rounded-2xl "
-              src={"https://www.youtube.com/embed/Xpk67YzOn5w"}
-             
-              title={"PEx Software Productivity Video"}
+              src={"https://www.youtube.com/embed/9RjT0j7LtrY?si=run9EXq-vCZfCc6a"}
+              title={"YouTube video player"}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               loading="lazy"

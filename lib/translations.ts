@@ -20,7 +20,7 @@ export const translations = {
 
     // QualityVideoSection Component translations
         qualityVideoSection: {
-          title: ["Watch video how PEx Software™", "Can help your business", "Improve productivity"],
+          title: ["Watch video how PEx Software™", "can help your business", "Improve productivity"],
           cards: {
             updates: {
               title: "Get the latest updates",
