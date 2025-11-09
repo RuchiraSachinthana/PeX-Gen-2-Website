@@ -41,7 +41,7 @@ export default function LinkedInFollowSection() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute top-5 left-[-120]">FOLLOW US</div>
+            <div className="absolute top-5 left-[-120] text-white">FOLLOW US</div>
             <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
               <Image
                 src="/avatar.jpg"

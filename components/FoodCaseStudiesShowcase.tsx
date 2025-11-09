@@ -91,8 +91,8 @@ export default function FoodCaseStudiesShowcase() {
               />
               <div className="absolute top-30 left-20">
                 <p className="text-4xl text-yellow-400">90%</p>
-                <p className="text-2xl">document</p>
-                <p className="text-2xl">reduction</p>
+                <p className="text-2xl text-white">document</p>
+                <p className="text-2xl text-white">reduction</p>
               </div>
             </motion.div>
             {/* center card */}
@@ -110,7 +110,7 @@ export default function FoodCaseStudiesShowcase() {
                 alt="Background Decoration"
               />
               <div className="absolute top-20 left-8">
-                <div className="mb-16 ml-7 text-left text-3xl">
+                <div className="mb-16 ml-7 text-left text-3xl text-white">
                   <p>Can a small</p>
                   <p>company get</p>
                   <p>ISO 9001</p>
@@ -145,7 +145,7 @@ export default function FoodCaseStudiesShowcase() {
                 src="/Asset 43.svg"
                 alt="Background Decoration"
               />
-              <div className="mb-10 absolute top-7 left-12 text-left text-2xl">
+              <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
                 <p>How PEx solution</p>
                 <p>saved 1.6 million</p>
                 <p>in the first quarter</p>

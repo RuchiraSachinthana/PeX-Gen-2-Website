@@ -26,7 +26,7 @@ const NavLink = ({
       {children}
       {currentPath === href && (
         <motion.div
-          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
+          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-yellow-400"
           layoutId={layoutId}
         />
       )}
@@ -36,7 +36,7 @@ const NavLink = ({
   if (disabled) {
     return (
       <span
-        className={`relative text-sm text-white/80 transition-colors duration-200 ${
+        className={`relative text-sm text-white transition-colors duration-200 ${
           currentPath === href ? "text-white" : ""
         }`}
       >
@@ -48,7 +48,7 @@ const NavLink = ({
   return (
     <Link
       href={href}
-      className={`relative text-sm text-white/80 hover:text-white transition-colors duration-200 ${
+      className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 ${
         currentPath === href ? "text-white" : ""
       }`}
     >
@@ -107,7 +107,7 @@ export default function HomeNavbar() {
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="relative  text-sm  hover:text-white transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5 cursor-pointer">
+            <button className="relative text-sm text-white hover:text-yellow-400 transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5 cursor-pointer">
               {String(currentPageName)}
               <motion.svg
                 className="w-4 h-4 ml-1.5"

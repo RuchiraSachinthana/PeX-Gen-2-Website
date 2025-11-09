@@ -46,14 +46,14 @@ export default function FoodThreeKeyPointsIntroSection() {
           />
           <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
-            <div className="text-2xl font-semibold">
+            <div className="text-2xl font-semibold text-white">
               <p>Heavy</p>
               <p>Documentation</p>
             </div>
           </div>
           <div className="absolute top-40 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Staff overwhelmed</p>
               <p>with HACCP/</p>
               <p>ISO 22000</p>
@@ -62,7 +62,7 @@ export default function FoodThreeKeyPointsIntroSection() {
           </div>
           <div className="absolute top-40 left-80 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Automated processes</p>
               <p>reduce paper documentation</p>
               <p>by 90%</p>
@@ -103,21 +103,21 @@ export default function FoodThreeKeyPointsIntroSection() {
           />
           <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
-            <div className="text-2xl font-semibold">
+            <div className="text-2xl font-semibold text-white">
               <p>Manual</p>
               <p>Monitoring</p>
             </div>
           </div>
           <div className="absolute top-35 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Temperature checks and logs</p>
               <p>done by hand are prone to errors</p>
             </div>
           </div>
           <div className="absolute top-80 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>IOT devices capture and</p>
               <p>record data in real time</p>
               
@@ -157,14 +157,14 @@ export default function FoodThreeKeyPointsIntroSection() {
           />
           <div className="absolute top-12 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
-            <div className="text-2xl font-semibold">
+            <div className="text-2xl font-semibold text-white">
               <p>Compliance</p>
               <p>Burden</p>
             </div>
           </div>
           <div className="absolute top-38 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Audits and inspection cause</p>
               <p>stress and extra workload</p>
             
@@ -172,7 +172,7 @@ export default function FoodThreeKeyPointsIntroSection() {
           </div>
           <div className="absolute top-75 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>AI dashboards provide</p>
               <p>instant compliance visibility</p>
               <p>and audit-ready reports</p>

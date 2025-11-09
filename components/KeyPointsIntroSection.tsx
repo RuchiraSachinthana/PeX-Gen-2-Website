@@ -46,14 +46,14 @@ export default function KeyPointsIntroSection() {
           />
           <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
-            <div className="text-2xl font-semibold">
+            <div className="text-2xl font-semibold text-white">
               <p>Documentation</p>
               <p>Overload</p>
             </div>
           </div>
           <div className="absolute top-35 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Paper-heavy,</p>
               <p>time-consuming,</p>
               <p>error-prone</p>
@@ -62,7 +62,7 @@ export default function KeyPointsIntroSection() {
           </div>
           <div className="absolute top-35 left-95 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Automated and</p>
               <p>Ai powered paperless</p>
               <p>workflows to</p>
@@ -103,21 +103,21 @@ export default function KeyPointsIntroSection() {
           />
           <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
-            <div className="text-2xl font-semibold">
+            <div className="text-2xl font-semibold text-white">
               <p>Lack of</p>
               <p>Strategic value</p>
             </div>
           </div>
           <div className="absolute top-33 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>ISO seen as a &quot;tick-box&quot; exercise,</p>
               <p>disconnected from business goals</p>
             </div>
           </div>
           <div className="absolute top-75 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Includes management tools</p>
               <p>for CEO&apos;s for planning and</p>
               <p>monitoring strategic direction</p>
@@ -158,14 +158,14 @@ export default function KeyPointsIntroSection() {
           />
           <div className="absolute top-10 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Pain Point</p>
-            <div className="text-2xl font-semibold">
+            <div className="text-2xl font-semibold text-white">
               <p>Time consuming</p>
               <p>to maintain</p>
             </div>
           </div>
           <div className="absolute top-33 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">Traditional Challenge</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Manual documentation,</p>
               <p>missing records,</p>
               <p>last-minute scrambling</p>
@@ -173,7 +173,7 @@ export default function KeyPointsIntroSection() {
           </div>
           <div className="absolute top-95 left-12 text-left text-lg justify-center leading-8">
             <p className="text-yellow-500 text-sm">How PEx Solves It</p>
-            <div className="text-2xl">
+            <div className="text-2xl text-white">
               <p>Removes unproductive</p>
               <p>documentation work</p>
               <p>and waste activities</p>
