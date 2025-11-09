@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslation } from "../context/LanguageProvider";
@@ -11,8 +13,8 @@ export default function SevenWaysBenefits() {
         {/* Header */}
         <div className="absolute left-0  top-[100] ">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-teal-800 mb-6">
-            <p>7 Ways how hospitality industry</p>
-            <p>can benefit by PEx Software™</p>
+            <span className="block">7 Ways how hospitality industry</span>
+            <span className="block">can benefit by PEx Software™</span>
           </h2>
         </div>
 
@@ -36,21 +38,21 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col top-3 items-left text-left">
-                  <h3 className="text-yellow-400 text-2xl font-semibold mb-3">
-                    <p>Safeguards Brand </p>
-                    <p>Reputation in the</p>
-                    <p>Social Media Era</p>
-                  </h3>
-                  <p className="text-white text-2xl">
-                    <p>In today&apos;s world, a single food</p>
-                    <p>safety lapse can go viral within</p>
-                    <p>minutes. PEX Software™</p>
-                    <p>ensures every process is</p>
-                    <p>monitored, documented, and</p>
-                    <p>verified—preventing hotels from</p>
-                    <p>reputational damage and</p>
-                    <p>giving owners peace of mind.</p>
-                  </p>
+                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                    <div>Safeguards Brand </div>
+                    <div>Reputation in the</div>
+                    <div>Social Media Era</div>
+                  </div>
+                  <div className="text-white text-2xl">
+                    <div>In today&apos;s world, a single food</div>
+                    <div>safety lapse can go viral within</div>
+                    <div>minutes. PEX Software™</div>
+                    <div>ensures every process is</div>
+                    <div>monitored, documented, and</div>
+                    <div>verified—preventing hotels from</div>
+                    <div>reputational damage and</div>
+                    <div>giving owners peace of mind.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,18 +76,18 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto"
                 />
                 <div className="absolute top-18 inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 absolute top-[-35] left-25 text-2xl font-semibold mb-3">
-                    <p>Reduces Paperwork by 90%</p>
-                  </h3>
-                  <p className="text-white text-2xl">
-                    <p>Traditional HACCP / ISO 22000</p>
-                    <p>systems demand heavy documentation.</p>
-                    <p>
+                  <div className="text-yellow-400 absolute top-[-35] left-25 text-2xl font-semibold mb-3">
+                    <div>Reduces Paperwork by 90%</div>
+                  </div>
+                  <div className="text-white text-2xl">
+                    <div>Traditional HACCP / ISO 22000</div>
+                    <div>systems demand heavy documentation.</div>
+                    <div>
                       PEX digitizes and automates compliance records, cutting
-                    </p>
-                    <p>paperwork by up to 90% and freeing staff to focus on</p>
-                    <p>service and guest experience.</p>
-                  </p>
+                    </div>
+                    <div>paperwork by up to 90% and freeing staff to focus on</div>
+                    <div>service and guest experience.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -108,19 +110,19 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute left-10 text-yellow-400 inset-0 p-6 z-10 flex flex-col justify-center items-right text-left">
-                  <h3 className="text-yellow-400 text-2xl ml-60 font-semibold mb-3">
-                    <p>Automates</p>
-                    <p>Monitoring</p>
-                    <p>with IoT Devices</p>
-                  </h3>
-                  <p className="text-white text-2xl">
-                    <p>Temperature checks, food traceability</p>
-                    <p>logs, and other critical control points are</p>
-                    <p>automatically captured through IoT</p>
-                    <p>sensors. This eliminates manual errors,</p>
-                    <p>ensures accuracy, and provides real-time</p>
-                    <p>visibility into food safety operations.</p>
-                  </p>
+                  <div className="text-yellow-400 text-2xl ml-60 font-semibold mb-3">
+                    <div>Automates</div>
+                    <div>Monitoring</div>
+                    <div>with IoT Devices</div>
+                  </div>
+                  <div className="text-white text-2xl">
+                    <div>Temperature checks, food traceability</div>
+                    <div>logs, and other critical control points are</div>
+                    <div>automatically captured through IoT</div>
+                    <div>sensors. This eliminates manual errors,</div>
+                    <div>ensures accuracy, and provides real-time</div>
+                    <div>visibility into food safety operations.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -143,17 +145,17 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-2xl font-semibold mb-3">
-                    <p>Empowers Chefs and Hygiene Managers</p>
-                  </h3>
-                  <p className="text-white text-2xl">
-                    <p>Instead of being burdened with compliance</p>
-                    <p>paperwork, chefs and hygiene managers can</p>
-                    <p>rely on visual dashboards and alerts.</p>
-                    <p>This allows them to focus on delivering safe,</p>
-                    <p>high-quality food while maintaining compliance</p>
-                    <p>effortlessly.</p>
-                  </p>
+                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                    <div>Empowers Chefs and Hygiene Managers</div>
+                  </div>
+                  <div className="text-white text-2xl">
+                    <div>Instead of being burdened with compliance</div>
+                    <div>paperwork, chefs and hygiene managers can</div>
+                    <div>rely on visual dashboards and alerts.</div>
+                    <div>This allows them to focus on delivering safe,</div>
+                    <div>high-quality food while maintaining compliance</div>
+                    <div>effortlessly.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,17 +178,17 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 left-5 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-2xl font-semibold mb-3">
-                    <p>Streamlines Audit Readiness</p>
-                  </h3>
-                  <p className="text-white text-2xl">
-                    <p>Preparing for audits is often</p>
-                    <p>stressful and time-consuming.</p>
-                    <p>With PEX, all compliance data is</p>
-                    <p>centralized, digital and instantly</p>
-                    <p>retrievable making audits smooth,</p>
-                    <p>transparent and stress-free.</p>
-                  </p>
+                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                    <div>Streamlines Audit Readiness</div>
+                  </div>
+                  <div className="text-white text-2xl">
+                    <div>Preparing for audits is often</div>
+                    <div>stressful and time-consuming.</div>
+                    <div>With PEX, all compliance data is</div>
+                    <div>centralized, digital and instantly</div>
+                    <div>retrievable making audits smooth,</div>
+                    <div>transparent and stress-free.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -209,19 +211,19 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 left-10 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-2xl ml-10 font-semibold mb-3">
-                    <p>Aligns Food Safety with</p>
-                    <p>Business Strategy</p>
-                  </h3>
-                  <p className="text-white text-2xl">
-                    <p>PEX transforms food safety from a</p>
-                    <p>&quot;compliance burden&quot; into a strategic</p>
-                    <p>advantage. By integrating ISO 22000 into</p>
-                    <p>daily operations, hotel owners can</p>
-                    <p>demonstrate excellence, win guest trust, and</p>
-                    <p>differentiate their brand in a competitive</p>
-                    <p>marketplace.</p>
-                  </p>
+                  <div className="text-yellow-400 text-2xl ml-10 font-semibold mb-3">
+                    <div>Aligns Food Safety with</div>
+                    <div>Business Strategy</div>
+                  </div>
+                  <div className="text-white text-2xl">
+                    <div>PEX transforms food safety from a</div>
+                    <div>&quot;compliance burden&quot; into a strategic</div>
+                    <div>advantage. By integrating ISO 22000 into</div>
+                    <div>daily operations, hotel owners can</div>
+                    <div>demonstrate excellence, win guest trust, and</div>
+                    <div>differentiate their brand in a competitive</div>
+                    <div>marketplace.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -244,20 +246,20 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <h3 className="text-yellow-400 text-2xl font-semibold mb-3">
-                    <p>Drives Continuous</p>
-                    <p>Improvement</p>
-                  </h3>
-                  <p className="text-white text-2xl">
-                    <p>With AI insights and</p>
-                    <p>performance analytics, PEX</p>
-                    <p>helps hotels identify trends,</p>
-                    <p>predict risks, and implement</p>
-                    <p>proactive improvements. This</p>
-                    <p>ensures not just compliance,</p>
-                    <p>but a culture of excellence and</p>
-                    <p>innovation in food safety.</p>
-                  </p>
+                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                    <div>Drives Continuous</div>
+                    <div>Improvement</div>
+                  </div>
+                  <div className="text-white text-2xl">
+                    <div>With AI insights and</div>
+                    <div>performance analytics, PEX</div>
+                    <div>helps hotels identify trends,</div>
+                    <div>predict risks, and implement</div>
+                    <div>proactive improvements. This</div>
+                    <div>ensures not just compliance,</div>
+                    <div>but a culture of excellence and</div>
+                    <div>innovation in food safety.</div>
+                  </div>
                 </div>
               </div>
             </div>
