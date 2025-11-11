@@ -12,8 +12,6 @@ type FAQItem = {
   answer: string;
 };
 
-// Main FAQ Section Component
-
 // Reusable Accordion Item Component
 interface AccordionItemProps {
   item: FAQItem;
@@ -31,44 +29,85 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   const isEven = index % 2 === 0;
 
   return (
-    <motion.div
-      className="mb-4"
-      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-    >
-      {/* Question Header (Button) */}
-
-      <button
-        onClick={onToggle}
-        className="flex w-full max-w-full sm:max-w-4xl mx-auto items-center justify-between rounded-full bg-teal-800 pl-0 pr-2 sm:pr-3 py-2 sm:py-5 text-left text-white cursor-pointer"
-        aria-expanded={isOpen}
+    <>
+      {/* Desktop Version */}
+      <motion.div
+        className="hidden lg:block mb-4"
+        initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
       >
-        <div className="flex items-center relative space-x-3">
-          <div className="flex h-17 w-17 absolute  items-center justify-center rounded-full bg-yellow-400 text-teal-900">
-            <span className="text-xl">{item.id.replace("q", "Q")}</span>
+        {/* Question Header (Button) */}
+        <button
+          onClick={onToggle}
+          className="flex w-full max-w-full sm:max-w-4xl mx-auto items-center justify-between rounded-full bg-teal-800 pl-0 pr-2 sm:pr-3 py-2 sm:py-5 text-left text-white cursor-pointer"
+          aria-expanded={isOpen}
+        >
+          <div className="flex items-center relative space-x-3">
+            <div className="flex h-17 w-17 absolute items-center justify-center rounded-full bg-yellow-400 text-teal-900">
+              <span className="text-xl">{item.id.replace("q", "Q")}</span>
+            </div>
+            <span className="ml-20 text-xl">{item.question}</span>
           </div>
-          <span className="ml-20 text-xl">{item.question}</span>
-        </div>
-        <ChevronDown
-          className={`h-6 w-6 text-yellow-400 shrink-0 transform transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
+          <ChevronDown
+            className={`h-6 w-6 text-yellow-400 shrink-0 transform transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
-      {/* Answer Content (Animated) */}
-      <div
-        className={`overflow-hidden  transition-all duration-300  ease-in-out ${
-          isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className=" rounded-2xl  bg-white px-20 py-10 text-gray-700 shadow-md max-w-4xl mx-auto">
-          {item.answer}
+        {/* Answer Content (Animated) */}
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="rounded-2xl bg-white px-20 py-10 text-gray-700 shadow-md max-w-4xl mx-auto">
+            {item.answer}
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+
+      {/* Mobile Version */}
+      <motion.div
+        className="lg:hidden mb-3"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+      >
+        {/* Question Header (Button) - Mobile */}
+        <button
+          onClick={onToggle}
+          className="flex w-full items-center justify-between rounded-full bg-teal-800 pl-0 pr-2 py-2 text-left text-white cursor-pointer"
+          aria-expanded={isOpen}
+        >
+          <div className="flex items-center relative">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400 text-teal-900 font-bold flex-shrink-0">
+              <span className="text-xs">{item.id.replace("q", "Q")}</span>
+            </div>
+            <span className="ml-3 text-xs pr-1 leading-tight">{item.question}</span>
+          </div>
+          <ChevronDown
+            className={`h-4 w-4 text-yellow-400 shrink-0 transform transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {/* Answer Content (Animated) - Mobile */}
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="rounded-2xl bg-white px-4 py-4 mt-2 text-gray-700 text-xs shadow-md leading-relaxed">
+            {item.answer}
+          </div>
+        </div>
+      </motion.div>
+    </>
   );
 };
 
@@ -87,7 +126,8 @@ const FAQSection: React.FC = () => {
 
   return (
     <div className="w-full mx-auto h-full px-4 relative sm:px-6 py-10 lg:px-8 z-10 bg-[#d7ecbe]">
-      <div className="max-w-4xl mx-auto">
+      {/* Desktop Title */}
+      <div className="hidden lg:block max-w-4xl mx-auto">
         <motion.h2
           className="mb-8 text-3xl text-left text-teal-900"
           initial={{ opacity: 0, y: -20 }}
@@ -98,6 +138,20 @@ const FAQSection: React.FC = () => {
           {String(t("faqSection.title"))}
         </motion.h2>
       </div>
+
+      {/* Mobile Title */}
+      <div className="lg:hidden max-w-md mx-auto">
+        <motion.h2
+          className="mb-5 text-xl text-center font-semibold text-teal-900"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {String(t("faqSection.title"))}
+        </motion.h2>
+      </div>
+
       <div>
         {faqData.map((item, index) => (
           <AccordionItem

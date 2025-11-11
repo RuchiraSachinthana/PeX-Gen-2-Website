@@ -18,20 +18,8 @@ export default function PexFoodHeader() {
           }}
         />
 
-        {/* Dark Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50" />
-
-        {/* Animated Gradient Shapes */}
-        <motion.div
-          className="absolute top-10 right-10 w-48 h-48 md:w-72 md:h-72 bg-teal-400 rounded-full opacity-20 blur-3xl"
-          animate={{ x: [0, 30, 0], y: [0, 20, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-10 left-10 w-64 h-64 md:w-96 md:h-96 bg-cyan-400 rounded-full opacity-15 blur-3xl"
-          animate={{ x: [0, -30, 0], y: [0, -20, 0] }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
+       
+       
 
         {/* Container for Logo, Navbar, and Content */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
