@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
@@ -72,14 +73,18 @@ const PexGenManagementSection = () => {
   ];
 
   return (
-    <div className="w-full  items-center justify-center py-20">
+    <div className="w-full mb-[-170] pt-20  items-center justify-center ">
       <div className="max-w-7xl mx-auto">
         {/* Category Headers */}
         <div className="grid grid-cols-3 gap-4 mb-8">
-          {categories.map((category) => (
-            <div
+          {categories.map((category, index) => (
+            <motion.div
               key={category.id}
               className=" text-white z-10 flex items-center justify-center relative"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
             >
               <Image
                 src={category.svgPath}
@@ -88,33 +93,63 @@ const PexGenManagementSection = () => {
                 height={80}
                 className="w-full max-w-md h-auto object-contain"
               />
-              <div className="absolute text-2xl p-4 left-4 top-0 whitespace-pre-line font-bold text-left w-full leading-tight">
+              <motion.div
+                className="absolute text-2xl p-4 left-4 top-0 whitespace-pre-line font-bold text-left w-full leading-tight"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+              >
                 {category.title}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
 
         {/* Cards Grid - 3x4 Layout */}
         <div className="grid grid-cols-3 grid-rows-4 gap-6">
           {cards.map((card, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-[#d1ecb8]  rounded-3xl  min-h-[260px] relative"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 + index * 0.05 }}
             >
               <div className="absolute top-8 left-8 right-8">
-                <h4 className="text-2xl  font-extrabold text-black whitespace-pre-line mb-3">
+                <motion.h4
+                  className="text-2xl  font-extrabold text-black whitespace-pre-line mb-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.8 + index * 0.05 }}
+                >
                   {card.title}
-                </h4>
-                <p className="text-gray-700 font-semibold  text-md leading-relaxed whitespace-pre-line ">
+                </motion.h4>
+                <motion.p
+                  className="text-gray-700 font-semibold  text-md leading-relaxed whitespace-pre-line "
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.9 + index * 0.05 }}
+                >
                   {card.description}
-                </p>
+                </motion.p>
               </div>
 
-              <button className="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm flex items-center justify-center  absolute bottom-0 right-0 hover:bg-yellow-500 transition-colors">
+              <motion.button
+                className="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm flex items-center justify-center  absolute bottom-0 right-0 hover:bg-yellow-500 transition-colors"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.0 + index * 0.05 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Read more <ChevronDown className="w-7 h-7" />
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           ))}
         </div>
       </div>
