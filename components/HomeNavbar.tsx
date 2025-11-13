@@ -97,9 +97,17 @@ export default function HomeNavbar() {
     [allPages, pathname]
   );
 
+  const isBlogPage = pathname === "/blog";
+  const navbarBorderColor = isBlogPage
+    ? "border-green-600"
+    : "border-[#04afbc]";
+  const navbarBgColor = isBlogPage ? "bg-green-900/20" : "bg-white/10";
+
   return (
     <nav className="w-full mt-7 max-w-6xl flex justify-end mb-4 sm:mb-6">
-      <div className="flex items-center h-11  rounded-full border border-[#04afbc] shadow-lg px-3 sm:px-5">
+      <div
+        className={`flex items-center h-11 rounded-full border shadow-lg px-3 sm:px-5 ${navbarBorderColor} ${navbarBgColor}`}
+      >
         <div className="flex items-center space-x-3 sm:space-x-6">
           {/* Page Selector Dropdown */}
           <div
@@ -157,7 +165,7 @@ export default function HomeNavbar() {
                 href={item.href}
                 currentPath={pathname}
                 layoutId="underline-home"
-                disabled={true}
+                disabled={false}
               >
                 {String(item.label)}
               </NavLink>
