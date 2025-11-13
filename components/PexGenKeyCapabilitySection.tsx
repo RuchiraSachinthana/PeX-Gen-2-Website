@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 /**
@@ -10,7 +11,13 @@ export default function PexGenKeyCapabilitiesSection() {
     <section className="flex flex-col items-center bg-white justify-center mb-[-700] px-4">
       <div className="max-w-6xl items-center mx-auto w-full">
         {/* Main Title with underline */}
-        <div className="flex flex-col items-center mb-12">
+        <motion.div
+          className="flex flex-col items-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <h2 className="text-4xl text-center text-teal-700 mb-4">
             Key Capabilities
           </h2>
@@ -21,12 +28,18 @@ export default function PexGenKeyCapabilitiesSection() {
             height={20}
             className="w-60 h-auto"
           />
-        </div>
+        </motion.div>
 
         {/* Cards container with absolute positioning */}
         <div className="relative  max-w-6xl mx-auto h-[800px]">
           {/* Card 1 - Top Left */}
-          <div className="absolute top-[-700px] left-40 w-80">
+          <motion.div
+            className="absolute top-[-700px] left-40 w-80"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <div>
               <Image
                 src="/Asset 49.svg"
@@ -42,10 +55,16 @@ export default function PexGenKeyCapabilitiesSection() {
                 </h3>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2 - Top Right */}
-          <div className="absolute top-[-630px] right-45 w-80">
+          <motion.div
+            className="absolute top-[-630px] right-45 w-80"
+            initial={{ opacity: 0, x: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
             <div className="relative">
               <Image
                 src="/Asset 50.svg"
@@ -60,10 +79,16 @@ export default function PexGenKeyCapabilitiesSection() {
                 </h3>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 3 - Middle Left */}
-          <div className="absolute top-[-300px] left-30 transform -translate-y-1/2 w-100">
+          <motion.div
+            className="absolute top-[-300px] left-30 transform -translate-y-1/2 w-100"
+            initial={{ opacity: 0, x: -100, rotate: -5 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
             <div className="relative">
               <Image
                 src="/Asset 51.svg"
@@ -78,10 +103,16 @@ export default function PexGenKeyCapabilitiesSection() {
                 </h3>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 4 - Middle Right */}
-          <div className="absolute top-[-240] right-30 transform -translate-y-1/2 w-100">
+          <motion.div
+            className="absolute top-[-240] right-30 transform -translate-y-1/2 w-100"
+            initial={{ opacity: 0, x: 100, rotate: 5 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
             <div className="relative">
               <Image
                 src="/Asset 52.svg"
@@ -96,10 +127,16 @@ export default function PexGenKeyCapabilitiesSection() {
                 </h3>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 5 - Bottom Center */}
-          <div className="absolute top-[-110] left-1/2 transform -translate-x-1/2 w-90">
+          <motion.div
+            className="absolute top-[-110] left-1/2 transform -translate-x-1/2 w-90"
+            initial={{ opacity: 0, y: 100, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
             <div className="relative">
               <Image
                 src="/Asset 53.svg"
@@ -114,7 +151,7 @@ export default function PexGenKeyCapabilitiesSection() {
                 </h3>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
