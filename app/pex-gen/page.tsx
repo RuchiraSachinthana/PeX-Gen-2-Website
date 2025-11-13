@@ -1,11 +1,19 @@
 "use client";
+
+import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
+import Footer from "@/components/Footer";
 import PexGenComplianceSection from "@/components/PexGenComplianceSection";
 import PexGenExploreSection from "@/components/PexGenExploreSection";
 import PexGenHeader from "@/components/PexGenHeader";
 import PexGenKeyCapabilitiesSection from "@/components/PexGenKeyCapabilitySection";
 import PexGenManagementSection from "@/components/PexGenManagementSection";
+import PexGenPartners from "@/components/PexGenPartners";
+import PexGenPhilosopySection from "@/components/PexGenPhilosopySection";
+import PexGenTestamonialsSection from "@/components/PexGenTestamonialsSection";
 import PexGenVideoSection from "@/components/PexGenVideoSection";
+import PexGenWhoWeAreSection from "@/components/PexGenWhoWeAreSection";
 import PexGenWhyMattersSection from "@/components/PexGenWhyMattersSection";
+import SocialsSection from "@/components/SocialSection";
 import WhatIsPexSection from "@/components/WhatIsPexSection";
 
 export default function PexGenPage() {
@@ -19,15 +27,13 @@ export default function PexGenPage() {
       <PexGenWhyMattersSection />
       <PexGenExploreSection />
       <PexGenManagementSection />
-
-      {/* <VideoPromoSection />
-      <BusinessImprovementSlider />
+      <PexGenTestamonialsSection />
+      <PexGenPartners />
       <CaseStudiesShowcase />
-      <KeyPointsIntroSection />
-      <ExperienceStatsSection />
-      <FAQSection />
+      <PexGenWhoWeAreSection />
+      <PexGenPhilosopySection />
       <SocialsSection />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

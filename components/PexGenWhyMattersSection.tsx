@@ -1,30 +1,39 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function PexGenWhyMattersSection() {
   return (
     <div className="w-full py-10 mb-[-120] px-4">
       <div className="max-w-6xl justify-center items-center align-middle min-h-100 mx-auto">
         <div className="flex flex-wrap md:flex-nowrap justify-between max-w-5xl mx-auto gap-10 items-center">
-          
           {/* Left Yellow Box: As you provided */}
-          <div className="bg-yellow-300 border-1 rounded-3xl p-8 flex-1">
-            <h2 className="text-4xl  mb-4">
-              Why It Matters
-            </h2>
+          <motion.div
+            className="bg-yellow-300 border-1 rounded-3xl p-8 flex-1"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h2 className="text-4xl  mb-4">Why It Matters</h2>
             <p className="text-lg text-black">
               PEx Gen2&trade; turns ISO systems from a documentation <br />
               burden into a strategic asset—aligning compliance with <br />
               business goals, reducing audit stress.
             </p>
-          </div>
+          </motion.div>
 
           {/* Right Green Box: MODIFIED FOR ABSOLUTE POSITIONING */}
           {/* 1. Added 'relative' to the wrapper to act as a positioning container */}
-          <div className="relative rounded-2xl overflow-hidden">
+          <motion.div
+            className="relative rounded-2xl overflow-hidden"
+            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <Image
               src="/Asset 55.webp" // Your image source
               alt="Request demo for PEx Gen2" // Descriptive alt text
@@ -38,9 +47,6 @@ export default function PexGenWhyMattersSection() {
             {/* --- Overlay Content --- */}
             {/* 4. This 'div' sits on top of the image */}
             <div className="absolute inset-0  p-5">
-              
-             
-
               {/* Main Text */}
               <h3 className="text-yellow-400 text-4xl mt-10 ">Request demo</h3>
 
@@ -62,8 +68,7 @@ export default function PexGenWhyMattersSection() {
               </div>
             </div>
             {/* --- End Overlay Content --- */}
-            
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
