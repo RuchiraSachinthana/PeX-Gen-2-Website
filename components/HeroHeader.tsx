@@ -28,13 +28,13 @@ export default function HeroHeader() {
 
   const allPages = useMemo(
     () => [
-      { key: "home", label: String(t("PEX Food")), href: "/" },
+      { key: "home", label: String(t("navPexGen")), href: "/" },
+      { key: "pexFood", label: String(t("navPexFood")), href: "/pex-food" },
       {
         key: "pexQuality",
-        label: String(t("PEX Quality")),
+        label: String(t("navPexQuality")),
         href: "/pex-quality",
       },
-      { key: "pexGen", label: String(t("PEX Gen")), href: "/pex-gen" },
     ],
     [t]
   );
