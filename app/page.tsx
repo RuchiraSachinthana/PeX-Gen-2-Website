@@ -1,32 +1,39 @@
 "use client";
-import AdditionalContentSection from "@/components/AdditionalContentSection";
 
-import FAQSection from "@/components/FAQSection";
-import FoodCaseStudiesShowcase from "@/components/FoodCaseStudiesShowcase";
-import { FoodExperienceStatsSection } from "@/components/FoodExperienceStatsSection";
-import FoodThreeKeyPointsIntroSection from "@/components/FoodThreeKeyPointSection";
-import FoodVideoPromoSection from "@/components/FoodVideoPromo";
-
+import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
 import Footer from "@/components/Footer";
-import LinkedInFollowSection from "@/components/LinkedInFollowSection";
-import PexFoodHeader from "@/components/PexFoodHeader";
-import SevenWaysBenefits from "@/components/SevenWaysBenefits";
+import PexGenComplianceSection from "@/components/PexGenComplianceSection";
+import PexGenExploreSection from "@/components/PexGenExploreSection";
+import PexGenHeader from "@/components/PexGenHeader";
+import PexGenKeyCapabilitiesSection from "@/components/PexGenKeyCapabilitySection";
+import PexGenManagementSection from "@/components/PexGenManagementSection";
+import PexGenPartners from "@/components/PexGenPartners";
+import PexGenPhilosopySection from "@/components/PexGenPhilosopySection";
+import PexGenTestamonialsSection from "@/components/PexGenTestamonialsSection";
+import PexGenVideoSection from "@/components/PexGenVideoSection";
+import PexGenWhoWeAreSection from "@/components/PexGenWhoWeAreSection";
+import PexGenWhyMattersSection from "@/components/PexGenWhyMattersSection";
 import SocialsSection from "@/components/SocialSection";
+import WhatIsPexSection from "@/components/WhatIsPexSection";
 
 export default function HomePage() {
   return (
-    <>
-      <PexFoodHeader />
-      <AdditionalContentSection />
-      <FoodVideoPromoSection />
-      <SevenWaysBenefits />
-      <LinkedInFollowSection />
-      <FoodCaseStudiesShowcase />
-      <FoodThreeKeyPointsIntroSection />
-      <FoodExperienceStatsSection />
-      <FAQSection />
+    <div className="w-full min-h-screen bg-white">
+      <PexGenHeader />
+      <PexGenComplianceSection />
+      <PexGenVideoSection />
+      <WhatIsPexSection />
+      <PexGenKeyCapabilitiesSection />
+      <PexGenWhyMattersSection />
+      <PexGenExploreSection />
+      <PexGenManagementSection />
+      <PexGenTestamonialsSection />
+      <PexGenPartners />
+      <CaseStudiesShowcase />
+      <PexGenWhoWeAreSection />
+      <PexGenPhilosopySection />
       <SocialsSection />
       <Footer />
-    </>
+    </div>
   );
 }

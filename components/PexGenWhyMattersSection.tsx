@@ -11,7 +11,7 @@ export default function PexGenWhyMattersSection() {
         <div className="flex flex-wrap md:flex-nowrap justify-between max-w-5xl mx-auto gap-10 items-center">
           {/* Left Yellow Box: As you provided */}
           <motion.div
-            className="bg-yellow-300 border-1 rounded-3xl p-8 flex-1"
+            className="bg-yellow-300 rounded-3xl p-8 flex-1"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

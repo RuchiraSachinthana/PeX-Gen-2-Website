@@ -42,7 +42,7 @@ export default function PexGenKeyCapabilitiesSection() {
           >
             <div>
               <Image
-                src="/Asset 49.svg"
+                src="/Asset 48 (1).svg"
                 alt="Paperless documentation and audit-ready records"
                 width={300}
                 height={150}
@@ -67,7 +67,7 @@ export default function PexGenKeyCapabilitiesSection() {
           >
             <div className="relative">
               <Image
-                src="/Asset 50.svg"
+                src="/Asset 48 (2).svg"
                 alt="IoT integration for real-time monitoring"
                 width={300}
                 height={150}
@@ -91,7 +91,7 @@ export default function PexGenKeyCapabilitiesSection() {
           >
             <div className="relative">
               <Image
-                src="/Asset 51.svg"
+                src="/Asset 48 (3).svg"
                 alt="AI-powered risk detection and predictive alerts"
                 width={300}
                 height={150}
@@ -115,7 +115,7 @@ export default function PexGenKeyCapabilitiesSection() {
           >
             <div className="relative">
               <Image
-                src="/Asset 52.svg"
+                src="/Asset 48 (4).svg"
                 alt="KPI dashboards and corrective action workflows"
                 width={300}
                 height={150}
@@ -139,7 +139,7 @@ export default function PexGenKeyCapabilitiesSection() {
           >
             <div className="relative">
               <Image
-                src="/Asset 53.svg"
+                src="/Asset 48 (5).svg"
                 alt="Scalable for SMEs and large enterprises"
                 width={350}
                 height={150}
