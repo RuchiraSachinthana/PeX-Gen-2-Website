@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../context/LanguageProvider";
 
@@ -8,6 +9,7 @@ export default function InlineLanguageButton() {
   const { setLang, lang } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -38,13 +40,16 @@ export default function InlineLanguageButton() {
   ];
 
   const currentLang = languages.find((l) => l.code === lang);
+  const isBlogPage = pathname === "/blog";
+  const buttonBgColor = isBlogPage ? "bg-green-900/20" : "bg-white/10";
+  const buttonBorderColor = isBlogPage ? "border-green-600" : "border-white/30";
 
   return (
     <div className="relative inline-block">
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1.5  bg-white/10 text-white px-2.5 py-1.5 rounded-full backdrop-blur-md border border-white/30 hover:border-white/50 transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer"
+          className={`flex items-center gap-1.5 text-white px-2.5 py-1.5 rounded-full backdrop-blur-md border hover:border-yellow-400 transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer ${buttonBgColor} ${buttonBorderColor}`}
         >
           <span className="text-xs ">{currentLang?.name}</span>
           <motion.svg

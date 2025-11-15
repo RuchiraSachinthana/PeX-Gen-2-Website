@@ -8,7 +8,7 @@ export default function PexGenComplianceSection() {
       <div className="max-w-6xl bg-white">
         {/* Line 1: Heading */}
         <motion.h1
-          className="text-4xl  text-teal-700 mb-4"
+          className="text-4xl  text-teal-700 mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

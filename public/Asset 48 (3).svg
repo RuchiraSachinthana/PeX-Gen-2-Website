@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 457.03 240.02">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #fdd221;
+        stroke-width: 1.36px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        isolation: isolate;
+      }
+
+      .cls-4 {
+        fill: #fdd221;
+        font-family: NexaBold, NexaBold;
+        font-size: 30px;
+      }
+
+      .cls-5 {
+        fill: #0f685b;
+      }
+
+      .cls-2 {
+        mix-blend-mode: overlay;
+        stroke: url(#linear-gradient);
+        stroke-width: 1.83px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="25.46" y1="116.35" x2="424.24" y2="116.35" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d5eabc"/>
+      <stop offset=".34" stop-color="#03c2b9"/>
+      <stop offset=".64" stop-color="#d5eabc"/>
+      <stop offset=".95" stop-color="#00877a"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-3">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <rect class="cls-5" width="457.03" height="240.02" rx="35.54" ry="35.54"/>
+        <path class="cls-2" d="M352.44,106.77c-5.25-.75-9.3-4.89-9.84-10.19V24.92H61.8c-19.56,0-35.42,15.86-35.42,35.42v112.02c0,19.56,15.86,35.42,35.42,35.42h361.53v-101.01h-70.9Z"/>
+        <g>
+          <g id="Generative_Object" data-name="Generative Object">
+            <path class="cls-1" d="M365.26,36.37c2.24-.59,4.6,1.55,4.28,3.84-.27,1.89-4.56,4.96-6.08,6.94-9.92,12.92-.39,31.86,15.68,32.92,17.34,1.14,29.07-18.99,18.48-32.92-2.08-2.73-9.31-6.86-4.61-10.24s12.06,8.65,13.49,12.16c8.37,20.59-10.57,42.09-32.09,37.23s-29.28-31.49-13.43-46.82c.92-.89,3.1-2.79,4.28-3.1Z"/>
+          </g>
+          <text class="cls-4" transform="translate(366.41 67.16)"><tspan x="0" y="0">ai</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
