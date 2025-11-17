@@ -61,7 +61,7 @@ const BusinessImprovementSlider: FC = () => {
   const currentSlideData = slides[currentSlide] || slides[0];
 
   return (
-    <div className="py-10 text-gray-900" style={{ backgroundColor: "#ffffff" }}>
+    <div className="md:py-10 py-5 text-gray-900" style={{ backgroundColor: "#ffffff" }}>
       {/* Desktop Version */}
       <div className="hidden lg:block max-w-6xl mx-auto py-6 md:py-20 px-4">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-2">
@@ -326,7 +326,7 @@ const BusinessImprovementSlider: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="bg-yellow-400 px-6 py-2 rounded-full shadow-lg">
+            <div className="bg-yellow-400 relative top-2 z-10  px-4 py-1 rounded-full shadow-lg">
               <p className="text-xs  text-gray-900 whitespace-nowrap">
                 {String(t("businessImprovementSlider.topButton"))}
               </p>
@@ -335,17 +335,17 @@ const BusinessImprovementSlider: FC = () => {
 
           {/* Inner content card with gradient */}
           <div
-            className="relative rounded-3xl overflow-hidden shadow-lg"
+            className="relative rounded-2xl overflow-hidden shadow-lg"
             style={{
               background: "linear-gradient(135deg, #00a99d 0%, #0d7377 100%)",
-              minHeight: "220px",
+              minHeight: "180px",
             }}
           >
             {/* Cyan Border Box */}
-            <div className="absolute left-4 top-4 right-4 bottom-16 border-[#00EEFF] border-2 rounded-xl"></div>
+            <div className="absolute left-4 top-4 right-4 bottom-10 border-[#00EEFF] border-2 rounded-xl"></div>
 
             {/* Content */}
-            <div className="relative z-10 px-6 py-8 flex flex-col items-center justify-center min-h-[200px]">
+            <div className="relative z-10 px-6 py-6 text-xs flex flex-col items-center justify-center  ">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -355,10 +355,10 @@ const BusinessImprovementSlider: FC = () => {
                   transition={{ duration: 0.3 }}
                   className="text-center"
                 >
-                  <h3 className="text-yellow-400 text-lg font-bold mb-3">
+                  <h3 className="text-yellow-400 text-lg font-semibold ">
                     {currentSlideData.title}
                   </h3>
-                  <p className="text-white text-sm leading-relaxed">
+                  <p className="text-white text-xs px-4">
                     {currentSlideData.content}
                   </p>
                 </motion.div>
@@ -366,7 +366,7 @@ const BusinessImprovementSlider: FC = () => {
 
               {/* Read More Button */}
               <motion.button
-                className="absolute bottom-2 bg-[#04afbc] text-white px-3 py-2 rounded-full flex items-center gap-2 text-xs shadow-lg"
+                className="absolute top-25 bg-[#04afbc] text-white px-3 py-1.5 rounded-full flex items-center gap-2 text-xs shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -423,17 +423,17 @@ const BusinessImprovementSlider: FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-[#0e685b] rounded-3xl p-6 relative shadow-lg">
+          <div className="bg-[#0e685b] mx-6 rounded-3xl p-4 max-w-sm relative shadow-lg">
             {/* LinkedIn Icon Badge */}
             <div className="absolute top-0 right-0 bg-yellow-400 rounded-xl p-2 shadow-lg">
-              <div className="text-3xl font-bold text-[#0e685b]">in</div>
+              <div className="text-2xl font-bold text-[#0e685b]">in</div>
             </div>
 
             {/* Title */}
             <div className="mb-4 pr-8">
-              <h3 className="text-white text-md font-semibold leading-tight">
-                {String(t("socialSection.partnerSection.title1"))}{" "}
-               <br/> {String(t("socialSection.partnerSection.title2"))}{" "}
+              <h3 className="text-white text-md ">
+                {String(t("socialSection.partnerSection.title1"))} <br />{" "}
+                {String(t("socialSection.partnerSection.title2"))}{" "}
                 {String(t("socialSection.partnerSection.title3"))}
               </h3>
             </div>
@@ -447,7 +447,7 @@ const BusinessImprovementSlider: FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <div className="flex items-center gap-1 text-xs  text-gray-900">
+                  <div className="flex items-center gap-1 text-[8px]  text-gray-900">
                     <span>LinkedIn</span>
                     <span className="font-bold">
                       {String(
@@ -486,8 +486,8 @@ const BusinessImprovementSlider: FC = () => {
               </div>
 
               {/* Follow Us text */}
-              <div className="text-right absolute bottom-12 right-6">
-                <p className="text-white text-xs uppercase font-semibold">
+              <div className="text-right absolute bottom-10 right-6">
+                <p className="text-white text-[0.5rem] uppercase ">
                   {String(t("socialSection.partnerSection.followUs"))}
                 </p>
               </div>

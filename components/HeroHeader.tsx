@@ -53,8 +53,8 @@ export default function HeroHeader() {
     : "border-[#04afbc]";
   const homeButtonBgColor = isBlogPage ? "bg-green-900/20" : "bg-white/10";
   const mobileOverlayBg = isBlogPage
-    ? "bg-linear-to-br from-green-900/95 to-emerald-900/95"
-    : "bg-linear-to-br from-teal-900/95 to-cyan-900/95";
+    ? "bg-gradient-to-br from-green-900/95 to-emerald-900/95"
+    : "bg-gradient-to-br from-teal-900/95 to-cyan-900/95";
 
   return (
     <div className="flex items-center max-w-7xl  justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">

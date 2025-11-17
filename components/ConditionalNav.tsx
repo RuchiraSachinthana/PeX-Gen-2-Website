@@ -27,7 +27,7 @@ export default function ConditionalNav() {
           <div className="flex items-center h-11">
             <InlineLanguageButton />
           </div>
-          <div className="flexitems-center justify-end h-11">
+          <div className="flex items-center justify-end h-11">
             <HomeNavbar />
           </div>
         </div>
