@@ -40,6 +40,5 @@ export const metadata: Metadata = {
 };
 
 export default function PexQualityPage() {
-
   return <PexQualityPageClient />;
 }
