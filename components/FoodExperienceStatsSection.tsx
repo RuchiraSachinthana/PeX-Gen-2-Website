@@ -130,7 +130,7 @@ export const FoodExperienceStatsSection: FC = () => {
               transition={{ delay: 0.7, duration: 0.5 }}
             >
               <h3 className="text-3xl top-40 right-55 absolute text-teal-700 mb-2">
-                {demoCard.titleLines.map((line: string, index: number) => (
+   {demoCard.titleLines.map((line: string, index: number) => (
                   <Fragment key={index}>
                     {line}
                     <br />
