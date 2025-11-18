@@ -333,7 +333,7 @@ export default function SocialSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-1 text-[10px] font-medium text-gray-900">
+                <div className="flex items-center gap-1 text-[8px] font-medium text-gray-900">
                   <span>
                     {String(
                       t("socialSection.partnerSection.linkedinButton.platform")

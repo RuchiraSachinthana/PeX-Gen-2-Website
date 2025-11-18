@@ -316,11 +316,11 @@ export default function FoodCaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.button
-                className="absolute top-[-5px] right-[-5px] bg-teal-700 p-4  border-6 border-white rounded-xl"
+                className="absolute top-[-5px] right-[-5px] bg-yellow-400 p-4  border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ArrowRight className="w-5 h-5 text-yellow-400 -rotate-45" />
+                <ArrowRight className="w-5 h-5 text-black -rotate-45" />
               </motion.button>
 
               <div className="p-4">
@@ -352,11 +352,11 @@ export default function FoodCaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <motion.button
-                className="absolute top-[-5px] right-[-5px] p-4 bg- rounded-xl border-6 border-white rounded-xl"
+                className="absolute top-[-5px] right-[-5px] bg-yellow-400 p-4  border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ArrowRight className="w-5 h-5 text-yellow-400 -rotate-45" />
+                <ArrowRight className="w-5 h-5 text-black -rotate-45" />
               </motion.button>
 
               <div className="mt-4">
