@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const BlogMessageSection = () => {
   const containerVariants = {
@@ -30,23 +29,22 @@ const BlogMessageSection = () => {
     <div className="relative w-full flex bg-white items-center py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto  ">
         <motion.div
-          className="relative"
+          className="relative border-2 border-teal-600 rounded-lg p-8 bg-white shadow-lg"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <Image width={850} height={50} src="/Asset 67.svg" alt="Client 2" />
           <motion.p
-            className="text-xl absolute top-10 left-10 leading-10"
+            className="text-xl leading-10 text-gray-800"
             variants={textVariants}
           >
             Digital transformation is no longer optional — it&apos;s a strategic
             imperative. Having <br /> worked as a CEO, Process Engineer and
             business consultant for nearly 30 years <br /> and working with over
-            150 organizations across industries, I’ve seen a recurring <br />{" "}
-            and costly mistake: companies rush into ERP implementations without
-            first <br /> re-engineering their business processes.
+            150 organizations across industries, I&apos;ve seen a recurring
+            <br /> and costly mistake: companies rush into ERP implementations
+            without first <br /> re-engineering their business processes.
           </motion.p>
         </motion.div>
       </div>

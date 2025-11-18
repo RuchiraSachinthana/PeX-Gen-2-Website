@@ -9,20 +9,32 @@ export default function VideoPromoSection() {
   const { t } = useTranslation();
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
-    <div
-      style={{
-        backgroundImage: 'url("/Asset 24.webp")',
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="w-full pt-20 pb-20  relative overflow-hidden"
-    >
-      <div className="max-w-6xl mx-auto relative z-10 px-4">
+    <div className="w-full md:pt-20 md:pb-20 py-5 relative overflow-hidden">
+      {/* Background for mobile - only top to middle of video */}
+      <div
+        className="md:hidden absolute top-0 left-0 right-0 h-[40%] z-0"
+        style={{
+          backgroundImage: 'url("/Asset 24.webp")',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center top",
+        }}
+      />
+      {/* Background for desktop - full section */}
+      <div
+        className="hidden md:block absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url("/Asset 24.webp")',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      <div className="max-w-6xl mx-auto relative z-10 px-2 md:px-4">
         {/* Mobile Layout */}
-        <div className="flex md:hidden flex-col gap-6 items-center">
+        <div className="flex md:hidden max-w-[370px] flex-col gap-3 items-center">
           {/* Title - Mobile */}
           <motion.h2
-            className="text-2xl sm:text-3xl text-[#0e685b] text-center mb-3"
+            className="text-xl sm:text-3xl text-[#0e685b] text-center mb-2"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -35,11 +47,12 @@ export default function VideoPromoSection() {
 
           {/* Video - Mobile */}
           <motion.div
-            className="relative w-full max-w-md h-64 bg-emerald-400 rounded-3xl p-2 shadow-2xl"
+            className="relative w-full max-w-sm h-64 bg-emerald-400 rounded-3xl p-1 shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
+            whileHover={{ scale: 1.02 }}
           >
             <iframe
               className="top-0 left-0 w-full h-full rounded-2xl"
@@ -55,14 +68,21 @@ export default function VideoPromoSection() {
 
           {/* Sign Up Card - Mobile */}
           <motion.div
-            className="relative w-full max-w-sm bg-[#0e685b] rounded-2xl p-4 shadow-lg"
+            className="relative w-full max-w-[370px] rounded-2xl "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
+            <Image
+              width={500}
+              height={0}
+              src="/PEX Website - Food-02.svg"
+              alt="PEx Software Video Thumbnail"
+              className=""
+            />
             <motion.div
-              className="text-lg mb-2 text-yellow-400"
+              className="text-lg  absolute top-6 left-10 text-yellow-400"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -71,7 +91,7 @@ export default function VideoPromoSection() {
               <p>Get the Latest Updates</p>
             </motion.div>
             <motion.div
-              className="flex items-center justify-between gap-2"
+              className="flex items-center absolute top-16 left-10 justify-between gap-6"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -79,13 +99,12 @@ export default function VideoPromoSection() {
             >
               <p className="text-xs text-white">GET NOTIFICATION</p>
               <motion.button
-                className="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                className="bg-yellow-400 hover:bg-yellow-500 text-black py-1 px-6 text-sm rounded-full cursor-pointer transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <div className="flex items-center gap-2">
-                  <p className="text-[15px]">Sign Up</p>
-                  <ArrowRight className="w-5 h-5 text-black -rotate-45" />
+                  <p className="text-[12px]">Sign Up</p>
                 </div>
               </motion.button>
             </motion.div>
@@ -93,14 +112,21 @@ export default function VideoPromoSection() {
 
           {/* Book Now Card - Mobile */}
           <motion.div
-            className="relative w-full max-w-sm bg-[#0e685b] rounded-2xl p-4 shadow-lg"
+            className="relative w-full max-w-sm"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
+            <Image
+              width={500}
+              height={0}
+              src="/PEX Website - Food-03.svg"
+              alt="PEx Software Video Thumbnail"
+              className=""
+            />
             <motion.div
-              className="text-lg mb-2 text-yellow-400"
+              className="text-lg absolute top-6 left-10 text-yellow-400"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -109,7 +135,7 @@ export default function VideoPromoSection() {
               <p>Request Demo</p>
             </motion.div>
             <motion.div
-              className="flex items-center justify-between gap-2"
+              className="flex items-center absolute top-16 left-10 justify-between gap-8"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -117,13 +143,12 @@ export default function VideoPromoSection() {
             >
               <p className="text-xs text-white">LETS CONNECT</p>
               <motion.button
-                className="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                className="bg-yellow-400 hover:bg-yellow-500 text-black py-1 px-6 text-sm rounded-full cursor-pointer transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <div className="flex items-center gap-2">
-                  <p className="text-[15px]">Book now</p>
-                  <ArrowRight className="w-5 h-5 text-black -rotate-45" />
+                  <p className="text-[12px]">Book now</p>
                 </div>
               </motion.button>
             </motion.div>

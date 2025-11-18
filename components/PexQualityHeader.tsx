@@ -17,13 +17,13 @@ export default function PexQualityHeader() {
       />
 
       {/* Container for Logo, Navbar, and Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto ">
+      <div className="relative z-100 w-full max-w-6xl mx-auto ">
         {/* Top Row: Logo, Language Selector, and Navbar */}
         <HeroHeader />
 
         {/* Main Content - Centered */}
         <div className="flex items-end justify-left min-h-100  md:min-h-[60vh] sm:min-h-[70vh]">
-          <div className="text-left sm:ml-0 ml-5 max-w-6xl">
+          <div className="text-left  sm:ml-0 ml-5 max-w-6xl">
             <motion.p
               className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}

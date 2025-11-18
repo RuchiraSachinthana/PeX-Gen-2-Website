@@ -21,7 +21,8 @@ export default function PexQualityPage() {
       <ExperienceStatsSection />
       <FAQSection />
       <SocialsSection />
-      <Footer />
+      <div className="hidden sm:block">  <Footer /></div>
+    
     </div>
   );
 }

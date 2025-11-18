@@ -5,7 +5,9 @@ import Image from "next/image";
 export default function KeyPointsIntroSection() {
   return (
     <>
-      {/* Desktop Version - Hidden on mobile */}
+      {/* ========================================== */}
+      {/* Desktop Version - UNCHANGED (As requested) */}
+      {/* ========================================== */}
       <div className="hidden lg:block w-full bg-white pt-30 pb-190 relative overflow-hidden">
         <div className="max-w-6xl mx-auto p-6 relative px-4 sm:px-6 lg:px-8 mb-100 z-10">
           <motion.div
@@ -77,7 +79,7 @@ export default function KeyPointsIntroSection() {
           </motion.div>
           {/* line 1 */}
           <motion.div
-            className="absolute right-[-15] top-52"
+            className="absolute right-[-15px] top-52"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -196,206 +198,261 @@ export default function KeyPointsIntroSection() {
         </div>
       </div>
 
-      {/* Mobile Version - Visible only on mobile */}
+      {/* ========================================== */}
+      {/* Mobile Version - HARDCODED (No components) */}
+      {/* ========================================== */}
       <div className="lg:hidden w-full bg-white py-12 px-4">
-        <div className="max-w-md mx-auto">
-          {/* Title Section */}
+        <div className="max-w-[350px] mx-auto flex flex-col items-center">
+          {/* Title */}
           <motion.div
-            className="text-left mb-8"
+            className="text-center mb-6"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-[#0e685b] text-2xl font-semibold leading-tight mb-3">
+            <h2 className="text-[#0e685b] text-xl leading-tight">
               Three key points why you need to consider PEx Software™ as a
               solution for your business
             </h2>
-            {/* Number badges */}
-            <div className="flex gap-2 mt-4">
-              <span className="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
-                01
-              </span>
-              <span className="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
-                02
-              </span>
-              <span className="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded">
-                03
-              </span>
-            </div>
           </motion.div>
 
-          {/* Card 1 - Documentation Overload */}
+          {/* ---------------------- */}
+          {/* CARD 01 - HARDCODED    */}
+          {/* ---------------------- */}
           <motion.div
-            className="relative mb-6"
-            initial={{ opacity: 0, y: 30 }}
+            className="w-full rounded-3xl overflow-hidden shadow-lg relative"
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.5 }}
           >
             <Image
-              src="/Asset 12.svg"
-              alt="Documentation Overload"
+              src="/keypoint (1).svg"
+              alt="Key Point 1"
               width={400}
-              height={0}
+              height={300}
               className="w-full h-auto"
             />
-            <div className="absolute top-6 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                Pain Point
-              </p>
-              <div className="text-lg font-semibold text-white mb-4">
-                <p>Documentation</p>
-                <p>Overload</p>
+            {/* Content Overlay */}
+            <div className="absolute inset-0 p-6 ml-3 mt-5 flex flex-col justify-between">
+              {/* Top Section */}
+              <div className="">
+                <div className="flex justify-between items-start ">
+                  <div className="flex flex-col items-start">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#fbbf24] text-xs font-bold">
+                        Pain Point
+                      </span>
+                      <span className="bg-[#fbbf24] text-black text-[10px]  px-1.5 py-0.5 rounded-sm border border-[#023c35]">
+                        01
+                      </span>
+                    </div>
+                  </div>
+             
+                </div>
+
+                <h3 className="text-white text-xl font-semibold mb-2 leading-tight">
+                  Documentation br Overload
+                </h3>
+
+                <div className="mb-6">
+                  <p className="text-[#fbbf24] text-xs font-bold ">
+                    Traditional Challenge
+                  </p>
+                  <p className="text-white text-sm opacity-90 ">
+                    Paper-heavy, time-consuming, error-prone compliance records
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="absolute top-24 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                Traditional Challenge
-              </p>
-              <div className="text-sm text-white mb-4">
-                <p>Paper-heavy,</p>
-                <p>time-consuming,</p>
-                <p>error-prone</p>
-                <p>compliance records</p>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                How PEx Solves It
-              </p>
-              <div className="text-sm text-white">
-                <p>Automated and</p>
-                <p>AI powered paperless</p>
-                <p>workflows to</p>
-                <p>manage compliance</p>
+
+              {/* Bottom Section (Inner Card) */}
+              <div className="relative  flex flex-col justify-center">
+                
+                <p className="text-[#fbbf24] text-xs font-bold mb-1">
+                  How PEx Solves It
+                </p>
+                <p className="text-white text-sm  pr-8">
+                  Automated and Ai powered paperless workflows to manage
+                  compliance
+                </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Connector line */}
+          {/* Arrow Connector 1 */}
           <motion.div
-            className="flex justify-center mb-6"
+            className="h-12 w-full flex justify-center items-center my-1"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            transition={{ delay: 0.5 }}
           >
-            <Image
-              src="/Asset 13.svg"
-              alt="Connector"
-              width={100}
-              height={0}
-              className="h-12 w-auto opacity-50"
-            />
+            <svg
+              width="20"
+              height="50"
+              viewBox="0 0 24 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 0V100" stroke="#06b6d4" strokeWidth="2" />
+              <path
+                d="M6 94L12 100L18 94"
+                stroke="#06b6d4"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </motion.div>
 
-          {/* Card 2 - Lack of Strategic Value */}
+          {/* ---------------------- */}
+          {/* CARD 02 - HARDCODED    */}
+          {/* ---------------------- */}
           <motion.div
-            className="relative mb-6"
-            initial={{ opacity: 0, y: 30 }}
+            className="w-full rounded-3xl overflow-hidden shadow-lg relative"
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             <Image
-              src="/Asset 14.svg"
-              alt="Lack of Strategic Value"
+              src="/keypoint (2).svg"
+              alt="Key Point 2"
               width={400}
-              height={0}
+              height={300}
               className="w-full h-auto"
             />
-            <div className="absolute top-6 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                Pain Point
-              </p>
-              <div className="text-lg font-semibold text-white mb-4">
-                <p>Lack of</p>
-                <p>Strategic value</p>
+            {/* Content Overlay */}
+            <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
+              {/* Top Section */}
+              <div className="pb-2">
+                <div className="flex justify-between items-start">
+                  <div className="flex flex-col items-start">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#fbbf24] text-xs font-bold">
+                        Pain Point
+                      </span>
+                      <span className="bg-[#fbbf24] text-black text-[10px]  px-1.5 py-0.5 rounded-lg border border-[#023c35]">
+                        02
+                      </span>
+                    </div>
+                  </div>
+                
+                </div>
+
+                <h3 className="text-white text-xl font-bold mb-2 ">
+                  Lack of <br/>Strategic Value
+                </h3>
+
+                <div className="mb-4">
+                  <p className="text-[#fbbf24] text-xs font-bold mb-1">
+                    Traditional Challenge
+                  </p>
+                  <p className="text-white text-sm opacity-90 leading-relaxed">
+                    ISO seen as a &quot;tick-box&quot; exercise, disconnected
+                    from business goals
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="absolute top-24 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                Traditional Challenge
-              </p>
-              <div className="text-sm text-white mb-4">
-                <p>ISO seen as a &quot;tick-box&quot;</p>
-                <p>exercise, disconnected from</p>
-                <p>business goals</p>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                How PEx Solves It
-              </p>
-              <div className="text-sm text-white">
-                <p>Includes management tools</p>
-                <p>for CEO&apos;s for planning and</p>
-                <p>monitoring strategic direction</p>
-                <p>of business</p>
+
+              {/* Bottom Section (Inner Card) */}
+              <div className=" relativeflex flex-col justify-center">
+            
+                <p className="text-[#fbbf24] text-xs font-bold mb-1">
+                  How PEx Solves It
+                </p>
+                <p className="text-white text-xs leading-relaxed pr-8">
+                  Includes management tools for CEO&apos;s for planning and
+                  monitoring strategic direction of business
+                </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Connector line */}
+          {/* Arrow Connector 2 */}
           <motion.div
-            className="flex justify-center mb-6"
+            className="h-12 w-full flex justify-center items-center my-1"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            transition={{ delay: 0.5 }}
           >
-            <Image
-              src="/Asset 15.svg"
-              alt="Connector"
-              width={100}
-              height={0}
-              className="h-12 w-auto opacity-50"
-            />
+            <svg
+              width="20"
+              height="50"
+              viewBox="0 0 24 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 0V100" stroke="#06b6d4" strokeWidth="2" />
+              <path
+                d="M6 94L12 100L18 94"
+                stroke="#06b6d4"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </motion.div>
 
-          {/* Card 3 - Time Consuming to Maintain */}
+          {/* ---------------------- */}
+          {/* CARD 03 - HARDCODED    */}
+          {/* ---------------------- */}
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 30 }}
+            className="w-full rounded-3xl overflow-hidden shadow-lg relative"
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Image
-              src="/Asset 16.svg"
-              alt="Time consuming to maintain"
+              src="/keypoint (3).svg"
+              alt="Key Point 3"
               width={400}
-              height={0}
+              height={300}
               className="w-full h-auto"
             />
-            <div className="absolute top-6 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                Pain Point
-              </p>
-              <div className="text-lg font-semibold text-white mb-4">
-                <p>Time consuming</p>
-                <p>to maintain</p>
+            {/* Content Overlay */}
+            <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
+              {/* Top Section */}
+              <div className="pb-2">
+                <div className="flex justify-between items-start">
+                  <div className="flex flex-col items-start">
+                    <div className="flex items-center gap-1">
+                      <span className="text-[#fbbf24] text-xs font-bold">
+                        Pain Point
+                      </span>
+                      <span className="bg-[#fbbf24] text-black text-[10px]  px-1.5 py-0.5 rounded-lg border border-[#023c35]">
+                        03
+                      </span>
+                    </div>
+                  </div>
+                 
+                </div>
+
+                <h3 className="text-white text-2xl font-bold leading-7 mb-2">
+                  Time consuming to maintain
+                </h3>
+
+                <div className="mb-6">
+                  <p className="text-[#fbbf24] text-xs font-bold">
+                    Traditional Challenge
+                  </p>
+                  <p className="text-white text-sm opacity-90 ">
+                    Manual documentation, missing records, last-minute
+                    scrambling
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="absolute top-24 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                Traditional Challenge
-              </p>
-              <div className="text-sm text-white mb-4">
-                <p>Manual documentation,</p>
-                <p>missing records,</p>
-                <p>last-minute scrambling</p>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-6 text-left">
-              <p className="text-yellow-500 text-xs font-bold mb-2">
-                How PEx Solves It
-              </p>
-              <div className="text-sm text-white">
-                <p>Removes unproductive</p>
-                <p>documentation work</p>
-                <p>and waste activities</p>
+
+              {/* Bottom Section (Inner Card) */}
+              <div className=" relative flex flex-col justify-center">
+                
+                <p className="text-[#fbbf24] text-xs font-bold mb-1">
+                  How PEx Solves It
+                </p>
+                <p className="text-white text-sm leading-relaxed pr-8">
+                  Removes unproductive documentation work and waste activities
+                </p>
               </div>
             </div>
           </motion.div>

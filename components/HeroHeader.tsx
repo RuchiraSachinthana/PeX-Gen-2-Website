@@ -53,8 +53,8 @@ export default function HeroHeader() {
     : "border-[#04afbc]";
   const homeButtonBgColor = isBlogPage ? "bg-green-900/20" : "bg-white/10";
   const mobileOverlayBg = isBlogPage
-    ? "bg-linear-to-br from-green-900/95 to-emerald-900/95"
-    : "bg-linear-to-br from-teal-900/95 to-cyan-900/95";
+    ? "bg-gradient-to-br from-green-900/95 to-emerald-900/95"
+    : "bg-gradient-to-br from-teal-900/95 to-cyan-900/95";
 
   return (
     <div className="flex items-center max-w-7xl  justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
@@ -85,7 +85,7 @@ export default function HeroHeader() {
         <div className="flex gap-4 items-center">
           <button
             onClick={() => router.push("/")}
-            className={`flex items-center gap-1.5 text-white px-2.5 py-3 rounded-full hover:scale-110 hover:border-yellow-400 backdrop-blur-md border transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer ${homeButtonBorderColor} ${homeButtonBgColor}`}
+            className={`flex items-center gap-1.5 text-white px-2.5 py-3 rounded-full hover:scale-110 hover:border-yellow-400   border transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer ${homeButtonBorderColor} ${homeButtonBgColor}`}
           >
             <Home size={15} />
           </button>
@@ -100,7 +100,7 @@ export default function HeroHeader() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden flex items-center justify-center bg-white/10 text-white p-2 mr-5 rounded-full backdrop-blur-md border border-[#04afbc] hover:border-yellow-400 transition-all duration-300 shadow-lg cursor-pointer z-50"
+        className="md:hidden flex items-center justify-center bg-white/10 text-white p-2 mr-5 rounded-full border border-[#04afbc] hover:border-yellow-400 transition-all duration-300 shadow-lg cursor-pointer"
       >
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </motion.button>
@@ -113,7 +113,7 @@ export default function HeroHeader() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className={`md:hidden fixed inset-0 ${mobileOverlayBg} backdrop-blur-md z-40 overflow-y-auto`}
+            className={`md:hidden fixed inset-0 ${mobileOverlayBg}  overflow-y-auto z-50`}
           >
             <div className="flex flex-col p-8 pt-24 space-y-6">
               {/* Home Button */}

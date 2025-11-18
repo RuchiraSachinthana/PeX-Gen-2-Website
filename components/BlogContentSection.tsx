@@ -57,125 +57,6 @@ const BlogContentSection = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {/* <h3 className="text-yellow-400 text-xl pb-6">
-          THE PROBLEM WITH TRADITIONAL AUDIT PREPARATION
-        </h3>
-
-        <p className=" text-xl pb-2">
-          Most companies treat audits as one-off events. They prepare
-          reactively, often relying on:
-        </p>
-        <p className="pb-6 ml-4 text-yellow-400 text-md">
-          Paper-based records or scattered spreadsheets
-          <br />
-          Manual checklists and fragmented SOPs
-          <br />
-          Staff memory to explain process flows
-          <br />
-          Last-minute fixes to cover gaps
-        </p>
-
-        <p className=" text-xl pb-2">
-          This approach is not only inefficient — it&apos;s risky. It leads to:
-        </p>
-        <p className="pb-6 ml-4 text-yellow-400 text-md">
-          Non-conformities and audit findings
-          <br />
-          Employee stress and burnout
-          <br />
-          Poor visibility into process performance
-          <br />
-          Missed opportunities for improvement
-        </p>
-
-        <h3 className="text-yellow-400 text-xl ">
-          THE PEX APPROACH: BUILT FOR CONTINUAL AUDIT READINESS
-        </h3>
-
-        <p className=" text-xl">
-          PEX Software™ is a Business Process Management System (BPMS) designed
-          to keep your organization audit-ready
-          <br />— every day, not just during audit season.
-        </p>
-
-        <p className=" text-md">Here&apos;s how:</p> */}
-
-        {/* Grid Container */}
-
-        {/* card grid */}
-
-        {/* <div className="relative text-center text-white">
-            <Image width={850} height={50} src="/Asset 68.svg" alt="card1" />
-            <div className="absolute text-xl text-teal-800 top-10 left-20 text-left">
-              <h2 className="uppercase font-semibold">
-                Process Mapping with Clarity
-              </h2>
-              <br /> PEx Software™ helps you document every <br />
-              process step, role, and control point, aligned <br /> with ISO
-              9001 / ISO 22000 and other <br />
-              standards. Auditors can trace workflows <br /> from start to
-              finish without ambiguity.
-            </div>
-          </div> */}
-
-        {/* Card 02 */}
-        {/* <div className="relative text-center text-white">
-            <Image width={850} height={50} src="/Asset 68.svg" alt="card2" />
-            <div className="absolute text-xl text-teal-800 top-10 left-20 text-left">
-              <h2 className="uppercase font-semibold mb-6">
-                Centralized Document Control
-              </h2>
-              No more hunting for SOPs, records, or <br /> approvals. PEx
-              Software™ stores all <br /> compliance documents in one place,
-              with
-              <br /> version control and access logs. Finish <br /> without
-              ambiguity.
-            </div>
-          </div> */}
-
-        {/* Card 03 - UPDATED */}
-        {/* <div className="relative text-center text-white">
-            <Image width={850} height={50} src="/Asset 68.svg" alt="card3" />
-            <div className="absolute text-xl text-teal-800 top-10 left-20 text-left">
-              <h2 className="uppercase font-semibold mb-6">
-                Real-Time Monitoring
-              </h2>
-              Dashboards show live data on process <br />
-              performance, non-conformities, and <br />
-              corrective actions. You don&apos;t just <br />
-              prepare for audits — you live in a state <br />
-              of readiness.
-            </div>
-          </div> */}
-
-        {/* Card 04 - UPDATED */}
-        {/* <div className="relative text-center text-white">
-            <Image width={850} height={50} src="/Asset 68.svg" alt="card4" />
-            <div className="absolute text-xl text-teal-800 top-10 left-20 text-left">
-              <h2 className="uppercase font-semibold mb-6">
-                Continual Improvement Tracking
-              </h2>
-              PEx Software™ captures Improvement <br />
-              Initiatives, root cause analyses, and <br />
-              change logs, demonstrating your <br />
-              commitment to quality and growth.
-            </div>
-          </div> */}
-
-        {/* Card 05 - UPDATED */}
-        {/* <div className="relative text-center text-white">
-            <Image width={850} height={50} src="/Asset 68.svg" alt="card5" />
-            <div className="absolute text-xl text-teal-800 top-10 left-20 text-left">
-              <h2 className="uppercase font-semibold mb-6">
-                Mobile-First Accessibility
-              </h2>
-              Frontline staff can log incidents, <br />
-              complete checklists, and upload <br />
-              evidence directly from their mobile <br />
-              devices, ensuring nothing is missed.
-            </div>
-          </div> */}
-
         {/* //first page */}
 
         <h3 className="text-yellow-400 text-xl pb-6">
@@ -215,27 +96,33 @@ const BlogContentSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.div
-            className="relative text-center text-white"
-            variants={cardVariants}
-          >
-            <Image width={850} height={50} src="/Asset 3.svg" alt="card4" />
-            <div className="absolute text-xl text-teal-800 top-10 left-20 text-left">
-              Top management&apos;s lack awareness about <br />
-              what Business Process Re-engineering (BPR) <br /> truly means.
-            </div>
-          </motion.div>
-          <motion.div
-            className="relative text-center text-white"
-            variants={cardVariants}
-          >
-            <Image width={850} height={50} src="/Asset 69.svg" alt="card4" />
-            <div className="absolute text-xl text-teal-800 top-10 left-20 text-left">
-              ERP vendors’ limited competence in process <br />
-              design — most focus on system deployment, <br />
-              not operational excellence.
-            </div>
-          </motion.div>
+          {[
+            {
+              number: 1,
+              text: "Top management's lack awareness about what Business Process Re-engineering (BPR) truly means.",
+            },
+            {
+              number: 2,
+              text: "ERP vendors' limited competence in process design — most focus on system deployment, not operational excellence.",
+            },
+          ].map((item) => (
+            <motion.div
+              key={item.number}
+              className="bg-teal-600 text-white p-6 rounded-lg shadow-lg"
+              variants={cardVariants}
+            >
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 w-12 h-12 bg-yellow-400 text-teal-800 rounded-full flex items-center justify-center text-2xl font-bold">
+                  {item.number}
+                </div>
+                <div className="text-left">
+                  <p className="text-xl text-white leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
         <p className="text-xl">
           ERP systems are powerful tools — but only when built on optimized
@@ -244,7 +131,7 @@ const BlogContentSection = () => {
         </p>
       </motion.div>
       <motion.div
-        className="w-full max-w-6xl bg-white border-1 leading-relaxed text-xl mb-2  rounded-3xl z-10 mx-auto p-8 text-border"
+        className="w-full max-w-6xl bg-white border leading-relaxed text-xl mb-2  rounded-3xl z-10 mx-auto p-8 text-border"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"

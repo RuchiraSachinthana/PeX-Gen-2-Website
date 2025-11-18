@@ -181,7 +181,7 @@ export default function CaseStudiesShowcase() {
       </div>
 
       {/* Mobile Version - Visible only on mobile */}
-      <div className="lg:hidden w-full">
+      <div className="lg:hidden  mx-auto w-full">
         {/* First Card with Background Image */}
         <div
           style={{
@@ -189,28 +189,30 @@ export default function CaseStudiesShowcase() {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
-          className="w-full py-6 px-4"
+          className="w-full"
         >
           <motion.div
-            className="max-w-md mx-auto rounded-3xl overflow-hidden p-4"
+            className=" mx-auto rounded-3xl  overflow-hidden p-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             {/* Main Content - Image and Text side by side */}
-            <div className="flex gap-4 items-start mb-4">
+            <div className="flex gap-2 items-start mb-4">
               {/* Left side - Image with badges */}
-              <div className="relative flex-shrink-0 w-[160px]">
+              <div className="relative shrink-0 w-[180px]">
                 <Image
-                  width={160}
-                  height={200}
+                  width={180}
+                  height={0}
                   src="/qs4 (4).webp"
                   alt="Success Story"
                   className="w-full h-auto rounded-2xl"
                 />
                 {/* 90% Badge */}
-                <div className="absolute top-3 left-3 bg-[#0e685b] rounded-xl p-2 px-3">
+                <div
+                  className="absolute opacity-70 top-3 left-3 from-[#0e685b] to-[#05423b] rounded-md p-2 py-6 px-3"
+                >
                   <p className="text-xl font-bold text-yellow-400">90%</p>
                   <p className="text-[8px] text-white leading-tight">
                     document
@@ -219,9 +221,10 @@ export default function CaseStudiesShowcase() {
                     reduction
                   </p>
                 </div>
+
                 {/* Small label at bottom */}
                 <div className="absolute bottom-3 left-3">
-                  <p className="text-[8px] text-yellow-400 bg-black/50 px-2 py-1 rounded-full whitespace-nowrap">
+                  <p className="text-[8px] text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
@@ -230,16 +233,16 @@ export default function CaseStudiesShowcase() {
               {/* Right side - Title and Images */}
               <div className="flex-1 flex flex-col justify-between h-full pt-2">
                 <div>
-                  <h2 className="text-[#0e685b] text-lg font-semibold leading-tight mb-1">
+                  <h2 className="text-[#0e685b] text-xl font-semibold leading-tight mb-1">
                     Businesses
                   </h2>
-                  <h2 className="text-[#0e685b] text-lg font-semibold leading-tight mb-1">
+                  <h2 className="text-[#0e685b] text-xl font-semibold leading-tight mb-1">
                     that have
                   </h2>
-                  <h2 className="text-[#0e685b] text-lg font-semibold leading-tight mb-1">
+                  <h2 className="text-[#0e685b] text-xl font-semibold leading-tight mb-1">
                     grown
                   </h2>
-                  <h2 className="text-[#0e685b] text-lg font-semibold leading-tight mb-4">
+                  <h2 className="text-[#0e685b] text-xl font-semibold leading-tight mb-4">
                     with us
                   </h2>
                 </div>
@@ -255,7 +258,7 @@ export default function CaseStudiesShowcase() {
                       WebkitOverflowScrolling: "touch",
                     }}
                   >
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <Image
                         width={80}
                         height={50}
@@ -264,7 +267,7 @@ export default function CaseStudiesShowcase() {
                         className="rounded-lg"
                       />
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <Image
                         width={80}
                         height={50}
@@ -273,7 +276,7 @@ export default function CaseStudiesShowcase() {
                         className="rounded-lg"
                       />
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <Image
                         width={80}
                         height={50}
@@ -291,8 +294,8 @@ export default function CaseStudiesShowcase() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="  p-1.5 rounded-full shadow-lg">
-                      <ChevronRight className="w-8 h-8 text-black" />
+                    <div className=" ">
+                      <ChevronRight className="w-8 h-8 text-teal-700" />
                     </div>
                   </motion.button>
                 </div>
@@ -302,7 +305,7 @@ export default function CaseStudiesShowcase() {
         </div>
 
         {/* White Background Section for remaining cards */}
-        <div className="w-full bg-white py-10 px-4">
+        <div className=" bg-white mx-auto max-w-[380px] mt-5  px-6">
           <div className="max-w-md mx-auto flex flex-col gap-6">
             {/* Second Card - ISO 9001 Card */}
             <motion.div
@@ -313,11 +316,11 @@ export default function CaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.button
-                className="absolute top-6 right-6 bg-white p-3 rounded-xl"
+                className="absolute top-[-5px] right-[-5px] bg-teal-700 p-4  border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ArrowRight className="w-5 h-5 text-[#0e685b]" />
+                <ArrowRight className="w-5 h-5 text-yellow-400 -rotate-45" />
               </motion.button>
 
               <div className="mt-4">
@@ -349,20 +352,20 @@ export default function CaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <motion.button
-                className="absolute top-6 right-6 bg-white p-3 rounded-xl"
+                className="absolute top-[-5px] right-[-5px] p-4 bg- rounded-xl border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ArrowRight className="w-5 h-5 text-[#4a5568]" />
+                <ArrowRight className="w-5 h-5 text-yellow-400 -rotate-45" />
               </motion.button>
 
               <div className="mt-4">
-                <h3 className="text-white text-2xl font-semibold leading-tight mb-8">
+                <h3 className="text-white text-2xl font-semibold leading-tight pt-2 mb-4">
                   How PEx solution saved 1.6 million in the first quarter
                 </h3>
 
                 <div className="flex flex-col gap-3">
-                  <p className="text-yellow-400 text-xs font-semibold tracking-wider">
+                  <p className="text-yellow-400 text-xs ">
                     CASE STUDY
                   </p>
                   <motion.button
