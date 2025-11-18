@@ -8,7 +8,7 @@ import Image from "next/image";
  */
 export default function PexGenKeyCapabilitiesSection() {
   return (
-    <section className="flex flex-col items-center bg-white justify-center mb-[-700] px-4">
+    <section className="flex flex-col items-center bg-white justify-center mb-[-700px] px-4">
       <div className="max-w-6xl items-center mx-auto w-full">
         {/* Main Title with underline */}
         <motion.div
@@ -107,7 +107,7 @@ export default function PexGenKeyCapabilitiesSection() {
 
           {/* Card 4 - Middle Right */}
           <motion.div
-            className="absolute top-[-240] right-30 transform -translate-y-1/2 w-100"
+            className="absolute top-[-240px] right-30 transform -translate-y-1/2 w-100"
             initial={{ opacity: 0, x: 100, rotate: 5 }}
             whileInView={{ opacity: 1, x: 0, rotate: 0 }}
             viewport={{ once: true }}
@@ -131,7 +131,7 @@ export default function PexGenKeyCapabilitiesSection() {
 
           {/* Card 5 - Bottom Center */}
           <motion.div
-            className="absolute top-[-110] left-1/2 transform -translate-x-1/2 w-90"
+            className="absolute top-[-110px] left-1/2 transform -translate-x-1/2 w-90"
             initial={{ opacity: 0, y: 100, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
