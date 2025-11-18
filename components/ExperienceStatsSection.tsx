@@ -235,7 +235,7 @@ export const ExperienceStatsSection: FC = () => {
           >
             <div className="inline-block p-6 rounded-3xl bg-black/60 backdrop-blur-sm">
               <div className="mb-5">
-                <p className="text-5xl font-bold text-yellow-400 mb-2">
+                <p className="text-5xl  text-yellow-400 mb-2">
                   {stats.years.value}
                 </p>
                 <p className="text-sm text-white uppercase leading-tight font-medium">
@@ -245,7 +245,7 @@ export const ExperienceStatsSection: FC = () => {
                 </p>
               </div>
               <div>
-                <p className="text-5xl font-bold text-yellow-400 mb-2">
+                <p className="text-5xl  text-yellow-400 mb-2">
                   {stats.clients.value}
                 </p>
                 <p className="text-sm text-white uppercase font-medium">
@@ -274,7 +274,7 @@ export const ExperienceStatsSection: FC = () => {
               </motion.div>
 
               <div className="mb-2">
-                <h3 className="text-sm font-semibold text-teal-700 leading-tight">
+                <h3 className="text-sm  text-teal-700 leading-tight">
                   {demoCard.titleLines.map((line: string, index: number) => (
                     <Fragment key={index}>
                       {line}
@@ -285,7 +285,7 @@ export const ExperienceStatsSection: FC = () => {
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="text-teal-700 uppercase text-[9px] font-bold">
+                <span className="text-teal-700 uppercase text-[9px] ">
                   {demoCard.connectLabel}
                 </span>
                 <motion.button

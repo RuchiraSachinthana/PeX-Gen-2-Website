@@ -239,7 +239,7 @@ export default function SocialSection() {
         <div className="max-w-md mx-auto">
           {/* Title */}
           <motion.h2
-            className="text-[#0e685b] text-xl font-semibold mb-4"
+            className="text-[#0e685b] text-xl  mb-4"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

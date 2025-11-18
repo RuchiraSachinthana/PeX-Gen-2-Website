@@ -310,7 +310,7 @@ const BusinessImprovementSlider: FC = () => {
       </div>
 
       {/* Mobile Version */}
-      <div className="lg:hidden max-w-md mx-auto px-1">
+      <div className="lg:hidden max-w-[370px] mx-auto px-1">
         {/* Slider Card with teal background container */}
         <motion.div
           className="mb-6  rounded-[2.5rem] "
@@ -431,7 +431,7 @@ const BusinessImprovementSlider: FC = () => {
 
             {/* Title */}
             <div className="mb-4 pr-8">
-              <h3 className="text-white text-md ">
+              <h3 className="text-white text-md max-w-[200px]">
                 {String(t("socialSection.partnerSection.title1"))}
                 {String(t("socialSection.partnerSection.title2"))}
                 {String(t("socialSection.partnerSection.title3"))}
