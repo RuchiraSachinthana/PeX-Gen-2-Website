@@ -211,9 +211,7 @@ export default function CaseStudiesShowcase() {
                 />
                 {/* 90% Badge */}
                 <div
-                  className="absolute opacity-70 top-3 left-3 
-                bg-gradient-to-b from-[#0e685b] to-[#05423b] 
-                rounded-md p-2 py-6 px-3"
+                  className="absolute opacity-70 top-3 left-3 from-[#0e685b] to-[#05423b] rounded-md p-2 py-6 px-3"
                 >
                   <p className="text-xl font-bold text-yellow-400">90%</p>
                   <p className="text-[8px] text-white leading-tight">
@@ -307,7 +305,7 @@ export default function CaseStudiesShowcase() {
         </div>
 
         {/* White Background Section for remaining cards */}
-        <div className="w-full bg-white py-10 px-4">
+        <div className="w-full bg-white py-10 max-w-md px-6">
           <div className="max-w-md mx-auto flex flex-col gap-6">
             {/* Second Card - ISO 9001 Card */}
             <motion.div
@@ -318,11 +316,11 @@ export default function CaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.button
-                className="absolute top-6 right-6 bg-white p-3 rounded-xl"
+                className="absolute top-[-5px] right-[-5px] bg-teal-700 p-4  border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ArrowRight className="w-5 h-5 text-[#0e685b]" />
+                <ArrowRight className="w-5 h-5 text-yellow-400 -rotate-45" />
               </motion.button>
 
               <div className="mt-4">
@@ -354,20 +352,20 @@ export default function CaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <motion.button
-                className="absolute top-6 right-6 bg-white p-3 rounded-xl"
+                className="absolute top-[-5px] right-[-5px] p-4 bg- rounded-xl border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <ArrowRight className="w-5 h-5 text-[#4a5568]" />
+                <ArrowRight className="w-5 h-5 text-yellow-400 -rotate-45" />
               </motion.button>
 
               <div className="mt-4">
-                <h3 className="text-white text-2xl font-semibold leading-tight mb-8">
+                <h3 className="text-white text-2xl font-semibold leading-tight pt-2 mb-4">
                   How PEx solution saved 1.6 million in the first quarter
                 </h3>
 
                 <div className="flex flex-col gap-3">
-                  <p className="text-yellow-400 text-xs font-semibold tracking-wider">
+                  <p className="text-yellow-400 text-xs ">
                     CASE STUDY
                   </p>
                   <motion.button

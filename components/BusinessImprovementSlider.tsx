@@ -86,7 +86,7 @@ const BusinessImprovementSlider: FC = () => {
               className="relative flex items-center justify-start"
             >
               {/* Rocket */}
-              <div className="absolute top-[-7] right-3">
+              <div className="absolute top-[-7px] right-3">
                 <Image
                   src="/Asset 5.svg"
                   alt="Rocket icon"
@@ -425,15 +425,15 @@ const BusinessImprovementSlider: FC = () => {
         >
           <div className="bg-[#0e685b] mx-6 rounded-3xl p-4 max-w-sm relative shadow-lg">
             {/* LinkedIn Icon Badge */}
-            <div className="absolute top-0 right-0 bg-yellow-400 rounded-xl p-2 shadow-lg">
+            <div className="absolute top-[-5px] right-[-5px] bg-yellow-400 rounded-xl p-2 px-4 border-white border-4 ">
               <div className="text-2xl font-bold text-[#0e685b]">in</div>
             </div>
 
             {/* Title */}
             <div className="mb-4 pr-8">
               <h3 className="text-white text-md ">
-                {String(t("socialSection.partnerSection.title1"))} <br />{" "}
-                {String(t("socialSection.partnerSection.title2"))}{" "}
+                {String(t("socialSection.partnerSection.title1"))}
+                {String(t("socialSection.partnerSection.title2"))}
                 {String(t("socialSection.partnerSection.title3"))}
               </h3>
             </div>
