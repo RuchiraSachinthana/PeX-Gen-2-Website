@@ -1,39 +1,38 @@
-"use client";
+import type { Metadata } from "next";
+import PexGenPageClient from "./pex-gen-client";
 
-import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
-import Footer from "@/components/Footer";
-import PexGenComplianceSection from "@/components/PexGenComplianceSection";
-import PexGenExploreSection from "@/components/PexGenExploreSection";
-import PexGenHeader from "@/components/PexGenHeader";
-import PexGenKeyCapabilitiesSection from "@/components/PexGenKeyCapabilitySection";
-import PexGenManagementSection from "@/components/PexGenManagementSection";
-import PexGenPartners from "@/components/PexGenPartners";
-import PexGenPhilosopySection from "@/components/PexGenPhilosopySection";
-import PexGenTestamonialsSection from "@/components/PexGenTestamonialsSection";
-import PexGenVideoSection from "@/components/PexGenVideoSection";
-import PexGenWhoWeAreSection from "@/components/PexGenWhoWeAreSection";
-import PexGenWhyMattersSection from "@/components/PexGenWhyMattersSection";
-import SocialsSection from "@/components/SocialSection";
-import WhatIsPexSection from "@/components/WhatIsPexSection";
+export const metadata: Metadata = {
+  title: "PEx Gen - Next-Generation Compliance & Performance Toolkit",
+  description:
+    "PEx Gen is the next-generation compliance and performance toolkit featuring AI-powered insights, real-time dashboards, gamified reporting, and strategic planning integration. Built for modern SMEs seeking operational excellence and competitive advantage.",
+  keywords: [
+    "PEx Gen",
+    "next-generation compliance software",
+    "AI-powered compliance",
+    "performance toolkit",
+    "strategic planning software",
+    "operational excellence",
+    "SME performance management",
+    "AI insights",
+    "real-time dashboards",
+    "gamified reporting",
+    "SWOT analysis integration",
+    "PESTLE analysis",
+    "OKR integration",
+    "decision support system",
+    "learning management",
+  ],
+  openGraph: {
+    title: "PEx Gen - Next-Generation Compliance & Performance Toolkit",
+    description:
+      "AI-powered compliance and performance toolkit with real-time dashboards and strategic planning integration.",
+    url: "https://pex-solutions.com/pex-gen",
+  },
+  alternates: {
+    canonical: "https://pex-solutions.com/pex-gen",
+  },
+};
 
 export default function PexGenPage() {
-  return (
-    <div className="w-full min-h-screen bg-white">
-      <PexGenHeader />
-      <PexGenComplianceSection />
-      <PexGenVideoSection />
-      <WhatIsPexSection />
-      <PexGenKeyCapabilitiesSection />
-      <PexGenWhyMattersSection />
-      <PexGenExploreSection />
-      <PexGenManagementSection />
-      <PexGenTestamonialsSection />
-      <PexGenPartners />
-      <CaseStudiesShowcase />
-      <PexGenWhoWeAreSection />
-      <PexGenPhilosopySection />
-      <SocialsSection />
-      <Footer />
-    </div>
-  );
+  return <PexGenPageClient />;
 }

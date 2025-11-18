@@ -1,21 +1,35 @@
-"use client";
+import type { Metadata } from "next";
+import BlogPageClient from "./blog-client";
 
-import BlogHeader from "@/components/BlogHeader";
-import Footer from "@/components/Footer";
-import BlogMessageSection from "./../../components/BlogMessageSection";
-import BlogContentSection from "./../../components/BlogContentSection";
-import  SocialsSection  from '@/components/SocialSection';
-import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
+export const metadata: Metadata = {
+  title: "Blog - Compliance, Quality Management & Performance Insights",
+  description:
+    "Expert insights on ISO compliance, quality management, performance improvement, and operational excellence for SMEs. Learn from industry best practices, case studies, and strategic guidance for CEOs and Quality Managers.",
+  keywords: [
+    "ISO compliance blog",
+    "quality management insights",
+    "SME best practices",
+    "performance improvement",
+    "operational excellence",
+    "compliance tips",
+    "quality management articles",
+    "ISO 9001 best practices",
+    "quality management case studies",
+    "SME growth strategies",
+    "compliance strategies",
+    "quality improvement",
+  ],
+  openGraph: {
+    title: "Blog - Compliance, Quality Management & Performance Insights",
+    description:
+      "Expert insights on ISO compliance, quality management, and operational excellence for SMEs.",
+    url: "https://pex-solutions.com/blog",
+  },
+  alternates: {
+    canonical: "https://pex-solutions.com/blog",
+  },
+};
 
 export default function BlogPage() {
-  return (
-    <div className="w-full min-h-screen">
-      <BlogHeader />
-      <BlogMessageSection />
-      <BlogContentSection />
-        <CaseStudiesShowcase />
-          <SocialsSection />
-      <Footer />
-    </div>
-  );
+  return <BlogPageClient />;
 }

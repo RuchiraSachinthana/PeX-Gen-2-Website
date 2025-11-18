@@ -1,39 +1,34 @@
-"use client";
+import type { Metadata } from "next";
+import HomePageClient from "./home-client";
 
-import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
-import Footer from "@/components/Footer";
-import PexGenComplianceSection from "@/components/PexGenComplianceSection";
-import PexGenExploreSection from "@/components/PexGenExploreSection";
-import PexGenHeader from "@/components/PexGenHeader";
-import PexGenKeyCapabilitiesSection from "@/components/PexGenKeyCapabilitySection";
-import PexGenManagementSection from "@/components/PexGenManagementSection";
-import PexGenPartners from "@/components/PexGenPartners";
-import PexGenPhilosopySection from "@/components/PexGenPhilosopySection";
-import PexGenTestamonialsSection from "@/components/PexGenTestamonialsSection";
-import PexGenVideoSection from "@/components/PexGenVideoSection";
-import PexGenWhoWeAreSection from "@/components/PexGenWhoWeAreSection";
-import PexGenWhyMattersSection from "@/components/PexGenWhyMattersSection";
-import SocialsSection from "@/components/SocialSection";
-import WhatIsPexSection from "@/components/WhatIsPexSection";
+export const metadata: Metadata = {
+  title: "PEx Software™ - Transform ISO Compliance into Competitive Advantage",
+  description:
+    "PEx Software™ transforms ISO 9001, ISO 14001, ISO 45001 from static compliance into a dynamic, AI-powered engine for growth. Real-time dashboards, KPI tracking, and strategic alignment for CEOs and Quality Managers of SMEs in manufacturing, logistics, and services across Sri Lanka & India.",
+  keywords: [
+    "PEx Software",
+    "ISO 9001 software",
+    "ISO compliance software",
+    "SME compliance toolkit",
+    "performance management software",
+    "CEO dashboard",
+    "quality management system",
+    "continual improvement",
+    "operational excellence",
+    "competitive advantage",
+    "Sri Lanka compliance",
+    "India compliance",
+    "manufacturing compliance",
+    "logistics compliance",
+  ],
+  openGraph: {
+    title: "PEx Software™ - Transform ISO Compliance into Competitive Advantage",
+    description:
+      "AI-powered compliance and performance toolkit transforming ISO certification into strategic growth for SMEs.",
+    url: "https://pex-solutions.com",
+  },
+};
 
 export default function HomePage() {
-  return (
-    <div className="w-full min-h-screen bg-white">
-      <PexGenHeader />
-      <PexGenComplianceSection />
-      <PexGenVideoSection />
-      <WhatIsPexSection />
-      <PexGenKeyCapabilitiesSection />
-      <PexGenWhyMattersSection />
-      <PexGenExploreSection />
-      <PexGenManagementSection />
-      <PexGenTestamonialsSection />
-      <PexGenPartners />
-      <CaseStudiesShowcase />
-      <PexGenWhoWeAreSection />
-      <PexGenPhilosopySection />
-      <SocialsSection />
-      <Footer />
-    </div>
-  );
+  return <HomePageClient />;
 }
