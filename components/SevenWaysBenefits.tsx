@@ -47,7 +47,7 @@ export default function SevenWaysBenefits() {
   ];
 
   return (
-    <div className="w-full md:bg-[#d7ecbe] py-12 sm:py-16 relative overflow-hidden">
+    <div className="w-full md:bg-[#d7ecbe]  sm:py-16 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* --- Responsive Header --- */}
         {/* Adjusted to be relative/centered on mobile, and absolute on desktop to match your original design */}
@@ -61,7 +61,7 @@ export default function SevenWaysBenefits() {
         {/* =========================================
             MOBILE VIEW (Visible on screens < 1024px)
            ========================================= */}
-        <div className="lg:hidden flex flex-col gap-4 pb-10">
+        <div className="lg:hidden max-w-[380px] mx-auto flex flex-col gap-4 pb-10">
           {benefitsData.map((item, index) => (
             <motion.div
               key={index}
