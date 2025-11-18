@@ -27,10 +27,10 @@ export default function AdditionalContentSection() {
   };
 
   return (
-    <div className="flex w-full justify-center bg-yellow-400 py-10 gap-3 sm:gap-4">
+    <div className="flex w-full justify-center bg-yellow-400 md:py-10 gap-3 sm:gap-4">
       <div className="max-w-6xl w-full px-6">
         <motion.div
-          className="text-left text-black text-2xl py-10 leading-relaxed"
+          className="md:text-left text-center text-black text-sm md:text-2xl py-10 leading-relaxed"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
