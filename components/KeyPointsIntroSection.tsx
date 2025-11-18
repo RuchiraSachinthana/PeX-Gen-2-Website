@@ -202,10 +202,10 @@ export default function KeyPointsIntroSection() {
       {/* Mobile Version - HARDCODED (No components) */}
       {/* ========================================== */}
       <div className="lg:hidden w-full bg-white py-12 px-4">
-        <div className="max-w-[330px] mx-auto flex flex-col items-center">
+        <div className="max-w-[350px] mx-auto flex flex-col items-center">
           {/* Title */}
           <motion.div
-            className="text-center mb-8"
+            className="text-center mb-6"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -235,7 +235,7 @@ export default function KeyPointsIntroSection() {
               className="w-full h-auto"
             />
             {/* Content Overlay */}
-            <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
+            <div className="absolute inset-0 p-6 ml-3 mt-5 flex flex-col justify-between">
               {/* Top Section */}
               <div className="">
                 <div className="flex justify-between items-start ">

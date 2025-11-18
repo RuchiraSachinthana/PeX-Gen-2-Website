@@ -181,7 +181,7 @@ export default function CaseStudiesShowcase() {
       </div>
 
       {/* Mobile Version - Visible only on mobile */}
-      <div className="lg:hidden w-full">
+      <div className="lg:hidden  mx-auto w-full">
         {/* First Card with Background Image */}
         <div
           style={{
@@ -192,7 +192,7 @@ export default function CaseStudiesShowcase() {
           className="w-full"
         >
           <motion.div
-            className="max-w-md mx-auto rounded-3xl overflow-hidden p-4"
+            className=" mx-auto rounded-3xl  overflow-hidden p-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -305,7 +305,7 @@ export default function CaseStudiesShowcase() {
         </div>
 
         {/* White Background Section for remaining cards */}
-        <div className="w-full bg-white py-10 max-w-md px-6">
+        <div className=" bg-white mx-auto max-w-[380px] mt-5  px-6">
           <div className="max-w-md mx-auto flex flex-col gap-6">
             {/* Second Card - ISO 9001 Card */}
             <motion.div

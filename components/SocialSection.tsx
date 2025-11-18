@@ -52,7 +52,7 @@ export default function SocialSection() {
           alt="Layer background"
           width={1500}
           height={0}
-          className="absolute right-[-800] top-0 z-0 object-cover"
+          className="absolute right-[-800px] top-0 z-0 object-cover"
         />
 
         {/* Content with relative positioning to stay above the background layer */}
@@ -67,7 +67,7 @@ export default function SocialSection() {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <motion.div
-                className="text-center text-4xl absolute top-[-100] left-80 text-emerald-900"
+                className="text-center text-4xl absolute top-[-100px] left-80 text-emerald-900"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -185,7 +185,9 @@ export default function SocialSection() {
                   >
                     <div className="flex justify-between text-sm px-2 items-center gap-2">
                       {String(
-                        t("socialSection.partnerSection.linkedinButton.platform")
+                        t(
+                          "socialSection.partnerSection.linkedinButton.platform"
+                        )
                       )}
                       <span className="font-semibold">
                         {String(
@@ -353,11 +355,7 @@ export default function SocialSection() {
                   </span>
                 </div>
               </motion.button>
-<div className="absolute bottom-13 right-5 ">
-              <p className="text-white text-[10px] uppercase">
-                {String(t("socialSection.partnerSection.followUs"))}
-              </p>
-            </div>
+
               {/* Avatars */}
               <motion.div
                 className="flex gap-1"
@@ -383,9 +381,6 @@ export default function SocialSection() {
                 ))}
               </motion.div>
             </div>
-
-           
-            
           </motion.div>
         </div>
 
