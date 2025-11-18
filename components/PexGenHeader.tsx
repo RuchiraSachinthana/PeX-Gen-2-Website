@@ -93,7 +93,7 @@ export default function PexGenHeader() {
 
           {/* Main Content - Mobile optimized */}
           <div className="flex items-end justify-end min-h-50">
-            <div className="text-right mr-5 max-w-4xl">
+            <div className="text-right mr-5 ">
               <motion.p
                 className="text-xs mb-2 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
