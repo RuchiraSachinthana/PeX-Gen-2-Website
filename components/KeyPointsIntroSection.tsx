@@ -235,7 +235,7 @@ export default function KeyPointsIntroSection() {
               className="w-full h-auto"
             />
             {/* Content Overlay */}
-            <div className="absolute inset-0 p-6 ml-3 mt-5 flex flex-col justify-between">
+            <div className="absolute inset-0 p-6 ml-3  flex flex-col justify-between">
               {/* Top Section */}
               <div className="">
                 <div className="flex justify-between items-start ">
@@ -253,7 +253,7 @@ export default function KeyPointsIntroSection() {
                 </div>
 
                 <h3 className="text-white text-xl font-semibold mb-2 leading-tight">
-                  Documentation br Overload
+                  Documentation br <br />Overload
                 </h3>
 
                 <div className="mb-6">
@@ -429,8 +429,8 @@ export default function KeyPointsIntroSection() {
                  
                 </div>
 
-                <h3 className="text-white text-2xl font-bold leading-7 mb-2">
-                  Time consuming to maintain
+                <h3 className="text-white text-xl font-semibold mb-2">
+                  Time consuming <br /> to maintain
                 </h3>
 
                 <div className="mb-6">
