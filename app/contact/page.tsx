@@ -18,10 +18,25 @@ export const metadata: Metadata = {
     title: "Contact Us - Get Started with PEx Software™",
     description:
       "Schedule a demo or consultation to transform your ISO compliance into competitive advantage.",
-    url: "https://pex-solutions.com/contact",
+    url: "https://pexsoftwaresolutions.com/contact",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact PEx Software™",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us - Get Started with PEx Software™",
+    description:
+      "Schedule a demo or consultation to transform your ISO compliance into competitive advantage.",
+    images: ["https://pexsoftwaresolutions.com/logo.webp"],
   },
   alternates: {
-    canonical: "https://pex-solutions.com/contact",
+    canonical: "https://pexsoftwaresolutions.com/contact",
   },
   robots: {
     index: false,

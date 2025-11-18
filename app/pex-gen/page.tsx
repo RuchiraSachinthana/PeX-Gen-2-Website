@@ -26,10 +26,25 @@ export const metadata: Metadata = {
     title: "PEx Gen - Next-Generation Compliance & Performance Toolkit",
     description:
       "AI-powered compliance and performance toolkit with real-time dashboards and strategic planning integration.",
-    url: "https://pex-solutions.com/pex-gen",
+    url: "https://pexsoftwaresolutions.com/pex-gen",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Gen - Next-Generation Compliance & Performance Toolkit",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PEx Gen - Next-Generation Compliance & Performance Toolkit",
+    description:
+      "AI-powered compliance and performance toolkit with real-time dashboards and strategic planning integration.",
+    images: ["https://pexsoftwaresolutions.com/logo.webp"],
   },
   alternates: {
-    canonical: "https://pex-solutions.com/pex-gen",
+    canonical: "https://pexsoftwaresolutions.com/pex-gen",
   },
 };
 

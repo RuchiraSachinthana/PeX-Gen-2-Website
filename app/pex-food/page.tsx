@@ -24,10 +24,25 @@ export const metadata: Metadata = {
     title: "PEx Food - Food Safety & Quality Compliance Software",
     description:
       "Comprehensive food safety and quality management software for food manufacturers and processors.",
-    url: "https://pex-solutions.com/pex-food",
+    url: "https://pexsoftwaresolutions.com/pex-food",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Food - Food Safety & Quality Compliance Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PEx Food - Food Safety & Quality Compliance Software",
+    description:
+      "Comprehensive food safety and quality management software for food manufacturers and processors.",
+    images: ["https://pexsoftwaresolutions.com/logo.webp"],
   },
   alternates: {
-    canonical: "https://pex-solutions.com/pex-food",
+    canonical: "https://pexsoftwaresolutions.com/pex-food",
   },
 };
 

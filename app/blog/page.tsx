@@ -23,10 +23,25 @@ export const metadata: Metadata = {
     title: "Blog - Compliance, Quality Management & Performance Insights",
     description:
       "Expert insights on ISO compliance, quality management, and operational excellence for SMEs.",
-    url: "https://pex-solutions.com/blog",
+    url: "https://pexsoftwaresolutions.com/blog",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Software™ Blog - Compliance Insights",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog - Compliance, Quality Management & Performance Insights",
+    description:
+      "Expert insights on ISO compliance, quality management, and operational excellence for SMEs.",
+    images: ["https://pexsoftwaresolutions.com/logo.webp"],
   },
   alternates: {
-    canonical: "https://pex-solutions.com/blog",
+    canonical: "https://pexsoftwaresolutions.com/blog",
   },
 };
 

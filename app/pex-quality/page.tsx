@@ -32,10 +32,25 @@ export const metadata: Metadata = {
     title: "PEx Quality - ISO 9001 QMS Software | Reduce Documentation by 90%",
     description:
       "Be audit-ready anytime. Smart automation, real-time visibility, and strategic alignment for Quality Managers.",
-    url: "https://pex-solutions.com/pex-quality",
+    url: "https://pexsoftwaresolutions.com/pex-quality",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Quality - ISO 9001 QMS Software",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PEx Quality - ISO 9001 QMS Software | Reduce Documentation by 90%",
+    description:
+      "Be audit-ready anytime. Smart automation, real-time visibility, and strategic alignment for Quality Managers.",
+    images: ["https://pexsoftwaresolutions.com/logo.webp"],
   },
   alternates: {
-    canonical: "https://pex-solutions.com/pex-quality",
+    canonical: "https://pexsoftwaresolutions.com/pex-quality",
   },
 };
 
