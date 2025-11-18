@@ -297,15 +297,15 @@ export default function SocialSection() {
 
           {/* Partner Card */}
           <motion.div
-            className="bg-[#0e685b] rounded-3xl p-5 relative shadow-lg"
+            className="bg-[#0e685b] max-w-[380px] rounded-3xl mx-auto p-5 relative shadow-lg"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Icon Badge - Top Right */}
-            <div className="absolute top-2 right-4 bg-yellow-400 rounded-xl shadow-lg">
-              <div className="w-8 h-8 flex items-center justify-center">
+            <div className="absolute top-2 right-4 bg-yellow-400 ">
+              <div className="w-9 h-9 flex items-center justify-center">
                 <Image
                   src="/Asset 27.svg"
                   alt="Icon"
@@ -318,7 +318,7 @@ export default function SocialSection() {
 
             {/* Title */}
             <div className="mb-4 pr-8">
-              <h3 className="text-white text-base leading-tight">
+              <h3 className="text-white max-w-[250px] text-base">
                 {String(t("socialSection.partnerSection.title1"))}{" "}
                 {String(t("socialSection.partnerSection.title2"))}{" "}
                 {String(t("socialSection.partnerSection.title3"))}
@@ -367,7 +367,7 @@ export default function SocialSection() {
                 {[1, 2, 3, 4, 5].map((num) => (
                   <motion.div
                     key={num}
-                    className="w-5 h-5 rounded-full bg-gray-300 overflow-hidden border border-white"
+                    className="w-6 h-6 rounded-full bg-gray-300 overflow-hidden border border-white"
                     variants={avatarItemVariants}
                   >
                     <Image

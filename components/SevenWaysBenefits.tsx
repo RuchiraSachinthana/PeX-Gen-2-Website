@@ -11,7 +11,7 @@ export default function SevenWaysBenefits() {
     <div className="w-full bg-[#d7ecbe] py-12 sm:py-16 relative overflow-hidden">
       <div className="max-w-6xl py-16  mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="absolute left-0  top-[100] ">
+        <div className="absolute left-0  top-[100px] ">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-teal-800 mb-6">
             <span className="block">7 Ways how hospitality industry</span>
             <span className="block">can benefit by PEx Software™</span>
@@ -22,7 +22,7 @@ export default function SevenWaysBenefits() {
         <div className="relative w-full h-[1700px]">
           {/* --- Card 01 --- */}
           <motion.div
-            className="absolute top-[-50] right-25 w-[40%]"
+            className="absolute top-[-50px] right-25 w-[40%]"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,7 +60,7 @@ export default function SevenWaysBenefits() {
 
           {/* --- Card 02 --- */}
           <motion.div
-            className="absolute top-[300] left-0 w-180 "
+            className="absolute top-[300px] left-0 w-180 "
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,7 +76,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto"
                 />
                 <div className="absolute top-18 inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <div className="text-yellow-400 absolute top-[-35] left-25 text-2xl font-semibold mb-3">
+                  <div className="text-yellow-400 absolute top-[-35px] left-25 text-2xl font-semibold mb-3">
                     <div>Reduces Paperwork by 90%</div>
                   </div>
                   <div className="text-white text-2xl">
@@ -94,7 +94,7 @@ export default function SevenWaysBenefits() {
           </motion.div>
 
           <motion.div
-            className="absolute top-[490] right-[-80] w-150"
+            className="absolute top-[490px] right-[-80px] w-150"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -129,7 +129,7 @@ export default function SevenWaysBenefits() {
           </motion.div>
 
           <motion.div
-            className="absolute top-[700] left-[-80] w-150"
+            className="absolute top-[700px] left-[-80px] w-150"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
