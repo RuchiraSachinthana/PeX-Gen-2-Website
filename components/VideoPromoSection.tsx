@@ -31,7 +31,7 @@ export default function VideoPromoSection() {
       />
       <div className="max-w-6xl mx-auto relative z-10 px-2 md:px-4">
         {/* Mobile Layout */}
-        <div className="flex md:hidden flex-col gap-3 items-center">
+        <div className="flex md:hidden max-w-[370px] flex-col gap-3 items-center">
           {/* Title - Mobile */}
           <motion.h2
             className="text-xl sm:text-3xl text-[#0e685b] text-center mb-2"
@@ -52,6 +52,7 @@ export default function VideoPromoSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
+            whileHover={{ scale: 1.02 }}
           >
             <iframe
               className="top-0 left-0 w-full h-full rounded-2xl"
@@ -67,7 +68,7 @@ export default function VideoPromoSection() {
 
           {/* Sign Up Card - Mobile */}
           <motion.div
-            className="relative w-full max-w-sm rounded-2xl "
+            className="relative w-full max-w-[370px] rounded-2xl "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

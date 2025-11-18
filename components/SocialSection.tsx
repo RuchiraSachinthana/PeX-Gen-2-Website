@@ -302,7 +302,7 @@ export default function SocialSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Icon Badge - Top Right */}
-            <div className="absolute -top-3 -right-3 bg-yellow-400 rounded-xl p-3 shadow-lg">
+            <div className="absolute top-2 right-4 bg-yellow-400 rounded-xl shadow-lg">
               <div className="w-8 h-8 flex items-center justify-center">
                 <Image
                   src="/Asset 27.svg"
@@ -316,7 +316,7 @@ export default function SocialSection() {
 
             {/* Title */}
             <div className="mb-4 pr-8">
-              <h3 className="text-yellow-300 text-base font-semibold leading-tight">
+              <h3 className="text-white text-base leading-tight">
                 {String(t("socialSection.partnerSection.title1"))}{" "}
                 {String(t("socialSection.partnerSection.title2"))}{" "}
                 {String(t("socialSection.partnerSection.title3"))}
@@ -353,7 +353,11 @@ export default function SocialSection() {
                   </span>
                 </div>
               </motion.button>
-
+<div className="absolute bottom-13 right-5 ">
+              <p className="text-white text-[10px] uppercase">
+                {String(t("socialSection.partnerSection.followUs"))}
+              </p>
+            </div>
               {/* Avatars */}
               <motion.div
                 className="flex gap-1"
@@ -362,10 +366,10 @@ export default function SocialSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                {[1, 2, 3, 4].map((num) => (
+                {[1, 2, 3, 4, 5].map((num) => (
                   <motion.div
                     key={num}
-                    className="w-7 h-7 rounded-full bg-gray-300 overflow-hidden border border-white"
+                    className="w-5 h-5 rounded-full bg-gray-300 overflow-hidden border border-white"
                     variants={avatarItemVariants}
                   >
                     <Image
@@ -380,12 +384,8 @@ export default function SocialSection() {
               </motion.div>
             </div>
 
-            {/* Follow Us Text */}
-            <div className="mt-3 text-right">
-              <p className="text-white text-[10px] uppercase font-semibold">
-                {String(t("socialSection.partnerSection.followUs"))}
-              </p>
-            </div>
+           
+            
           </motion.div>
         </div>
 

@@ -72,7 +72,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-gradient-to-r from-emerald-900 to-teal-700 text-white py-12 relative overflow-hidden">
+    <footer className="bg-gradient-to-r from-emerald-900 to-teal-700 text-white py-8 lg:py-12 relative overflow-hidden w-full">
       {/* Gradient Blurs */}
       <div
         className="absolute -right-20 -top-20 w-80 h-80 bg-teal-600/30 rounded-full blur-3xl"
@@ -83,9 +83,9 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
         {/* Left Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-20">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -268,15 +268,15 @@ export default function Footer() {
 
         {/* Right Section - Contact Form */}
         <motion.div
-          className="bg-emerald-950/60 backdrop-blur-md px-10 py-4 rounded-4xl shadow-lg w-full max-w-md ml-auto"
+          className="bg-emerald-950/60 backdrop-blur-md px-6 lg:px-10 py-4 rounded-4xl shadow-lg w-full max-w-md mx-auto lg:ml-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <form className="space-y-2">
-            <div className="flex items-center gap-1">
-              <label className="text-white text-sm w-20 shrink-0">
+          <form className="space-y-3 lg:space-y-2">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+              <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.company"))}
               </label>
               <input
@@ -284,8 +284,8 @@ export default function Footer() {
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-            <div className="flex items-center gap-1">
-              <label className="text-white text-sm w-20 shrink-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+              <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.name"))}
               </label>
               <input
@@ -293,8 +293,8 @@ export default function Footer() {
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-            <div className="flex items-center gap-1">
-              <label className="text-white text-sm w-20 shrink-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+              <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.email"))}
               </label>
               <input
@@ -302,8 +302,8 @@ export default function Footer() {
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-            <div className="flex items-center gap-1">
-              <label className="text-white text-sm w-20 shrink-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+              <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.country"))}
               </label>
               <div className="relative flex-1">
@@ -342,8 +342,8 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center gap-1">
-              <label className="text-white text-sm w-20 shrink-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+              <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.phone"))}
               </label>
               <input

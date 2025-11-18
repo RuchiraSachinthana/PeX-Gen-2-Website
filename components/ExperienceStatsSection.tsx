@@ -1,11 +1,11 @@
 "use client";
 // Import motion from framer-motion
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import type { FC } from "react";
 import { Fragment } from "react";
 import { useTranslation } from "../context/LanguageProvider";
 import ReusableShape from "./ReusableShape";
-import { ArrowRight } from "lucide-react";
 
 export const ExperienceStatsSection: FC = () => {
   const { t } = useTranslation();
@@ -218,8 +218,11 @@ export const ExperienceStatsSection: FC = () => {
 
       {/* Mobile Version */}
       <section
-        className="lg:hidden w-full bg-cover bg-center bg-no-repeat relative overflow-hidden min-h-[500px]"
-        style={{ backgroundImage: "url('/office_promo_bg.webp')" }}
+        className="lg:hidden w-full bg-cover  bg-no-repeat relative overflow-hidden min-h-[500px]"
+        style={{
+          backgroundImage: "url('/office_promo_bg.webp')",
+          backgroundPosition: "45% center",
+        }}
       >
         <div className="max-w-md mx-auto h-full px-4 py-10 relative z-10">
           {/* Stats Card - Top Left - BIGGER */}

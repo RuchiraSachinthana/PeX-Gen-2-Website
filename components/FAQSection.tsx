@@ -80,14 +80,14 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         {/* Question Header (Button) - Mobile */}
         <button
           onClick={onToggle}
-          className="flex w-full items-center justify-between rounded-full bg-teal-800 pl-0 pr-2 py-2 text-left text-white cursor-pointer"
+          className="flex w-full items-center justify-between rounded-full bg-teal-800 pl-0 pr-2  text-left text-white cursor-pointer"
           aria-expanded={isOpen}
         >
           <div className="flex items-center relative">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400 text-teal-900 font-bold flex-shrink-0">
               <span className="text-xs">{item.id.replace("q", "Q")}</span>
             </div>
-            <span className="ml-3 text-xs pr-1 leading-tight">{item.question}</span>
+            <span className="ml-3 text-[10px] md:text-sm pr-1 ">{item.question}</span>
           </div>
           <ChevronDown
             className={`h-4 w-4 text-yellow-400 shrink-0 transform transition-transform duration-300 ${
@@ -142,7 +142,7 @@ const FAQSection: React.FC = () => {
       {/* Mobile Title */}
       <div className="lg:hidden max-w-md mx-auto">
         <motion.h2
-          className="mb-5 text-xl text-center font-semibold text-teal-900"
+          className="mb-5 text-xl text-center  text-teal-900"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

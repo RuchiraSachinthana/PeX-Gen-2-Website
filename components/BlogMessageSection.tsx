@@ -42,7 +42,7 @@ const BlogMessageSection = () => {
             Digital transformation is no longer optional — it&apos;s a strategic
             imperative. Having <br /> worked as a CEO, Process Engineer and
             business consultant for nearly 30 years <br /> and working with over
-            150 organizations across industries, I&apos;ve seen a recurring{" "}
+            150 organizations across industries, I&apos;ve seen a recurring
             <br /> and costly mistake: companies rush into ERP implementations
             without first <br /> re-engineering their business processes.
           </motion.p>
