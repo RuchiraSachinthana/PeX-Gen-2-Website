@@ -1,0 +1,16 @@
+# PEx Software™ - Robots.txt
+# https://pex-solutions.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
+Sitemap: https://pex-solutions.com/sitemap.xml
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1
+
