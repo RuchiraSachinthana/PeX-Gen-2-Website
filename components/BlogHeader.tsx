@@ -54,16 +54,16 @@ const BlogHeader = () => {
         </div>
       </div>
 
-      {/* Main Content Container */}
+      {/* Desktop Version */}
       <motion.div
-        className="w-full max-w-6xl mx-auto z-10  mt-25"
+        className="hidden md:block w-full max-w-6xl mx-auto z-10 mt-25"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <div className="flex gap-6">
           {/* Left Side - Main Featured Article */}
-          <motion.div className="w-[45%]" variants={fadeInUp}>
+          <motion.div className="w-[45%]">
             <div className="">
               {/* Featured Image */}
               <div className="w-full">
@@ -88,10 +88,10 @@ const BlogHeader = () => {
           </motion.div>
 
           {/* Right Side - Article List */}
-          <motion.div className="w-1/2" variants={fadeInUp}>
+          <motion.div className="w-1/2">
             <div className="">
               {/* Article Item 1 */}
-              <motion.div className="flex gap-4 mb-4" variants={fadeInRight}>
+              <motion.div className="flex gap-4 mb-4">
                 <div className="w-60">
                   <Image
                     src="/Asset 64.webp"
@@ -166,6 +166,110 @@ const BlogHeader = () => {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Mobile Version */}
+      <motion.div
+        className="md:hidden w-full max-w-[370px] mx-auto z-10 mt-32 px-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="space-y-6">
+          {/* Left Side - Main Featured Article (Row 1) */}
+          <motion.div variants={fadeInUp}>
+            <div className="w-full">
+              <Image
+                src="/Asset 9.webp"
+                alt="Featured Article"
+                width={370}
+                height={250}
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+            <div className="mt-3">
+              <h2 className="text-xl text-teal-700 mb-2 font-bold">
+                The ERP Trap:
+              </h2>
+              <h3 className="text-lg text-teal-700 leading-relaxed">
+                Why Digital Transformation Fails Without Business Process
+                Re-engineering
+              </h3>
+            </div>
+          </motion.div>
+
+          {/* Right Side - Article List (Rows 2-4) */}
+          <div className="space-y-4">
+            {/* Article Item 1 */}
+            <motion.div className="flex gap-3" variants={fadeInUp}>
+              <div className="w-32 flex-shrink-0">
+                <Image
+                  src="/Asset 64.webp"
+                  alt="Article 1"
+                  width={128}
+                  height={85}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-sm font-bold text-teal-700 mb-1">
+                  BE AUDIT-READY AT ANY MOMENT:
+                </h4>
+                <p className="text-xs text-teal-700 mb-1">
+                  How PEx Simplifies Internal Audits
+                </p>
+                <p className="text-xs text-gray-700">
+                  5th November 2025 | Author
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Article Item 2 */}
+            <motion.div className="flex gap-3" variants={fadeInUp}>
+              <div className="w-32 flex-shrink-0">
+                <Image
+                  src="/Asset 65.webp"
+                  alt="Article 2"
+                  width={128}
+                  height={85}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-sm font-bold text-teal-700 mb-1">
+                  SANJU&apos;S STORY
+                </h4>
+                <p className="text-xs text-gray-900 mt-4">
+                  5th November 2025 | Author
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Article Item 3 */}
+            <motion.div className="flex gap-3" variants={fadeInUp}>
+              <div className="w-32 flex-shrink-0">
+                <Image
+                  src="/Asset 66.webp"
+                  alt="Article 3"
+                  width={128}
+                  height={85}
+                  className="w-full h-auto object-cover rounded"
+                />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-sm font-bold text-teal-700 mb-1">
+                  BE AUDIT-READY AT ANY MOMENT:
+                </h4>
+                <p className="text-xs text-teal-700 mb-1">
+                  How PEx Simplifies Internal Audits
+                </p>
+                <p className="text-xs text-gray-700">
+                  5th November 2025 | Author
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </div>
