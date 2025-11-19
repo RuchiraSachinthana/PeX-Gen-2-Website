@@ -3,7 +3,20 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const BlogContentSection = () => {
+interface Blog {
+  _id: string;
+  title: string;
+  hero_img: string;
+  sub_title_1: string;
+  paragraph_1: string;
+  created_at: string;
+}
+
+interface BlogContentSectionProps {
+  blogData: Blog | null;
+}
+
+const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -49,9 +62,9 @@ const BlogContentSection = () => {
     },
   };
   return (
-    <div className="relative w-full  bg-white items-center pb-20 overflow-hidden">
+    <div className="relative w-full bg-white items-center py-10 overflow-hidden px-4 md:px-0">
       <motion.div
-        className="w-full max-w-6xl bg-teal-700 min-h-200 rounded-3xl z-10 mx-auto p-8 mb-2 text-white"
+        className="w-full max-w-6xl bg-teal-700  rounded-2xl md:rounded-3xl z-10 mx-auto p-4 md:p-8 mb-2 text-white"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -59,23 +72,17 @@ const BlogContentSection = () => {
       >
         {/* //first page */}
 
-        <h3 className="text-yellow-400 text-xl pb-6">
-          The Myth of ERP as a Cure-All
+        <h3 className="text-yellow-400 text-base md:text-xl pb-4 md:pb-6">
+          {blogData?.sub_title_1}
         </h3>
 
-        <p className=" text-xl pb-2 mb-4">
-          Many organizations believe that investing in an ERP system will
-          automatically solve their operational inefficiencies. It won’t. <br />
-          Without process re-engineering, an ERP simply digitizes the same
-          broken workflows. The result? A high-cost <br />
-          system that delivers financial reports — yes — but at the expense of
-          bottom-level staff who bear the brunt of <br />
-          manual data entry, repetitive tasks, and burnout.
+        <p className="text-sm md:text-xl pb-2 mb-3 md:mb-4">
+          {blogData?.paragraph_1}
         </p>
-        <p className=" text-xl pb-2">
-          I’ve seen this pattern repeat across industries:
+        {/* <p className="text-sm md:text-xl pb-2">
+          I've seen this pattern repeat across industries:
         </p>
-        <p className="pb-6 ml-4 text-yellow-400 text-md">
+        <p className="pb-4 md:pb-6 ml-2 md:ml-4 text-yellow-400 text-xs md:text-md">
           • Finance teams get their reports on time.
           <br />
           • Operational teams drown in inefficiency.
@@ -83,14 +90,18 @@ const BlogContentSection = () => {
           • Employees complain of increased workload and wasteful activity.
           <br />• ROI remains elusive — because no one can quantify the value of
           the <br />
-          transformation.{" "}
+          transformation.
+        </p> */}
+
+        {/* <h3 className="text-yellow-400 text-base md:text-xl uppercase ">
+          Why This Happens
+        </h3>
+
+        <p className="text-sm md:text-xl">
+          This mistake stems from two critical gaps:
         </p>
-
-        <h3 className="text-yellow-400 text-xl uppercase ">Why This Happens</h3>
-
-        <p className=" text-xl">This mistake stems from two critical gaps:</p>
         <motion.div
-          className="grid grid-cols-2 gap-6 my-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 my-3 md:my-4"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -108,61 +119,55 @@ const BlogContentSection = () => {
           ].map((item) => (
             <motion.div
               key={item.number}
-              className="bg-teal-600 text-white p-6 rounded-lg shadow-lg"
+              className="bg-teal-600 text-white p-4 md:p-6 rounded-lg shadow-lg"
               variants={cardVariants}
             >
-              <div className="flex items-start gap-4">
-                <div className="shrink-0 w-12 h-12 bg-yellow-400 text-teal-800 rounded-full flex items-center justify-center text-2xl font-bold">
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="shrink-0 w-8 h-8 md:w-12 md:h-12 bg-yellow-400 text-teal-800 rounded-full flex items-center justify-center text-lg md:text-2xl font-bold">
                   {item.number}
                 </div>
                 <div className="text-left">
-                  <p className="text-xl text-white leading-relaxed">
+                  <p className="text-sm md:text-xl text-white leading-relaxed">
                     {item.text}
                   </p>
                 </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
-        <p className="text-xl">
+        </motion.div> */}
+        {/* <p className="text-sm md:text-xl">
           ERP systems are powerful tools — but only when built on optimized
           processes. Without BPR, organizations end <br /> up automating
           inefficiency.
-        </p>
+        </p> */}
       </motion.div>
       <motion.div
-        className="w-full max-w-6xl bg-white border leading-relaxed text-xl mb-2  rounded-3xl z-10 mx-auto p-8 text-border"
+        className="w-full max-w-6xl bg-white border leading-relaxed text-sm md:text-xl mb-2 rounded-2xl md:rounded-3xl z-10 mx-auto p-4 md:p-8 text-border"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        What Is Business Process Re-engineering? <br /> <br /> BPR is the
-        science of identifying and eliminating wasteful activities to create
-        lean, efficient, and customer-centric <br />
-        processes. It’s not just about cost-cutting — it’s about consistency,
-        scalability, and satisfaction. <br />
-        Done right, BPR: <br />• Reduces operational costs <br />• Improves
-        delivery timelines <br />• Enhances employee productivity <br />•
-        Strengthens customer experience
+        <h2 className="mb-2">{blogData?.sub_title_2}</h2>{" "}
+        {blogData?.paragraph_2}
       </motion.div>
       <motion.div
-        className="w-full max-w-6xl mx-auto mb-2 rounded-3xl"
+        className="w-full max-w-6xl mx-auto mb-2 rounded-2xl md:rounded-3xl"
         variants={scaleIn}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <Image
-          src="/Asset 16.webp"
-          alt="Avatar 4"
+          src={blogData?.img_url_2}
+          alt="blog_image 2"
           width={1000}
           height={40}
           className="w-full h-full object-cover rounded-3xl"
         />
       </motion.div>
-      <motion.div
-        className="w-full max-w-6xl bg-[#d2edb9] leading-relaxed text-xl mb-5  rounded-3xl z-10 mx-auto p-8 text-border"
+      {/* <motion.div
+        className="w-full max-w-6xl bg-[#d2edb9] leading-relaxed text-sm md:text-xl mb-5 rounded-2xl md:rounded-3xl z-10 mx-auto p-4 md:p-8 text-border"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -179,24 +184,27 @@ const BlogContentSection = () => {
         <br />
         • A lean operational foundation <br />• Clear process ownerships <br />•
         Measurable ROI <br />• A smoother, more effective ERP rollout
-      </motion.div>
-      <motion.div
-        className="w-full max-w-6xl bg-white leading-relaxed mt-8 flex justify-between z-10 mx-auto"
+      </motion.div> */}
+      {/* <motion.div
+        className="w-full max-w-6xl bg-white leading-relaxed mt-6 md:mt-8 flex flex-col md:flex-row gap-4 md:justify-between z-10 mx-auto"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="text-md p-6">
-          <p className="uppercase mb-4">Final Thought</p>
+        <div className="text-sm md:text-md p-4 md:p-6">
+          <p className="uppercase mb-3 md:mb-4 font-bold">Final Thought</p>
           Digital transformation isn’t just about technology — <br />
           it’s about process clarity, people empowerment, and <br />
           strategic alignment. Before you invest
           <br /> in an ERP, invest in understanding and improving your
           processes. <br /> PEx Software™ helps you do exactly that.
         </div>
-        <div className="bg-[#d2edb9] p-8 py-16 text-xs rounded-3xl">
-          <p className="text-sm mb-2"> About the Author </p>
+        <div className="bg-[#d2edb9] p-4 md:p-8 py-8 md:py-16 text-xs rounded-2xl md:rounded-3xl">
+          <p className="text-xs md:text-sm mb-2 font-bold">
+            {" "}
+            About the Author{" "}
+          </p>
           Malik Perera is a transformation architect, executive coach, and CEO
           of Swiss <br />
           Advantage Systems. With 30 years consulting experience across 150+
@@ -211,7 +219,7 @@ const BlogContentSection = () => {
           <br />
           operations.
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };

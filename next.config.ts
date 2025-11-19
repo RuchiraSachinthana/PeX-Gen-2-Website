@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "pex-sooty.vercel.app",
+      },
+      {
+        protocol: "https",
+        hostname: "pex-sooty.vercel.app",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

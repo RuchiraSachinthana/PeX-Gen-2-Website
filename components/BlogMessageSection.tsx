@@ -26,17 +26,17 @@ const BlogMessageSection = () => {
   };
 
   return (
-    <div className="relative w-full flex bg-white items-center py-20 overflow-hidden">
+    <div className="relative w-full  flex bg-white items-center py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto  ">
         <motion.div
-          className="relative border-2 border-teal-600 rounded-lg p-8 bg-white shadow-lg"
+          className="relative border-2 mx-10 border-teal-600 rounded-lg p-8 bg-white shadow-lg"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.p
-            className="text-xl leading-10 text-gray-800"
+            className="md:text-xl text-xs md:leading-relaxed text-gray-800"
             variants={textVariants}
           >
             Digital transformation is no longer optional — it&apos;s a strategic
