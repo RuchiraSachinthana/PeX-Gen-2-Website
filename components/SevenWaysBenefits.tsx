@@ -7,22 +7,101 @@ import { useTranslation } from "../context/LanguageProvider";
 export default function SevenWaysBenefits() {
   const { t } = useTranslation();
 
+  // Data extracted for the Mobile View Loop to ensure clean code
+  const benefitsData = [
+    {
+      id: "01",
+      title: "Safeguards Brand Reputation in the Social Media Era",
+      desc: "In today's world, a single food safety lapse can go viral within minutes. PEX Software™ ensures every process is monitored, documented, and verified—preventing hotels from reputational damage and giving owners peace of mind.",
+    },
+    {
+      id: "02",
+      title: "Reduces Paperwork by 90%",
+      desc: "Traditional HACCP / ISO 22000 systems demand heavy documentation. PEX digitizes and automates compliance records, cutting paperwork by up to 90% and freeing staff to focus on service and guest experience.",
+    },
+    {
+      id: "03",
+      title: "Automates Monitoring with IoT Devices",
+      desc: "Temperature checks, food traceability logs, and other critical control points are automatically captured through IoT sensors. This eliminates manual errors, ensures accuracy, and provides real-time visibility into food safety operations.",
+    },
+    {
+      id: "04",
+      title: "Empowers Chefs and Hygiene Managers",
+      desc: "Instead of being burdened with compliance paperwork, chefs and hygiene managers can rely on visual dashboards and alerts. This allows them to focus on delivering safe, high-quality food while maintaining compliance effortlessly.",
+    },
+    {
+      id: "05",
+      title: "Streamlines Audit Readiness",
+      desc: "Preparing for audits is often stressful and time-consuming. With PEX, all compliance data is centralized, digital and instantly retrievable making audits smooth, transparent and stress-free.",
+    },
+    {
+      id: "06",
+      title: "Aligns Food Safety with Business Strategy",
+      desc: 'PEX transforms food safety from a "compliance burden" into a strategic advantage. By integrating ISO 22000 into daily operations, hotel owners can demonstrate excellence, win guest trust, and differentiate their brand in a competitive marketplace.',
+    },
+    {
+      id: "07",
+      title: "Drives Continuous Improvement",
+      desc: "With AI insights and performance analytics, PEX helps hotels identify trends, predict risks, and implement proactive improvements. This ensures not just compliance, but a culture of excellence and innovation in food safety.",
+    },
+  ];
+
   return (
-    <div className="w-full bg-[#d7ecbe] py-12 sm:py-16 relative overflow-hidden">
-      <div className="max-w-6xl py-16  mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="absolute left-0  top-[100] ">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-teal-800 mb-6">
+    <div className="w-full md:bg-[#d7ecbe]  sm:py-16 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* --- Responsive Header --- */}
+        {/* Adjusted to be relative/centered on mobile, and absolute on desktop to match your original design */}
+        <div className="relative mb-16 text-center lg:text-left lg:absolute lg:left-0 lg:top-[100px] lg:mb-0 z-20">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-teal-800 font-semibold ">
             <span className="block">7 Ways how hospitality industry</span>
             <span className="block">can benefit by PEx Software™</span>
           </h2>
         </div>
 
-        {/* Custom Positioned Cards Container */}
-        <div className="relative w-full h-[1700px]">
+        {/* =========================================
+            MOBILE VIEW (Visible on screens < 1024px)
+           ========================================= */}
+        <div className="lg:hidden max-w-[380px] mx-auto flex flex-col gap-4 pb-10">
+          {benefitsData.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative"
+            >
+              {/* The Green Card */}
+              <div
+                className={`rounded-3xl p-8 text-left shadow-lg relative z-10 ${
+                  parseInt(item.id) % 2 === 1 ? "bg-teal-800" : "bg-teal-600"
+                }`}
+              >
+                {/* The Yellow Number Badge (Matches Screenshot) */}
+                <div className="absolute -top-2 -right-2 bg-yellow-400 text-black text-2xl  w-16 h-16 flex items-center justify-center rounded-xl z-20 border-4 border-white">
+                  {item.id}
+                </div>
+
+                {/* Content */}
+                <h3 className="text-[#facc15] text-xl font-bold mb-4 leading-tight pr-8">
+                  {item.title}
+                </h3>
+                <p className="text-white text-base leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* =========================================
+            DESKTOP VIEW (Visible on screens >= 1024px)
+            (Your original code, untouched inside this wrapper)
+           ========================================= */}
+        <div className="hidden lg:block relative w-full h-[1700px]">
           {/* --- Card 01 --- */}
           <motion.div
-            className="absolute top-[-50] right-25 w-[40%]"
+            className="absolute top-[-50px] right-25 w-[40%]"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,7 +139,7 @@ export default function SevenWaysBenefits() {
 
           {/* --- Card 02 --- */}
           <motion.div
-            className="absolute top-[300] left-0 w-180 "
+            className="absolute top-[300px] left-0 w-180 "
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,7 +155,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto"
                 />
                 <div className="absolute top-18 inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <div className="text-yellow-400 absolute top-[-35] left-25 text-2xl font-semibold mb-3">
+                  <div className="text-yellow-400 absolute top-[-35px] left-25 text-2xl font-semibold mb-3">
                     <div>Reduces Paperwork by 90%</div>
                   </div>
                   <div className="text-white text-2xl">
@@ -85,7 +164,9 @@ export default function SevenWaysBenefits() {
                     <div>
                       PEX digitizes and automates compliance records, cutting
                     </div>
-                    <div>paperwork by up to 90% and freeing staff to focus on</div>
+                    <div>
+                      paperwork by up to 90% and freeing staff to focus on
+                    </div>
                     <div>service and guest experience.</div>
                   </div>
                 </div>
@@ -93,8 +174,9 @@ export default function SevenWaysBenefits() {
             </div>
           </motion.div>
 
+          {/* --- Card 03 --- */}
           <motion.div
-            className="absolute top-[490] right-[-80] w-150"
+            className="absolute top-[490px] right-[-80px] w-150"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -128,8 +210,9 @@ export default function SevenWaysBenefits() {
             </div>
           </motion.div>
 
+          {/* --- Card 04 --- */}
           <motion.div
-            className="absolute top-[700] left-[-80] w-150"
+            className="absolute top-[700px] left-[-80px] w-150"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -161,6 +244,7 @@ export default function SevenWaysBenefits() {
             </div>
           </motion.div>
 
+          {/* --- Card 05 --- */}
           <motion.div
             className="absolute top-[950px] right-15 w-120"
             initial={{ opacity: 0, y: 50 }}
@@ -194,6 +278,7 @@ export default function SevenWaysBenefits() {
             </div>
           </motion.div>
 
+          {/* --- Card 06 --- */}
           <motion.div
             className="absolute top-[1200px] left-0 w-150"
             initial={{ opacity: 0, y: 50 }}
@@ -229,6 +314,7 @@ export default function SevenWaysBenefits() {
             </div>
           </motion.div>
 
+          {/* --- Card 07 --- */}
           <motion.div
             className="absolute top-[1340px] right-10  w-100"
             initial={{ opacity: 0, y: 50 }}
