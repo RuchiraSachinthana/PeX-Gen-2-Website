@@ -6,19 +6,19 @@ import Image from "next/image";
 
 export default function PexGenWhyMattersSection() {
   return (
-    <div className="w-full py-10 mb-[-120] px-4">
+    <div className="w-full mx-auto py-10 mb-[-120] px-4">
       <div className="max-w-6xl justify-center items-center align-middle min-h-100 mx-auto">
         <div className="flex flex-wrap md:flex-nowrap justify-between max-w-5xl mx-auto gap-10 items-center">
           {/* Left Yellow Box: As you provided */}
           <motion.div
-            className="bg-yellow-300 rounded-3xl p-8 flex-1"
+            className="bg-yellow-300 rounded-3xl mx-auto p-8 flex-1"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-4xl  mb-4">Why It Matters</h2>
-            <p className="text-lg text-black">
+            <h2 className="md:text-4xl text-2xl text-center md:text-left md:mb-4 mb-2">Why It Matters</h2>
+            <p className="md:text-lg text-[10px] text-center md:text-left text-black">
               PEx Gen2&trade; turns ISO systems from a documentation <br />
               burden into a strategic asset—aligning compliance with <br />
               business goals, reducing audit stress.
@@ -46,13 +46,13 @@ export default function PexGenWhyMattersSection() {
 
             {/* --- Overlay Content --- */}
             {/* 4. This 'div' sits on top of the image */}
-            <div className="absolute inset-0  p-5">
+            <div className="absolute inset-0 mx-auto  p-5">
               {/* Main Text */}
-              <h3 className="text-yellow-400 text-4xl mt-10 ">Request demo</h3>
+              <h3 className="text-yellow-400 md:text-4xl text-2xl md:mt-10 ">Request demo</h3>
 
               {/* Bottom Content */}
               <div className="absolute bottom-5 left-5 flex items-center gap-4">
-                <span className="text-yellow-400 text-sm hidden sm:inline">
+                <span className="text-yellow-400 text-sm hidden inline">
                   LET&apos;S CONNECT
                 </span>
                 <motion.button
