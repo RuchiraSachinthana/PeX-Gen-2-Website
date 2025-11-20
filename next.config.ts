@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   // Domain configuration for pexsoftwaresolutions.com
   images: {
-    domains: ['pexsoftwaresolutions.com'],
+    domains: ['pexsoftwaresolutions.com', 'pex-sooty.vercel.app'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "pex-sooty.vercel.app",
+      },
+      {
+        protocol: "http",
         hostname: "pex-sooty.vercel.app",
       },
     ],

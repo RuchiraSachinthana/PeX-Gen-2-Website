@@ -120,10 +120,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className="antialiased min-h-screen bg-gray-50 text-gray-900"
         style={{ fontFamily: "Nexa, sans-serif" }}
+        suppressHydrationWarning
       >
         <LanguageProvider>
           <ConditionalNav />
