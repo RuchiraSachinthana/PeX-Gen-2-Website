@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import ConditionalNav from "../components/ConditionalNav";
 import { LanguageProvider } from "../context/LanguageProvider";
 import "./globals.css";
@@ -119,8 +120,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaMeasurementId =
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-26Y2X9D2YN";
+
   return (
     <html lang="en">
+      <Script
+        id="gtag-src"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+      />
+      <Script id="gtag-inline" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${gaMeasurementId}');
+        `}
+      </Script>
       <body
         className="antialiased min-h-screen bg-gray-50 text-gray-900"
         style={{ fontFamily: "Nexa, sans-serif" }}
