@@ -125,7 +125,7 @@ export default function RootLayout({
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-P3T633TP";
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       {/* Google Tag Manager */}
       <Script
         id="gtm-script"
@@ -157,6 +157,7 @@ export default function RootLayout({
       <body
         className="antialiased min-h-screen bg-gray-50 text-gray-900"
         style={{ fontFamily: "Nexa, sans-serif" }}
+        suppressHydrationWarning
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
