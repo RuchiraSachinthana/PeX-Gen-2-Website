@@ -21,7 +21,7 @@ export default function PexGenHeader() {
         />
 
         {/* Container for Logo, Navbar, and Content */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto ">
+        <div className="relative w-full max-w-6xl mx-auto ">
           {/* Top Row: Logo, Language Selector, and Navbar */}
           <HeroHeader />
 
@@ -87,7 +87,7 @@ export default function PexGenHeader() {
         />
 
         {/* Container for Logo, Navbar, and Content */}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-4">
+        <div className="relative w-full max-w-6xl mx-auto px-4">
           {/* Top Row: Logo, Language Selector, and Navbar */}
           <HeroHeader />
 

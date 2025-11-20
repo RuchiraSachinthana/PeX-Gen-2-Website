@@ -23,7 +23,7 @@ export default function FoodVideoPromoSection() {
       }
     }
   `}</style>
-      <div className="max-w-6xl mx-auto relative z-10 px-4">
+      <div className="max-w-6xl mx-auto relative  px-4">
         {/* Mobile Layout */}
         <div className="flex md:hidden max-w-[370px] mx-auto flex-col gap-3 items-center">
           {/* Title - Mobile */}
@@ -41,7 +41,7 @@ export default function FoodVideoPromoSection() {
 
           {/* Video - Mobile */}
           <motion.div
-            className="relative w-full max-w-sm h-64 bg-emerald-400 rounded-3xl p-1 shadow-2xl"
+            className="relative w-full max-w-sm h-64 bg-emerald-400 rounded-3xl p-1 shadow-2xl z-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

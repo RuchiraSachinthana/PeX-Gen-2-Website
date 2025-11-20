@@ -67,8 +67,8 @@ export default function HeroHeader() {
     : "border-[#04afbc]";
   const homeButtonBgColor = isBlogPage ? "bg-green-900/40" : "bg-white/10";
   const mobileOverlayBg = isBlogPage
-    ? "bg-gradient-to-br from-green-900/90 to-emerald-900/90"
-    : "bg-gradient-to-br from-teal-900/90 to-cyan-900/90";
+    ? "bg-gradient-to-br from-green-900 to-emerald-900/90"
+    : "bg-gradient-to-br from-teal-900 to-cyan-900/90";
 
   return (
     <div className="flex items-center max-w-7xl  justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
@@ -127,7 +127,8 @@ export default function HeroHeader() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className={`md:hidden fixed inset-0 ${mobileOverlayBg}  overflow-y-auto z-100`}
+            className={`md:hidden fixed inset-0 ${mobileOverlayBg} overflow-y-auto z-50`}
+            style={{ zIndex: 9999 }}
           >
             <div className="flex flex-col p-8 pt-24 space-y-6">
               {/* Close Button */}
@@ -193,9 +194,9 @@ export default function HeroHeader() {
                     {item.key === "contact" ? (
                       <button
                         onClick={() => {
-                          const footer = document.getElementById('footer');
+                          const footer = document.getElementById("footer");
                           if (footer) {
-                            footer.scrollIntoView({ behavior: 'smooth' });
+                            footer.scrollIntoView({ behavior: "smooth" });
                           }
                           setIsMobileMenuOpen(false);
                         }}
@@ -210,9 +211,10 @@ export default function HeroHeader() {
                     ) : pathname === "/" && item.key === "about" ? (
                       <button
                         onClick={() => {
-                          const section = document.getElementById('what-is-pex-gen');
+                          const section =
+                            document.getElementById("what-is-pex-gen");
                           if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.scrollIntoView({ behavior: "smooth" });
                           }
                           setIsMobileMenuOpen(false);
                         }}
@@ -227,9 +229,10 @@ export default function HeroHeader() {
                     ) : pathname === "/" && item.key === "features" ? (
                       <button
                         onClick={() => {
-                          const section = document.getElementById('management-section');
+                          const section =
+                            document.getElementById("management-section");
                           if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.scrollIntoView({ behavior: "smooth" });
                           }
                           setIsMobileMenuOpen(false);
                         }}
@@ -244,9 +247,11 @@ export default function HeroHeader() {
                     ) : pathname === "/pex-food" && item.key === "about" ? (
                       <button
                         onClick={() => {
-                          const section = document.getElementById('seven-ways-benefits');
+                          const section = document.getElementById(
+                            "seven-ways-benefits"
+                          );
                           if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.scrollIntoView({ behavior: "smooth" });
                           }
                           setIsMobileMenuOpen(false);
                         }}
@@ -261,9 +266,11 @@ export default function HeroHeader() {
                     ) : pathname === "/pex-food" && item.key === "features" ? (
                       <button
                         onClick={() => {
-                          const section = document.getElementById('food-three-key-points');
+                          const section = document.getElementById(
+                            "food-three-key-points"
+                          );
                           if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.scrollIntoView({ behavior: "smooth" });
                           }
                           setIsMobileMenuOpen(false);
                         }}
@@ -278,9 +285,10 @@ export default function HeroHeader() {
                     ) : pathname === "/pex-quality" && item.key === "about" ? (
                       <button
                         onClick={() => {
-                          const section = document.getElementById('pex-quality-slider');
+                          const section =
+                            document.getElementById("pex-quality-slider");
                           if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.scrollIntoView({ behavior: "smooth" });
                           }
                           setIsMobileMenuOpen(false);
                         }}
@@ -292,12 +300,15 @@ export default function HeroHeader() {
                       >
                         {item.label}
                       </button>
-                    ) : pathname === "/pex-quality" && item.key === "features" ? (
+                    ) : pathname === "/pex-quality" &&
+                      item.key === "features" ? (
                       <button
                         onClick={() => {
-                          const section = document.getElementById('pex-quality-key-points');
+                          const section = document.getElementById(
+                            "pex-quality-key-points"
+                          );
                           if (section) {
-                            section.scrollIntoView({ behavior: 'smooth' });
+                            section.scrollIntoView({ behavior: "smooth" });
                           }
                           setIsMobileMenuOpen(false);
                         }}

@@ -54,7 +54,7 @@ export default function PexGenVideoSection() {
       <section className="md:hidden mx-auto flex flex-col bg-[#0e685b] items-center justify-center py-8 px-4 text-center">
         <div className="max-w-[380px]  text-center justify-center flex mx-auto relative">
           <motion.div
-            className="relative w-full rounded-3xl shadow-2xl p-2 z-10 bg-[linear-gradient(to_bottom_right,#0e685b,#10b981,#0e685b)]"
+            className="relative w-full rounded-3xl shadow-2xl p-2 z-0 bg-[linear-gradient(to_bottom_right,#0e685b,#10b981,#0e685b)]"
             initial={{ opacity: 0, scale: 0.9, y: 50 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
@@ -74,7 +74,7 @@ export default function PexGenVideoSection() {
           </motion.div>
           {/* Green Dragon positioned below video on mobile */}
           <motion.div
-            className="absolute top-40 left-40 z-20"
+            className="absolute top-40 left-40 z-0"
             initial={{ opacity: 0, y: 30, scale: 0.8 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
