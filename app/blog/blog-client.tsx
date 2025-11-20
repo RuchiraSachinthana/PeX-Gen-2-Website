@@ -17,9 +17,6 @@ interface Blog {
   paragraph_2?: string;
   img_url_2?: string;
   created_at: string;
-  sub_title_2?: string;
-  paragraph_2?: string;
-  img_url_2?: string;
 }
 
 export default function BlogPageClient() {
