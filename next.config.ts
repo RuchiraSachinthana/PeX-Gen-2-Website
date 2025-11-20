@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'pexsoftwaresolutions.com',
       },
+      {
+        protocol: "https",
+        hostname: "pex-sooty.vercel.app",
+      },
     ],
   },
   // Ensure proper domain handling
