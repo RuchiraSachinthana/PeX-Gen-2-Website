@@ -8,7 +8,7 @@ export default function KeyPointsIntroSection() {
       {/* ========================================== */}
       {/* Desktop Version - UNCHANGED (As requested) */}
       {/* ========================================== */}
-      <div className="hidden lg:block w-full bg-white pt-30 pb-190 relative overflow-hidden">
+      <div id="pex-quality-key-points" className="hidden lg:block w-full bg-white pt-30 pb-190 relative overflow-hidden">
         <div className="max-w-6xl mx-auto p-6 relative px-4 sm:px-6 lg:px-8 mb-100 z-10">
           <motion.div
             className="absolute left-0 text-[#0e685b] top-0 w-full h-full"
@@ -201,7 +201,7 @@ export default function KeyPointsIntroSection() {
       {/* ========================================== */}
       {/* Mobile Version - HARDCODED (No components) */}
       {/* ========================================== */}
-      <div className="lg:hidden w-full bg-white py-12 px-4">
+      <div id="pex-quality-key-points" className="lg:hidden w-full bg-white py-12 px-4">
         <div className="max-w-[350px] mx-auto flex flex-col items-center">
           {/* Title */}
           <motion.div

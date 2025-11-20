@@ -151,10 +151,10 @@ const BlogHeader = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="flex gap-6">
+        <div className="flex justify-between">
           {/* Left Side - Main Featured Article */}
           {featuredBlog && (
-            <motion.div className="w-[45%]">
+            <motion.div className="w-full max-w-md">
               <div className="">
                 {/* Featured Image */}
                 <div className="w-full">
@@ -179,7 +179,7 @@ const BlogHeader = () => {
           )}
 
           {/* Right Side - Article List */}
-          <motion.div className="w-1/2">
+          <motion.div className="w-full max-w-md">
             <div className="space-y-4">
               {otherBlogs.map((blog, index) => (
                 <motion.div

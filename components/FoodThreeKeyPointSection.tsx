@@ -9,7 +9,7 @@ export default function FoodThreeKeyPointsIntroSection() {
       {/* Desktop Version - UNCHANGED (As requested) */}
       {/* ========================================== */}
       <div className="hidden lg:block w-full bg-white pt-30 pb-190 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto p-6 relative px-4 sm:px-6 lg:px-8 mb-100 z-10">
+        <div id="food-three-key-points" className="max-w-6xl mx-auto p-6 relative px-4 sm:px-6 lg:px-8 mb-100 z-10">
           <motion.div
             className="absolute left-0 text-[#0e685b] top-0 w-full h-full"
             initial={{ opacity: 0, x: -100 }}
@@ -197,7 +197,7 @@ export default function FoodThreeKeyPointsIntroSection() {
       {/* ========================================== */}
       {/* Mobile Version - Following KeyPointsIntroSection pattern */}
       {/* ========================================== */}
-      <div className="lg:hidden w-full bg-white py-12 px-4">
+      <div id="food-three-key-points" className="lg:hidden w-full bg-white py-12 px-4">
         <div className="max-w-[350px] mx-auto flex flex-col items-center">
           {/* Title */}
           <motion.div
@@ -264,7 +264,7 @@ export default function FoodThreeKeyPointsIntroSection() {
               </div>
 
               {/* Bottom Section (Inner Card) */}
-              <div className="relative top-[-10px] flex flex-col justify-center">
+              <div className="relative -top-2.5 flex flex-col justify-center">
                 <p className="text-[#fbbf24] text-xs font-bold mb-1">
                   How PEx Solves It
                 </p>

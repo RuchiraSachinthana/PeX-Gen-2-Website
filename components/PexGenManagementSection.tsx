@@ -73,7 +73,7 @@ const PexGenManagementSection = () => {
   ];
 
   return (
-    <>
+    <div id="management-section">
       {/* Desktop Version */}
       <div className="hidden md:block w-full mb-[-170] pt-20  items-center justify-center ">
         <div className="max-w-7xl mx-auto">
@@ -377,7 +377,7 @@ const PexGenManagementSection = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

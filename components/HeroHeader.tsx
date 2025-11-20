@@ -190,17 +190,138 @@ export default function HeroHeader() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block text-lg py-3 px-4 rounded-lg transition-all ${
-                        pathname === item.href
-                          ? "bg-yellow-400 text-teal-900 font-semibold"
-                          : "text-white/60 hover:bg-white/10 hover:text-white"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
+                    {item.key === "contact" ? (
+                      <button
+                        onClick={() => {
+                          const footer = document.getElementById('footer');
+                          if (footer) {
+                            footer.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/" && item.key === "about" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('what-is-pex-gen');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/" && item.key === "features" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('management-section');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-food" && item.key === "about" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('seven-ways-benefits');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-food" && item.key === "features" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('food-three-key-points');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-quality" && item.key === "about" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('pex-quality-slider');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-quality" && item.key === "features" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('pex-quality-key-points');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </div>

@@ -47,7 +47,10 @@ export default function SevenWaysBenefits() {
   ];
 
   return (
-    <div className="w-full md:bg-[#d7ecbe]  sm:py-16 relative overflow-hidden">
+    <div
+      id="seven-ways-benefits"
+      className="w-full md:bg-[#d7ecbe]  sm:py-16 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* --- Responsive Header --- */}
         {/* Adjusted to be relative/centered on mobile, and absolute on desktop to match your original design */}
