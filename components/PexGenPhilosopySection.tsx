@@ -37,7 +37,7 @@ const PexGenPhilosopySection = () => {
             >
               We believe compliance should empower, <br /> not burden—your
               business. <br />
-              That’s why we built PEx Gen2™
+              That&apos;s why we built PEx Gen2™
             </motion.p>
           </motion.div>
 
@@ -103,7 +103,7 @@ const PexGenPhilosopySection = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               We believe compliance should empower, not burden—your business.
-              That's why we built PEx Gen2™
+              That&apos;s why we built PEx Gen2™
             </motion.p>
           </motion.div>
 
