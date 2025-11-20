@@ -25,7 +25,15 @@ export const homeMetadata: Metadata = {
     title: "PEx Software™ - Transform ISO Compliance into Competitive Advantage",
     description:
       "AI-powered compliance and performance toolkit transforming ISO certification into strategic growth for SMEs.",
-    url: "https://pex-solutions.com",
+    url: "https://pexsoftwaresolutions.com",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Software™ - Compliance and Performance Toolkit",
+      },
+    ],
   },
 };
 
@@ -54,7 +62,15 @@ export const pexQualityMetadata: Metadata = {
     title: "PEx Quality - ISO 9001 QMS Software | Reduce Documentation by 90%",
     description:
       "Be audit-ready anytime. Smart automation, real-time visibility, and strategic alignment for Quality Managers.",
-    url: "https://pex-solutions.com/pex-quality",
+    url: "https://pexsoftwaresolutions.com/pex-quality",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Quality - ISO 9001 QMS Software",
+      },
+    ],
   },
 };
 
@@ -79,7 +95,15 @@ export const pexFoodMetadata: Metadata = {
     title: "PEx Food - Food Safety & Quality Compliance Software",
     description:
       "Comprehensive food safety and quality management software for food manufacturers and processors.",
-    url: "https://pex-solutions.com/pex-food",
+    url: "https://pexsoftwaresolutions.com/pex-food",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Food - Food Safety & Quality Compliance Software",
+      },
+    ],
   },
 };
 
@@ -104,7 +128,15 @@ export const pexGenMetadata: Metadata = {
     title: "PEx Gen - Next-Generation Compliance & Performance Toolkit",
     description:
       "AI-powered compliance and performance toolkit with real-time dashboards and strategic planning integration.",
-    url: "https://pex-solutions.com/pex-gen",
+    url: "https://pexsoftwaresolutions.com/pex-gen",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Gen - Next-Generation Compliance & Performance Toolkit",
+      },
+    ],
   },
 };
 
@@ -126,7 +158,15 @@ export const blogMetadata: Metadata = {
     title: "Blog - Compliance, Quality Management & Performance Insights",
     description:
       "Expert insights on ISO compliance, quality management, and operational excellence for SMEs.",
-    url: "https://pex-solutions.com/blog",
+    url: "https://pexsoftwaresolutions.com/blog",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Software™ Blog - Compliance Insights",
+      },
+    ],
   },
 };
 
@@ -146,7 +186,15 @@ export const contactMetadata: Metadata = {
     title: "Contact Us - Get Started with PEx Software™",
     description:
       "Schedule a demo or consultation to transform your ISO compliance into competitive advantage.",
-    url: "https://pex-solutions.com/contact",
+    url: "https://pexsoftwaresolutions.com/contact",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact PEx Software™",
+      },
+    ],
   },
 };
 

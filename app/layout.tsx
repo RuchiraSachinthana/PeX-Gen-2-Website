@@ -4,7 +4,7 @@ import { LanguageProvider } from "../context/LanguageProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pex-solutions.com"),
+  metadataBase: new URL("https://pexsoftwaresolutions.com"),
   title: {
     default: "PEx Software™ - Full Compliance & Performance Toolkit for SMEs",
     template: "%s | PEx Software™",
@@ -81,23 +81,23 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   alternates: {
-    canonical: "https://pex-solutions.com",
+    canonical: "https://pexsoftwaresolutions.com",
     languages: {
-      en: "https://pex-solutions.com",
-      si: "https://pex-solutions.com/si",
+      en: "https://pexsoftwaresolutions.com",
+      si: "https://pexsoftwaresolutions.com/si",
     },
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://pex-solutions.com",
+    url: "https://pexsoftwaresolutions.com",
     title: "PEx Software™ - Full Compliance & Performance Toolkit",
     description:
       "Transform ISO compliance into competitive advantage. AI-powered compliance and performance toolkit for CEOs and Quality Managers of SMEs in manufacturing, logistics, and services.",
     siteName: "PEx Software™",
     images: [
       {
-        url: "/logo.webp",
+        url: "https://pexsoftwaresolutions.com/logo.webp",
         width: 1200,
         height: 630,
         alt: "PEx Software™ - Compliance and Performance Toolkit",
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     title: "PEx Software™ - Full Compliance & Performance Toolkit",
     description:
       "Transform ISO compliance into competitive advantage. AI-powered toolkit for SMEs.",
-    images: ["/logo.webp"],
+    images: ["https://pexsoftwaresolutions.com/logo.webp"],
   },
   category: "Business Software",
 };

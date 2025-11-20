@@ -1,5 +1,5 @@
 # PEx Software™ - Robots.txt
-# https://pex-solutions.com/robots.txt
+# https://pexsoftwaresolutions.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -9,7 +9,7 @@ Allow: /
 # Disallow: /api/
 
 # Sitemap location
-Sitemap: https://pex-solutions.com/sitemap.xml
+Sitemap: https://pexsoftwaresolutions.com/sitemap.xml
 
 # Crawl-delay (optional, adjust if needed)
 # Crawl-delay: 1

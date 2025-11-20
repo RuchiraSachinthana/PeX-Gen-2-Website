@@ -25,7 +25,22 @@ export const metadata: Metadata = {
     title: "PEx Software™ - Transform ISO Compliance into Competitive Advantage",
     description:
       "AI-powered compliance and performance toolkit transforming ISO certification into strategic growth for SMEs.",
-    url: "https://pex-solutions.com",
+    url: "https://pexsoftwaresolutions.com",
+    images: [
+      {
+        url: "https://pexsoftwaresolutions.com/logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "PEx Software™ - Compliance and Performance Toolkit",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PEx Software™ - Transform ISO Compliance into Competitive Advantage",
+    description:
+      "AI-powered compliance and performance toolkit transforming ISO certification into strategic growth for SMEs.",
+    images: ["https://pexsoftwaresolutions.com/logo.webp"],
   },
 };
 
