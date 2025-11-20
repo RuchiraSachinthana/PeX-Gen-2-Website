@@ -9,6 +9,9 @@ interface Blog {
   hero_img: string;
   sub_title_1: string;
   paragraph_1: string;
+  sub_title_2?: string;
+  paragraph_2?: string;
+  img_url_2?: string;
   created_at: string;
 }
 
@@ -151,21 +154,23 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
         <h2 className="mb-2">{blogData?.sub_title_2}</h2>{" "}
         {blogData?.paragraph_2}
       </motion.div>
-      <motion.div
-        className="w-full max-w-6xl mx-auto mb-2 rounded-2xl md:rounded-3xl"
-        variants={scaleIn}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <Image
-          src={blogData?.img_url_2}
-          alt="blog_image 2"
-          width={1000}
-          height={40}
-          className="w-full h-full object-cover rounded-3xl"
-        />
-      </motion.div>
+      {blogData?.img_url_2 && (
+        <motion.div
+          className="w-full max-w-6xl mx-auto mb-2 rounded-2xl md:rounded-3xl"
+          variants={scaleIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <Image
+            src={blogData.img_url_2}
+            alt="blog_image 2"
+            width={1000}
+            height={40}
+            className="w-full h-full object-cover rounded-3xl"
+          />
+        </motion.div>
+      )}
       {/* <motion.div
         className="w-full max-w-6xl bg-[#d2edb9] leading-relaxed text-sm md:text-xl mb-5 rounded-2xl md:rounded-3xl z-10 mx-auto p-4 md:p-8 text-border"
         variants={fadeInUp}
