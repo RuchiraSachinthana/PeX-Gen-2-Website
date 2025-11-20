@@ -61,7 +61,7 @@ const BusinessImprovementSlider: FC = () => {
   const currentSlideData = slides[currentSlide] || slides[0];
 
   return (
-    <div className="md:py-10 py-5 text-gray-900" style={{ backgroundColor: "#ffffff" }}>
+    <div id="pex-quality-slider" className="md:py-10 py-5 text-gray-900" style={{ backgroundColor: "#ffffff" }}>
       {/* Desktop Version */}
       <div className="hidden lg:block max-w-6xl mx-auto py-6 md:py-20 px-4">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-2">

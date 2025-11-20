@@ -90,7 +90,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-gradient-to-r from-emerald-900 to-teal-700 text-white py-8 lg:py-12 relative overflow-hidden w-full">
+    <footer id="footer" className="bg-gradient-to-r from-emerald-900 to-teal-700 text-white py-8 lg:py-12 relative overflow-hidden w-full">
       {/* Gradient Blurs */}
       <div
         className="absolute -right-20 -top-20 w-80 h-80 bg-teal-600/30 rounded-full blur-3xl"

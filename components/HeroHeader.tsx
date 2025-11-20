@@ -5,7 +5,7 @@ import { Home, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "../context/LanguageProvider";
 import HomeNavbar from "./HomeNavbar";
 import InlineLanguageButton from "./InlineLanguageButton";
@@ -15,6 +15,20 @@ export default function HeroHeader() {
   const pathname = usePathname();
   const { t, setLang, lang } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
 
   const navItems = useMemo(
     () => [
@@ -51,10 +65,10 @@ export default function HeroHeader() {
   const homeButtonBorderColor = isBlogPage
     ? "border-green-600"
     : "border-[#04afbc]";
-  const homeButtonBgColor = isBlogPage ? "bg-green-900/20" : "bg-white/10";
+  const homeButtonBgColor = isBlogPage ? "bg-green-900/40" : "bg-white/10";
   const mobileOverlayBg = isBlogPage
-    ? "bg-gradient-to-br from-green-900/95 to-emerald-900/95"
-    : "bg-gradient-to-br from-teal-900/95 to-cyan-900/95";
+    ? "bg-gradient-to-br from-green-900/90 to-emerald-900/90"
+    : "bg-gradient-to-br from-teal-900/90 to-cyan-900/90";
 
   return (
     <div className="flex items-center max-w-7xl  justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
@@ -113,9 +127,19 @@ export default function HeroHeader() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className={`md:hidden fixed inset-0 ${mobileOverlayBg}  overflow-y-auto z-50`}
+            className={`md:hidden fixed inset-0 ${mobileOverlayBg}  overflow-y-auto z-100`}
           >
             <div className="flex flex-col p-8 pt-24 space-y-6">
+              {/* Close Button */}
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1 }}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="self-end flex items-center justify-center w-10 h-10 bg-white/20 text-white rounded-full hover:bg-white/30 transition-all"
+              >
+                <X size={20} />
+              </motion.button>
               {/* Home Button */}
               <motion.button
                 initial={{ opacity: 0, x: 20 }}
@@ -166,17 +190,138 @@ export default function HeroHeader() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + index * 0.1 }}
                   >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block text-lg py-3 px-4 rounded-lg transition-all ${
-                        pathname === item.href
-                          ? "bg-yellow-400 text-teal-900 font-semibold"
-                          : "text-white/60 hover:bg-white/10 hover:text-white"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
+                    {item.key === "contact" ? (
+                      <button
+                        onClick={() => {
+                          const footer = document.getElementById('footer');
+                          if (footer) {
+                            footer.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/" && item.key === "about" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('what-is-pex-gen');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/" && item.key === "features" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('management-section');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-food" && item.key === "about" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('seven-ways-benefits');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-food" && item.key === "features" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('food-three-key-points');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-quality" && item.key === "about" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('pex-quality-slider');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : pathname === "/pex-quality" && item.key === "features" ? (
+                      <button
+                        onClick={() => {
+                          const section = document.getElementById('pex-quality-key-points');
+                          if (section) {
+                            section.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all text-left w-full cursor-pointer ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`block text-lg py-3 px-4 rounded-lg transition-all ${
+                          pathname === item.href
+                            ? "bg-yellow-400 text-teal-900 font-semibold"
+                            : "text-white/60 hover:bg-white/10 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </div>

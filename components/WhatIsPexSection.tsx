@@ -7,7 +7,7 @@ export default function WhatIsPexSection() {
       {/* ========================================== */}
       {/* Desktop Version - UNCHANGED (As requested) */}
       {/* ========================================== */}
-      <section className="hidden md:flex flex-col items-center bg-white justify-center py-16 px-4 text-center">
+      <section id="what-is-pex-gen" className="hidden md:flex flex-col items-center bg-white justify-center py-16 px-4 text-center">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             className="text-4xl  text-gray-900 mb-8"

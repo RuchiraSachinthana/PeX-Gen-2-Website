@@ -21,6 +21,55 @@ const NavLink = ({
   layoutId,
   disabled = false,
 }: NavLinkProps) => {
+  const scrollToFooter = () => {
+    const footer = document.getElementById("footer");
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToSevenWaysBenefits = () => {
+    const section = document.getElementById("seven-ways-benefits");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToThreeKeyPoints = () => {
+    const section = document.getElementById("food-three-key-points");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToWhatIsPexGen = () => {
+    const section = document.getElementById("what-is-pex-gen");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToManagementSection = () => {
+    const section = document.getElementById("management-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToQualitySlider = () => {
+    const section = document.getElementById("pex-quality-slider");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToQualityKeyPoints = () => {
+    const section = document.getElementById("pex-quality-key-points");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const content = (
     <>
       {children}
@@ -43,6 +92,92 @@ const NavLink = ({
         {content}
       </span>
     );
+  }
+
+  // Special handling for contact link
+  if (href === "/contact") {
+    return (
+      <button
+        onClick={scrollToFooter}
+        className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 cursor-pointer ${
+          currentPath === href ? "text-white" : ""
+        }`}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  // Special handling for food page navigation
+  if (currentPath === "/pex-food") {
+    if (href === "/about") {
+      return (
+        <button
+          onClick={scrollToSevenWaysBenefits}
+          className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 cursor-pointer`}
+        >
+          {content}
+        </button>
+      );
+    }
+    if (href === "/features") {
+      return (
+        <button
+          onClick={scrollToThreeKeyPoints}
+          className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 cursor-pointer`}
+        >
+          {content}
+        </button>
+      );
+    }
+  }
+
+  // Special handling for PEx Gen page navigation
+  if (currentPath === "/") {
+    if (href === "/about") {
+      return (
+        <button
+          onClick={scrollToWhatIsPexGen}
+          className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 cursor-pointer`}
+        >
+          {content}
+        </button>
+      );
+    }
+    if (href === "/features") {
+      return (
+        <button
+          onClick={scrollToManagementSection}
+          className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 cursor-pointer`}
+        >
+          {content}
+        </button>
+      );
+    }
+  }
+
+  // Special handling for PEx Quality page navigation
+  if (currentPath === "/pex-quality") {
+    if (href === "/about") {
+      return (
+        <button
+          onClick={scrollToQualitySlider}
+          className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 cursor-pointer`}
+        >
+          {content}
+        </button>
+      );
+    }
+    if (href === "/features") {
+      return (
+        <button
+          onClick={scrollToQualityKeyPoints}
+          className={`relative text-sm text-white hover:text-yellow-400 transition-colors duration-200 cursor-pointer`}
+        >
+          {content}
+        </button>
+      );
+    }
   }
 
   return (
