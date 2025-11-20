@@ -13,6 +13,7 @@ interface Blog {
   hero_img: string;
   sub_title_1: string;
   paragraph_1: string;
+  created_at: string;
   sub_title_2?: string;
   paragraph_2?: string;
   img_url_2?: string;
