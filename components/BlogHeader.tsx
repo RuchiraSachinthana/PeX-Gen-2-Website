@@ -196,7 +196,7 @@ const BlogHeader = () => {
                   </div>
                   <div className="flex-1 flex items-center gap-4">
                     <div>
-                      <h4 className="text-lg font-bold text-teal-700 mb-2">
+                      <h4 className="text-lg font-semibold text-teal-700 mb-2">
                         {blog.title}
                       </h4>
                       <p className="text-sm text-gray-700">
