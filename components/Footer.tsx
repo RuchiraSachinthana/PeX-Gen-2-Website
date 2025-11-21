@@ -570,6 +570,19 @@ export default function Footer() {
           </form>
         </motion.div>
       </div>
+
+      {/* Copyright Section */}
+      <motion.div
+        className="mt-8 pt-6 border-t border-white/20 text-center relative z-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <p className="text-white/80 text-sm">
+          © {new Date().getFullYear()} PEx Software Solutions. All rights reserved.
+        </p>
+      </motion.div>
     </footer>
   );
 }
