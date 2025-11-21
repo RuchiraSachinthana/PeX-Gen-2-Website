@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 interface CardData {
   id: string;
@@ -13,7 +13,7 @@ interface CardData {
 }
 
 const PexGenManagementSection = () => {
-  // Track the ID of the expanded card. 
+  // Track the ID of the expanded card.
   // If you want multiple cards open at once, change this to an array of strings.
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -39,63 +39,72 @@ const PexGenManagementSection = () => {
     {
       id: "card-1",
       title: "DOCUMENT\nMANAGEMENT",
-      description: "Control and access ISO documents with\nversion history and approval workflows.",
+      description:
+        "Control and access ISO documents with\nversion history and approval workflows.",
       detailedContent:
         "This module offers centralized document storage, automated version control, and role-based access. Users can create, review, approve, and archive documents with full traceability. AI-powered semantic search allows instant retrieval of procedures, policies, and records—reducing audit preparation time significantly.",
     },
     {
       id: "card-2",
       title: "STRATEGIC\nDIRECTION PLANNING",
-      description: "Align your business goals through\nstructured strategic planning.",
+      description:
+        "Align your business goals through\nstructured strategic planning.",
       detailedContent:
         "This module helps leadership teams define and document the organization's strategic direction, including mission, vision, values, and long-term objectives. It ensures alignment with ISO requirement for integrating stakeholder expectations, market trends, and internal capabilities (SWOT / PESTLE analysis) into a living strategy map. AI tools assist in identifying gaps, tracking strategic initiatives, and linking them to operational KPIs.",
     },
     {
       id: "card-3",
       title: "INTERNAL\nAUDITS",
-      description: "Plan, execute, and document internal\naudits with full traceability and compliance.",
+      description:
+        "Plan, execute, and document internal\naudits with full traceability and compliance.",
       detailedContent:
         "Compliant with ISO standards, this module streamlines audit scheduling, auditor assignment, checklist creation, and evidence capture. It supports multi-site audits, automated scoring, and CAPA integration. Audit findings are linked to relevant clauses, and AI tools assist in identifying recurring issues and audit fatigue across departments.",
     },
     {
       id: "card-4",
       title: "CUSTOMER\nCOMPLAINTS\nMANAGEMENT",
-      description: "Respond to customer complaints with\nspeed, transparency, and accountability.",
+      description:
+        "Respond to customer complaints with\nspeed, transparency, and accountability.",
       detailedContent:
         "This module supports capturing complaints, assigning resolution workflows, and tracking response times. It includes escalation rules, communication logs, and satisfaction follow-ups. AI tools categorize complaints by root cause and frequency, helping teams prioritize systemic fixes over reactive responses.",
     },
     {
       id: "card-5",
       title: "KEY PERFORMANCE\nINDICATORS",
-      description: "Set measurable goals and track\nperformance across departments and\nprocesses.",
+      description:
+        "Set measurable goals and track\nperformance across departments and\nprocesses.",
       detailedContent:
         "Aligned with ISO standards, this module supports SMART goal setting, automated KPI dashboards, and real-time performance tracking. Users can link objectives to strategic plans, assign ownership, and monitor progress with visual indicators.",
     },
     {
       id: "card-6",
       title: "CUSTOMER\nSATISFACTION\nSURVEY",
-      description: "Gather feedback to drive improvements\nand enhance customer loyalty.",
+      description:
+        "Gather feedback to drive improvements\nand enhance customer loyalty.",
       detailedContent:
         "This module enables organizations to design and deploy customer satisfaction surveys. It includes customizable templates, automated distribution, and real-time analytics. Feedback is categorized by themes and AI sentiment analysis helps uncover hidden trends and improvement opportunities.",
     },
     {
       id: "card-7",
       title: "SUPPLIER\nMANAGEMENT",
-      description: "Evaluate and monitor suppliers to ensure\nconsistent quality and compliance.",
+      description:
+        "Evaluate and monitor suppliers to ensure\nconsistent quality and compliance.",
       detailedContent:
         "Aligned with ISO requirements, this module enables organizations to onboard, assess, and monitor suppliers based on performance, risk, and compliance. It includes supplier scorecards, audit logs, and corrective action tracking. AI analytics highlight supplier trends, flag underperformers, and support strategic sourcing decisions.",
     },
     {
       id: "card-8",
       title: "RISK ANALYSIS",
-      description: "Identify, assess, and mitigate risks that\ncould impact quality and compliance.",
+      description:
+        "Identify, assess, and mitigate risks that\ncould impact quality and compliance.",
       detailedContent:
         "Aligned with ISO standards, this module provides a structured framework for risk-based thinking. Users can categorize risks by process, severity, and likelihood, and assign mitigation actions with deadlines and responsible owners. AI tools help predict emerging risks based on historical data and operational trends, ensuring proactive decision-making and continuous improvement.",
     },
     {
       id: "card-9",
       title: "PRODUCT\nNONCONFORMITY\nMANAGEMENT",
-      description: "Detect, document, and resolve product\nnonconformities with full audit trails.",
+      description:
+        "Detect, document, and resolve product\nnonconformities with full audit trails.",
       detailedContent:
         "Aligned with ISO requirements, this module allows users to log nonconforming outputs, assign corrective actions, and track resolution status. It supports root cause analysis, containment actions, and verification of effectiveness. AI tools help identify patterns across product lines and suggest preventive measures to reduce recurrence.",
     },
@@ -139,7 +148,7 @@ const PexGenManagementSection = () => {
 
           {/* Cards Grid */}
           {/* Changed from grid-rows-4 to auto flow so height adjusts naturally */}
-          <div className="grid grid-cols-3 gap-6 items-start">
+          <div className="grid grid-cols-3 gap-6 items-stretch">
             {cards.map((card, index) => {
               const isExpanded = expandedId === card.id;
 
@@ -147,7 +156,7 @@ const PexGenManagementSection = () => {
                 <motion.div
                   layout // This prop enables the smooth resize animation
                   key={index}
-                  className="bg-[#d1ecb8] rounded-3xl relative overflow-hidden flex flex-col"
+                  className="bg-[#d1ecb8] rounded-3xl relative overflow-hidden flex flex-col min-h-[280px]"
                   initial={{ opacity: 0, y: 50, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
@@ -289,7 +298,10 @@ const MobileCard = ({
     transition={{ duration: 0.5, delay: index * 0.1 }}
   >
     <motion.div layout className="p-6">
-      <motion.h4 layout="position" className="text-lg font-extrabold text-black mb-2">
+      <motion.h4
+        layout="position"
+        className="text-lg font-extrabold text-black mb-2"
+      >
         {card.title.replace(/\n/g, " ")}
       </motion.h4>
       <motion.p
