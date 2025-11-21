@@ -30,8 +30,7 @@ export default function PexGenPageClient() {
       <PexGenManagementSection />
       <PexGenTestamonialsSection />
       <PexGenPartners />
-      <CaseStudiesShowcase />
-     
+      <CaseStudiesShowcase />     
       <PexGenWhoWeAreSection />
       <PexGenPhilosopySection />
       <SocialsSection />

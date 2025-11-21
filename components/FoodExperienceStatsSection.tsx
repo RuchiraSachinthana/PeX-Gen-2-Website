@@ -3,11 +3,22 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { Fragment, type FC } from "react";
+import { Fragment, type FC, useEffect } from "react";
 import { useTranslation } from "../context/LanguageProvider";
+import { useRouter } from "next/navigation";
+import { getCalApi } from "@calcom/embed-react";
 
 export const FoodExperienceStatsSection: FC = () => {
   const { t } = useTranslation();
+  const router = useRouter();
+  
+  // Initialize Cal.com
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
 
   // Get translated content
   const stats = t("experienceStatsSection.stats") as {
@@ -99,6 +110,7 @@ export const FoodExperienceStatsSection: FC = () => {
                   className="bg-cyan-500 text-black  py-2.5 px-6 rounded-full flex items-center gap-2 text-md hover:bg-cyan-600 transition-colors"
                   whileHover={{ scale: 1.05 }} // ADDED
                   whileTap={{ scale: 0.95 }} // ADDED
+                  onClick={() => router.push("/blog")}
                 >
                   <span>{buttons.readMore}</span>
                   <ArrowRight className="w-5 h-5 text-black" />
@@ -159,6 +171,9 @@ export const FoodExperienceStatsSection: FC = () => {
                   className="bg-teal-700 text-white py-3 px-4 rounded-full flex items-center justify-center gap-2 hover:bg-teal-800 transition-colors text-sm"
                   whileHover={{ scale: 1.05 }} // ADDED
                   whileTap={{ scale: 0.95 }} // ADDED
+                  data-cal-namespace="15min"
+                  data-cal-link="pexsoftwaresolutions/15min"
+                  data-cal-config='{"layout":"month_view"}'
                 >
                   <span className="text-md">{buttons.bookNow}</span>
                   <svg
@@ -267,6 +282,9 @@ export const FoodExperienceStatsSection: FC = () => {
                   className="bg-teal-700 text-white py-1.5 px-2.5 rounded-full flex items-center gap-1 text-[10px]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  data-cal-namespace="15min"
+                  data-cal-link="pexsoftwaresolutions/15min"
+                  data-cal-config='{"layout":"month_view"}'
                 >
                   <span>{buttons.bookNow}</span>
                   <ArrowRight className="w-3 h-3" />
@@ -287,6 +305,7 @@ export const FoodExperienceStatsSection: FC = () => {
               className="bg-cyan-500 text-black py-1.5 px-3 rounded-full flex items-center gap-1 text-[10px] font-medium whitespace-nowrap"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => router.push("/blog")}
             >
               <span>{buttons.readMore}</span>
               <ArrowRight className="w-3 h-3" />
