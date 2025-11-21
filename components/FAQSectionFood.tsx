@@ -112,9 +112,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 };
 
 // Main FAQ Section Component
-const FAQSection: React.FC = () => {
+const FAQSectionFood: React.FC = () => {
   const { t } = useTranslation();
-  const faqData = t("faqSection.faqs") as FAQItem[];
+  const faqData = t("faqSectionFood.faqs") as FAQItem[];
 
   // State to track the currently open item. 'q1' is open by default per your image.
   const [openId, setOpenId] = useState<string | null>("q1");
@@ -135,7 +135,7 @@ const FAQSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {String(t("faqSection.title"))}
+          {String(t("faqSectionFood.title"))}
         </motion.h2>
       </div>
 
@@ -148,7 +148,7 @@ const FAQSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {String(t("faqSection.title"))}
+          {String(t("faqSectionFood.title"))}
         </motion.h2>
       </div>
 
@@ -167,4 +167,4 @@ const FAQSection: React.FC = () => {
   );
 };
 
-export default FAQSection;
+export default FAQSectionFood;
