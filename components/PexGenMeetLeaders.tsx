@@ -49,7 +49,7 @@ export default function PexGenMeetLeaders() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               Our team blends deep expertise in ISO standards, lean management, 
-              software engineering, and AI integration. We're not just developers—we're 
+              software engineering, and AI integration. We&apos;re not just developers—we&apos;re 
               auditors, trainers, and transformation architects.
             </motion.p>
           </div>

@@ -3,7 +3,7 @@
 import BusinessImprovementSlider from "@/components/BusinessImprovementSlider";
 import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
 import { ExperienceStatsSection } from "@/components/ExperienceStatsSection";
-import FAQSection from "@/components/FAQSection";
+import FAQSection from "@/components/FAQSectionQuality";
 import Footer from "@/components/Footer";
 import KeyPointsIntroSection from "@/components/KeyPointsIntroSection";
 import SocialsSection from "@/components/SocialSection";
@@ -21,9 +21,7 @@ export default function PexQualityPageClient() {
       <ExperienceStatsSection />
       <FAQSection />
       <SocialsSection />
-     
-        <Footer />
-     
+      <Footer />     
     </div>
   );
 }

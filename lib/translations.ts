@@ -229,42 +229,106 @@ export const translations = {
     },
 
     // FAQSection Component translations
-    faqSection: {
-      title: "FAQs",
-      faqs: [
-        {
-          id: "q1",
-          question: "Who is PEX Software designed for?",
-          answer: "PEX Software is purpose-built for ISO 9001 certified organizations, as well as CEOs and Quality Managers seeking to elevate their compliance programs into performance-driven systems. It also supports organizations preparing for ISO certification by streamlining documentation, workflows, and audit readiness."
-        },
-        {
-          id: "q2",
-          question: "Can PEX Software support other international standards?",
-          answer: "Yes, PEX Software is designed to be flexible and can support various other international standards beyond ISO 9001, including ISO 14001, ISO 45001, and more."
-        },
-        {
-          id: "q3",
-          question: "Can PEX Software integrate with existing enterprise systems?",
-          answer: "Absolutely. We offer robust API capabilities to ensure PEX Software can seamlessly integrate with your existing ERP, CRM, HRIS, and other critical enterprise systems."
-        },
-        {
-          id: "q4",
-          question: "How does AI enhance the capabilities of PEX Software?",
-          answer: "AI powers intelligent document analysis, automates compliance checks, provides predictive insights into potential non-conformities, and assists in optimizing workflows for continuous improvement."
-        },
-        {
-          id: "q5",
-          question: "Is PEX Software suitable for small and medium-sized enterprises (SMEs)?",
-          answer: "Yes, PEX Software is scalable and offers flexible pricing tiers, making it a suitable and cost-effective solution for SMEs as well as large corporations."
-        },
-        {
-          id: "q6",
-          question: "How secure is our data within PEX Software?",
-          answer: "Data security is our top priority. We employ end-to-end encryption, regular security audits, and comply with international data protection regulations like GDPR to ensure your data is always secure."
-        }
-      ]
-    },
+      faqSectionQuality: {
+        title: "FAQs",
+        faqs: [
+          {
+            id: "q1",
+            question: "Who is PEX Software designed for?",
+            answer: "PEX Software is purpose-built for ISO 9001 certified organizations, as well as CEOs and Quality Managers seeking to elevate their compliance programs into performance-driven systems. It also supports organizations preparing for ISO certification by streamlining documentation, workflows, and audit readiness."
+          },
+          {
+            id: "q2",
+            question: "Can PEX Software support other international standards?",
+            answer: "Yes, PEX Software is designed to be flexible and can support various other international standards beyond ISO 9001, including ISO 14001, ISO 45001, and more."
+          },
+          {
+            id: "q3",
+            question: "Can PEX Software integrate with existing enterprise systems?",
+            answer: "Absolutely. We offer robust API capabilities to ensure PEX Software can seamlessly integrate with your existing ERP, CRM, HRIS, and other critical enterprise systems."
+          },
+          {
+            id: "q4",
+            question: "How does AI enhance the capabilities of PEX Software?",
+            answer: "AI powers intelligent document analysis, automates compliance checks, provides predictive insights into potential non-conformities, and assists in optimizing workflows for continuous improvement."
+          },
+          {
+            id: "q5",
+            question: "Is PEX Software suitable for small and medium-sized enterprises (SMEs)?",
+            answer: "Yes, PEX Software is scalable and offers flexible pricing tiers, making it a suitable and cost-effective solution for SMEs as well as large corporations."
+          },
+          {
+            id: "q6",
+            question: "How secure is our data within PEX Software?",
+            answer: "Data security is our top priority. We employ end-to-end encryption, regular security audits, and comply with international data protection regulations like GDPR to ensure your data is always secure."
+          }
+        ]
+      },
+      faqSectionFood: {
+        title: "FAQs",
+        faqs: [
+          {
+            id: "q1",
+            question: "Who is PEX Software designed for?",
+            answer:
+              "PEX Software for food safety is purpose-built for hotels, restaurants, and food service businesses certified under HACCP or ISO 22000. It also supports organizations preparing for certification by streamlining food safety documentation, monitoring, and audit readiness."
+          },
+          {
+            id: "q2",
+            question: "How does PEX Software reduce paperwork?",
+            answer:
+              "By digitizing compliance records and automating monitoring tasks, PEX reduces manual documentation by up to 90%—freeing staff to focus on service quality and operational excellence."
+          },
+          {
+            id: "q3",
+            question: "Can PEX Software integrate with IoT devices?",
+            answer:
+              "Yes. PEX seamlessly connects with temperature sensors and other IoT-enabled devices to enable real-time monitoring of critical control points and food safety parameters."
+          },
+          {
+            id: "q4",
+            question: "How does AI enhance food safety management?",
+            answer:
+              "AI tools within PEX identify potential risks, trigger real-time alerts, and provide predictive insights—helping Hygiene Managers and Chefs prevent non-compliance before it occurs."
+          },
+          {
+            id: "q5",
+            question:
+              "Is PEX Software suitable for both small restaurants and large hotel chains?",
+            answer:
+              "Absolutely. PEX is scalable and configurable to suit businesses of any size—from boutique restaurants to multi-site hotel operations—without compromising functionality or compliance depth."
+          },
+          {
+            id: "q6",
+            question:
+              "How does PEX Software improve productivity in food and beverage operations?",
+            answer:
+              "Designed by lean management experts and ISO auditors, PEX eliminates up to 90% of unproductive compliance tasks while ensuring 100% adherence to food safety requirements—boosting staff efficiency and operational focus."
+          },
+          {
+            id: "q7",
+            question: "Does PEX Software support food traceability?",
+            answer:
+              "Yes. PEX enables full traceability from the guest's plate back to the raw material supplier—ensuring transparency, accountability, and rapid recall readiness."
+          },
+          {
+            id: "q8",
+            question:
+              "Can PEX Software be used in other food processing industries beyond hospitality?",
+            answer:
+              "Certainly. PEX is suitable for any food processing business seeking compliance with HACCP, ISO 22000, FSSC 22000, or other recognized food safety standards."
+          },
+          {
+            id: "q9",
+            question:
+              "Can PEX Software manage compliance with other sustainability standards?",
+            answer:
+              "Yes. PEX is designed to support integrated compliance across Environmental Management (ISO 14001), Energy Management (ISO 50001), and Occupational Health & Safety (ISO 45001)—making it a versatile tool for holistic governance."
+          }
+        ]
+      },
 
+    
     // SocialSection Component translations
     socialSection: {
       title: "What's on social",

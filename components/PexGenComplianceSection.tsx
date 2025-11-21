@@ -23,7 +23,7 @@ export default function PexGenComplianceSection() {
 
           {/* Line 2: Main Heading (Part 1) */}
           <motion.h2
-            className="text-3xl font-bold text-teal-700 uppercase "
+            className="text-3xl text-teal-700 uppercase "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -34,7 +34,7 @@ export default function PexGenComplianceSection() {
 
           {/* Line 3: Main Heading (Part 2) */}
           <motion.h2
-            className="text-3xl font-bold text-teal-700 uppercase mb-8"
+            className="text-3xl text-teal-700 uppercase mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

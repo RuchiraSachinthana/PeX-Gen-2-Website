@@ -1,7 +1,7 @@
 "use client";
 
 import AdditionalContentSection from "@/components/AdditionalContentSection";
-import FAQSection from "@/components/FAQSection";
+import FAQSectionFood from "@/components/FAQSectionFood";
 import FoodCaseStudiesShowcase from "@/components/FoodCaseStudiesShowcase";
 import { FoodExperienceStatsSection } from "@/components/FoodExperienceStatsSection";
 import FoodThreeKeyPointsIntroSection from "@/components/FoodThreeKeyPointSection";
@@ -23,7 +23,7 @@ export default function PexFoodPageClient() {
       <FoodCaseStudiesShowcase />
       <FoodThreeKeyPointsIntroSection />
       <FoodExperienceStatsSection />
-      <FAQSection />
+      <FAQSectionFood   />
       <SocialsSection />
       <Footer />
     </>
