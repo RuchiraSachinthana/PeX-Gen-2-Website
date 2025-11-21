@@ -10,7 +10,7 @@ export default function PexGenMeetLeaders() {
       name: "Malik Perera",
       title: "CEO & Transformation Architect.",
       experience: "+30 years experience.",
-      image: "/Asset 5.png",
+      image: "/men.webp",
       linkedinUrl: "#",
     },
     {
@@ -18,7 +18,7 @@ export default function PexGenMeetLeaders() {
       name: "Dinusha Wijegunawardena",
       title: "Director of Operations, Compliance and Audits.",
       experience: "+20 years experience.",
-      image: "/Asset 6.png",
+      image: "/girl.webp",
       linkedinUrl: "#",
     },
   ];
