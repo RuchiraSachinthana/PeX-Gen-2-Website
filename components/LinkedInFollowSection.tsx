@@ -50,7 +50,7 @@ export default function LinkedInFollowSection() {
                 <div className="absolute bottom-4 left-45 flex gap-1 z-20">
                   <div className="w-6 h-6 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (1).png"
                       alt="Avatar 1"
                       width={48}
                       height={48}
@@ -60,7 +60,7 @@ export default function LinkedInFollowSection() {
 
                   <div className="w-6 h-6  rounded-full border-2 border-white overflow-hidden bg-gray-200">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (2).png"
                       alt="Avatar 2"
                       width={48}
                       height={48}
@@ -69,7 +69,7 @@ export default function LinkedInFollowSection() {
                   </div>
                   <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (3).png"
                       alt="Avatar 3"
                       width={48}
                       height={48}
@@ -78,7 +78,7 @@ export default function LinkedInFollowSection() {
                   </div>
                   <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (4).png"
                       alt="Avatar 4"
                       width={48}
                       height={48}
@@ -87,7 +87,7 @@ export default function LinkedInFollowSection() {
                   </div>
                   <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (5).png"
                       alt="Avatar 5"
                       width={48}
                       height={48}
@@ -128,7 +128,7 @@ export default function LinkedInFollowSection() {
             <div className="absolute bottom-6 left-60 flex gap-2 z-20">
               <div className="md:w-12 md:h-12 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (1).png"
                   alt="Avatar 1"
                   width={48}
                   height={48}
@@ -140,7 +140,7 @@ export default function LinkedInFollowSection() {
               </div>
               <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (2).png"
                   alt="Avatar 2"
                   width={48}
                   height={48}
@@ -149,7 +149,7 @@ export default function LinkedInFollowSection() {
               </div>
               <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (3).png"
                   alt="Avatar 3"
                   width={48}
                   height={48}
@@ -158,7 +158,7 @@ export default function LinkedInFollowSection() {
               </div>
               <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (4).png"
                   alt="Avatar 4"
                   width={48}
                   height={48}
@@ -167,7 +167,7 @@ export default function LinkedInFollowSection() {
               </div>
               <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (5).png"
                   alt="Avatar 5"
                   width={48}
                   height={48}

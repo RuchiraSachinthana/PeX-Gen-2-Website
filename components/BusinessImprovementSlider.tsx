@@ -14,16 +14,7 @@ const BusinessImprovementSlider: FC = () => {
   // Get slides from translations
   const slidesData = t("businessImprovementSlider.slides");
 
-  // Debug: Log the slides data
-  useEffect(() => {
-    console.log("Slides data:", slidesData);
-    console.log("Type:", typeof slidesData);
-    console.log("Is array:", Array.isArray(slidesData));
-
-    // Try to see what the full businessImprovementSlider object looks like
-    const fullData = t("businessImprovementSlider");
-    console.log("Full businessImprovementSlider:", fullData);
-  }, [slidesData, t]);
+  
 
   const slides = Array.isArray(slidesData)
     ? slidesData.map(
@@ -138,7 +129,7 @@ const BusinessImprovementSlider: FC = () => {
                 <div className="flex gap-1">
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (1).png"
                       alt="Avatar 1"
                       width={40}
                       height={40}
@@ -147,7 +138,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (2).png"
                       alt="Avatar 2"
                       width={40}
                       height={40}
@@ -156,7 +147,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (3).png"
                       alt="Avatar 3"
                       width={40}
                       height={40}
@@ -165,7 +156,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (4).png"
                       alt="Avatar 4"
                       width={40}
                       height={40}
@@ -174,7 +165,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (5).png"
                       alt="Avatar 5"
                       width={40}
                       height={40}
@@ -474,7 +465,7 @@ const BusinessImprovementSlider: FC = () => {
                       className="w-5 h-5 rounded-full bg-gray-300 overflow-hidden border-2 border-white"
                     >
                       <Image
-                        src="/avatar.jpg"
+                        src={`/user (${num}).png`}
                         alt={`Avatar ${num}`}
                         width={22}
                         height={22}

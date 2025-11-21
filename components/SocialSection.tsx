@@ -218,7 +218,7 @@ export default function SocialSection() {
                         variants={avatarItemVariants}
                       >
                         <Image
-                          src="/avatar.jpg"
+                          src={`/user (${num}).png`}
                           alt={`Avatar ${num}`}
                           width={40}
                           height={40}
@@ -371,7 +371,7 @@ export default function SocialSection() {
                     variants={avatarItemVariants}
                   >
                     <Image
-                      src="/avatar.jpg"
+                      src={`/user (${num}).png`}
                       alt={`Avatar ${num}`}
                       width={28}
                       height={28}
