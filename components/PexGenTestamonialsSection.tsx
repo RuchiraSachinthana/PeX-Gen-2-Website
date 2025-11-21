@@ -111,21 +111,23 @@ const PexGenTestamonialsSection = () => {
               business growth
             </motion.div>
 
-            <motion.button
-              className="bg-yellow-400 absolute top-45 left-5 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="flex justify-between text-sm items-center gap-2">
-                Linkedin
-                <span className="font-semibold">1000+</span>
-                followers
-              </div>
-            </motion.button>
+            <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                className="bg-yellow-400 absolute top-45 left-5 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="flex justify-between text-sm items-center gap-2">
+                  Linkedin
+                  <span className="font-semibold">1000+</span>
+                  followers
+                </div>
+              </motion.button>
+            </a>
             <motion.div
               className="flex gap-2 top-57 absolute left-7"
               initial={{ opacity: 0, y: 20 }}
@@ -319,9 +321,11 @@ const PexGenTestamonialsSection = () => {
                       {/* Content Stack */}
                       <div className="flex flex-col gap-6 items-start">
                         {/* Button */}
-                        <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
-                          Linkedin <span className="font-bold">1000+</span> followers
-                        </button>
+                        <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+                          <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
+                            Linkedin <span className="font-bold">1000+</span> followers
+                          </button>
+                        </a>
           
                         {/* Follow Us + Avatars */}
                         <div className="flex flex-col gap-2 mt-2">

@@ -38,9 +38,11 @@ export default function LinkedInFollowSection() {
             {/* Content Stack */}
             <div className="flex flex-col gap-6 items-start">
               {/* Button */}
-              <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
-                Linkedin <span className="font-bold">1000+</span> followers
-              </button>
+              <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+                <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
+                  Linkedin <span className="font-bold">1000+</span> followers
+                </button>
+              </a>
 
               {/* Follow Us + Avatars */}
               <div className="flex flex-col gap-2 mt-2">
@@ -175,10 +177,12 @@ export default function LinkedInFollowSection() {
                 />
               </div>
             </div>
-            <button className="absolute bottom-6 right-10 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-full shadow-lg z-20 cursor-pointer">
-              Linkedin <span className="font-semibold">&nbsp;1000+</span>
-              &nbsp;followers
-            </button>
+            <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+              <button className="absolute bottom-6 right-10 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-full shadow-lg z-20 cursor-pointer">
+                Linkedin <span className="font-semibold">&nbsp;1000+</span>
+                &nbsp;followers
+              </button>
+            </a>
           </motion.div>
         </div>
       </div>
