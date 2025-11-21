@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useTranslation } from "../context/LanguageProvider";
 
 export default function VideoPromoSection() {
-  const { t } = useTranslation();
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
     <div className="w-full md:pt-20 md:pb-20 py-5 relative overflow-hidden">

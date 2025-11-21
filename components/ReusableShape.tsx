@@ -18,7 +18,6 @@ export interface ReusableShapeProps {
   cutoutWidth?: number;
   cutoutHeight?: number;
   cutoutBgColor?: string;
-  cutoutOpacity?: number;
   borderColor?: string;
   borderWidth?: number;
   cutoutPosition?: CutoutPosition;
@@ -42,7 +41,6 @@ const ReusableShape: React.FC<ReusableShapeProps> = ({
   cutoutWidth = 100,
   cutoutHeight = 80,
   cutoutBgColor = "transparent",
-  cutoutOpacity = 0.5,
   borderColor = "transparent",
   borderWidth = 0,
   cutoutPosition = "bottom-right",

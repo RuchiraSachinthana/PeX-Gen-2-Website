@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import { useTranslation } from "../context/LanguageProvider";
 import HeroHeader from "./HeroHeader";
 
 export default function PexGenHeader() {
-  const { t } = useTranslation();
-
   return (
     <>
       {/* ========================================== */}

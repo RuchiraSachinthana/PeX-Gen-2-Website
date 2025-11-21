@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useTranslation } from "../context/LanguageProvider";
 import HeroHeader from "./HeroHeader";
 
 interface Blog {
@@ -32,7 +32,6 @@ interface BlogResponse {
 }
 
 const BlogHeader = () => {
-  const { t } = useTranslation();
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pagination, setPagination] = useState({
@@ -161,9 +160,11 @@ const BlogHeader = () => {
               <div className="">
                 {/* Featured Image */}
                 <div className="w-full">
-                  <img
+                  <Image
                     src={featuredBlog.hero_img}
                     alt={featuredBlog.title}
+                    width={500}
+                    height={300}
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
@@ -184,16 +185,18 @@ const BlogHeader = () => {
           {/* Right Side - Article List */}
           <motion.div className="w-full max-w-md">
             <div className="space-y-4">
-              {otherBlogs.map((blog, index) => (
+              {otherBlogs.map((blog) => (
                 <motion.div
                   key={blog._id}
                   className="flex gap-4"
                   variants={fadeInRight}
                 >
                   <div className="w-60">
-                    <img
+                    <Image
                       src={blog.hero_img}
                       alt={blog.title}
+                      width={240}
+                      height={160}
                       className="w-full h-full object-cover rounded"
                     />
                   </div>
@@ -258,9 +261,11 @@ const BlogHeader = () => {
           {featuredBlog && (
             <motion.div variants={fadeInUp}>
               <div className="w-full">
-                <img
+                <Image
                   src={featuredBlog.hero_img}
                   alt={featuredBlog.title}
+                  width={370}
+                  height={250}
                   className="w-full h-auto rounded-lg"
                 />
               </div>
@@ -284,9 +289,11 @@ const BlogHeader = () => {
                 variants={fadeInUp}
               >
                 <div className="w-32 shrink-0">
-                  <img
+                  <Image
                     src={blog.hero_img}
                     alt={blog.title}
+                    width={128}
+                    height={96}
                     className="w-full h-auto object-cover rounded"
                   />
                 </div>

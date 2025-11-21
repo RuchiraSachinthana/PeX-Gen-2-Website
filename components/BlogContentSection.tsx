@@ -83,7 +83,7 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
           {blogData?.paragraph_1}
         </p>
         <p className="text-sm md:text-xl pb-2">
-          I've seen this pattern repeat across industries:
+          I&apos;ve seen this pattern repeat across industries:
         </p>
         <p className="pb-4 md:pb-6 ml-2 md:ml-4 text-yellow-400 text-xs md:text-md">
           • Finance teams get their reports on time.

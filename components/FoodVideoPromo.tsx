@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useTranslation } from "../context/LanguageProvider";
 
 export default function FoodVideoPromoSection() {
-  const { t } = useTranslation();
   return (
   <div
   style={{
