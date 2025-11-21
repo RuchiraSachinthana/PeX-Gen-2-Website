@@ -7,6 +7,7 @@ import PexGenExploreSection from "@/components/PexGenExploreSection";
 import PexGenHeader from "@/components/PexGenHeader";
 import PexGenKeyCapabilitiesSection from "@/components/PexGenKeyCapabilitySection";
 import PexGenManagementSection from "@/components/PexGenManagementSection";
+import PexGenMeetLeaders from "@/components/PexGenMeetLeaders";
 import PexGenPartners from "@/components/PexGenPartners";
 import PexGenPhilosopySection from "@/components/PexGenPhilosopySection";
 import PexGenTestamonialsSection from "@/components/PexGenTestamonialsSection";
@@ -30,6 +31,7 @@ export default function PexGenPageClient() {
       <PexGenTestamonialsSection />
       <PexGenPartners />
       <CaseStudiesShowcase />
+     
       <PexGenWhoWeAreSection />
       <PexGenPhilosopySection />
       <SocialsSection />
@@ -37,4 +39,3 @@ export default function PexGenPageClient() {
     </div>
   );
 }
-

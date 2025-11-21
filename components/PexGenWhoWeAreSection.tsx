@@ -132,16 +132,16 @@ const PexGenWhoWeAreSection = () => {
           </div>
         </div>
         <motion.div
-          className="absolute top-0 right-10 "
+          className="absolute top-0 right-15 "
           initial={{ opacity: 0, x: 100, scale: 0.8 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Image
-            width={450}
+            width={370}
             height={0}
-            src="/Asset 61.webp"
+            src="/Asset 61.png"
             alt="PEx Software Video Thumbnail"
           />
         </motion.div>
@@ -201,18 +201,18 @@ const PexGenWhoWeAreSection = () => {
         {/* Yellow Background Section */}
         <div className="w-full bg-yellow-300 py-8 px-4">
           <div className="max-w-[370px] relative mx-auto">
-             {/* Award Image and Caption */}
+            {/* Award Image and Caption */}
             <motion.div
-              className=" left-20 top-[-150px] absolute "
+              className=" left-20 top-[-130px] absolute "
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <Image
-                width={200}
+                width={150}
                 height={0}
-                src="/Asset 61.webp"
+                src="/Asset 61.png"
                 alt="Award"
                 className="mx-auto "
               />
@@ -223,7 +223,8 @@ const PexGenWhoWeAreSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
-                Winner of the National Best Quality <br/> Software Award in Sri Lanka.
+                Winner of the National Best Quality <br /> Software Award in Sri
+                Lanka.
               </motion.p>
             </motion.div>
             {/* Three Cards in One Row */}
@@ -291,8 +292,6 @@ const PexGenWhoWeAreSection = () => {
                 <div className="text-xs leading-tight">TRAINED</div>
               </motion.div>
             </div>
-
-           
           </div>
         </div>
       </div>
