@@ -82,7 +82,7 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
         <p className="text-sm md:text-xl pb-2 mb-3 md:mb-4">
           {blogData?.paragraph_1}
         </p>
-        {/* <p className="text-sm md:text-xl pb-2">
+        <p className="text-sm md:text-xl pb-2">
           I've seen this pattern repeat across industries:
         </p>
         <p className="pb-4 md:pb-6 ml-2 md:ml-4 text-yellow-400 text-xs md:text-md">
@@ -94,9 +94,9 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
           <br />• ROI remains elusive — because no one can quantify the value of
           the <br />
           transformation.
-        </p> */}
+        </p> 
 
-        {/* <h3 className="text-yellow-400 text-base md:text-xl uppercase ">
+         <h3 className="text-yellow-400 text-base md:text-xl uppercase ">
           Why This Happens
         </h3>
 
@@ -137,12 +137,12 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
               </div>
             </motion.div>
           ))}
-        </motion.div> */}
-        {/* <p className="text-sm md:text-xl">
+        </motion.div>
+         <p className="text-sm md:text-xl">
           ERP systems are powerful tools — but only when built on optimized
           processes. Without BPR, organizations end <br /> up automating
           inefficiency.
-        </p> */}
+        </p>
       </motion.div>
       <motion.div
         className="w-full max-w-6xl bg-white border leading-relaxed text-sm md:text-xl mb-2 rounded-2xl md:rounded-3xl z-10 mx-auto p-4 md:p-8 text-border"
@@ -151,7 +151,7 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2 className="mb-2">{blogData?.sub_title_2}</h2>{" "}
+        <h2 className="mb-2">{blogData?.sub_title_2}</h2>
         {blogData?.paragraph_2}
       </motion.div>
       {blogData?.img_url_2 && (
@@ -171,7 +171,7 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
           />
         </motion.div>
       )}
-      {/* <motion.div
+      <motion.div
         className="w-full max-w-6xl bg-[#d2edb9] leading-relaxed text-sm md:text-xl mb-5 rounded-2xl md:rounded-3xl z-10 mx-auto p-4 md:p-8 text-border"
         variants={fadeInUp}
         initial="hidden"
@@ -189,8 +189,8 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
         <br />
         • A lean operational foundation <br />• Clear process ownerships <br />•
         Measurable ROI <br />• A smoother, more effective ERP rollout
-      </motion.div> */}
-      {/* <motion.div
+      </motion.div>
+      <motion.div
         className="w-full max-w-6xl bg-white leading-relaxed mt-6 md:mt-8 flex flex-col md:flex-row gap-4 md:justify-between z-10 mx-auto"
         variants={fadeIn}
         initial="hidden"
@@ -224,7 +224,7 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
           <br />
           operations.
         </div>
-      </motion.div> */}
+      </motion.div> 
     </div>
   );
 };

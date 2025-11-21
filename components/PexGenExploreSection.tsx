@@ -8,7 +8,7 @@ export default function PexGenExploreSection() {
     <>
       {/* Desktop Version */}
       <div
-        className="hidden md:flex w-full px-4 bg-white relative"
+        className="hidden md:flex w-full  px-4 bg-white relative"
         style={{
           backgroundImage: "url('/Asset 56.webp')",
           backgroundSize: "cover",
@@ -128,7 +128,7 @@ export default function PexGenExploreSection() {
 
       {/* Mobile Version */}
       <div
-        className="md:hidden w-full px-4 bg-white relative"
+        className="md:hidden w-full my-10 px-4 bg-white relative"
         style={{
           backgroundImage: "url('/Asset 56.webp')",
           backgroundSize: "cover",

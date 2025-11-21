@@ -32,7 +32,7 @@ export default function PexGenVideoSection() {
           </motion.div>
           {/* Green Dragon positioned absolutely to the right */}
           <motion.div
-            className="absolute md:right-[-340px] md:bottom-[-90px] z-20"
+            className="absolute md:right-[-340px] md:bottom-[-110px] z-20"
             initial={{ opacity: 0, x: 100, scale: 0.8 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true }}
@@ -41,7 +41,7 @@ export default function PexGenVideoSection() {
             <Image
               width={350}
               height={0}
-              src="/Asset 63.png"
+              src="/dragon.png"
               alt="Green Dragon"
             />
           </motion.div>
@@ -83,7 +83,7 @@ export default function PexGenVideoSection() {
             <Image
               width={200}
               height={0}
-              src="/Asset 63.png"
+              src="/dragon.png"
               alt="Green Dragon"
               className="mx-auto"
             />
