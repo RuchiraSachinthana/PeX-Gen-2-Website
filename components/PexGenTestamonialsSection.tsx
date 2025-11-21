@@ -111,21 +111,23 @@ const PexGenTestamonialsSection = () => {
               business growth
             </motion.div>
 
-            <motion.button
-              className="bg-yellow-400 absolute top-45 left-5 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="flex justify-between text-sm items-center gap-2">
-                Linkedin
-                <span className="font-semibold">1000+</span>
-                followers
-              </div>
-            </motion.button>
+            <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                className="bg-yellow-400 absolute top-45 left-5 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="flex justify-between text-sm items-center gap-2">
+                  Linkedin
+                  <span className="font-semibold">1000+</span>
+                  followers
+                </div>
+              </motion.button>
+            </a>
             <motion.div
               className="flex gap-2 top-57 absolute left-7"
               initial={{ opacity: 0, y: 20 }}
@@ -141,7 +143,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.3 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (1).png"
                   alt="Avatar 1"
                   width={40}
                   height={40}
@@ -156,7 +158,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.4 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (2).png"
                   alt="Avatar 2"
                   width={40}
                   height={40}
@@ -171,7 +173,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.5 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (3).png"
                   alt="Avatar 3"
                   width={40}
                   height={40}
@@ -186,7 +188,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.6 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (4).png"
                   alt="Avatar 4"
                   width={40}
                   height={40}
@@ -201,7 +203,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.7 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (5).png"
                   alt="Avatar 5"
                   width={40}
                   height={40}
@@ -319,19 +321,21 @@ const PexGenTestamonialsSection = () => {
                       {/* Content Stack */}
                       <div className="flex flex-col gap-6 items-start">
                         {/* Button */}
-                        <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
-                          Linkedin <span className="font-bold">1000+</span> followers
-                        </button>
+                        <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+                          <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
+                            Linkedin <span className="font-bold">1000+</span> followers
+                          </button>
+                        </a>
           
                         {/* Follow Us + Avatars */}
                         <div className="flex flex-col gap-2 mt-2">
                           <span className="text-white text-[10px] absolute top-7 right-10 uppercase opacity-90">
                             Follow Us
                           </span>
-                          <div className="absolute bottom-4 left-45 flex gap-1 z-20">
+                          <div className="absolute top-12 left-45 flex gap-1 z-20">
                             <div className="w-6 h-6 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (5).png"
                                 alt="Avatar 1"
                                 width={48}
                                 height={48}
@@ -341,7 +345,7 @@ const PexGenTestamonialsSection = () => {
           
                             <div className="w-6 h-6  rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (4).png"
                                 alt="Avatar 2"
                                 width={48}
                                 height={48}
@@ -350,7 +354,7 @@ const PexGenTestamonialsSection = () => {
                             </div>
                             <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (3).png"
                                 alt="Avatar 3"
                                 width={48}
                                 height={48}
@@ -359,7 +363,7 @@ const PexGenTestamonialsSection = () => {
                             </div>
                             <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (2).png"
                                 alt="Avatar 4"
                                 width={48}
                                 height={48}
@@ -368,7 +372,7 @@ const PexGenTestamonialsSection = () => {
                             </div>
                             <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (1).png"
                                 alt="Avatar 5"
                                 width={48}
                                 height={48}

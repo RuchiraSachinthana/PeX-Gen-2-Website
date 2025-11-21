@@ -93,13 +93,12 @@ export default function CaseStudiesShowcase() {
                     src="/Asset 21.svg"
                     alt="Background Decoration"
                   />
-                </div>
-                <div>{/* Small label at bottom */}
+                </div>            
                 <div className="absolute bottom-3 left-10">
-                  <p className="text-sm text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                  <p className="text-sm ml-10 text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
-                </div></div>
+                </div>
                 <Image
                   width={60}
                   height={0}

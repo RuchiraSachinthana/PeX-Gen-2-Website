@@ -14,16 +14,7 @@ const BusinessImprovementSlider: FC = () => {
   // Get slides from translations
   const slidesData = t("businessImprovementSlider.slides");
 
-  // Debug: Log the slides data
-  useEffect(() => {
-    console.log("Slides data:", slidesData);
-    console.log("Type:", typeof slidesData);
-    console.log("Is array:", Array.isArray(slidesData));
-
-    // Try to see what the full businessImprovementSlider object looks like
-    const fullData = t("businessImprovementSlider");
-    console.log("Full businessImprovementSlider:", fullData);
-  }, [slidesData, t]);
+  
 
   const slides = Array.isArray(slidesData)
     ? slidesData.map(
@@ -116,29 +107,31 @@ const BusinessImprovementSlider: FC = () => {
                 </p>
 
                 {/* Row 1: LinkedIn button */}
-                <button className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer">
-                  <div className="flex justify-between text-sm items-center gap-2">
-                    Linkedin
-                    <span className="font-semibold">
+                <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-yellow-400 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer">
+                    <div className="flex justify-between text-sm items-center gap-2">
+                      Linkedin
+                      <span className="font-semibold">
+                        {String(
+                          t(
+                            "socialSection.partnerSection.linkedinButton.followersCount"
+                          )
+                        )}
+                      </span>
                       {String(
                         t(
-                          "socialSection.partnerSection.linkedinButton.followersCount"
+                          "socialSection.partnerSection.linkedinButton.followersText"
                         )
                       )}
-                    </span>
-                    {String(
-                      t(
-                        "socialSection.partnerSection.linkedinButton.followersText"
-                      )
-                    )}
-                  </div>
-                </button>
+                    </div>
+                  </button>
+                </a>
 
                 {/* Row 2: Avatars */}
                 <div className="flex gap-1">
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (1).png"
                       alt="Avatar 1"
                       width={40}
                       height={40}
@@ -147,7 +140,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (2).png"
                       alt="Avatar 2"
                       width={40}
                       height={40}
@@ -156,7 +149,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (3).png"
                       alt="Avatar 3"
                       width={40}
                       height={40}
@@ -165,7 +158,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (4).png"
                       alt="Avatar 4"
                       width={40}
                       height={40}
@@ -174,7 +167,7 @@ const BusinessImprovementSlider: FC = () => {
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
                     <Image
-                      src="/avatar.jpg"
+                      src="/user (5).png"
                       alt="Avatar 5"
                       width={40}
                       height={40}
@@ -442,29 +435,31 @@ const BusinessImprovementSlider: FC = () => {
             <div className="flex items-end justify-between">
               <div className="flex flex-row items-center gap-3">
                 {/* LinkedIn Button */}
-                <motion.button
-                  className="bg-yellow-400 px-2 py-1 rounded-full shadow-md"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <div className="flex items-center gap-1 text-[8px]  text-gray-900">
-                    <span>LinkedIn</span>
-                    <span className="font-bold">
-                      {String(
-                        t(
-                          "socialSection.partnerSection.linkedinButton.followersCount"
-                        )
-                      )}
-                    </span>
-                    <span>
-                      {String(
-                        t(
-                          "socialSection.partnerSection.linkedinButton.followersText"
-                        )
-                      )}
-                    </span>
-                  </div>
-                </motion.button>
+                <a href="https://web.facebook.com/Pexsolutions" target="_blank" rel="noopener noreferrer">
+                  <motion.button
+                    className="bg-yellow-400 px-2 py-1 rounded-full shadow-md"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="flex items-center gap-1 text-[8px]  text-gray-900">
+                      <span>LinkedIn</span>
+                      <span className="font-bold">
+                        {String(
+                          t(
+                            "socialSection.partnerSection.linkedinButton.followersCount"
+                          )
+                        )}
+                      </span>
+                      <span>
+                        {String(
+                          t(
+                            "socialSection.partnerSection.linkedinButton.followersText"
+                          )
+                        )}
+                      </span>
+                    </div>
+                  </motion.button>
+                </a>
 
                 {/* Avatars */}
                 <div className="flex gap-1">
@@ -474,7 +469,7 @@ const BusinessImprovementSlider: FC = () => {
                       className="w-5 h-5 rounded-full bg-gray-300 overflow-hidden border-2 border-white"
                     >
                       <Image
-                        src="/avatar.jpg"
+                        src={`/user (${num}).png`}
                         alt={`Avatar ${num}`}
                         width={22}
                         height={22}

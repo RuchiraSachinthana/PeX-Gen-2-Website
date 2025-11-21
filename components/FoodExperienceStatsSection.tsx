@@ -241,6 +241,7 @@ export const FoodExperienceStatsSection: FC = () => {
                 <p className="text-sm text-white uppercase font-medium">
                   {stats.clients.label}
                 </p>
+                
               </div>
             </div>
           </motion.div>

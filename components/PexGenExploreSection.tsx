@@ -7,8 +7,8 @@ export default function PexGenExploreSection() {
   return (
     <>
       {/* Desktop Version */}
-      <div
-        className="hidden md:flex w-full  px-4 bg-white relative"
+      <div 
+        className="hidden md:flex w-full px-4 relative overflow-hidden"
         style={{
           backgroundImage: "url('/Asset 56.webp')",
           backgroundSize: "cover",
@@ -16,12 +16,14 @@ export default function PexGenExploreSection() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="max-w-6xl mx-auto">
+        
+
+        <div className="max-w-6xl mx-auto w-full relative z-10">
           {/* Main container for the two content blocks */}
-          <div className="flex flex-col md:flex-row gap-16 py-10">
-            {/* Left Block: Quality Management */}
+          <div className="flex flex-col md:flex-row  justify-between py-10">
+            {/* Left Block: Quality Management - RIGHT ALIGNED */}
             <motion.div
-              className="relative flex-1  flex flex-col justify-center"
+              className="relative flex-1 flex flex-col justify-between pl-8"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -29,7 +31,7 @@ export default function PexGenExploreSection() {
             >
               <div className="relative z-10">
                 <motion.p
-                  className="text-yellow-400 mb-2 text-2xl uppercase"
+                  className="text-yellow-400 mb-2 text-xl uppercase tracking-wider"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -38,7 +40,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-xl md:text-3xl  text-white uppercase mb-1"
+                  className="text-lg md:text-xl text-white uppercase mb-1"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -46,9 +48,9 @@ export default function PexGenExploreSection() {
                 >
                   PEX SOFTWARE&trade; FOR
                 </motion.h3>
-                <div className="flex items-center  text-white space-x-4">
+                <div className="flex items-center text-white space-x-4">
                   <motion.h2
-                    className="text-4xl font-extrabold uppercase "
+                    className="text-3xl md:text-4xl font-bold uppercase"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -57,7 +59,7 @@ export default function PexGenExploreSection() {
                     QUALITY MANAGEMENT
                   </motion.h2>
                   <motion.button
-                    className="bg-yellow-400 p-3 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                    className="bg-yellow-400 p-3 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105 flex-shrink-0"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -71,17 +73,17 @@ export default function PexGenExploreSection() {
               </div>
             </motion.div>
 
-            {/* Right Block: Food Safety */}
+            {/* Right Block: Food Safety - LEFT ALIGNED */}
             <motion.div
-              className="relative flex flex-col "
+              className="relative flex flex-col"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="relative z-10 ">
+              <div className="relative z-10">
                 <motion.p
-                  className="text-green-900 text-2xl mb-2 font-semibold uppercase"
+                  className="text-[#0B5B52] text-xl mb-2 font-semibold uppercase tracking-wider"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -90,7 +92,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-xl md:text-3xl font-bold uppercase "
+                  className="text-lg md:text-xl text-black font-semibold uppercase mb-1"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -100,7 +102,7 @@ export default function PexGenExploreSection() {
                 </motion.h3>
                 <div className="flex items-center space-x-4">
                   <motion.h2
-                    className=" text-4xl font-extrabold uppercase "
+                    className="text-3xl md:text-4xl font-bold text-black uppercase"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -109,7 +111,7 @@ export default function PexGenExploreSection() {
                     FOOD SAFETY
                   </motion.h2>
                   <motion.button
-                    className="bg-green-900 p-3 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                    className="bg-[#0B5B52] p-3 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105 flex-shrink-0"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -149,7 +151,7 @@ export default function PexGenExploreSection() {
             >
               <div className="relative z-10">
                 <motion.p
-                  className="text-yellow-400 mb-1 text-xs uppercase"
+                  className="text-yellow-400 mb-1 text-[10px] uppercase"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -158,7 +160,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-xs text-white uppercase mb-1"
+                  className="text-[9px] text-white uppercase mb-1"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -168,7 +170,7 @@ export default function PexGenExploreSection() {
                 </motion.h3>
                 <div className="flex items-center text-white space-x-1">
                   <motion.h2
-                    className="text-sm font-extrabold uppercase"
+                    className="text-xs font-extrabold uppercase"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -201,7 +203,7 @@ export default function PexGenExploreSection() {
             >
               <div className="relative z-10">
                 <motion.p
-                  className="text-green-900 text-xs mb-1 font-semibold uppercase"
+                  className="text-[#0B5B52] text-[10px] mb-1 font-semibold uppercase"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -210,7 +212,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-xs font-bold uppercase mb-1"
+                  className="text-[9px] text-black font-bold uppercase mb-1"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -220,7 +222,7 @@ export default function PexGenExploreSection() {
                 </motion.h3>
                 <div className="flex items-center space-x-1">
                   <motion.h2
-                    className="text-sm font-extrabold uppercase"
+                    className="text-xs font-extrabold uppercase"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

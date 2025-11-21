@@ -178,31 +178,33 @@ export default function SocialSection() {
                     </p>
                   </div>
 
-                  <motion.button
-                    className="bg-yellow-400 px-2 mt-2 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <div className="flex justify-between text-sm px-2 items-center gap-2">
-                      {String(
-                        t(
-                          "socialSection.partnerSection.linkedinButton.platform"
-                        )
-                      )}
-                      <span className="font-semibold">
+                  <a href="https://web.facebook.com/Pexsolutions" target="_blank" rel="noopener noreferrer">
+                    <motion.button
+                      className="bg-yellow-400 px-2 mt-2 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="flex justify-between text-sm px-2 items-center gap-2">
                         {String(
                           t(
-                            "socialSection.partnerSection.linkedinButton.followersCount"
+                            "socialSection.partnerSection.linkedinButton.platform"
                           )
                         )}
-                      </span>
-                      {String(
-                        t(
-                          "socialSection.partnerSection.linkedinButton.followersText"
-                        )
-                      )}
-                    </div>
-                  </motion.button>
+                        <span className="font-semibold">
+                          {String(
+                            t(
+                              "socialSection.partnerSection.linkedinButton.followersCount"
+                            )
+                          )}
+                        </span>
+                        {String(
+                          t(
+                            "socialSection.partnerSection.linkedinButton.followersText"
+                          )
+                        )}
+                      </div>
+                    </motion.button>
+                  </a>
 
                   <motion.div
                     className="flex gap-1 mt-5"
@@ -218,7 +220,7 @@ export default function SocialSection() {
                         variants={avatarItemVariants}
                       >
                         <Image
-                          src="/avatar.jpg"
+                          src={`/user (${num}).png`}
                           alt={`Avatar ${num}`}
                           width={40}
                           height={40}
@@ -328,33 +330,35 @@ export default function SocialSection() {
             {/* Bottom Section - Button and Avatars */}
             <div className="flex items-center justify-between">
               {/* LinkedIn Button */}
-              <motion.button
-                className="bg-yellow-400 px-3 py-1.5 rounded-full shadow-md"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex items-center gap-1 text-[8px] font-medium text-gray-900">
-                  <span>
-                    {String(
-                      t("socialSection.partnerSection.linkedinButton.platform")
-                    )}
-                  </span>
-                  <span className="font-bold">
-                    {String(
-                      t(
-                        "socialSection.partnerSection.linkedinButton.followersCount"
-                      )
-                    )}
-                  </span>
-                  <span>
-                    {String(
-                      t(
-                        "socialSection.partnerSection.linkedinButton.followersText"
-                      )
-                    )}
-                  </span>
-                </div>
-              </motion.button>
+              <a href="https://web.facebook.com/Pexsolutions" target="_blank" rel="noopener noreferrer">
+                <motion.button
+                  className="bg-yellow-400 px-3 py-1.5 rounded-full shadow-md"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="flex items-center gap-1 text-[8px] font-medium text-gray-900">
+                    <span>
+                      {String(
+                        t("socialSection.partnerSection.linkedinButton.platform")
+                      )}
+                    </span>
+                    <span className="font-bold">
+                      {String(
+                        t(
+                          "socialSection.partnerSection.linkedinButton.followersCount"
+                        )
+                      )}
+                    </span>
+                    <span>
+                      {String(
+                        t(
+                          "socialSection.partnerSection.linkedinButton.followersText"
+                        )
+                      )}
+                    </span>
+                  </div>
+                </motion.button>
+              </a>
 
               {/* Avatars */}
               <motion.div
@@ -371,7 +375,7 @@ export default function SocialSection() {
                     variants={avatarItemVariants}
                   >
                     <Image
-                      src="/avatar.jpg"
+                      src={`/user (${num}).png`}
                       alt={`Avatar ${num}`}
                       width={28}
                       height={28}

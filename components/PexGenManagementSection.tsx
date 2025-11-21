@@ -113,7 +113,7 @@ const PexGenManagementSection = () => {
   return (
     <div id="management-section" className="relative">
       {/* Desktop Version */}
-      <div className="hidden md:block w-full mb-[-170] py-20 items-center justify-center">
+      <div className="hidden mb-10 md:block w-full mb-[-170] py-20 items-center justify-center">
         <div className="max-w-7xl mx-auto">
           {/* Category Headers */}
           <div className="grid grid-cols-3 gap-4 mb-8">
@@ -148,7 +148,7 @@ const PexGenManagementSection = () => {
 
           {/* Cards Grid */}
           {/* Changed from grid-rows-4 to auto flow so height adjusts naturally */}
-          <div className="grid grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-3 gap-6 items-start">
             {cards.map((card, index) => {
               const isExpanded = expandedId === card.id;
 

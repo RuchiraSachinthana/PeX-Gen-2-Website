@@ -25,7 +25,7 @@ export default function FoodCaseStudiesShowcase() {
       {/* Desktop Version - Hidden on mobile */}
       <div
         style={{
-          backgroundImage: 'url("/Asset 23.webp")',
+          backgroundImage: 'url("/Asset 71.webp")',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -95,7 +95,11 @@ export default function FoodCaseStudiesShowcase() {
                     alt="Background Decoration"
                   />
                 </div>
-                <div></div>
+               <div className="absolute bottom-3 left-10">
+                  <p className="text-sm ml-10 text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                    THIS MONTH&apos;S SUCCESS STORY
+                  </p>
+                </div>
                 <Image
                   width={60}
                   height={0}
@@ -120,7 +124,7 @@ export default function FoodCaseStudiesShowcase() {
                 <Image
                   width={340}
                   height={0}
-                  src="/Asset 19.svg"
+                  src="/Asset 73.svg"
                   alt="Background Decoration"
                 />
                 <div className="absolute top-20 left-8">
@@ -157,7 +161,7 @@ export default function FoodCaseStudiesShowcase() {
                 <Image
                   width={440}
                   height={0}
-                  src="/Asset 20.svg"
+                  src="/Asset 72.svg"
                   alt="Background Decoration"
                 />
                 <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
@@ -190,7 +194,7 @@ export default function FoodCaseStudiesShowcase() {
         {/* First Card with Background Image */}
         <div
           style={{
-            backgroundImage: 'url("/Asset 23.webp")',
+            backgroundImage: 'url("/Asset 71.webp")',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}

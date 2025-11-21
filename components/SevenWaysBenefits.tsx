@@ -113,7 +113,7 @@ export default function SevenWaysBenefits() {
             <div className="relative ">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/Asset 36.svg"
+                  src="/1.svg"
                   alt={String(t("sevenWaysBenefits.benefits.0.title"))}
                   width={310}
                   height={200}
@@ -151,7 +151,7 @@ export default function SevenWaysBenefits() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/Asset 35.svg"
+                  src="/2.svg"
                   alt={String(t("sevenWaysBenefits.benefits.1.title"))}
                   width={0}
                   height={0}
@@ -188,7 +188,7 @@ export default function SevenWaysBenefits() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/Asset 37.svg"
+                  src="/3.svg"
                   alt={String(t("sevenWaysBenefits.benefits.2.title"))}
                   width={280}
                   height={200}
@@ -224,7 +224,7 @@ export default function SevenWaysBenefits() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/Asset 38.svg"
+                  src="/4.svg"
                   alt={String(t("sevenWaysBenefits.benefits.3.title"))}
                   width={280}
                   height={200}
@@ -258,7 +258,7 @@ export default function SevenWaysBenefits() {
             <div className="relative ">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/Asset 39.svg"
+                  src="/5.svg"
                   alt={String(t("sevenWaysBenefits.benefits.4.title"))}
                   width={280}
                   height={200}
@@ -292,7 +292,7 @@ export default function SevenWaysBenefits() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/Asset 40.svg"
+                  src="/6.svg"
                   alt={String(t("sevenWaysBenefits.benefits.5.title"))}
                   width={280}
                   height={200}
@@ -328,7 +328,7 @@ export default function SevenWaysBenefits() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg">
                 <Image
-                  src="/Asset 41.svg"
+                  src="/7.svg"
                   alt={String(t("sevenWaysBenefits.benefits.6.title"))}
                   width={280}
                   height={200}
