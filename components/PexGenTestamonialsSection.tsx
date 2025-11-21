@@ -143,7 +143,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.3 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (1).png"
                   alt="Avatar 1"
                   width={40}
                   height={40}
@@ -158,7 +158,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.4 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (2).png"
                   alt="Avatar 2"
                   width={40}
                   height={40}
@@ -173,7 +173,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.5 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (3).png"
                   alt="Avatar 3"
                   width={40}
                   height={40}
@@ -188,7 +188,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.6 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (4).png"
                   alt="Avatar 4"
                   width={40}
                   height={40}
@@ -203,7 +203,7 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.4, delay: 1.7 }}
               >
                 <Image
-                  src="/avatar.jpg"
+                  src="/user (5).png"
                   alt="Avatar 5"
                   width={40}
                   height={40}
@@ -332,10 +332,10 @@ const PexGenTestamonialsSection = () => {
                           <span className="text-white text-[10px] absolute top-7 right-10 uppercase opacity-90">
                             Follow Us
                           </span>
-                          <div className="absolute bottom-4 left-45 flex gap-1 z-20">
+                          <div className="absolute top-12 left-45 flex gap-1 z-20">
                             <div className="w-6 h-6 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (5).png"
                                 alt="Avatar 1"
                                 width={48}
                                 height={48}
@@ -345,7 +345,7 @@ const PexGenTestamonialsSection = () => {
           
                             <div className="w-6 h-6  rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (4).png"
                                 alt="Avatar 2"
                                 width={48}
                                 height={48}
@@ -354,7 +354,7 @@ const PexGenTestamonialsSection = () => {
                             </div>
                             <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (3).png"
                                 alt="Avatar 3"
                                 width={48}
                                 height={48}
@@ -363,7 +363,7 @@ const PexGenTestamonialsSection = () => {
                             </div>
                             <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (2).png"
                                 alt="Avatar 4"
                                 width={48}
                                 height={48}
@@ -372,7 +372,7 @@ const PexGenTestamonialsSection = () => {
                             </div>
                             <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
                               <Image
-                                src="/avatar.jpg"
+                                src="/user (1).png"
                                 alt="Avatar 5"
                                 width={48}
                                 height={48}
