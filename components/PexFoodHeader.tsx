@@ -54,14 +54,7 @@ export default function PexFoodHeader() {
                    {String(t("pexFoodHeaderDesc3"))}   {String(t("pexFoodHeaderDesc4"))}
             
               </motion.p>
-              {/* <motion.p
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-              >
-                {String(t("pexFoodHeaderDesc4"))}
-              </motion.p> */}
+             
             </div>
           </div>
         </div>

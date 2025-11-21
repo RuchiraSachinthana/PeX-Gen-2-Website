@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SocialsSection from "@/components/SocialSection";
 import { useEffect, useState } from "react";
 import BlogContentSection from "./../../components/BlogContentSection";
+import BlogMessageSection from "@/components/BlogMessageSection";
 
 interface Blog {
   _id: string;
@@ -121,7 +122,7 @@ export default function BlogPageClient() {
   return (
     <div className="w-full min-h-screen">
       <BlogHeader />
-      {/* <BlogMessageSection  /> */}
+      <BlogMessageSection  />
 
       <div className="flex flex-col gap-8">
         {blogData.length > 0 ? (
