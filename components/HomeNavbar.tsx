@@ -237,7 +237,7 @@ export default function HomeNavbar() {
   const navbarBorderColor = isBlogPage
     ? "border-green-600"
     : "border-[#04afbc]";
-  const navbarBgColor = isBlogPage ? "bg-green-900/20" : "bg-white/10";
+  const navbarBgColor = isBlogPage ? "bg-green-900/20" : "bg-green-800/20";
 
   return (
     <nav className="w-full mt-7 max-w-6xl flex justify-end mb-4 sm:mb-6">

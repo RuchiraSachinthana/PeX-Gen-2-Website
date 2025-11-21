@@ -65,7 +65,7 @@ export default function HeroHeader() {
   const homeButtonBorderColor = isBlogPage
     ? "border-green-600"
     : "border-[#04afbc]";
-  const homeButtonBgColor = isBlogPage ? "bg-green-900/40" : "bg-white/10";
+  const homeButtonBgColor = isBlogPage ? "bg-green-900/40" : "bg-green-800/20";
   const mobileOverlayBg = isBlogPage
     ? "bg-gradient-to-br from-green-900 to-emerald-900/90"
     : "bg-gradient-to-br from-teal-900 to-cyan-900/90";
@@ -91,15 +91,15 @@ export default function HeroHeader() {
 
       {/* Desktop Navigation - Hidden on mobile */}
       <motion.div
-        initial={{ opacity: 0, x: 20 }}
+        initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
         className="hidden md:flex flex-1 items-center justify-end h-11"
       >
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center ">
           <button
             onClick={() => router.push("/")}
-            className={`flex items-center gap-1.5 text-white px-2.5 py-3 rounded-full hover:scale-110 hover:border-yellow-400   border transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer ${homeButtonBorderColor} ${homeButtonBgColor}`}
+            className={`  flex items-center gap-1.5 text-white px-2.5 py-3 rounded-full hover:scale-110 hover:border-yellow-400   border transition-all duration-300 shadow-lg hover:shadow-xl h-9 cursor-pointer ${homeButtonBorderColor} ${homeButtonBgColor}`}
           >
             <Home size={15} />
           </button>
@@ -353,7 +353,7 @@ export default function HeroHeader() {
                       className={`py-3 px-4 rounded-lg transition-all text-center ${
                         lang === language.code
                           ? "bg-yellow-400 text-teal-900 font-semibold"
-                          : "bg-white/10 text-white hover:bg-white/20"
+                          : "bg-green-800/20 text-white hover:bg-white/20"
                       }`}
                     >
                       <div className="text-sm font-semibold">

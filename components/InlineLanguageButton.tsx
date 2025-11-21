@@ -41,7 +41,7 @@ export default function InlineLanguageButton() {
 
   const currentLang = languages.find((l) => l.code === lang);
   const isBlogPage = pathname === "/blog";
-  const buttonBgColor = isBlogPage ? "bg-green-900/20" : "bg-white/10";
+  const buttonBgColor = isBlogPage ? "bg-green-900/20" : "bg-green-800/20";
   const buttonBorderColor = isBlogPage ? "border-green-600" : "border-white/30";
 
   return (
