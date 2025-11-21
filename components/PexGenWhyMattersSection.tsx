@@ -3,8 +3,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 export default function PexGenWhyMattersSection() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
   return (
     <div className="w-full mx-auto md:py-10 pt-8 mb-[-120] px-4">
       <div className="max-w-6xl justify-center items-center align-middle min-h-100 mx-auto">
@@ -59,6 +67,9 @@ export default function PexGenWhyMattersSection() {
                   className="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-2 text-sm rounded-full cursor-pointer transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  data-cal-namespace="15min"
+                  data-cal-link="pexsoftwaresolutions/15min"
+                  data-cal-config='{"layout":"month_view"}'
                 >
                   <div className="flex ">
                     <p className="text-[17px]"> Book now </p>

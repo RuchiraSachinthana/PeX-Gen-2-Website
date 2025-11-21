@@ -3,9 +3,11 @@
 import { motion } from "framer-motion"; // Import motion
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 export default function CaseStudiesShowcase() {
+  const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollRight = () => {
@@ -138,6 +140,7 @@ export default function CaseStudiesShowcase() {
                       className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => router.push("/blog")}
                     >
                       <div className="flex">
                         Read More &nbsp;
@@ -172,6 +175,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => router.push("/blog")}
                   >
                     <div className="flex">
                       Read More &nbsp;{" "}

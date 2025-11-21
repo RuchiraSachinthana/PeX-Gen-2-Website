@@ -4,8 +4,11 @@ import { motion } from "framer-motion"; // Import motion
 
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
+
 export default function FoodCaseStudiesShowcase() {
+  const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
     const scrollRight = () => {
@@ -133,6 +136,7 @@ export default function FoodCaseStudiesShowcase() {
                       className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => router.push("/blog")}
                     >
                       <div className="flex">
                         Read More &nbsp;
@@ -167,7 +171,8 @@ export default function FoodCaseStudiesShowcase() {
                     className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                  >
+                    onClick={() => router.push("/blog")}
+                    >
                     <div className="flex">
                       Read More &nbsp;{" "}
                       <ArrowRight className="w-5 h-5 text-black" />
@@ -336,6 +341,7 @@ export default function FoodCaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    onClick={() => router.push("/blog")}
                   >
                     Read More
                   </motion.button>
@@ -372,6 +378,7 @@ export default function FoodCaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    onClick={() => router.push("/blog")}
                   >
                     Read More
                   </motion.button>

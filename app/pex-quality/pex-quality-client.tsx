@@ -21,9 +21,7 @@ export default function PexQualityPageClient() {
       <ExperienceStatsSection />
       <FAQSection />
       <SocialsSection />
-     
-        <Footer />
-     
+      <Footer />     
     </div>
   );
 }

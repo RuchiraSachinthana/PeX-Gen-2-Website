@@ -3,8 +3,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 export default function FoodVideoPromoSection() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
   return (
   <div
   style={{
@@ -138,6 +146,10 @@ export default function FoodVideoPromoSection() {
                 className="bg-yellow-400 hover:bg-yellow-500 text-black py-1 px-6 text-sm rounded-full cursor-pointer transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                data-cal-namespace="15min"
+                data-cal-link="pexsoftwaresolutions/15min"
+                data-cal-config='{"layout":"month_view"}'
+
               >
                 <div className="flex items-center gap-2">
                   <p className="text-[12px]">Book now</p>
@@ -248,6 +260,9 @@ export default function FoodVideoPromoSection() {
                   className="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-2 text-sm rounded-full cursor-pointer transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  data-cal-namespace="15min"
+                  data-cal-link="pexsoftwaresolutions/15min"
+                  data-cal-config='{"layout":"month_view"}'
                 >
                   <div className="flex ">
                     <p className="text-[17px]"> Book now </p>
