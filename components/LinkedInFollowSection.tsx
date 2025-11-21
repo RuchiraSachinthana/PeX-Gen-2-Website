@@ -49,7 +49,7 @@ export default function LinkedInFollowSection() {
                 <span className="text-white text-[10px] absolute top-7 right-10 uppercase opacity-90">
                   Follow Us
                 </span>
-                <div className="absolute bottom-4 left-45 flex gap-1 z-20">
+                <div className="absolute top-12 left-45 flex gap-1 z-20">
                   <div className="w-6 h-6 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
                     <Image
                       src="/user (1).png"

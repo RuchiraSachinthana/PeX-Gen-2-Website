@@ -120,7 +120,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col top-3 items-left text-left">
-                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                  <div className="text-yellow-400 text-2xl  mb-3">
                     <div>Safeguards Brand </div>
                     <div>Reputation in the</div>
                     <div>Social Media Era</div>
@@ -158,7 +158,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto"
                 />
                 <div className="absolute top-18 inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <div className="text-yellow-400 absolute top-[-35px] left-25 text-2xl font-semibold mb-3">
+                  <div className="text-yellow-400 absolute top-[-35px] left-25 text-2xl  mb-3">
                     <div>Reduces Paperwork by 90%</div>
                   </div>
                   <div className="text-white text-2xl">
@@ -195,7 +195,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute left-10 text-yellow-400 inset-0 p-6 z-10 flex flex-col justify-center items-right text-left">
-                  <div className="text-yellow-400 text-2xl ml-60 font-semibold mb-3">
+                  <div className="text-yellow-400 text-2xl ml-60  mb-3">
                     <div>Automates</div>
                     <div>Monitoring</div>
                     <div>with IoT Devices</div>
@@ -231,7 +231,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                  <div className="text-yellow-400 text-2xl  mb-3">
                     <div>Empowers Chefs and Hygiene Managers</div>
                   </div>
                   <div className="text-white text-2xl">
@@ -265,7 +265,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 left-5 z-10 flex flex-col justify-center items-left text-left">
-                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                  <div className="text-yellow-400 text-2xl  mb-3">
                     <div>Streamlines Audit Readiness</div>
                   </div>
                   <div className="text-white text-2xl">
@@ -299,7 +299,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 left-10 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <div className="text-yellow-400 text-2xl ml-10 font-semibold mb-3">
+                  <div className="text-yellow-400 text-2xl ml-10  mb-3">
                     <div>Aligns Food Safety with</div>
                     <div>Business Strategy</div>
                   </div>
@@ -335,7 +335,7 @@ export default function SevenWaysBenefits() {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 p-6 z-10 flex flex-col justify-center items-left text-left">
-                  <div className="text-yellow-400 text-2xl font-semibold mb-3">
+                  <div className="text-yellow-400 text-2xl  mb-3">
                     <div>Drives Continuous</div>
                     <div>Improvement</div>
                   </div>

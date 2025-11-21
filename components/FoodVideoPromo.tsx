@@ -47,7 +47,7 @@ export default function FoodVideoPromoSection() {
 
           {/* Video - Mobile */}
           <motion.div
-            className="relative w-full max-w-sm h-64 bg-emerald-400 rounded-3xl p-1 shadow-2xl z-0"
+            className="relative w-full h-64 bg-emerald-400 rounded-3xl p-1 shadow-2xl z-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -68,7 +68,7 @@ export default function FoodVideoPromoSection() {
 
           {/* Sign Up Card - Mobile */}
           <motion.div
-            className="relative w-full max-w-[370px] rounded-2xl "
+            className="relative w-full max-w-[380px] rounded-2xl "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -112,7 +112,7 @@ export default function FoodVideoPromoSection() {
 
           {/* Book Now Card - Mobile */}
           <motion.div
-            className="relative w-full max-w-sm"
+            className="relative w-full "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

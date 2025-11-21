@@ -86,7 +86,7 @@ export default function PexGenMeetLeaders() {
                     <h3 className="text-lg sm:text-xl font-bold text-[#0B7A6F] mb-1">
                       {leader.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#0B7A6F] mb-1">
+                    <p className="text-xs sm:text-xs text-[#0B7A6F] mb-1">
                       {leader.title}
                     </p>
                     <p className="text-xs sm:text-sm text-[#0B7A6F] mb-3 font-medium">
