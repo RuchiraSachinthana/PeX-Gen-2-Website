@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import { useTranslation } from "../context/LanguageProvider";
 
 // Phone Icon Component (Custom filled design)
@@ -86,8 +88,93 @@ const itemVariants = {
 };
 // --- END ---
 
+type ContactFormData = {
+  company: string;
+  name: string;
+  email: string;
+  country: string;
+  phone: string;
+  message: string;
+};
+
+const CONTACT_API_ENDPOINT = "https://pex-sooty.vercel.app/api/contact";
+
+const initialFormState: ContactFormData = {
+  company: "",
+  name: "",
+  email: "",
+  country: "Sri Lanka",
+  phone: "",
+  message: "",
+};
+
 export default function Footer() {
   const { t } = useTranslation();
+  const [formData, setFormData] = useState<ContactFormData>(() => ({
+    ...initialFormState,
+  }));
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "idle" | "success" | "error";
+    message?: string;
+  }>({ type: "idle" });
+
+  const successFallback = String(t("footer.contactForm.successMessage"));
+  const errorFallback = String(t("footer.contactForm.errorMessage"));
+  const submitLabel = String(t("footer.contactForm.submitButton"));
+  const sendingLabel = String(t("footer.contactForm.sending"));
+
+  const handleChange =
+    (field: keyof ContactFormData) =>
+    (
+      event: ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
+    ) => {
+      setFormData((prev) => ({
+        ...prev,
+        [field]: event.target.value,
+      }));
+    };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: "idle" });
+
+    try {
+      const response = await fetch(CONTACT_API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data?.success) {
+        throw new Error(data?.message ?? errorFallback);
+      }
+
+      setStatus({
+        type: "success",
+        message: data.message ?? successFallback,
+      });
+
+      setFormData(() => ({ ...initialFormState }));
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error && error.message
+            ? error.message
+            : errorFallback,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <footer id="footer" className="bg-gradient-to-r from-emerald-900 to-teal-700 text-white py-8 lg:py-12 relative overflow-hidden w-full">
@@ -342,13 +429,18 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <form className="space-y-3 lg:space-y-2">
+          <form className="space-y-3 lg:space-y-2" onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1">
               <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.company"))}
               </label>
               <input
                 type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange("company")}
+                required
+                autoComplete="organization"
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
@@ -358,6 +450,11 @@ export default function Footer() {
               </label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange("name")}
+                required
+                autoComplete="name"
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
@@ -367,6 +464,11 @@ export default function Footer() {
               </label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange("email")}
+                required
+                autoComplete="email"
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
@@ -376,7 +478,10 @@ export default function Footer() {
               </label>
               <div className="relative flex-1">
                 <select
-                  defaultValue=""
+                  name="country"
+                  value={formData.country}
+                  onChange={handleChange("country")}
+                  required
                   className="w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 appearance-none"
                 >
                   <option value="Sri Lanka">
@@ -387,6 +492,7 @@ export default function Footer() {
                   </option>
                   <option value="Singapore">
                     {String(t("footer.contactForm.countries.singapore"))}
+                    
                   </option>
                   <option value="Other">
                     {String(t("footer.contactForm.countries.other"))}
@@ -415,20 +521,52 @@ export default function Footer() {
                 {String(t("footer.contactForm.placeholders.phone"))}
               </label>
               <input
-                type="text"
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange("phone")}
+                required
+                autoComplete="tel"
                 className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <label className="text-white text-sm w-full sm:w-20 shrink-0 pt-2 sm:pt-1">
+                {String(t("footer.contactForm.placeholders.message"))}
+              </label>
+              <textarea
+                name="message"
+                rows={3}
+                value={formData.message}
+                onChange={handleChange("message")}
+                required
+                className="flex-1 px-4 py-3 rounded-3xl bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none"
+                placeholder={String(t("footer.contactForm.placeholders.message"))}
               />
             </div>
 
             <motion.button // --- ADDED motion ---
               type="submit"
-              className="ml-auto flex items-center justify-center gap-2 bg-yellow-400 text-emerald-900 py-2 px-6 rounded-full hover:bg-yellow-300 transition font-medium"
+              className="ml-auto flex items-center justify-center gap-2 bg-yellow-400 text-emerald-900 py-2 px-6 rounded-full hover:bg-yellow-300 transition font-medium disabled:opacity-70 disabled:cursor-not-allowed"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              disabled={isSubmitting}
+              aria-busy={isSubmitting}
             >
-              {String(t("footer.contactForm.submitButton"))}
+              {isSubmitting ? sendingLabel : submitLabel}
               <ArrowRight size={18} />
             </motion.button>
+            {status.type !== "idle" && (
+              <p
+                className={`text-sm ${
+                  status.type === "success" ? "text-emerald-200" : "text-red-200"
+                }`}
+                role="status"
+                aria-live="polite"
+              >
+                {status.message}
+              </p>
+            )}
           </form>
         </motion.div>
       </div>
