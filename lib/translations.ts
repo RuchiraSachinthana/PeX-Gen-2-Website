@@ -303,7 +303,8 @@ export const translations = {
           name: "Name",
           email: "E-mail",
           country: "Country",
-          phone: "Phone"
+          phone: "Phone",
+          message: "Message"
         },
         countries: {
           sriLanka: "Sri Lanka",
@@ -311,7 +312,10 @@ export const translations = {
           singapore: "Singapore",
           other: "Other"
         },
-        submitButton: "E-mail us"
+        submitButton: "E-mail us",
+        sending: "Sending...",
+        successMessage: "Message sent successfully.",
+        errorMessage: "Unable to send message. Please try again."
       }
     },
 
