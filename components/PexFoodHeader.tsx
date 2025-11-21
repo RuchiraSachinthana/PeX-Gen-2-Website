@@ -51,7 +51,7 @@ export default function PexFoodHeader() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                <p className="text-[#41c4b7]">    {String(t("pexFoodHeaderDesc3"))}   {String(t("pexFoodHeaderDesc4"))}</p>
+                   {String(t("pexFoodHeaderDesc3"))}   {String(t("pexFoodHeaderDesc4"))}
             
               </motion.p>
               {/* <motion.p
