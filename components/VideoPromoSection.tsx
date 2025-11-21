@@ -108,6 +108,12 @@ export default function VideoPromoSection() {
                 className="bg-yellow-400 hover:bg-yellow-500 text-black py-1 px-6 text-sm rounded-full cursor-pointer transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const footer = document.getElementById("footer");
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }}
               >
                 <div className="flex items-center gap-2">
                   <p className="text-[12px]">Sign Up</p>
@@ -221,6 +227,12 @@ export default function VideoPromoSection() {
                   className="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-3 text-sm rounded-full cursor-pointer transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const footer = document.getElementById("footer");
+                    if (footer) {
+                      footer.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
                 >
                   <div className="flex ">
                     <p className="text-[17px]"> Sign Up </p>
