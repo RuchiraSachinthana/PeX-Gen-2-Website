@@ -113,7 +113,7 @@ const PexGenManagementSection = () => {
   return (
     <div id="management-section" className="relative">
       {/* Desktop Version */}
-      <div className="hidden mb-10 md:block w-full mb-[-170] py-20 items-center justify-center">
+      <div className="hidden mb-10 md:block w-full  py-20 items-center justify-center">
         <div className="max-w-7xl mx-auto">
           {/* Category Headers */}
           <div className="grid grid-cols-3 gap-4 mb-8">
@@ -358,13 +358,18 @@ const SectionHeader = ({ title }: { title: string }) => (
   >
     <Image
       src="/Asset 54.svg"
-      alt={title}
+      alt={title.replace(/\n/g, " ")}
       width={200}
       height={80}
       className="w-full h-auto object-contain"
     />
-    <motion.div className="absolute text-lg p-3 left-3 top-0 whitespace-pre-line font-bold text-left w-full leading-tight">
-      {title}
+    <motion.div className="absolute text-lg p-3 left-3 top-0 font-bold text-left w-full leading-tight">
+      {title.split("\\n").map((line, index, array) => (
+        <span key={index}>
+          {line}
+          {index < array.length - 1 && <br />}
+        </span>
+      ))}
     </motion.div>
   </motion.div>
 );
