@@ -22,8 +22,8 @@ export default function PexQualityHeader() {
         <HeroHeader />
 
         {/* Main Content - Centered */}
-        <div className="flex items-end justify-left min-h-100  md:min-h-[60vh] sm:min-h-[70vh]">
-          <div className="text-left  sm:ml-0 ml-5 max-w-6xl">
+        <div className="flex items-end justify-end min-h-100  md:min-h-[60vh] sm:min-h-[70vh]">
+          <div className="text-right  sm:ml-0 mr-5 max-w-6xl">
             <motion.p
               className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
@@ -33,37 +33,23 @@ export default function PexQualityHeader() {
               {String(t("pexQualityHeader.desc1"))}
             </motion.p>
             <motion.p
-              className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+              className="text-md sm:text-3xl md:text-44xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {String(t("pexQualityHeader.desc2"))}
+              {String(t("pexQualityHeader.desc2"))}  {String(t("pexQualityHeader.desc3"))}
             </motion.p>
+           
             <motion.p
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              {String(t("pexQualityHeader.desc3"))}
-            </motion.p>
-            <motion.p
-              className="tesxt:sm mb-2 sm:mb-3 text-[#41c4b7] drop-shadow-lg uppercase"
+              className="tesxt:sm sm:text-xl md:text-3xl lg:text-3xl mb-2 sm:mb-3 text-[#41c4b7] drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               {String(t("pexQualityHeader.desc4"))}
             </motion.p>
-            <motion.p
-              className="text:sm sm:text-2xl md:text-3xl lg:text-3xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-            >
-              {String(t("pexQualityHeader.desc5"))}
-            </motion.p>
+      
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function PexFoodHeader() {
           <HeroHeader />
 
           {/* Main Content - Centered */}
-          <div className="flex items-end justify-left min-h-100 md:min-h-[60vh] sm:min-h-[70vh]">
+          <div className="flex items-end justify-start min-h-100 md:min-h-[60vh] sm:min-h-[70vh]">
             <div className="text-left sm:ml-0 ml-5 max-w-4xl">
               <motion.p
                 className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -46,21 +46,22 @@ export default function PexFoodHeader() {
                 {String(t("pexFoodHeaderDesc2"))}
               </motion.p>
               <motion.p
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+                className="text-md  sm:text-md md:text-2xl lg:text-3xl mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {String(t("pexFoodHeaderDesc3"))}
+                <p className="text-[#41c4b7]">    {String(t("pexFoodHeaderDesc3"))}   {String(t("pexFoodHeaderDesc4"))}</p>
+            
               </motion.p>
-              <motion.p
+              {/* <motion.p
                 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 {String(t("pexFoodHeaderDesc4"))}
-              </motion.p>
+              </motion.p> */}
             </div>
           </div>
         </div>

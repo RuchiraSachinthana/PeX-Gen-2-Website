@@ -18,7 +18,7 @@ export default function PexGenExploreSection() {
       >
         
 
-        <div className="max-w-6xl mx-auto w-full relative z-10">
+        <div className="max-w-6xl mx-auto w-full py-5 relative z-10">
           {/* Main container for the two content blocks */}
           <div className="flex flex-col md:flex-row  justify-between py-10">
             {/* Left Block: Quality Management - RIGHT ALIGNED */}
