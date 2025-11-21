@@ -119,6 +119,7 @@ export const FoodExperienceStatsSection: FC = () => {
                   className="bg-yellow-400 text-black  py-2.5 px-6 rounded-full flex items-center gap-2 text-md hover:bg-yellow-500 transition-colors"
                   whileHover={{ scale: 1.05 }} // ADDED
                   whileTap={{ scale: 0.95 }} // ADDED
+                  onClick={() => router.push("/blog")}
                 >
                   <span>{buttons.learnMore}</span>
                   <ArrowRight className="w-5 h-5 text-black" />

@@ -6,11 +6,12 @@ import Image from "next/image";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 import ReusableShape from "./ReusableShape";
+import { useRouter } from "next/navigation";
 
 const BusinessImprovementSlider: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { t } = useTranslation();
-
+  const router = useRouter();
   // Get slides from translations
   const slidesData = t("businessImprovementSlider.slides");
 
@@ -245,6 +246,7 @@ const BusinessImprovementSlider: FC = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => router.push("/blog")}
                   >
                     <span className="text-sm text-white">
                       {String(t("businessImprovementSlider.readMoreButton"))}
@@ -369,6 +371,7 @@ const BusinessImprovementSlider: FC = () => {
                 className="absolute top-25 bg-[#04afbc] text-white px-3 py-1.5 rounded-full flex items-center gap-2 text-xs shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => router.push("/blog")}
               >
                 <span>
                   {String(t("businessImprovementSlider.readMoreButton"))}

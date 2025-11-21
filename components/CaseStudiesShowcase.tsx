@@ -345,6 +345,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    onClick={() => router.push("/blog")}
                   >
                     Read More
                   </motion.button>
@@ -381,6 +382,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    onClick={() => router.push("/blog")}
                   >
                     Read More
                   </motion.button>
