@@ -13,7 +13,7 @@ export default function PexQualityHeader() {
         style={{
           backgroundImage: "url('/pex_quality_header.webp')",
           backgroundAttachment: "scroll",
-          backgroundPosition: window.innerWidth < 768 ? "30% center" : "50% center",
+          backgroundPosition: typeof window !== 'undefined' && window.innerWidth < 768 ? "30% center" : "50% center",
         }}
       />
 
