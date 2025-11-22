@@ -34,7 +34,7 @@ export default function HomePageClient() {
       <CaseStudiesShowcase />
       <PexGenWhoWeAreSection />
       <PexGenPhilosopySection />
-       <PexGenMeetLeaders />
+      <PexGenMeetLeaders />
       <SocialsSection />
       <Footer />
     </div>

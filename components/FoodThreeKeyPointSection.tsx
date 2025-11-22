@@ -233,7 +233,7 @@ export default function FoodThreeKeyPointsIntroSection() {
             {/* Content Overlay */}
             <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
               {/* Top Section */}
-              <div className="">
+              <div className="mt-2">
                 <div className="flex justify-between items-start">
                   <div className="flex flex-col items-start">
                     <div className="flex items-center">
@@ -254,7 +254,7 @@ export default function FoodThreeKeyPointsIntroSection() {
                 </h3>
 
                 <div className="mb-6">
-                  <p className="text-[#fbbf24] text-xs font-bold">
+                  <p className="text-[#fbbf24] text-xs font-bold pt-2">
                     Traditional Challenge
                   </p>
                   <p className="text-white text-sm opacity-90">
@@ -320,7 +320,7 @@ export default function FoodThreeKeyPointsIntroSection() {
             {/* Content Overlay */}
             <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
               {/* Top Section */}
-              <div className="pb-2">
+              <div className="pb-2 mt-2">
                 <div className="flex justify-between items-start">
                   <div className="flex flex-col items-start">
                     <div className="flex items-center gap-2">
@@ -341,7 +341,7 @@ export default function FoodThreeKeyPointsIntroSection() {
                 </h3>
 
                 <div className="mb-4">
-                  <p className="text-[#fbbf24] text-xs font-bold mb-1">
+                  <p className="text-[#fbbf24] text-xs font-bold pt-2">
                     Traditional Challenge
                   </p>
                   <p className="text-white text-sm opacity-90 leading-relaxed">
@@ -407,7 +407,7 @@ export default function FoodThreeKeyPointsIntroSection() {
             {/* Content Overlay */}
             <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
               {/* Top Section */}
-              <div className="pb-2">
+              <div className="pb-2 mt-2">
                 <div className="flex justify-between items-start">
                   <div className="flex flex-col items-start">
                     <div className="flex items-center gap-1">
@@ -427,8 +427,8 @@ export default function FoodThreeKeyPointsIntroSection() {
                   Burden
                 </h3>
 
-                <div className="mb-6">
-                  <p className="text-[#fbbf24] text-xs font-bold">
+                <div className="mb-6 ">
+                  <p className="text-[#fbbf24] text-xs font-bold pt-2">
                     Traditional Challenge
                   </p>
                   <p className="text-white text-sm opacity-90">

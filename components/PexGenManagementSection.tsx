@@ -363,7 +363,7 @@ const SectionHeader = ({ title }: { title: string }) => (
       height={80}
       className="w-full h-auto object-contain"
     />
-    <motion.div className="absolute text-lg p-3 left-3 top-0 font-bold text-left w-full leading-tight">
+    <motion.div className="absolute text-lg p-6  left-3 top-0 font-bold text-left w-full leading-tight">
       {title.split("\\n").map((line, index, array) => (
         <span key={index}>
           {line}

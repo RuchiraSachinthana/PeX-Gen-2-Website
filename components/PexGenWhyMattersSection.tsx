@@ -16,7 +16,7 @@ export default function PexGenWhyMattersSection() {
   return (
     <div className="w-full mx-auto md:py-10 py-5 px-4">
       <div className="max-w-6xl justify-center items-center align-middle  mx-auto">
-        <div className="flex flex-wrap md:flex-nowrap justify-between max-w-5xl mx-auto gap-10 items-center">
+        <div className="flex flex-wrap md:flex-nowrap justify-between max-w-5xl mx-auto gap-12 items-center">
           {/* Left Yellow Box: As you provided */}
           <motion.div
             className="bg-yellow-300 rounded-3xl mx-auto p-8 flex-1"

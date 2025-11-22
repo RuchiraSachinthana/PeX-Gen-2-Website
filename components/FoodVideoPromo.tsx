@@ -41,8 +41,7 @@ export default function FoodVideoPromoSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p>Watch video how PEx Software™</p>
-            <p>can Food safety </p>
-            <p>management</p>
+            <p>can Food safety management</p>
           </motion.h2>
 
           {/* Video - Mobile */}
@@ -82,7 +81,7 @@ export default function FoodVideoPromoSection() {
               className=""
             />
             <motion.div
-              className="text-lg  absolute top-6 left-10 text-yellow-400"
+              className="text-lg  absolute top-8 left-10 text-yellow-400"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -90,8 +89,9 @@ export default function FoodVideoPromoSection() {
             >
               <p>Get the Latest Updates</p>
             </motion.div>
+            
             <motion.div
-              className="flex items-center absolute top-16 left-10 justify-between gap-6"
+              className="flex items-center absolute top-16 left-10 right-12 justify-between"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -132,7 +132,7 @@ export default function FoodVideoPromoSection() {
               className=""
             />
             <motion.div
-              className="text-lg absolute top-6 left-10 text-yellow-400"
+              className="text-lg absolute top-8 left-10 text-yellow-400"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -141,7 +141,7 @@ export default function FoodVideoPromoSection() {
               <p>Request Demo</p>
             </motion.div>
             <motion.div
-              className="flex items-center absolute top-16 left-10 justify-between gap-8"
+              className="flex items-center absolute top-16 left-10 right-12 justify-between"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}

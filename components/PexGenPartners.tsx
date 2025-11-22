@@ -20,7 +20,7 @@ const PexGenPartners = () => {
 
   return (
     <motion.div
-      className="w-full my-8 relative"
+      className="w-full my-8 relative pb-6"
       initial="hidden"
       animate="visible"
       variants={containerVariants}

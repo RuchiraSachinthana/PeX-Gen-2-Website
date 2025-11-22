@@ -93,7 +93,7 @@ export default function PexGenHeader() {
           <div className="flex items-end justify-end min-h-50">
             <div className="text-right mr-5 ">
               <motion.p
-                className="text-xs mb-2 text-white drop-shadow-lg uppercase"
+                className="text-xs mb-1 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -102,7 +102,7 @@ export default function PexGenHeader() {
                 PEx Software™ Gen2
               </motion.p>
               <motion.p
-                className="text-base font-semibold mb-2 text-white drop-shadow-lg uppercase"
+                className="text-base font-semibold mb-1 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -111,7 +111,7 @@ export default function PexGenHeader() {
                 Tame the
               </motion.p>
               <motion.p
-                className="text-base font-semibold mb-2 text-white drop-shadow-lg uppercase"
+                className="text-base font-semibold mb-1 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -120,7 +120,7 @@ export default function PexGenHeader() {
                 Compliance Dragon.
               </motion.p>
               <motion.p
-                className="text-base font-semibold mb-2 text-white drop-shadow-lg uppercase"
+                className="text-base font-semibold mb-1 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

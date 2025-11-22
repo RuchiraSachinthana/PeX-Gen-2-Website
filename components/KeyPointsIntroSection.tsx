@@ -238,7 +238,7 @@ export default function KeyPointsIntroSection() {
             <div className="absolute inset-0 p-6 ml-3  flex flex-col justify-between">
               {/* Top Section */}
               <div className="">
-                <div className="flex justify-between items-start ">
+                <div className="flex justify-between items-start mt-2">
                   <div className="flex flex-col items-start">
                     <div className="flex items-center gap-2">
                       <span className="text-[#fbbf24] text-xs font-bold">
@@ -257,7 +257,7 @@ export default function KeyPointsIntroSection() {
                 </h3>
 
                 <div className="mb-6">
-                  <p className="text-[#fbbf24] text-xs font-bold ">
+                  <p className="text-[#fbbf24] text-xs font-bold pt-2">
                     Traditional Challenge
                   </p>
                   <p className="text-white text-sm opacity-90 ">
@@ -269,10 +269,10 @@ export default function KeyPointsIntroSection() {
               {/* Bottom Section (Inner Card) */}
               <div className="relative  flex flex-col justify-center">
                 
-                <p className="text-[#fbbf24] text-xs font-bold mb-1">
+                <p className="text-[#fbbf24] text-xs font-bold mb-4">
                   How PEx Solves It
                 </p>
-                <p className="text-white text-sm  pr-8">
+                <p className="text-white text-sm  pr-8 pb-2">
                   Automated and Ai powered paperless workflows to manage
                   compliance
                 </p>
@@ -326,7 +326,7 @@ export default function KeyPointsIntroSection() {
             <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
               {/* Top Section */}
               <div className="pb-2">
-                <div className="flex justify-between items-start">
+                <div className="flex justify-between items-start mt-2">
                   <div className="flex flex-col items-start">
                     <div className="flex items-center gap-2">
                       <span className="text-[#fbbf24] text-xs font-bold">
@@ -345,7 +345,7 @@ export default function KeyPointsIntroSection() {
                 </h3>
 
                 <div className="mb-4">
-                  <p className="text-[#fbbf24] text-xs font-bold mb-1">
+                  <p className="text-[#fbbf24] text-xs font-bold pt-2">
                     Traditional Challenge
                   </p>
                   <p className="text-white text-sm opacity-90 leading-relaxed">
@@ -415,7 +415,7 @@ export default function KeyPointsIntroSection() {
             <div className="absolute inset-0 p-6 ml-3 flex flex-col justify-between">
               {/* Top Section */}
               <div className="pb-2">
-                <div className="flex justify-between items-start">
+                <div className="flex justify-between items-start mt-2">
                   <div className="flex flex-col items-start">
                     <div className="flex items-center gap-1">
                       <span className="text-[#fbbf24] text-xs font-bold">
@@ -434,7 +434,7 @@ export default function KeyPointsIntroSection() {
                 </h3>
 
                 <div className="mb-6">
-                  <p className="text-[#fbbf24] text-xs font-bold">
+                  <p className="text-[#fbbf24] text-xs font-bold pt-2">
                     Traditional Challenge
                   </p>
                   <p className="text-white text-sm opacity-90 ">

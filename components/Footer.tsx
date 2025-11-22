@@ -211,7 +211,7 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <motion.li variants={itemVariants}>
-                <p className="font-medium mb-1">Malik</p>
+                <p className="font-medium mb-1 text-left">Malik</p>
                 <div className="flex items-center">
                   <PhoneIcon
                     size={14}
@@ -244,7 +244,7 @@ export default function Footer() {
                 </div>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <p className="font-medium mb-1">Dinusha</p>
+                <p className="font-medium mb-1 text-left">Dinusha</p>
                 <div className="flex items-center">
                   <PhoneIcon
                     size={14}
@@ -277,7 +277,7 @@ export default function Footer() {
                 </div>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <p className="font-medium mb-1">Binuri</p>
+                <p className="font-medium mb-1 text-left">Binuri</p>
                 <div className="flex items-center">
                   <PhoneIcon
                     size={14}
