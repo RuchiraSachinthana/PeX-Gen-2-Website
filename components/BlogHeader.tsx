@@ -410,9 +410,9 @@ const BlogHeader = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="flex gap-6">
+        <div className="flex gap-8">
           {/* Left Side - Main Featured Article */}
-          <motion.div className="w-[45%]">
+          <motion.div className="w-1/2">
             <div className="">
               {/* Featured Image */}
               <div className="w-full">
