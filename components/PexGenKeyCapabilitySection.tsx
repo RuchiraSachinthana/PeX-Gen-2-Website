@@ -9,17 +9,17 @@ import Image from "next/image";
 export default function PexGenKeyCapabilitiesSection() {
   return (
     <>
-      <section className="hidden md:flex flex-col items-center bg-white justify-center mb-[-700px] px-4">
+      <section className="flex flex-col items-center bg-white justify-center mb-[-400px] md:mb-[-700px] px-4">
         <div className="max-w-6xl items-center mx-auto w-full">
           {/* Main Title with underline */}
           <motion.div
-            className="flex flex-col items-center mb-12"
+            className="flex flex-col items-center mb-8 md:mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-4xl text-center text-teal-700 mb-4">
+            <h2 className="text-2xl md:text-4xl text-center text-teal-700 mb-3 md:mb-4">
               Key Capabilities
             </h2>
             <Image
@@ -27,15 +27,15 @@ export default function PexGenKeyCapabilitiesSection() {
               alt="decorative line"
               width={320}
               height={20}
-              className="w-60 h-auto"
+              className="w-32 md:w-60 h-auto"
             />
           </motion.div>
 
           {/* Cards container with absolute positioning */}
-          <div className="relative  max-w-6xl mx-auto h-[800px]">
+          <div className="relative max-w-6xl mx-auto h-[450px] md:h-[800px]">
             {/* Card 1 - Top Left */}
             <motion.div
-              className="absolute top-[-700px] left-40 w-80"
+              className="absolute top-[-400px] md:top-[-700px] left-2 md:left-40 w-36 md:w-80"
               initial={{ opacity: 0, x: -100, scale: 0.8 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
@@ -49,10 +49,11 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center left-12">
-                  <h3 className="text-white text-2xl font-semibold text-left  ">
-                    Paperless <br /> documentation <br /> and audit-ready <br />{" "}
-                    records
+                <div className="absolute inset-0 flex items-center left-1 md:left-12 pl-2 md:px-0">
+                  <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
+                    Paperless <br /> documentation{" "}
+                    <br /> and audit-ready{" "}
+                    <br /> records
                   </h3>
                 </div>
               </div>
@@ -60,7 +61,7 @@ export default function PexGenKeyCapabilitiesSection() {
 
             {/* Card 2 - Top Right */}
             <motion.div
-              className="absolute top-[-630px] right-45 w-80"
+              className="absolute top-[-360px] md:top-[-630px] right-2 md:right-[180px] w-36 md:w-80"
               initial={{ opacity: 0, x: 100, scale: 0.8 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
@@ -74,9 +75,10 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center left-10">
-                  <h3 className="text-white text-2xl font-semibold text-left ">
-                    IoT integration <br /> for real-time <br /> monitoring
+                <div className="absolute inset-0 flex items-center left-1 md:left-10 px-1 md:px-0 pl-2 md:pl-0">
+                  <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
+                    IoT integration <br /> for
+                    real-time <br /> monitoring
                   </h3>
                 </div>
               </div>
@@ -84,7 +86,7 @@ export default function PexGenKeyCapabilitiesSection() {
 
             {/* Card 3 - Middle Left */}
             <motion.div
-              className="absolute top-[-300px] left-30 transform -translate-y-1/2 w-100"
+              className="absolute top-[-180px] md:top-[-300px] left-1 md:left-[120px] transform -translate-y-1/2 w-36 md:w-[400px]"
               initial={{ opacity: 0, x: -100, rotate: -5 }}
               whileInView={{ opacity: 1, x: 0, rotate: 0 }}
               viewport={{ once: true }}
@@ -98,9 +100,10 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center justify-start left-15">
-                  <h3 className="text-white text-2xl font-semibold text-left ">
-                    AI-powered risk <br /> detection and <br /> predictive
+                <div className="absolute inset-0 flex items-center justify-start left-1 md:left-[60px] px-1 md:px-0 pl-2 md:pl-0">
+                  <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
+                    AI-powered risk <br />{" "}
+                    detection and <br /> predictive
                     alerts
                   </h3>
                 </div>
@@ -109,7 +112,7 @@ export default function PexGenKeyCapabilitiesSection() {
 
             {/* Card 4 - Middle Right */}
             <motion.div
-              className="absolute top-[-240px] right-30 transform -translate-y-1/2 w-100"
+              className="absolute top-[-150px] md:top-[-240px] right-1 md:right-[120px] transform -translate-y-1/2 w-36 md:w-[400px]"
               initial={{ opacity: 0, x: 100, rotate: 5 }}
               whileInView={{ opacity: 1, x: 0, rotate: 0 }}
               viewport={{ once: true }}
@@ -123,9 +126,11 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center left-15">
-                  <h3 className="text-white text-2xl font-semibold text-left ">
-                    KPI dashboards <br /> and corrective action <br /> workflows
+                <div className="absolute inset-0 flex items-center left-1 md:left-[60px] px-1 md:px-0 pl-2 md:pl-0">
+                  <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
+                    KPI dashboards <br /> and
+                    corrective action <br />{" "}
+                    workflows
                   </h3>
                 </div>
               </div>
@@ -133,7 +138,7 @@ export default function PexGenKeyCapabilitiesSection() {
 
             {/* Card 5 - Bottom Center */}
             <motion.div
-              className="absolute top-[-110px] left-1/2 transform -translate-x-1/2 w-90"
+              className="absolute top-[-70px] md:top-[-110px] left-1/2 transform -translate-x-1/2 w-40 md:w-[360px]"
               initial={{ opacity: 0, y: 100, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
@@ -147,9 +152,10 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute left-10 inset-0 flex items-center justify-start ">
-                  <h3 className="text-white text-2xl font-semibold text-left ">
-                    Scalable for SMEs <br /> and large enterprises
+                <div className="absolute left-1 md:left-10 inset-0 flex items-center justify-start px-1 md:px-0 pl-2 md:pl-0  ">
+                  <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
+                    Scalable for SMEs <br /> and
+                    large enterprises
                   </h3>
                 </div>
               </div>
@@ -158,53 +164,7 @@ export default function PexGenKeyCapabilitiesSection() {
         </div>
       </section>
 
-      <div className="md:hidden relative max-w-[380px]  mx-auto text-center">
-        <h2 className="text-2xl text-center text-teal-700 mb-2">
-          Key Capabilities
-        </h2>
-        
-                <div className="relative">
-
- <div className="absolute inset-0 flex items-center left-15 top-[-160px]">
-                  <h3 className="text-white text-[10px] text-left  ">
-                    Paperless <br /> documentation <br /> and audit-ready <br />
-                    records
-                  </h3>
-                </div>
-
-                <div className="absolute inset-0 flex items-center left-55 top-[-130px]">
-                  <h3 className="text-white text-[10px] text-left  ">
-                    IoT integration <br /> for real-time <br /> monitoring
-                  </h3>
-                </div>
-                <div className="absolute inset-0 flex items-center left-12 top-[30px]">
-                  <h3 className="text-white text-[10px] text-left  ">
-                     AI-powered risk <br /> detection and <br /> predictive
-                    alerts
-                  </h3>
-                </div>
-                <div className="absolute inset-0 flex items-center left-55 top-[70px]">
-                  <h3 className="text-white text-[10px] text-left  ">
-                       KPI dashboards <br /> and corrective action <br /> workflows
-                  </h3>
-                </div>
-                 <div className="absolute inset-0 flex items-center left-34 top-[230px]">
-                  <h3 className="text-white text-[10px] text-left  ">
-                      Scalable for SMEs <br /> and large enterprises
-                  </h3>
-                </div>
-                  <Image
-          src="/Asset 70.svg"
-          alt="Scalable for SMEs and large enterprises"
-          width={320}
-          height={150}
-          className="max-w-[380px] mx-auto h-auto object-contain"
-        />
-        
-        
-        </div>
-        
-      </div>
+    
     </>
   );
 }
