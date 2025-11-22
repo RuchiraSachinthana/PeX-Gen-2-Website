@@ -76,10 +76,11 @@ export default function PexGenHeader() {
       <div className="md:hidden relative w-full  flex items-center py-5 justify-center overflow-hidden">
         {/* Background Image - Mobile optimized */}
         <div
-          className="absolute inset-0 w-full  bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 w-full  bg-cover bg-no-repeat"
           style={{
             backgroundImage: "url('/pexgen2_header.webp')",
             backgroundAttachment: "cover",
+            backgroundPosition: "60% center",
           }}
         />
 

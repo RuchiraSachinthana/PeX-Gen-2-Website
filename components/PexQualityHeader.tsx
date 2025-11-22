@@ -9,10 +9,11 @@ export default function PexQualityHeader() {
     <div className="relative w-full md:min-h-screen flex items-center py-5 md:py-0 justify-center overflow-hidden">
       {/* Background Image - Fixed and Responsive */}
       <div
-        className="absolute inset-0 w-full md:h-full h-130 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 w-full md:h-full h-130 bg-cover bg-no-repeat"
         style={{
           backgroundImage: "url('/pex_quality_header.webp')",
           backgroundAttachment: "scroll",
+          backgroundPosition: window.innerWidth < 768 ? "30% center" : "50% center",
         }}
       />
 
