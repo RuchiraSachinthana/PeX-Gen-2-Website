@@ -85,16 +85,15 @@ const BlogContentSection = ({ blogData }: BlogContentSectionProps) => {
         <p className="text-sm md:text-xl pb-2">
           I&apos;ve seen this pattern repeat across industries:
         </p>
-        <p className="pb-4 md:pb-6 ml-2 md:ml-4 text-yellow-400 text-xs md:text-md">
-          • Finance teams get their reports on time.
-          <br />
-          • Operational teams drown in inefficiency.
-          <br />
-          • Employees complain of increased workload and wasteful activity.
-          <br />• ROI remains elusive — because no one can quantify the value of
-          the <br />
-          transformation.
-        </p> 
+        <ul className="pb-4 md:pb-6 ml-4 md:ml-6 text-yellow-400 text-xs md:text-base space-y-2 md:space-y-3 list-disc">
+          <li>Finance teams get their reports on time.</li>
+          <li>Operational teams drown in inefficiency.</li>
+          <li>Employees complain of increased workload and wasteful activity.</li>
+          <li>
+            ROI remains elusive — because no one can quantify the value of the
+            transformation.
+          </li>
+        </ul> 
 
          <h3 className="text-yellow-400 text-base md:text-xl uppercase ">
           Why This Happens

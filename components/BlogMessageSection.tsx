@@ -29,7 +29,7 @@ const BlogMessageSection = () => {
     <div className="relative w-full  flex bg-white items-center py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto  ">
         <motion.div
-          className="relative border-2 mx-10 border-teal-600 rounded-lg p-8 bg-white shadow-lg"
+          className="relative border-2 mx-10 border-teal-600 rounded-lg p-8 bg-white shadow-lg lg:mx-50 md:mx-20 sm:mx-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -40,11 +40,11 @@ const BlogMessageSection = () => {
             variants={textVariants}
           >
             Digital transformation is no longer optional — it&apos;s a strategic
-            imperative. Having <br /> worked as a CEO, Process Engineer and
-            business consultant for nearly 30 years <br /> and working with over
+            imperative. Having worked as a CEO, Process Engineer and
+            business consultant for nearly 30 years and working with over
             150 organizations across industries, I&apos;ve seen a recurring
-            <br /> and costly mistake: companies rush into ERP implementations
-            without first <br /> re-engineering their business processes.
+            and costly mistake: companies rush into ERP implementations without
+            first re-engineering their business processes.
           </motion.p>
         </motion.div>
       </div>
