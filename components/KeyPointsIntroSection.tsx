@@ -267,9 +267,9 @@ export default function KeyPointsIntroSection() {
               </div>
 
               {/* Bottom Section (Inner Card) */}
-              <div className="relative  flex flex-col justify-center">
+              <div className="relative bottom-4  flex flex-col justify-center">
                 
-                <p className="text-[#fbbf24] text-xs font-bold mb-4">
+                <p className="text-[#fbbf24] text-xs font-bold ">
                   How PEx Solves It
                 </p>
                 <p className="text-white text-sm  pr-8 pb-2">

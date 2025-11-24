@@ -102,7 +102,7 @@ const PexGenPhilosopySection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              We believe compliance should empower, not burden—your business.
+              We believe compliance should empower, <br /> not burden—your business.
               That&apos;s why we built PEx Gen2™
             </motion.p>
           </motion.div>

@@ -143,7 +143,7 @@ export default function PexGenExploreSection() {
           <div className="flex flex-row gap-16 py-2">
             {/* Left Block: Quality Management */}
             <motion.div
-              className="relative flex-1 flex flex-col justify-center"
+              className="relative text-right flex-1 flex flex-col justify-center"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -151,7 +151,7 @@ export default function PexGenExploreSection() {
             >
               <div className="relative z-10">
                 <motion.p
-                  className="text-yellow-400 mb-1 text-[10px] uppercase"
+                  className="text-yellow-400  text-[10px] uppercase"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -160,7 +160,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-[9px] text-white uppercase mb-1"
+                  className="text-[9px] text-white uppercase"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -168,7 +168,7 @@ export default function PexGenExploreSection() {
                 >
                   PEX SOFTWARE&trade; FOR
                 </motion.h3>
-                <div className="flex items-center text-white space-x-1">
+                <div className="flex items-center text-white ">
                   <motion.h2
                     className="text-xs font-extrabold uppercase"
                     initial={{ opacity: 0, y: 10 }}
@@ -179,7 +179,7 @@ export default function PexGenExploreSection() {
                     QUALITY MANAGEMENT
                   </motion.h2>
                   <motion.button
-                    className="bg-yellow-400 p-1 rounded-lg flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                    className="bg-yellow-400 p-1 absolute -right-7 rounded-lg flex items-center justify-center transition-transform duration-200 hover:scale-105"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -203,7 +203,7 @@ export default function PexGenExploreSection() {
             >
               <div className="relative z-10">
                 <motion.p
-                  className="text-[#0B5B52] text-[10px] mb-1 font-semibold uppercase"
+                  className="text-[#0B5B52] text-[10px] font-semibold uppercase"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -212,7 +212,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-[9px] text-black font-bold uppercase mb-1"
+                  className="text-[9px] text-black font-bold uppercase"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -220,18 +220,18 @@ export default function PexGenExploreSection() {
                 >
                   PEX SOFTWARE&trade; FOR
                 </motion.h3>
-                <div className="flex items-center space-x-1">
+                <div className="flex items-center gap-2 ">
                   <motion.h2
-                    className="text-xs font-extrabold uppercase"
+                    className="text-xs font-bold uppercase"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.7 }}
                   >
-                    FOOD SAFETY
+                    FOOD <br />SAFETY
                   </motion.h2>
                   <motion.button
-                    className="bg-green-900 p-1 rounded-lg flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                    className="bg-green-900 absolute left-15 p-1 rounded-lg flex items-center justify-center transition-transform duration-200 hover:scale-105"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}

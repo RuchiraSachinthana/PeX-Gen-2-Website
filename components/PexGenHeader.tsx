@@ -23,10 +23,10 @@ export default function PexGenHeader() {
           <HeroHeader />
 
           {/* Main Content - Centered */}
-          <div className="flex flex-row-reverse items-end min-h-100  md:min-h-[60vh] sm:min-h-[70vh]">
+          <div className="flex flex-row-reverse items-end min-h-100 md:min-h-[60vh] sm:min-h-[70vh]">
             <div className="text-right sm:ml-0 ml-5 max-w-6xl">
               <motion.p
-                className="text:sm sm:text-2xl md:text-3xl lg:text-3xl  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+                className="text:sm sm:text-2xl md:text-3xl mb-1 lg:text-3xl text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -34,7 +34,7 @@ export default function PexGenHeader() {
                 PEx Software™ Gen2
               </motion.p>
               <motion.p
-                className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+                className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  mb-1 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -42,7 +42,7 @@ export default function PexGenHeader() {
                 Tame the
               </motion.p>
               <motion.p
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold  mb-2 sm:mb-3 text-white drop-shadow-lg uppercase"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-1 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -50,7 +50,7 @@ export default function PexGenHeader() {
                 Compliance Dragon.
               </motion.p>
               <motion.p
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold  mb-2 sm:mb-6 text-white drop-shadow-lg uppercase"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 font-semibold text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -58,7 +58,7 @@ export default function PexGenHeader() {
                 Unleash Performance.
               </motion.p>
               <motion.p
-                className="text:sm sm:text-2xl md:text-3xl lg:text-3xl  mb-4 sm:mb-6 text-white drop-shadow-lg uppercase"
+                className="text:sm sm:text-2xl md:text-3xl lg:text-3xl mb-1 text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -93,7 +93,7 @@ export default function PexGenHeader() {
           <div className="flex items-end justify-end min-h-50">
             <div className="text-right mr-5 ">
               <motion.p
-                className="text-xs mb-1 text-white drop-shadow-lg uppercase"
+                className="text-xs  text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -102,7 +102,7 @@ export default function PexGenHeader() {
                 PEx Software™ Gen2
               </motion.p>
               <motion.p
-                className="text-base font-semibold mb-1 text-white drop-shadow-lg uppercase"
+                className="text-base font-semibold  text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -111,7 +111,7 @@ export default function PexGenHeader() {
                 Tame the
               </motion.p>
               <motion.p
-                className="text-base font-semibold mb-1 text-white drop-shadow-lg uppercase"
+                className="text-base font-semibold text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -120,7 +120,7 @@ export default function PexGenHeader() {
                 Compliance Dragon.
               </motion.p>
               <motion.p
-                className="text-base font-semibold mb-1 text-white drop-shadow-lg uppercase"
+                className="text-base font-semibold text-white drop-shadow-lg uppercase"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

@@ -264,7 +264,7 @@ export default function FoodThreeKeyPointsIntroSection() {
               </div>
 
               {/* Bottom Section (Inner Card) */}
-              <div className="relative -top-2.5 flex flex-col justify-center">
+              <div className="relative -top-4 flex flex-col justify-center">
                 <p className="text-[#fbbf24] text-xs font-bold mb-1">
                   How PEx Solves It
                 </p>
@@ -351,7 +351,7 @@ export default function FoodThreeKeyPointsIntroSection() {
               </div>
 
               {/* Bottom Section (Inner Card) */}
-              <div className="relative flex flex-col justify-center">
+              <div className="relative flex flex-col  bottom-2 justify-center">
                 <p className="text-[#fbbf24] text-xs font-bold mb-1">
                   How PEx Solves It
                 </p>
@@ -421,7 +421,7 @@ export default function FoodThreeKeyPointsIntroSection() {
                   </div>
                 </div>
 
-                <h3 className="text-white text-xl font-semibold mb-2">
+                <h3 className="text-white text-xl mt-2 font-semibold ">
                   Compliance
                   <br />
                   Burden
