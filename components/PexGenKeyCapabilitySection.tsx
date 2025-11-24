@@ -49,7 +49,7 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center left-1 md:left-12 pl-2 md:px-0">
+                <div className="absolute inset-0 flex items-center left-4 md:left-12 pl-2 md:px-0">
                   <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
                     Paperless <br /> documentation{" "}
                     <br /> and audit-ready{" "}
@@ -75,7 +75,7 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center left-1 md:left-10 px-1 md:px-0 pl-2 md:pl-0">
+                <div className="absolute inset-0 flex items-center left-4 md:left-10 px-1 md:px-0 pl-2 md:pl-0">
                   <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
                     IoT integration <br /> for
                     real-time <br /> monitoring
@@ -100,7 +100,7 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center justify-start left-1 md:left-[60px] px-1 md:px-0 pl-2 md:pl-0">
+                <div className="absolute inset-0 flex items-center justify-start left-4 md:left-[60px] px-1 md:px-0 pl-2 md:pl-0">
                   <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
                     AI-powered risk <br />{" "}
                     detection and <br /> predictive
@@ -126,7 +126,7 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 flex items-center left-1 md:left-[60px] px-1 md:px-0 pl-2 md:pl-0">
+                <div className="absolute inset-0 flex items-center left-4 md:left-[60px] px-1 md:px-0 pl-2 md:pl-0">
                   <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
                     KPI dashboards <br /> and
                     corrective action <br />{" "}
@@ -152,7 +152,7 @@ export default function PexGenKeyCapabilitiesSection() {
                   height={150}
                   className="w-full h-auto object-contain"
                 />
-                <div className="absolute left-1 md:left-10 inset-0 flex items-center justify-start px-1 md:px-0 pl-2 md:pl-0  ">
+                <div className="absolute left-4 md:left-10 inset-0 flex items-center justify-start px-1 md:px-0 pl-2 md:pl-0  ">
                   <h3 className="text-white text-[10px] md:text-2xl font-semibold text-left leading-tight md:leading-normal">
                     Scalable for SMEs <br /> and
                     large enterprises
