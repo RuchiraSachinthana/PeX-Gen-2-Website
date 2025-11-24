@@ -241,19 +241,19 @@ export default function FoodCaseStudiesShowcase() {
 
               {/* Right side - Title and Images */}
               <div className="flex-1 flex flex-col justify-between h-full pt-2">
-                <div>
-                  <h2 className="text-[#0e685b] text-xl  mb-1">
+                <div className="text-2xl text-teal-700">
+                
                     Businesses
-                  </h2>
-                  <h2 className="text-[#0e685b] text-xl mb-1">
+                 
+                 
                     that have
-                  </h2>
-                  <h2 className="text-[#0e685b] text-xl  mb-1">
+                 
+           
                     grown
-                  </h2>
-                  <h2 className="text-[#0e685b] text-xl  mb-4">
+               
+                
                     with us
-                  </h2>
+                
                 </div>
 
                 {/* Scrollable Image Grid - Horizontal Row */}
