@@ -112,9 +112,17 @@ const PexGenManagementSection = () => {
 
   return (
     <div id="management-section" className="relative">
+      {/* Section Title */}
+     
+
       {/* Desktop Version */}
       <div className="hidden mb-10 md:block w-full  py-20 items-center justify-center">
         <div className="max-w-7xl mx-auto">
+           <div className="w-full text-center mb-10 ">
+        <h2 className="text-3xl md:text-4xl  text-[#0B5B52] ">
+          Management tools for you
+        </h2>
+      </div>
           {/* Category Headers */}
           <div className="grid grid-cols-3 gap-4 mb-8">
             {categories.map((category, index) => (
@@ -225,6 +233,11 @@ const PexGenManagementSection = () => {
       <div className="md:hidden w-full py-8 px-4">
         <div className="max-w-[370px] mx-auto space-y-8">
           {/* Group 1 */}
+          <div className="w-full text-center mb-5 ">
+        <h2 className="text-xl text-[#0B5B52] ">
+          Management tools for you
+        </h2>
+      </div>
           <div>
             <SectionHeader title="OPERATIONS\nSUPPORT" />
             <div className="space-y-4">
