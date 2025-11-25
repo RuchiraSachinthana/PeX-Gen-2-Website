@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function PexGenExploreSection() {
   return (
@@ -47,17 +48,19 @@ export default function PexGenExploreSection() {
               </motion.h2>
             </div>
             
-            <motion.div 
-              className="bg-yellow-400 p-3 md:p-4 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ml-4 mb-1"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowRight className="text-[#0B5B52] w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
-            </motion.div>
+            <Link href="/pex-quality">
+              <motion.div 
+                className="bg-yellow-400 p-3 md:p-4 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ml-4 mb-1"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowRight className="text-[#0B5B52] w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
+              </motion.div>
+            </Link>
           </motion.div>
 
           {/* Right Block: Food Safety */}
@@ -100,17 +103,19 @@ export default function PexGenExploreSection() {
               </div>
             </div>
 
-            <motion.div 
-              className="bg-[#0B5B52] p-3 md:p-4 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-1"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowRight className="text-yellow-400 w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
-            </motion.div>
+            <Link href="/pex-food">
+              <motion.div 
+                className="bg-[#0B5B52] p-3 md:p-4 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-1"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowRight className="text-yellow-400 w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
+              </motion.div>
+            </Link>
           </motion.div>
 
         </div>

@@ -15,7 +15,7 @@ export default function PexGenMeetLeaders() {
     },
     {
       id: 2,
-      name: "Dinusha Wijegunawardena",
+      name: "Dinusha Wijegunasekara",
       title: "Director of Operations, Compliance and Audits.",
       experience: "+20 years experience.",
       image: "/girl.webp",

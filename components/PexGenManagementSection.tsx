@@ -24,15 +24,15 @@ const PexGenManagementSection = () => {
   const categories = [
     {
       id: "operations",
-      svgPath: "/Asset 54.svg",
+      svgPath: "/Asset 74.svg",
       title: "OPERATIONS\nSUPPORT",
     },
     {
       id: "monitoring",
-      svgPath: "/Asset 54.svg",
+      svgPath: "/Asset 74.svg",
       title: "MONITORING &\nIMPROVEMENT",
     },
-    { id: "management", svgPath: "/Asset 54.svg", title: "MANAGEMENT\nTOOLS" },
+    { id: "management", svgPath: "/Asset 74.svg", title: "MANAGEMENT\nTOOLS" },
   ];
 
   const cards: CardData[] = [
@@ -370,7 +370,7 @@ const SectionHeader = ({ title }: { title: string }) => (
     transition={{ duration: 0.6 }}
   >
     <Image
-      src="/Asset 54.svg"
+      src="/Asset 74.svg"
       alt={title.replace(/\n/g, " ")}
       width={200}
       height={80}
