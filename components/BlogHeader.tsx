@@ -355,7 +355,6 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import HeroHeader from "./HeroHeader";
 
-
 interface Blog {
   _id: string;
   title: string;
@@ -368,24 +367,12 @@ interface Blog {
   created_at: string;
 }
 
-interface Pagination {
-  current_page: number;
-  total_pages: number;
-  total_blogs: number;
-  per_page: number;
-  has_next: boolean;
-  has_prev: boolean;
-}
-
 interface BlogHeaderProps {
   blogData: Blog[];
-  pagination: Pagination;
-  currentPage: number;
-  onPageChange: (page: number) => void;
   onBlogSelect?: (blog: Blog | null) => void;
 }
 
-const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
+const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
   // State to track the sliding window offset for right panel
   const [slideIndex, setSlideIndex] = useState(0);
   const [loadingBlogId, setLoadingBlogId] = useState<string | null>(null);
@@ -399,13 +386,9 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
       // Use setTimeout to avoid synchronous setState in effect
       setTimeout(() => {
         setSlideIndex(0);
-        // Notify parent about initial state (hardcoded blog)
-        if (onBlogSelect) {
-          onBlogSelect(null);
-        }
       }, 0);
     }
-  }, [blogData, onBlogSelect]);
+  }, [blogData]);
 
   const formatDateShort = (dateString: string) => {
     const date = new Date(dateString);
@@ -495,21 +478,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
 
   const rightPanelBlogs = getRightPanelBlogs();
   
-  // Calculate pagination display range based on actual right panel blogs
-  const getPaginationRange = () => {
-    if (!blogData || blogData.length === 0 || rightPanelBlogs.length === 0) {
-      return { start: 0, end: 0 };
-    }
-    const firstBlogIndex = blogData.findIndex(blog => blog._id === rightPanelBlogs[0]._id);
-    const lastBlogIndex = blogData.findIndex(blog => blog._id === rightPanelBlogs[rightPanelBlogs.length - 1]._id);
-    return {
-      start: firstBlogIndex + 1, // Convert to 1-based for display
-      end: lastBlogIndex + 1, // Convert to 1-based for display
-    };
-  };
-  
-  const paginationRange = getPaginationRange();
-  
   // Can slide next if there are more blogs to navigate through
   // Allow navigation through all blogs (0 to blogData.length)
   // slideIndex 0 = hardcoded, 1 = blog[0], 2 = blog[1], ..., blogData.length = blog[blogData.length - 1]
@@ -524,16 +492,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
         // newIndex 0 -> null (hardcoded)
         // newIndex 1 -> blog[0] (1st blog)
         // newIndex 2 -> blog[1] (2nd blog)
-        if (onBlogSelect && blogData && blogData.length > 0) {
-          if (newIndex === 0) {
-            onBlogSelect(null); // Hardcoded blog
-          } else if (newIndex > 0) {
-            const blogIndex = newIndex - 1;
-            if (blogIndex >= 0 && blogIndex < blogData.length) {
-              onBlogSelect(blogData[blogIndex]);
-            }
-          }
-        }
         return newIndex;
       });
     }
@@ -547,16 +505,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
         // newIndex 0 -> null (hardcoded)
         // newIndex 1 -> blog[0] (1st blog)
         // newIndex 2 -> blog[1] (2nd blog)
-        if (onBlogSelect && blogData && blogData.length > 0) {
-          if (newIndex === 0) {
-            onBlogSelect(null); // Hardcoded blog
-          } else if (newIndex > 0) {
-            const blogIndex = newIndex - 1;
-            if (blogIndex >= 0 && blogIndex < blogData.length) {
-              onBlogSelect(blogData[blogIndex]);
-            }
-          }
-        }
         return newIndex;
       });
     }
@@ -578,11 +526,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
     setTimeout(() => {
       setSlideIndex(targetSlideIndex);
       setLoadingBlogId(null);
-      
-      // Notify parent about selected blog
-      if (onBlogSelect) {
-        onBlogSelect(blog);
-      }
     }, 300); // 300ms loading delay
   };
 
@@ -789,11 +732,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
                   <ChevronLeft className="w-4 h-4" />
                   Previous
                 </button>
-                {/* <span className="text-teal-700 font-medium">
-                  {blogData && blogData.length > 0
-                    ? `${paginationRange.start}-${paginationRange.end} of ${blogData.length}`
-                    : "0-0 of 0"}
-                </span> */}
                 <button
                   onClick={handleNext}
                   disabled={!canSlideNext}
