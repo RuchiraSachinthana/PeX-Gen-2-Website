@@ -3,111 +3,60 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const partners = [
+  "/partner (1).png",
+  "/partner (2).png",
+  "/partner (3).png",
+  "/partner (4).png",
+  "/partner (5).png",
+  "/partner (6).png",
+];
+
 const PexGenPartners = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
-    <motion.div
-      className="w-full py-5 pb-15 relative "
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <div className="max-w-6xl justify-center items-center align-middle mx-auto">
-        <div className="flex gap-2 justify-between">
-          <motion.div
-            className="relative"
-            variants={itemVariants}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              width={150}
-              height={0}
-              src="/partner (1).png"
-              alt="PEx Software Video Thumbnail"
-              className="grayscale"
-            />
-          </motion.div>
-          <motion.div
-            className="relative flex items-end align-bottom"
-            variants={itemVariants}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              width={150}
-              height={0}
-              src="/partner (2).png"
-              alt="PEx Software Video Thumbnail"
-              className="grayscale"
-            />
-          </motion.div>
-          <motion.div
-            className="relative flex items-end align-bottom"
-            variants={itemVariants}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              width={150}
-              height={0}
-              src="/partner (3).png"
-              alt="PEx Software Video Thumbnail"
-              className="grayscale"
-            />
-          </motion.div>
-          <motion.div
-            className="relative flex items-end align-bottom"
-            variants={itemVariants}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              width={150}
-              height={0}
-              src="/partner (4).png"
-              alt="PEx Software Video Thumbnail"
-              className="grayscale"
-            />
-          </motion.div>
-          <motion.div
-            className="relative flex items-end align-bottom"
-            variants={itemVariants}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              width={150}
-              height={0}
-              src="/partner (5).png"
-              alt="PEx Software Video Thumbnail"
-              className="grayscale"
-            />
-          </motion.div>
-          <motion.div
-            className="relative flex items-end align-bottom"
-            variants={itemVariants}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              width={150}
-              height={0}
-              src="/partner (6).png"
-              alt="PEx Software Video Thumbnail"
-              className="grayscale"
-            />
-          </motion.div>
-        </div>
+    <div className="w-full py-10 overflow-hidden bg-white">
+      <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
+        {/* Optional: Add a title if needed, or keep it clean as requested */}
       </div>
-    </motion.div>
+
+      {/* Marquee Container */}
+      <div className="relative flex overflow-hidden group">
+        
+
+        {/* Scrolling Track */}
+        <motion.div
+          className="flex gap-12 md:gap-24 items-center flex-nowrap"
+          animate={{
+            x: ["0%", "-50%"],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 30, // Adjust speed here (higher = slower)
+              ease: "linear",
+            },
+          }}
+          style={{ width: "fit-content" }}
+        >
+          {/* Render partners twice for seamless loop */}
+          {[...partners, ...partners].map((src, index) => (
+            <div
+              key={index}
+              className="relative w-[120px] md:w-[150px] flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+            >
+              <Image
+                src={src}
+                alt={`Partner ${index + 1}`}
+                width={150}
+                height={80}
+                className="object-contain w-full h-auto"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
   );
 };
 
