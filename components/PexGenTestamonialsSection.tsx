@@ -116,7 +116,7 @@ const PexGenTestamonialsSection = () => {
               {/* Top Right Arrow Button */}
               <motion.button
                 onClick={handleNext}
-                className="absolute top-0 cursor-pointer right-0 bg-yellow-400 p-4 rounded-2xl flex items-center justify-center hover:bg-yellow-500 transition-colors"
+                className="absolute top-0 cursor-pointer right-0 bg-yellow-400 p-4 rounded-2xl flex items-center justify-center hover:bg-yellow-500 "
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -130,7 +130,7 @@ const PexGenTestamonialsSection = () => {
               {/* Bottom Left Arrow Button */}
               <motion.button
                 onClick={handlePrevious}
-                className="absolute cursor-pointer bottom-0 left-0 bg-yellow-400 p-4 rounded-2xl  flex items-center justify-center hover:bg-yellow-500 transition-colors"
+                className="absolute cursor-pointer bottom-0 left-0 bg-yellow-400 p-4 rounded-2xl  flex items-center justify-center hover:bg-yellow-500"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -145,7 +145,7 @@ const PexGenTestamonialsSection = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`image-${currentIndex}`}
-                  className="absolute left-4 top-10 w-[150px] rounded-2xl h-[150px] overflow-hidden"
+                  className="absolute left-5 top-12 w-[150px] rounded-2xl h-[150px] overflow-hidden"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 30 }}
@@ -379,33 +379,88 @@ const PexGenTestamonialsSection = () => {
             <Image
               width={350}
               height={0}
-              src="/Asset 58.webp"
+              src="/Asset 75.svg"
               alt="Testimonial"
               className="mx-auto max-w-[370px] h-auto"
             />
-            <motion.div
-              className="absolute top-6 left-20 text-white text-[8px] px-12"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            
+            {/* Top Right Arrow Button - Mobile */}
+            <motion.button
+              onClick={handleNext}
+              className="absolute top-0 cursor-pointer right-2 bg-yellow-400 p-2 rounded-xl flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              We have also invested in the purchase of the PEx Sofware Solution,
-              which has added a great value to our company to automate our
-              business processes and maintain a paperless work environment. We
-              have found PEx Software to be an excellent tool for managing our
-              quality management system with a high efficiency.
-            </motion.div>
-            <motion.div
-              className="absolute bottom-3 left-15 text-yellow-400 text-[6px]"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              <ArrowRight className="text-black w-4 h-4" />
+            </motion.button>
+
+            {/* Bottom Left Arrow Button - Mobile */}
+            <motion.button
+              onClick={handlePrevious}
+              className="absolute cursor-pointer bottom-0 left-2 bg-yellow-400 p-2 rounded-xl flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <p className="font-semibold">Rakitha De silva</p>
-              <p>Head of Advantis Freight <br/> Sri Lanka</p>
-            </motion.div>
+              <ArrowRight className="text-black w-4 h-4 transform rotate-180" />
+            </motion.button>
+
+            {/* Left Side Center Image - Mobile */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`mobile-image-${currentIndex}`}
+                className="absolute left-8 top-8 w-[70px] h-[70px] rounded-xl overflow-hidden"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="relative w-full h-full rounded-xl">
+                  <Image
+                    src={testimonials[currentIndex].image}
+                    alt="Profile"
+                    fill
+                    className="object-cover rounded-xl"
+                  />
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Message - Mobile */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`mobile-message-${currentIndex}`}
+                className="absolute top-8 left-35 text-white text-[8px] max-w-[180px]"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+              >
+                {testimonials[currentIndex].message.replace(/\n/g, ' ')}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Designation - Mobile */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`mobile-designation-${currentIndex}`}
+                className="absolute bottom-3 left-15 text-yellow-400 text-[6px]"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+              >
+                <p className="font-semibold">{testimonials[currentIndex].name}</p>
+                <p>{testimonials[currentIndex].designation} <br/> {testimonials[currentIndex].location}</p>
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
 
           <div className="lg:hidden max-w-[370px] mx-auto">
