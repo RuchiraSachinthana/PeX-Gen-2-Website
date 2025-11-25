@@ -5,33 +5,73 @@ import { ArrowRight } from "lucide-react";
 
 export default function PexGenExploreSection() {
   return (
-    <>
-      {/* Desktop Version */}
-      <div 
-        className="hidden md:flex w-full px-4 relative overflow-hidden"
-        style={{
-          backgroundImage: "url('/Asset 56.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        
-
-        <div className="max-w-6xl mx-auto w-full py-5 relative z-10">
-          {/* Main container for the two content blocks */}
-          <div className="flex flex-col md:flex-row  justify-between py-10">
-            {/* Left Block: Quality Management - RIGHT ALIGNED */}
-            <motion.div
-              className="relative flex-1 flex flex-col justify-between pl-8"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+    <section className="w-full py-10 px-4 md:px-8 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-6">
+          
+          {/* Left Block: Quality Management */}
+          <motion.div
+            className="flex-1 bg-[#0B5B52] rounded-[40px] p-5 md:p-12 flex flex-row items-end justify-between relative group cursor-pointer min-h-[140px] md:min-h-[200px]"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex flex-col items-end z-10 flex-1 text-right">
+              <motion.p
+                className="text-yellow-400 font-medium tracking-wider mb-2 uppercase text-xs md:text-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                EXPLORE
+              </motion.p>
+              <motion.h3
+                className="text-white text-xs md:text-base font-medium uppercase mb-1"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                PEX SOFTWARE&trade; FOR
+              </motion.h3>
+              <motion.h2
+                className="text-white text-xl md:text-3xl font-bold uppercase leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                QUALITY MANAGEMENT
+              </motion.h2>
+            </div>
+            
+            <motion.div 
+              className="bg-yellow-400 p-3 md:p-4 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ml-4 mb-1"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <div className="relative z-10">
+              <ArrowRight className="text-[#0B5B52] w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
+            </motion.div>
+          </motion.div>
+
+          {/* Right Block: Food Safety */}
+          <motion.div
+            className="flex-1 bg-yellow-400 rounded-[40px] p-5 md:p-12 flex flex-row items-end justify-center gap-4 relative group cursor-pointer min-h-[140px] md:min-h-[200px]"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+             <div className="flex flex-col items-center z-10">
+              <div className="flex flex-col items-start text-left">
                 <motion.p
-                  className="text-yellow-400 mb-2 text-xl uppercase tracking-wider"
+                  className="text-[#0B5B52] font-medium tracking-wider mb-2 uppercase text-xs md:text-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -40,7 +80,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-lg md:text-xl text-white uppercase mb-1"
+                  className="text-black text-xs md:text-base font-medium uppercase mb-1"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -48,205 +88,33 @@ export default function PexGenExploreSection() {
                 >
                   PEX SOFTWARE&trade; FOR
                 </motion.h3>
-                <div className="flex items-center text-white space-x-4">
-                  <motion.h2
-                    className="text-3xl md:text-4xl font-bold uppercase"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                  >
-                    QUALITY MANAGEMENT
-                  </motion.h2>
-                  <motion.button
-                    className="bg-yellow-400 p-3 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105 flex-shrink-0"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <ArrowRight className="text-black w-6 h-6 transform -rotate-45" />
-                  </motion.button>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Block: Food Safety - LEFT ALIGNED */}
-            <motion.div
-              className="relative flex flex-col"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="relative z-10">
-                <motion.p
-                  className="text-[#0B5B52] text-xl mb-2 font-semibold uppercase tracking-wider"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  EXPLORE
-                </motion.p>
-                <motion.h3
-                  className="text-lg md:text-xl text-black font-semibold uppercase mb-1"
+                <motion.h2
+                  className="text-black text-xl md:text-3xl font-bold uppercase leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  PEX SOFTWARE&trade; FOR
-                </motion.h3>
-                <div className="flex items-center space-x-4">
-                  <motion.h2
-                    className="text-3xl md:text-4xl font-bold text-black uppercase"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
-                  >
-                    FOOD SAFETY
-                  </motion.h2>
-                  <motion.button
-                    className="bg-[#0B5B52] p-3 rounded-2xl flex items-center justify-center transition-transform duration-200 hover:scale-105 flex-shrink-0"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <ArrowRight className="text-white w-6 h-6 transform -rotate-45" />
-                  </motion.button>
-                </div>
+                  FOOD SAFETY
+                </motion.h2>
               </div>
+            </div>
+
+            <motion.div 
+              className="bg-[#0B5B52] p-3 md:p-4 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-1"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowRight className="text-white w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
             </motion.div>
-          </div>
+          </motion.div>
+
         </div>
       </div>
-
-      {/* Mobile Version */}
-      <div
-        className="md:hidden w-full my-8 px-4 bg-white relative"
-        style={{
-          backgroundImage: "url('/Asset 56.webp')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="max-w-[370px] mx-auto">
-          {/* Main container for the two content blocks in one row */}
-          <div className="flex flex-row gap-16 py-2">
-            {/* Left Block: Quality Management */}
-            <motion.div
-              className="relative text-right flex-1 flex flex-col justify-center"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="relative z-10">
-                <motion.p
-                  className="text-yellow-400  text-[10px] uppercase"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  EXPLORE
-                </motion.p>
-                <motion.h3
-                  className="text-[9px] text-white uppercase"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  PEX SOFTWARE&trade; FOR
-                </motion.h3>
-                <div className="flex items-center text-white ">
-                  <motion.h2
-                    className="text-xs font-extrabold uppercase"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                  >
-                    QUALITY MANAGEMENT
-                  </motion.h2>
-                  <motion.button
-                    className="bg-yellow-400 p-1 absolute -right-7 rounded-lg flex items-center justify-center transition-transform duration-200 hover:scale-105"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <ArrowRight className="text-black w-3 h-3 transform -rotate-45" />
-                  </motion.button>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Block: Food Safety */}
-            <motion.div
-              className="relative flex-1 flex flex-col justify-center"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="relative z-10">
-                <motion.p
-                  className="text-[#0B5B52] text-[10px] font-semibold uppercase"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  EXPLORE
-                </motion.p>
-                <motion.h3
-                  className="text-[9px] text-black font-bold uppercase"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                  PEX SOFTWARE&trade; FOR
-                </motion.h3>
-                <div className="flex items-center gap-2 ">
-                  <motion.h2
-                    className="text-xs font-bold uppercase"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
-                  >
-                    FOOD <br />SAFETY
-                  </motion.h2>
-                  <motion.button
-                    className="bg-green-900 absolute left-15 p-1 rounded-lg flex items-center justify-center transition-transform duration-200 hover:scale-105"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <ArrowRight className="text-white w-3 h-3 transform -rotate-45" />
-                  </motion.button>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-    </>
+    </section>
   );
 }
