@@ -1,9 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const PexGenTestamonialsSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const testimonials = [
+    {
+      image: "/Leader (1).png",
+      message: "We invested in the purchase of the PEx Sofware™ \nSolution, which has added a great value to our \ncompany to automate our business processes and \nmaintain a paperless work environment. We have \nfound PEx Software to be an excellent tool for \nmanaging our quality management system with a \nhigh efficiency.",
+      name: "Rakitha De silva",
+      designation: "Head of Heyleys",
+      location: "Advantis Freight "
+    },
+    {
+      image: "/Leader (3).png",
+      message: "The dedication and professionalism  demonstrated \nby all members of the team from Swiss Advantage \nSystems is highly commendable and has helped our organization achieve a high level of standardization \nthrough the introduction of best practices in \nmanagement systems via PEx Software™ system. ",
+      name: "Sarath Ranasinghe",
+      designation: "General Manager",
+      location: "E B Creasy - Denta Tooth Brush Factory"
+    },
+    {
+      image: "/Leader (2).png",
+      message: "I have no hesitation whatsoever in \nrecommending PEx Software solution which \nwas implemented to manage our integrated \nmanagement system which has greatly helped \nus maintain compliance \nand continual improvement of our business.",
+      name: "Sujeewa Walisundara",
+      designation: "Director Marketing",
+      location: ""
+    },
+    {
+      image: "/Leader (4).png",
+      message: "The introduction of the PEx Software Solution \ndeveloped and implemented by Swiss \nAdvantage Systems has greatly contributed to \nenhancing our EHS and Quality culture throughout \nour organization in a paperless environment. \nWe have no hesitation in recommending their \nproducts and services to any organization.",
+      name: "Ricky Barnett",
+      designation: "Director",
+      location: "Hayleys Energy Services Lanka (Pvt) Ltd."
+    },
+    {
+      image: "/Leader (5).png",
+      message: "The ISO Certification Auditors were fully satisfied \nand commended on the excellent features of the \nPEx Software system. We consider our decision \nto invest on the PEx Software is well worth \nand in the right direction our organization is \ntaking in automating all our business and \nmanufacturing processes.",
+      name: "Randy Roche",
+      designation: "Director / General Manager",
+      location: "Packwell Lanka (Pvt) Ltd"
+    }
+  ];
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <>
       {/* Desktop Version */}
@@ -54,37 +104,98 @@ const PexGenTestamonialsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Image
-              width={750}
-              height={0}
-              src="/Asset 58.webp"
-              alt="PEx Software Video Thumbnail"
-            />
-            <motion.div
-              className=" top-17 left-53 text-sm absolute  text-white"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-            >
-              We have also invested in the purchase of the PEx <br />
-              Sofware Solution, which has added a great value to <br />
-              our company to automate our business processes <br />
-              and maintain a paperless work environment. We <br />
-              have found PEx Software to be an excellent tool for <br />
-              managing our quality management system with <br /> a high
-              efficiency.
-            </motion.div>
-            <motion.div
-              className="text-yellow-400 absolute top-55 left-20 text-xs"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-            >
-              <p className="font-semibold"> Rakitha De silva </p>
-              Head of Advantis Freight <br /> Sri Lanka
-            </motion.div>
+            <div className="relative">
+              <Image
+                width={750}
+                height={0}
+                src="/Asset 75.svg"
+                alt="PEx Software Video Thumbnail"
+                className="relative "
+              />
+              
+              {/* Top Right Arrow Button */}
+              <motion.button
+                onClick={handleNext}
+                className="absolute top-0 cursor-pointer right-0 bg-yellow-400 p-4 rounded-2xl flex items-center justify-center hover:bg-yellow-500 transition-colors"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowRight className="text-black w-6 h-6" />
+              </motion.button>
+
+              {/* Bottom Left Arrow Button */}
+              <motion.button
+                onClick={handlePrevious}
+                className="absolute cursor-pointer bottom-0 left-0 bg-yellow-400 p-4 rounded-2xl  flex items-center justify-center hover:bg-yellow-500 transition-colors"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowRight className="text-black w-6 h-6 transform rotate-180" />
+              </motion.button>
+
+              {/* Left Side Center Image */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`image-${currentIndex}`}
+                  className="absolute left-4 top-10 w-[150px] rounded-2xl h-[150px] overflow-hidden"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 30 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="relative w-full rounded-2xl h-full">
+                    <Image
+                      src={testimonials[currentIndex].image}
+                      alt="Profile"
+                      fill
+                      className="object-cover rounded-2xl"
+                    />
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            
+            {/* message */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`message-${currentIndex}`}
+                className=" top-17 left-55 text-sm absolute  text-white"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.5 }}
+              >
+                {testimonials[currentIndex].message.split('\n').map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < testimonials[currentIndex].message.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+            
+            {/* designation */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`designation-${currentIndex}`}
+                className="text-yellow-400 absolute top-55 left-20 text-xs"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+              >
+                <p className="font-semibold">{testimonials[currentIndex].name}</p>
+                {testimonials[currentIndex].designation} <br /> {testimonials[currentIndex].location}
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
           <motion.div
             className=" relative "
