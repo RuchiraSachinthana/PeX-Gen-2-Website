@@ -1,6 +1,7 @@
 "use client";
 
 import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
+import { ExperienceStatsSection } from "@/components/ExperienceStatsSection";
 import Footer from "@/components/Footer";
 import PexGenComplianceSection from "@/components/PexGenComplianceSection";
 import PexGenExploreSection from "@/components/PexGenExploreSection";
@@ -26,8 +27,10 @@ export default function HomePageClient() {
       <PexGenVideoSection />
       <WhatIsPexSection />
       <PexGenKeyCapabilitiesSection />
-      <PexGenWhyMattersSection />
+      {/* <PexGenWhyMattersSection /> */}
+      
       <PexGenExploreSection />
+      <ExperienceStatsSection />
       <PexGenManagementSection />
       <PexGenTestamonialsSection />
       <PexGenPartners />

@@ -11,15 +11,15 @@ export default function PexGenExploreSection() {
           
           {/* Left Block: Quality Management */}
           <motion.div
-            className="flex-1 bg-[#0B5B52] rounded-[40px] p-5 md:p-12 flex flex-row items-end justify-between relative group cursor-pointer min-h-[140px] md:min-h-[200px]"
+            className="flex-1 bg-[#0B5B52] rounded-[40px] p-5 md:p-12 flex flex-row items-end justify-between relative group cursor-pointer "
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex flex-col items-end z-10 flex-1 text-right">
+            <div className="flex flex-col items-start md:items-end z-10 flex-1 text-left md:text-right">
               <motion.p
-                className="text-yellow-400 font-medium tracking-wider mb-2 uppercase text-xs md:text-sm"
+                className="text-yellow-400  tracking-wider mb-2 uppercase text-xs md:text-sm"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -28,7 +28,7 @@ export default function PexGenExploreSection() {
                 EXPLORE
               </motion.p>
               <motion.h3
-                className="text-white text-xs md:text-base font-medium uppercase mb-1"
+                className="text-white text-xs md:text-base  uppercase mb-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -62,16 +62,16 @@ export default function PexGenExploreSection() {
 
           {/* Right Block: Food Safety */}
           <motion.div
-            className="flex-1 bg-yellow-400 rounded-[40px] p-5 md:p-12 flex flex-row items-end justify-center gap-4 relative group cursor-pointer min-h-[140px] md:min-h-[200px]"
+            className="flex-1 bg-yellow-400 rounded-[40px] p-5 md:p-12 flex flex-row items-end  justify-between gap-6  md:justify-center   relative group cursor-pointer "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-             <div className="flex flex-col items-center z-10">
-              <div className="flex flex-col items-start text-left">
+             <div className="flex flex-col  items-start z-10 ">
+              <div className="flex flex-col items-start  text-left">
                 <motion.p
-                  className="text-[#0B5B52] font-medium tracking-wider mb-2 uppercase text-xs md:text-sm"
+                  className="text-[#0B5B52]  tracking-wider mb-2 uppercase text-xs md:text-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -80,7 +80,7 @@ export default function PexGenExploreSection() {
                   EXPLORE
                 </motion.p>
                 <motion.h3
-                  className="text-black text-xs md:text-base font-medium uppercase mb-1"
+                  className="text-black text-xs md:text-base  uppercase mb-1"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -109,7 +109,7 @@ export default function PexGenExploreSection() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <ArrowRight className="text-white w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
+              <ArrowRight className="text-yellow-400 w-6 h-6 md:w-8 md:h-8 transform -rotate-45" />
             </motion.div>
           </motion.div>
 
