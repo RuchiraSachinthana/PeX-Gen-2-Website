@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import ConditionalNav from "../components/ConditionalNav";
 import { LanguageProvider } from "../context/LanguageProvider";
+import ReduxProvider from "@/providers/ReduxProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -170,10 +171,12 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         
-        <LanguageProvider>
-          <ConditionalNav />
-          {children}
-        </LanguageProvider>
+        <ReduxProvider>
+          <LanguageProvider>
+            <ConditionalNav />
+            {children}
+          </LanguageProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronUp } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import { useTranslation } from "../context/LanguageProvider";
 
@@ -118,11 +118,58 @@ export default function Footer() {
     type: "idle" | "success" | "error";
     message?: string;
   }>({ type: "idle" });
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Handle scroll visibility for back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 400; // Show button after scrolling 400px
+      setShowBackToTop(window.scrollY > scrollThreshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const successFallback = String(t("footer.contactForm.successMessage"));
   const errorFallback = String(t("footer.contactForm.errorMessage"));
   const submitLabel = String(t("footer.contactForm.submitButton"));
   const sendingLabel = String(t("footer.contactForm.sending"));
+
+  // Phone number validation function
+  const validatePhone = (phone: string): string | null => {
+    if (!phone.trim()) {
+      return "Phone number is required";
+    }
+
+    // Remove common formatting characters (spaces, dashes, parentheses, plus)
+    const digitsOnly = phone.replace(/[\s\-\(\)\+]/g, "");
+
+    // Check if contains only digits after removing formatting
+    if (!/^\d+$/.test(digitsOnly)) {
+      return "Phone number can only contain digits and common formatting characters (+, -, spaces, parentheses)";
+    }
+
+    // Check minimum length (at least 7 digits for a valid phone number)
+    if (digitsOnly.length < 9) {
+      return "Phone number must contain at least 9 digits";
+    }
+
+    // Check maximum length (E.164 standard allows up to 15 digits)
+    if (digitsOnly.length > 15) {
+      return "Phone number cannot exceed 15 digits";
+    }
+
+    return null;
+  };
 
   const handleChange =
     (field: keyof ContactFormData) =>
@@ -131,16 +178,36 @@ export default function Footer() {
         HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
       >
     ) => {
+      const value = event.target.value;
       setFormData((prev) => ({
         ...prev,
-        [field]: event.target.value,
+        [field]: value,
       }));
+
+      // Validate phone number in real-time
+      if (field === "phone") {
+        const error = validatePhone(value);
+        setPhoneError(error);
+      }
     };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    
+    // Validate phone number before submission
+    const phoneValidationError = validatePhone(formData.phone);
+    if (phoneValidationError) {
+      setPhoneError(phoneValidationError);
+      setStatus({
+        type: "error",
+        message: phoneValidationError,
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setStatus({ type: "idle" });
+    setPhoneError(null);
 
     try {
       const response = await fetch(CONTACT_API_ENDPOINT, {
@@ -163,6 +230,7 @@ export default function Footer() {
       });
 
       setFormData(() => ({ ...initialFormState }));
+      setPhoneError(null);
     } catch (error) {
       setStatus({
         type: "error",
@@ -520,15 +588,26 @@ export default function Footer() {
               <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.phone"))}
               </label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange("phone")}
-                required
-                autoComplete="tel"
-                className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
+              <div className="flex-1">
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange("phone")}
+                  required
+                  autoComplete="tel"
+                  className={`flex-1 w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 ${
+                    phoneError
+                      ? "focus:ring-red-400 ring-2 ring-red-400"
+                      : "focus:ring-yellow-400"
+                  }`}
+                />
+                {phoneError && (
+                  <p className="text-red-200 text-xs mt-1 ml-4">
+                    {phoneError}
+                  </p>
+                )}
+              </div>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-start gap-1">
               <label className="text-white text-sm w-full sm:w-20 shrink-0 pt-2 sm:pt-1">
@@ -583,6 +662,22 @@ export default function Footer() {
           © {new Date().getFullYear()} PEx Software Solutions. All rights reserved.
         </p>
       </motion.div>
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <motion.button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-4 md:bottom-8 md:right-8 z-50 bg-yellow-400 hover:bg-yellow-300 text-emerald-900 rounded-full p-3 md:p-4 shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-emerald-900"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Back to top"
+        >
+          <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
+        </motion.button>
+      )}
     </footer>
   );
 }
