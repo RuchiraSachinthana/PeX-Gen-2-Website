@@ -12,7 +12,7 @@ export default function PexGenExploreSection() {
           
           {/* Left Block: Quality Management */}
           <motion.div
-            className="flex-1 bg-[#0B5B52] rounded-[40px] p-5 md:p-12 flex flex-row items-end justify-between relative group cursor-pointer "
+            className="flex-1 bg-[#0B5B52] rounded-[20px] p-5 md:p-12 flex flex-row items-end justify-between relative group cursor-pointer "
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -65,7 +65,7 @@ export default function PexGenExploreSection() {
 
           {/* Right Block: Food Safety */}
           <motion.div
-            className="flex-1 bg-yellow-400 rounded-[40px] p-5 md:p-12 flex flex-row items-end  justify-between gap-6  md:justify-center   relative group cursor-pointer "
+            className="flex-1 bg-yellow-400 rounded-[20px] p-5 md:p-12 flex flex-row items-end  justify-between gap-6  md:justify-center   relative group cursor-pointer "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
