@@ -31,7 +31,7 @@ export default function PexQualityHeader() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {String(t("pexQualityHeader.desc1"))}
+             Reduce Your
             </motion.p>
             <motion.p
               className="text-md sm:text-3xl md:text-44xl lg:text-4xl font-semibold   sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -39,16 +39,16 @@ export default function PexQualityHeader() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {String(t("pexQualityHeader.desc2"))}  {String(t("pexQualityHeader.desc3"))}
+             ISO 9001 PAPER
             </motion.p>
            
             <motion.p
-              className="tesxt:sm sm:text-xl md:text-3xl lg:text-3xl  sm:mb-3 text-white drop-shadow-lg uppercase"
+              className="text-md sm:text-3xl md:text-44xl lg:text-4xl font-semibold   sm:mb-3 text-white drop-shadow-lg uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              {String(t("pexQualityHeader.desc4"))}
+             DOCUMENTATION BY 90%
             </motion.p>
       
           </div>
