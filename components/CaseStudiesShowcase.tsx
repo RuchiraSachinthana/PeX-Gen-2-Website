@@ -315,7 +315,7 @@ export default function CaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.button
-                className="absolute top-[-5px] right-[-5px] bg-teal-700 p-4  border-6 border-white rounded-xl"
+                className="absolute top-[-5px] right-[-5px] p-4  border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -352,7 +352,7 @@ export default function CaseStudiesShowcase() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <motion.button
-                className="absolute top-[-5px] right-[-5px] p-4 bg- rounded-xl border-6 border-white rounded-xl"
+                className="absolute top-[-5px] right-[-5px] p-4  border-6 border-white rounded-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

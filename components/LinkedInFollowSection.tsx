@@ -14,7 +14,7 @@ export default function LinkedInFollowSection() {
             MOBILE VIEW (Visible on screens < 1024px)
             Recreated using CSS to look like the image
            ========================================= */}
-        <div className="lg:hidden max-w-[380px] mx-auto">
+        <div className="md:hidden max-w-[380px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +106,7 @@ export default function LinkedInFollowSection() {
             DESKTOP VIEW (Visible on screens >= 1024px)
             (Your original code, untouched inside this wrapper)
            ========================================= */}
-        <div className="hidden lg:block">
+        <div className="hidden md:block">
           <motion.div
             className="relative"
             initial={{ opacity: 0, y: 30 }}

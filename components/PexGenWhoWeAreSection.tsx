@@ -280,7 +280,7 @@ const PexGenWhoWeAreSection = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <motion.div
-                  className="text-xl text-yellow-400 mb-1 "
+                  className="text-2xl text-yellow-400 mb-1 "
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}

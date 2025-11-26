@@ -31,7 +31,7 @@ export default function FoodVideoPromoSection() {
   `}</style>
       <div className="max-w-6xl mx-auto relative  px-4">
         {/* Mobile Layout */}
-        <div className="flex md:hidden max-w-[370px] mx-auto flex-col gap-3 items-center">
+        <div className="flex lg:hidden max-w-[370px] mx-auto flex-col gap-3 items-center">
           {/* Title - Mobile */}
           <motion.h2
             className="text-xl sm:text-3xl text-[#0e685b] text-center mb-2"
@@ -166,7 +166,7 @@ export default function FoodVideoPromoSection() {
         </div>
 
         {/* Desktop Layout - Hidden on mobile */}
-        <div className="hidden md:flex gap-2 justify-between">
+        <div className="hidden lg:flex gap-2 justify-between">
           {/* left section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

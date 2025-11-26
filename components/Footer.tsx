@@ -173,27 +173,27 @@ export default function Footer() {
 
   const handleChange =
     (field: keyof ContactFormData) =>
-    (
-      event: ChangeEvent<
-        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-      >
-    ) => {
-      const value = event.target.value;
-      setFormData((prev) => ({
-        ...prev,
-        [field]: value,
-      }));
+      (
+        event: ChangeEvent<
+          HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >
+      ) => {
+        const value = event.target.value;
+        setFormData((prev) => ({
+          ...prev,
+          [field]: value,
+        }));
 
-      // Validate phone number in real-time
-      if (field === "phone") {
-        const error = validatePhone(value);
-        setPhoneError(error);
-      }
-    };
+        // Validate phone number in real-time
+        if (field === "phone") {
+          const error = validatePhone(value);
+          setPhoneError(error);
+        }
+      };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+
     // Validate phone number before submission
     const phoneValidationError = validatePhone(formData.phone);
     if (phoneValidationError) {
@@ -256,31 +256,31 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-0 grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] lg:grid-cols-2 gap-8 md:gap-8 lg:gap-12 relative z-10">
         {/* Left Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-20 justify-center">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center md:text-left flex flex-col items-center md:items-start"
+            className="text-center md:text-center lg:text-left flex flex-col items-center md:items-center lg:items-start"
           >
             <h3 className="text-lg mb-4 text-yellow-300">
               {String(t("footer.sections.contactUs"))}
             </h3>
             {/* --- ADDED motion.ul --- */}
             <motion.ul
-              className="space-y-3 text-sm flex flex-col items-center md:items-start"
+              className="space-y-3 text-sm flex flex-col items-center md:items-center lg:items-start"
               variants={listVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
               <motion.li variants={itemVariants}>
-                <p className="font-lg mb-1 text-left pl-6 md:pl-0">Malik</p>
-                <div className="flex items-center">
+                <p className="font-lg mb-1 text-center md:text-center lg:text-left pl-6 md:pl-0">Malik</p>
+                <div className="flex items-center justify-center md:justify-center lg:justify-start">
                   <PhoneIcon
                     size={14}
                     className="flex-shrink-0 mr-1 text-yellow-300"
@@ -312,8 +312,8 @@ export default function Footer() {
                 </div>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <p className="font-medium mb-1 text-left pl-6 md:pl-0">Dinusha</p>
-                <div className="flex items-center">
+                <p className="font-medium mb-1 text-center md:text-center lg:text-left pl-6 md:pl-0">Dinusha</p>
+                <div className="flex items-center justify-center md:justify-center lg:justify-start">
                   <PhoneIcon
                     size={14}
                     className="flex-shrink-0 mr-1 text-yellow-300"
@@ -345,8 +345,8 @@ export default function Footer() {
                 </div>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <p className="font-medium mb-1 text-left pl-6 md:pl-0">Binuri</p>
-                <div className="flex items-center">
+                <p className="font-medium mb-1 text-center md:text-center lg:text-left pl-6 md:pl-0">Binuri</p>
+                <div className="flex items-center justify-center md:justify-center lg:justify-start">
                   <PhoneIcon
                     size={14}
                     className="flex-shrink-0 mr-1 text-yellow-300"
@@ -380,7 +380,7 @@ export default function Footer() {
             </motion.ul>
 
             <motion.div // --- ADDED motion ---
-              className="mt-8"
+              className="block md:hidden lg:block mt-8"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -400,14 +400,16 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="md:ml-10 text-center md:text-left flex flex-col items-center md:items-start"
+            className="text-center md:text-center lg:text-left flex flex-col items-center md:items-center lg:items-start"
           >
+
+
             <h3 className="text-lg mb-4 text-yellow-300">
               {String(t("footer.sections.explore"))}
             </h3>
             {/* --- ADDED motion.ul --- */}
             <motion.ul
-              className="space-y-2 text-sm flex flex-col items-center md:items-start"
+              className="space-y-2 text-sm flex flex-col items-center md:items-center lg:items-start"
               variants={listVariants}
               initial="hidden"
               whileInView="visible"
@@ -442,14 +444,14 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center md:text-left flex flex-col items-center md:items-start"
+            className="text-center md:text-center lg:text-left flex flex-col items-center md:items-center lg:items-start"
           >
             <h3 className="text-lg mb-4 text-yellow-300">
               {String(t("footer.sections.menu"))}
             </h3>
             {/* --- ADDED motion.ul --- */}
             <motion.ul
-              className="space-y-2 text-sm flex flex-col items-center md:items-start"
+              className="space-y-2 text-sm flex flex-col items-center md:items-center lg:items-start"
               variants={listVariants}
               initial="hidden"
               whileInView="visible"
@@ -490,13 +492,28 @@ export default function Footer() {
         </div>
 
         {/* Right Section - Contact Form */}
-        <motion.div
-          className="bg-emerald-950/60 backdrop-blur-md px-6 lg:px-10 py-4 rounded-4xl shadow-lg w-full max-w-md mx-auto lg:ml-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
+        <div className="flex flex-col items-center md:items-center lg:items-start">
+          <motion.div // --- ADDED motion ---
+            className="mx-auto hidden md:block lg:hidden mb-6"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Image
+              src="/logo.webp"
+              alt="PEx Logo"
+              width={170}
+              height={40}
+              className="object-contain"
+            />
+          </motion.div>
+          <motion.div
+            className="bg-emerald-950/60 backdrop-blur-md px-6 md:px-7 lg:px-10 py-4 rounded-4xl shadow-lg w-full max-w-md md:max-w-full mx-auto md:mx-0 lg:ml-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+
           <form className="space-y-3 lg:space-y-2" onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1">
               <label className="text-white text-sm w-full sm:w-20 shrink-0">
@@ -560,7 +577,7 @@ export default function Footer() {
                   </option>
                   <option value="Singapore">
                     {String(t("footer.contactForm.countries.singapore"))}
-                    
+
                   </option>
                   <option value="Other">
                     {String(t("footer.contactForm.countries.other"))}
@@ -596,11 +613,10 @@ export default function Footer() {
                   onChange={handleChange("phone")}
                   required
                   autoComplete="tel"
-                  className={`flex-1 w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 ${
-                    phoneError
+                  className={`flex-1 w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 ${phoneError
                       ? "focus:ring-red-400 ring-2 ring-red-400"
                       : "focus:ring-yellow-400"
-                  }`}
+                    }`}
                 />
                 {phoneError && (
                   <p className="text-red-200 text-xs mt-1 ml-4">
@@ -637,9 +653,8 @@ export default function Footer() {
             </motion.button>
             {status.type !== "idle" && (
               <p
-                className={`text-sm ${
-                  status.type === "success" ? "text-emerald-200" : "text-red-200"
-                }`}
+                className={`text-sm ${status.type === "success" ? "text-emerald-200" : "text-red-200"
+                  }`}
                 role="status"
                 aria-live="polite"
               >
@@ -648,6 +663,7 @@ export default function Footer() {
             )}
           </form>
         </motion.div>
+        </div>
       </div>
 
       {/* Copyright Section */}
