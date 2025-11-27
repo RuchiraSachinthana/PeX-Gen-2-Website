@@ -10,37 +10,44 @@ const PexGenTestamonialsSection = () => {
 
   const testimonials = [
     {
+      image: "/Leader (6).png",
+      message: `We have invested in the PEx SoftwareTM Solution, which \nhas added significant value to our food safety management program. We have found PEx SoftwareTM to be an excellent tool for managing food safety in a completely paperless environment, thereby improving efficiency and effectiveness in our processes.`,
+      name: "Mr. Mangala Hemananda",
+      designation: "Ex. Manager Radisson Kandy",
+      location: "Radisson Hotel, Kandy"
+    },
+    {
       image: "/Leader (1).png",
-      message: "We invested in the purchase of the PEx Sofware™ \nSolution, which has added a great value to our \ncompany to automate our business processes and \nmaintain a paperless work environment. We have \nfound PEx Software to be an excellent tool for \nmanaging our quality management system with a \nhigh efficiency.",
-      name: "Rakitha De silva",
+      message: `We have also invested in the purchase of the PEx \nSoftware Solution, which has added a great value to our \ncompany to automate our business processes and maintain a paperless work environment. We have found PEx Software to be an excellent tool for managing our quality management system with a high efficiency.`,
+      name: "Mr. Rakitha De silva",
       designation: "Head of Heyleys",
-      location: "Advantis Freight "
+      location: "Advantis Freight (Pvt) Ltd"
     },
     {
       image: "/Leader (3).png",
-      message: "The dedication and professionalism  demonstrated \nby all members of the team from Swiss Advantage \nSystems is highly commendable and has helped our organization achieve a high level of standardization \nthrough the introduction of best practices in \nmanagement systems via PEx Software™ system. ",
-      name: "Sarath Ranasinghe",
+      message: "We are happy to inform that PEx SoftwareTM solution \ndeveloped and introduced by Swiss Advantage Systems \nhas fully met with our requirements to our entire satisfaction. We first implemented the software in 2015 and continue to use it to manage our paperless work environment. The software is supported with regular updates provided by Swiss Advantage Systems.We are also happy to inform that external compliance auditors have also been delighted with the PEx SoftwareTM features and have commended it’s benefits in meeting with compliance requirements.",
+      name: "Mr. Sarath Ranasinghe",
       designation: "General Manager",
-      location: "E B Creasy - Denta Tooth Brush Factory"
+      location: "EB Creasy & Co., PLC"
     },
     {
-      image: "/Leader (2).png",
-      message: "I have no hesitation whatsoever in \nrecommending PEx Software solution which \nwas implemented to manage our integrated \nmanagement system which has greatly helped \nus maintain compliance \nand continual improvement of our business.",
-      name: "Sujeewa Walisundara",
-      designation: "Director Marketing",
-      location: ""
+      image: "/Leader (2).jpg",
+      message: "We decided to invest on the PEx SoftwareTM solution \nfrom Swiss Advantage Systems (Pvt) ltd to demonstrate \nthe hotels commitment to food safety management. We are happy to inform that the team from Swiss Advantage System handled the whole project very professionally and with great commitment.",
+      name: "Mr. Puneet Dutta",
+      designation: "General Manager",
+      location: "Radisson Blu Resort, Galle (Amari Hotel)"
     },
     {
       image: "/Leader (4).png",
-      message: "The introduction of the PEx Software Solution \ndeveloped and implemented by Swiss \nAdvantage Systems has greatly contributed to \nenhancing our EHS and Quality culture throughout \nour organization in a paperless environment. \nWe have no hesitation in recommending their \nproducts and services to any organization.",
-      name: "Ricky Barnett",
+      message: "Further, the introduction of the PEx Software Solution \ndevelop and implemented by Swiss Advantage Systems \nhas greatly contributed to enhance our EHS and Quality culture throughout our organization in a paperless environment.",
+      name: "Mr. Ricky Barnett",
       designation: "Director",
       location: "Hayleys Energy Services Lanka (Pvt) Ltd."
     },
     {
       image: "/Leader (5).png",
-      message: "The ISO Certification Auditors were fully satisfied \nand commended on the excellent features of the \nPEx Software system. We consider our decision \nto invest on the PEx Software is well worth \nand in the right direction our organization is \ntaking in automating all our business and \nmanufacturing processes.",
-      name: "Randy Roche",
+      message: "We are extremely happy with the PEx Software System implemented by Swiss Advantage which helped us to fully automate our quality management system and reduce most of the paperwork related to quality activities while also fully complying with the ISO 9001:2015 international standards. We consider our decision to invest on the PEx Software Solution is well worth and the right direction our organization is taking in automating all our business and manufacturing processes.”This letter will not be complete if we fail to mention that even the certification auditors were fully satisfied and commended on the excellent features of the PEx Software System.",
+      name: "Mr. Randy Roche",
       designation: "Director / General Manager",
       location: "Packwell Lanka (Pvt) Ltd"
     }
@@ -145,7 +152,7 @@ const PexGenTestamonialsSection = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`image-${currentIndex}`}
-                  className="absolute left-5 top-12 w-[150px] rounded-2xl h-[150px] overflow-hidden"
+                  className="absolute left-5 top-7 w-[150px] rounded-2xl h-[150px] overflow-hidden"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 30 }}
@@ -167,7 +174,7 @@ const PexGenTestamonialsSection = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={`message-${currentIndex}`}
-                className=" top-17 left-55 text-sm absolute  text-white"
+                className=" top-15 left-55 text-xs absolute max-w-sm  text-white"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -30 }}
@@ -437,7 +444,7 @@ const PexGenTestamonialsSection = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={`mobile-message-${currentIndex}`}
-                className="absolute top-8 left-35 text-white text-[8px] max-w-[180px]"
+                className="absolute top-5 left-35 text-white text-[7px] max-w-[180px]"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
