@@ -355,7 +355,6 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import HeroHeader from "./HeroHeader";
 
-
 interface Blog {
   _id: string;
   title: string;
@@ -368,24 +367,12 @@ interface Blog {
   created_at: string;
 }
 
-interface Pagination {
-  current_page: number;
-  total_pages: number;
-  total_blogs: number;
-  per_page: number;
-  has_next: boolean;
-  has_prev: boolean;
-}
-
 interface BlogHeaderProps {
   blogData: Blog[];
-  pagination: Pagination;
-  currentPage: number;
-  onPageChange: (page: number) => void;
   onBlogSelect?: (blog: Blog | null) => void;
 }
 
-const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
+const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
   // State to track the sliding window offset for right panel
   const [slideIndex, setSlideIndex] = useState(0);
   const [loadingBlogId, setLoadingBlogId] = useState<string | null>(null);
@@ -399,13 +386,9 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
       // Use setTimeout to avoid synchronous setState in effect
       setTimeout(() => {
         setSlideIndex(0);
-        // Notify parent about initial state (hardcoded blog)
-        if (onBlogSelect) {
-          onBlogSelect(null);
-        }
       }, 0);
     }
-  }, [blogData, onBlogSelect]);
+  }, [blogData]);
 
   const formatDateShort = (dateString: string) => {
     const date = new Date(dateString);
@@ -495,21 +478,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
 
   const rightPanelBlogs = getRightPanelBlogs();
   
-  // Calculate pagination display range based on actual right panel blogs
-  const getPaginationRange = () => {
-    if (!blogData || blogData.length === 0 || rightPanelBlogs.length === 0) {
-      return { start: 0, end: 0 };
-    }
-    const firstBlogIndex = blogData.findIndex(blog => blog._id === rightPanelBlogs[0]._id);
-    const lastBlogIndex = blogData.findIndex(blog => blog._id === rightPanelBlogs[rightPanelBlogs.length - 1]._id);
-    return {
-      start: firstBlogIndex + 1, // Convert to 1-based for display
-      end: lastBlogIndex + 1, // Convert to 1-based for display
-    };
-  };
-  
-  const paginationRange = getPaginationRange();
-  
   // Can slide next if there are more blogs to navigate through
   // Allow navigation through all blogs (0 to blogData.length)
   // slideIndex 0 = hardcoded, 1 = blog[0], 2 = blog[1], ..., blogData.length = blog[blogData.length - 1]
@@ -524,16 +492,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
         // newIndex 0 -> null (hardcoded)
         // newIndex 1 -> blog[0] (1st blog)
         // newIndex 2 -> blog[1] (2nd blog)
-        if (onBlogSelect && blogData && blogData.length > 0) {
-          if (newIndex === 0) {
-            onBlogSelect(null); // Hardcoded blog
-          } else if (newIndex > 0) {
-            const blogIndex = newIndex - 1;
-            if (blogIndex >= 0 && blogIndex < blogData.length) {
-              onBlogSelect(blogData[blogIndex]);
-            }
-          }
-        }
         return newIndex;
       });
     }
@@ -547,16 +505,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
         // newIndex 0 -> null (hardcoded)
         // newIndex 1 -> blog[0] (1st blog)
         // newIndex 2 -> blog[1] (2nd blog)
-        if (onBlogSelect && blogData && blogData.length > 0) {
-          if (newIndex === 0) {
-            onBlogSelect(null); // Hardcoded blog
-          } else if (newIndex > 0) {
-            const blogIndex = newIndex - 1;
-            if (blogIndex >= 0 && blogIndex < blogData.length) {
-              onBlogSelect(blogData[blogIndex]);
-            }
-          }
-        }
         return newIndex;
       });
     }
@@ -578,11 +526,6 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
     setTimeout(() => {
       setSlideIndex(targetSlideIndex);
       setLoadingBlogId(null);
-      
-      // Notify parent about selected blog
-      if (onBlogSelect) {
-        onBlogSelect(blog);
-      }
     }, 300); // 300ms loading delay
   };
 
@@ -646,14 +589,14 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
         </div>
       </div>
 
-      {/* Desktop Version */}
+      {/* Desktop Version - Responsive for Tablets and Desktops */}
       <motion.div
-        className="hidden md:block w-full max-w-6xl mx-auto z-10 mt-25"
+        className="hidden md:block w-full max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto z-10 mt-25 px-4 md:px-6 lg:px-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="flex gap-8">
+        <div className="flex gap-4 md:gap-6 lg:gap-8">
           {/* Left Side - Main Featured Article */}
           <motion.div className="w-1/2">
             <div className="">
@@ -671,16 +614,16 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
                   </div>
 
                   {/* Article Content from API */}
-                  <div className="mt-4">
+                  <div className="mt-3 md:mt-4">
                     {splitTitle(featuredBlog.title).map((line, index) => (
                       <h2
                         key={index}
-                        className="text-3xl text-teal-700 leading-relaxed"
+                        className="text-xl md:text-2xl lg:text-3xl text-teal-700 leading-relaxed"
                       >
                         {line}
                       </h2>
                     ))}
-                    <p className="text-sm text-gray-700 mt-2">
+                    <p className="text-xs md:text-sm text-gray-700 mt-2">
                       {formatDate(featuredBlog.created_at)}
                     </p>
                   </div>
@@ -699,9 +642,9 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
                   </div>
 
                   {/* Hardcoded Article Content (Initial State) */}
-                  <div className="mt-4">
-                    <h2 className="text-3xl text-teal-700 mb-4">The ERP Trap:</h2>
-                    <h3 className="text-3xl text-teal-700 leading-relaxed">
+                  <div className="mt-3 md:mt-4">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl text-teal-700 mb-3 md:mb-4">The ERP Trap:</h2>
+                    <h3 className="text-xl md:text-2xl lg:text-3xl text-teal-700 leading-relaxed">
                       <p>Why Digital Transformation Fails</p>{" "}
                       <p>Without Business Process</p> <p>Re-engineering</p>
                     </h3>
@@ -713,7 +656,7 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
 
           {/* Right Side - Article List */}
           <motion.div className="w-1/2">
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {rightPanelBlogs.length > 0 ? (
                 rightPanelBlogs.map((blog, index) => {
                   const isLoading = loadingBlogId === blog._id;
@@ -721,7 +664,7 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
                     <motion.div
                       key={blog._id}
                       onClick={() => handleBlogClick(blog)}
-                      className={`flex gap-4 rounded-lg transition-all cursor-pointer hover:bg-teal-50 relative ${
+                      className={`flex gap-2 md:gap-3 lg:gap-4 rounded-lg transition-all cursor-pointer hover:bg-teal-50 relative ${
                         isLoading ? "opacity-60 pointer-events-none" : ""
                       }`}
                       variants={fadeInRight}
@@ -731,10 +674,10 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
                     >
                       {isLoading && (
                         <div className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-lg z-10">
-                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-700"></div>
+                          <div className="animate-spin rounded-full h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 border-b-2 border-teal-700"></div>
                         </div>
                       )}
-                      <div className="w-60 flex-shrink-0">
+                      <div className="w-40 md:w-48 lg:w-60 flex-shrink-0">
                         <Image
                           src={blog.hero_img}
                           alt={blog.title}
@@ -748,14 +691,21 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
                       <div className="flex-1 flex items-center">
                         <div>
                           <h4
-                            className={`text-lg font-bold mb-2 leading-tight`}
+                            className={`text-sm md:text-base lg:text-lg font-bold mb-1 md:mb-2 leading-tight`}
                           >
-                            {blog.title.length > 50
-                              ? `${blog.title.substring(0, 50)}...`
-                              : blog.title}
+                            <span className="hidden lg:inline">
+                              {blog.title.length > 50
+                                ? `${blog.title.substring(0, 50)}...`
+                                : blog.title}
+                            </span>
+                            <span className="lg:hidden">
+                              {blog.title.length > 40
+                                ? `${blog.title.substring(0, 40)}...`
+                                : blog.title}
+                            </span>
                           </h4>
                           <p
-                            className={`text-sm `}
+                            className={`text-xs md:text-sm`}
                           >
                             {formatDateShort(blog.created_at)} 
                           </p>
@@ -765,9 +715,9 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
                   );
                 })
               ) : (
-                <div className="text-gray-500 text-sm items-center justify-center">
+                <div className="text-gray-500 text-xs md:text-sm items-center justify-center">
                   <div className="flex items-center justify-center">
-                    <div className="text-gray-500 text-sm mt-4">
+                    <div className="text-gray-500 text-xs md:text-sm mt-4">
                       No recent blogs available
                     </div>
                   </div>
@@ -776,35 +726,31 @@ const BlogHeader = ({ blogData, onBlogSelect }: BlogHeaderProps) => {
             </div>
 
             {rightPanelBlogs.length > 0 ? (
-                <div className="flex items-center justify-center gap-4 mt-6">
+                <div className="flex items-center justify-center gap-3 md:gap-4 mt-4 md:mt-6">
                 <button
                   onClick={handlePrev}
                   disabled={!canSlidePrev}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${
+                  className={`flex items-center gap-1 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm transition-colors ${
                     canSlidePrev
                       ? "bg-teal-700 text-white hover:bg-teal-600 cursor-pointer"
                       : "bg-gray-300 text-gray-500 cursor-not-allowed"
                   }`}
                 >
-                  <ChevronLeft className="w-4 h-4" />
-                  Previous
+                  <ChevronLeft className="w-3 h-3 md:w-4 md:h-4" />
+                  <span className="hidden md:inline">Previous</span>
+                  <span className="md:hidden">Prev</span>
                 </button>
-                {/* <span className="text-teal-700 font-medium">
-                  {blogData && blogData.length > 0
-                    ? `${paginationRange.start}-${paginationRange.end} of ${blogData.length}`
-                    : "0-0 of 0"}
-                </span> */}
                 <button
                   onClick={handleNext}
                   disabled={!canSlideNext}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${
+                  className={`flex items-center gap-1 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm transition-colors ${
                     canSlideNext
                       ? "bg-teal-700 text-white hover:bg-teal-600 cursor-pointer"
                       : "bg-gray-300 text-gray-500 cursor-not-allowed"
                   }`}
                 >
                   Next
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
                 </button>
               </div>
             ) : null }

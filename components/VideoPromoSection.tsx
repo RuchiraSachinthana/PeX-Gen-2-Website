@@ -16,28 +16,19 @@ export default function VideoPromoSection() {
   return (
     // Component: Main Section Container - Full width white background with overflow hidden
     <div className="w-full md:pt-20 md:pb-20 py-5 relative overflow-hidden">
-      {/* Background for mobile - only top to middle of video */}
+      {/* Background for all devices - full section */}
       <div
-        className="md:hidden absolute top-0 left-0 right-0 h-[40%] z-0"
+        className="absolute inset-0 z-0"
         style={{
           backgroundImage: 'url("/Asset 24.webp")',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "center top",
-        }}
-      />
-      {/* Background for desktop - full section */}
-      <div
-        className="hidden md:block absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("/Asset 24.webp")',
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
         }}
       />
       <div className="max-w-6xl mx-auto relative z-10 px-2 md:px-4">
         {/* Mobile Layout */}
-        <div className="flex md:hidden max-w-[370px] mx-auto flex-col gap-3 items-center">
+        <div className="flex lg:hidden max-w-[370px] mx-auto flex-col gap-3 items-center">
           {/* Title - Mobile */}
           <motion.h2
             className="text-xl sm:text-3xl text-[#0e685b] text-center mb-2"
@@ -171,7 +162,7 @@ export default function VideoPromoSection() {
         </div>
 
         {/* Desktop Layout - Hidden on mobile */}
-        <div className="hidden md:flex gap-2  justify-between">
+        <div className="hidden lg:flex gap-2  justify-between">
           {/* left section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

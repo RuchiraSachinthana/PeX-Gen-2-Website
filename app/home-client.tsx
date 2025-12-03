@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
 import { ExperienceStatsSection } from "@/components/ExperienceStatsSection";
 import Footer from "@/components/Footer";
@@ -17,9 +18,19 @@ import PexGenWhoWeAreSection from "@/components/PexGenWhoWeAreSection";
 import PexGenWhyMattersSection from "@/components/PexGenWhyMattersSection";
 import SocialsSection from "@/components/SocialSection";
 import WhatIsPexSection from "@/components/WhatIsPexSection";
-
+import { fetchBlogs } from "@/store/blogSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 export default function HomePageClient() {
+  const dispatch = useAppDispatch();
+  const { items, status } = useAppSelector((state) => state.blog);
+
+  useEffect(() => {
+    if (items.length === 0 && status !== "loading") {
+      dispatch(fetchBlogs({ page: 1, limit: 10 }));
+    }
+  }, [dispatch, items.length, status]);
+
   return (
     <div className="w-full min-h-screen bg-white">
       <PexGenHeader />
@@ -43,4 +54,3 @@ export default function HomePageClient() {
     </div>
   );
 }
-

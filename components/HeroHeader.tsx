@@ -94,7 +94,7 @@ export default function HeroHeader() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="hidden md:flex flex-1 items-center justify-end h-11"
+        className="hidden lg:flex flex-1 items-center justify-end h-11"
       >
         <div className="flex gap-4 items-center ">
           <button
@@ -114,7 +114,7 @@ export default function HeroHeader() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="md:hidden flex items-center justify-center bg-white/10 text-white p-2 mr-5 rounded-full border border-[#04afbc] hover:border-yellow-400 transition-all duration-300 shadow-lg cursor-pointer"
+        className="lg:hidden flex items-center justify-center bg-white/10 text-white p-2 mr-5 rounded-full border border-[#04afbc] hover:border-yellow-400 transition-all duration-300 shadow-lg cursor-pointer"
       >
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </motion.button>
@@ -127,7 +127,7 @@ export default function HeroHeader() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3 }}
-            className={`md:hidden fixed inset-0 ${mobileOverlayBg} overflow-y-auto z-50`}
+            className={`lg:hidden fixed inset-0 ${mobileOverlayBg} overflow-y-auto z-50`}
             style={{ zIndex: 9999 }}
           >
             <div className="flex flex-col p-8 pt-24 space-y-6">
