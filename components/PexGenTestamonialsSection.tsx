@@ -220,7 +220,7 @@ const PexGenTestamonialsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="absolute top-0 left-6 w-full z-10 pointer-events-none">
+              <div className="absolute top-0 left-24 w-full z-10 pointer-events-none">
                 <h4 className="text-left md:text-3xl text-white drop-shadow-lg md:mt-6">
                 Your reliable partner in business growth
                 </h4>

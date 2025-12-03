@@ -1,7 +1,7 @@
 "use client";
 
 import BusinessImprovementSlider from "@/components/BusinessImprovementSlider";
-import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
+import CaseStudiesShowcaseQuality from "@/components/CaseStudiesShowcaseQuality";
 import { ExperienceStatsSection } from "@/components/ExperienceStatsSection";
 import FAQSection from "@/components/FAQSectionQuality";
 import Footer from "@/components/Footer";
@@ -16,7 +16,7 @@ export default function PexQualityPageClient() {
       <PexQualityHeader />
       <VideoPromoSection />
       <BusinessImprovementSlider />
-      <CaseStudiesShowcase />
+      <CaseStudiesShowcaseQuality />
       <KeyPointsIntroSection />
       <ExperienceStatsSection />
       <FAQSection />

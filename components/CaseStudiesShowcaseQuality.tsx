@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
-export default function CaseStudiesShowcase() {
+export default function CaseStudiesShowcaseQuality() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -93,7 +93,7 @@ export default function CaseStudiesShowcase() {
                     src="/Asset 21.svg"
                     alt="Background Decoration"
                   />
-                </div>            
+                </div>
                 <div className="absolute bottom-3 left-10">
                   <p className="text-sm ml-10 text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
@@ -107,13 +107,11 @@ export default function CaseStudiesShowcase() {
                   className="absolute top-12 left-40"
                 />
                 <div className="absolute top-30 left-20">
-                  <p className="text-lg text-yellow-400">The ERP Trap:</p>
-                  <p className="text-sm text-white"> Why Digital </p>
-                  <p className="text-sm text-white"> Transformation    </p>
-                  <p className="text-sm text-white">  Fails   </p>
-                  <p className="text-sm text-white"> without Business  </p>
-                  <p className="text-sm text-white"> Process </p>
-                  <p className="text-sm text-white"> Re-engineering.</p>
+                  <p className="text-lg text-yellow-400">&quot;It is a</p>
+                  <p className="text-lg text-yellow-400">Game Changer&quot;</p>
+                  <p className="text-sm text-white"> says             </p>
+                  <p className="text-sm text-white"> General Manager     </p>
+                  <p className="text-sm text-white">  EBC   </p>
                 </div>
               </motion.div>
               {/* center card */}
@@ -131,16 +129,18 @@ export default function CaseStudiesShowcase() {
                   alt="Background Decoration"
                 />
                 <div className="absolute top-20 left-8">
-                  <div className="mb-16 ml-7 text-left text-3xl text-white">
-                    <p>Sanju -</p>
-                    <p>Compliance</p>
-                    <p>Manager</p>
-                    <p>Her Story</p>
+                  <div className="mb-8 ml-6 text-left text-lg text-white">
+                    <p>&quot;Our teams are </p>
+                    <p>more confident,</p>
+                    <p>more accountable,</p>
+                    <p>and better equipped </p>
+                    <p>to meet standards&quot; - </p>
+                    <p>A diversified Company</p>
                   </div>
                   <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                     <p className="text-sm text-yellow-400">CASE STUDY</p>
                     <motion.button
-                      className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                      className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300 mr-5"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => router.push("/blog")}
@@ -166,26 +166,9 @@ export default function CaseStudiesShowcase() {
                   height={0}
                   src="/Asset 20.svg"
                   alt="Background Decoration"
+                  className="invisible"
                 />
-                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
-                  <p> Be Audit-Ready:</p>
-                  <p>How PEx Software</p>
-                  <p>Simplifies ISO Audits.</p>
-                </div>
-                <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
-                  <p className="text-sm text-yellow-400">CASE STUDY</p>
-                  <motion.button
-                    className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => router.push("/blog")}
-                  >
-                    <div className="flex">
-                      Read More &nbsp;{" "}
-                      <ArrowRight className="w-5 h-5 text-black" />
-                    </div>
-                  </motion.button>
-                </div>
+      
               </motion.div>
             </div>
           </div>
@@ -225,13 +208,12 @@ export default function CaseStudiesShowcase() {
                 <div
                   className="absolute  top-3 left-3 from-[#0e685b] to-[#05423b] rounded-md p-2 py-6 px-3"
                 >
-                  <p className="text-lg font- text-yellow-400">The ERP Trap:</p>
+                  <p className="text-lg font- text-yellow-400">&quot;It is a Game Changer&quot;</p>
                   <p className="text-[8px] text-white leading-tight">
-                  Why Digital <br />Transformation <br />Fails without 
-
+                  says 
                   </p>
                   <p className="text-[8px] text-white leading-tight">
-                  Business Process <br />Re-engineering.
+                  General Manager EBC
                   </p>
                 </div>
 
@@ -246,9 +228,9 @@ export default function CaseStudiesShowcase() {
               {/* Right side - Title and Images */}
               <div className="flex-1 flex flex-col justify-between h-full pt-2">
                 <div className="text-2xl text-teal-700">
-                 
-                    Businesses that have grown with us
-                 
+
+                  Businesses that have grown with us
+
                 </div>
 
                 {/* Scrollable Image Grid - Horizontal Row */}
@@ -328,9 +310,8 @@ export default function CaseStudiesShowcase() {
               </motion.button>
 
               <div className="p-4">
-                <h3 className="text-white text-2xl mb-2">
-                Sanju - Compliance Manager.<br />
-                Her Story
+                <h3 className="text-white text-md mb-2">
+                &quot;Our teams are more confident, more accountable, and better equipped to meet standards&quot; - A diversified Company
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -350,7 +331,7 @@ export default function CaseStudiesShowcase() {
             </motion.div>
 
             {/* Third Card - PEx Solution Card */}
-            <motion.div
+            {/* <motion.div
               className="relative bg-[#4a5568] rounded-3xl p-8 pb-10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -367,7 +348,7 @@ export default function CaseStudiesShowcase() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                Be Audit-Ready: How PEx Software Simplifies ISO Audits.
+                  How PEx solution saved 1.6 million in the first quarter
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -384,7 +365,7 @@ export default function CaseStudiesShowcase() {
                   </motion.button>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>
