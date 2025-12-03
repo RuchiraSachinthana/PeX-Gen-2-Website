@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "../context/LanguageProvider";
 
 const PexGenTestamonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,11 +55,13 @@ const PexGenTestamonialsSection = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const { t } = useTranslation();
+
   return (
     <>
       {/* Desktop Version */}
       <div className="hidden md:block w-full h-100 bg-[#0e685b] py-20">
-        <div className="max-w-6xl  justify-between flex gap-3 mx-auto">
+        <div className="max-w-4xl  justify-between flex gap-4 mx-auto">
           <motion.div
             className=" relative "
             initial={{ opacity: 0, x: -50, scale: 0.95 }}
@@ -112,7 +115,7 @@ const PexGenTestamonialsSection = () => {
                 alt="PEx Software Video Thumbnail"
                 className="relative "
               />
-              
+
               {/* Top Right Arrow Button */}
               <motion.button
                 onClick={handleNext}
@@ -162,7 +165,7 @@ const PexGenTestamonialsSection = () => {
                 </motion.div>
               </AnimatePresence>
             </div>
-            
+
             {/* message */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -181,7 +184,7 @@ const PexGenTestamonialsSection = () => {
                 ))}
               </motion.div>
             </AnimatePresence>
-            
+
             {/* designation */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -197,132 +200,97 @@ const PexGenTestamonialsSection = () => {
               </motion.div>
             </AnimatePresence>
           </motion.div>
-          <motion.div
-            className=" relative "
-            initial={{ opacity: 0, x: 50, scale: 0.95 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Image
-              width={300}
-              height={0}
-              src="/Asset 59.svg"
-              alt="PEx Software Video Thumbnail"
-            />
-            <motion.div
-              className="absolute top-4 text-2xl text-yellow-300  left-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              Your reliable <br />
-              partner in <br />
-              business growth
-            </motion.div>
+  
+        </div>
+      </div>
 
-            <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
-              <motion.button
-                className="bg-yellow-400 absolute top-45 left-5 px-4 hover:bg-yellow-500 text-gray-900 py-2 rounded-full shadow-lg transition-colors cursor-pointer"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 1.0 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="flex justify-between text-sm items-center gap-2">
-                  Linkedin
-                  <span className="font-semibold">1000+</span>
-                  followers
-                </div>
-              </motion.button>
-            </a>
+      <div className="w-full bg-white py-4 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+
+          {/* =========================================
+            DESKTOP VIEW (Visible on screens >= 1024px)
+            (Your original code, untouched inside this wrapper)
+           ========================================= */}
+          <div className="hidden lg:block">
             <motion.div
-              className="flex gap-2 top-57 absolute left-7"
-              initial={{ opacity: 0, y: 20 }}
+              className="relative"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 1.2 }}
+              transition={{ duration: 0.8 }}
             >
-              <motion.div
-                className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 1.3 }}
-              >
-                <Image
-                  src="/user (1).png"
-                  alt="Avatar 1"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div
-                className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 1.4 }}
-              >
-                <Image
-                  src="/user (2).png"
-                  alt="Avatar 2"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div
-                className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 1.5 }}
-              >
-                <Image
-                  src="/user (3).png"
-                  alt="Avatar 3"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div
-                className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 1.6 }}
-              >
-                <Image
-                  src="/user (4).png"
-                  alt="Avatar 4"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div
-                className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 1.7 }}
-              >
-                <Image
-                  src="/user (5).png"
-                  alt="Avatar 5"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+              <div className="absolute top-0 left-6 w-full z-10 pointer-events-none">
+                <h4 className="text-left md:text-3xl text-white drop-shadow-lg md:mt-6">
+                Your reliable partner in business growth
+                </h4>
+              </div>
+              <Image
+                src="/section_5_image.svg"
+                alt={String(t("linkedInFollowSection.alt"))}
+                width={1200}
+                height={200}
+                className="w-full h-auto"
+              />
+
+              <div className="absolute bottom-6 left-60 flex gap-2 z-20">
+                <div className="md:w-12 md:h-12 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                  <Image
+                    src="/user (1).png"
+                    alt="Avatar 1"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute top-5 left-[-120px] text-white">
+                  FOLLOW US
+                </div>
+                <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                  <Image
+                    src="/user (2).png"
+                    alt="Avatar 2"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                  <Image
+                    src="/user (3).png"
+                    alt="Avatar 3"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                  <Image
+                    src="/user (4).png"
+                    alt="Avatar 4"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                  <Image
+                    src="/user (5).png"
+                    alt="Avatar 5"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+                <button className="absolute bottom-6 right-10 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-full shadow-lg z-20 cursor-pointer">
+                  Linkedin <span className="font-semibold">&nbsp;1000+</span>
+                  &nbsp;followers
+                </button>
+              </a>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -383,7 +351,7 @@ const PexGenTestamonialsSection = () => {
               alt="Testimonial"
               className="mx-auto max-w-[370px] h-auto"
             />
-            
+
             {/* Top Right Arrow Button - Mobile */}
             <motion.button
               onClick={handleNext}
@@ -458,98 +426,98 @@ const PexGenTestamonialsSection = () => {
                 transition={{ duration: 0.5 }}
               >
                 <p className="font-semibold">{testimonials[currentIndex].name}</p>
-                <p>{testimonials[currentIndex].designation} <br/> {testimonials[currentIndex].location}</p>
+                <p>{testimonials[currentIndex].designation} <br /> {testimonials[currentIndex].location}</p>
               </motion.div>
             </AnimatePresence>
           </motion.div>
 
           <div className="lg:hidden max-w-[370px] mx-auto">
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8 }}
-                      className=" relative"
-                    >
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className=" relative"
+            >
+              <Image
+                src="/section_5_image.svg"
+                alt="linkedin card"
+                width={0}
+                height={0}
+                className="w-full h-auto"
+              />
+
+              {/* Main Text */}
+              <h4 className="text-left absolute left-4 top-3 text-xs sm:text-3xl  text-white  mb-8 leading-tight">
+                Your reliable partner in business growth
+              </h4>
+
+              {/* Content Stack */}
+              <div className="flex flex-col gap-6 items-start">
+                {/* Button */}
+                <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
+                    Linkedin <span className="font-bold">1000+</span> followers
+                  </button>
+                </a>
+
+                {/* Follow Us + Avatars */}
+                <div className="flex flex-col gap-2 mt-2">
+                  <span className="text-white text-[10px] absolute top-7 right-10 uppercase opacity-90">
+                    Follow Us
+                  </span>
+                  <div className="absolute top-12 left-45 flex gap-1 z-20">
+                    <div className="w-6 h-6 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
                       <Image
-                        src="/section_5_image.svg"
-                        alt="linkedin card"
-                        width={0}
-                        height={0}
-                        className="w-full h-auto"
+                        src="/user (5).png"
+                        alt="Avatar 1"
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
                       />
-          
-                      {/* Main Text */}
-                      <h4 className="text-left absolute left-4 top-3 text-xs sm:text-3xl  text-white  mb-8 leading-tight">
-                       Your reliable partner in business growth
-                      </h4>
-          
-                      {/* Content Stack */}
-                      <div className="flex flex-col gap-6 items-start">
-                        {/* Button */}
-                        <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
-                          <button className="bg-yellow-400 absolute top-11 left-4 hover:bg-yellow-500 text-gray-900 px-2 py-1 text-[10px] rounded-full sm:w-auto text-center">
-                            Linkedin <span className="font-bold">1000+</span> followers
-                          </button>
-                        </a>
-          
-                        {/* Follow Us + Avatars */}
-                        <div className="flex flex-col gap-2 mt-2">
-                          <span className="text-white text-[10px] absolute top-7 right-10 uppercase opacity-90">
-                            Follow Us
-                          </span>
-                          <div className="absolute top-12 left-45 flex gap-1 z-20">
-                            <div className="w-6 h-6 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
-                              <Image
-                                src="/user (5).png"
-                                alt="Avatar 1"
-                                width={48}
-                                height={48}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-          
-                            <div className="w-6 h-6  rounded-full border-2 border-white overflow-hidden bg-gray-200">
-                              <Image
-                                src="/user (4).png"
-                                alt="Avatar 2"
-                                width={48}
-                                height={48}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
-                              <Image
-                                src="/user (3).png"
-                                alt="Avatar 3"
-                                width={48}
-                                height={48}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
-                              <Image
-                                src="/user (2).png"
-                                alt="Avatar 4"
-                                width={48}
-                                height={48}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                            <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
-                              <Image
-                                src="/user (1).png"
-                                alt="Avatar 5"
-                                width={48}
-                                height={48}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
+                    </div>
+
+                    <div className="w-6 h-6  rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                      <Image
+                        src="/user (4).png"
+                        alt="Avatar 2"
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                      <Image
+                        src="/user (3).png"
+                        alt="Avatar 3"
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                      <Image
+                        src="/user (2).png"
+                        alt="Avatar 4"
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                      <Image
+                        src="/user (1).png"
+                        alt="Avatar 5"
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </>

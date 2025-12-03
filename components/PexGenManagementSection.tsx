@@ -142,7 +142,7 @@ const PexGenManagementSection = () => {
                   className="w-full max-w-md h-auto object-contain"
                 />
                 <motion.div
-                  className="absolute text-2xl p-4 left-4 top-0 whitespace-pre-line font-bold text-left w-full leading-tight"
+                  className="absolute text-2xl p-6 left-0 top-0 whitespace-pre-line font-bold  w-full leading-tight"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}

@@ -65,7 +65,7 @@ export default function HeroHeader() {
   const homeButtonBorderColor = isBlogPage
     ? "border-green-600"
     : "border-[#04afbc]";
-  const homeButtonBgColor = isBlogPage ? "bg-green-900/40" : "bg-green-800/20";
+  const homeButtonBgColor = isBlogPage ? "bg-teal-800" : "bg-teal-800";
   const mobileOverlayBg = isBlogPage
     ? "bg-gradient-to-br from-green-900 to-emerald-900/90"
     : "bg-gradient-to-br from-teal-900 to-cyan-900/90";
