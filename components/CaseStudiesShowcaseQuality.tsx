@@ -4,11 +4,33 @@ import { motion } from "framer-motion"; // Import motion
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
+interface Blog {
+  _id: string;
+  title: string;
+}
+
+interface BlogApiResponse {
+  success: boolean;
+  data: Blog[];
+  pagination: {
+    current_page: number;
+    total_pages: number;
+    total_blogs: number;
+    per_page: number;
+    has_next: boolean;
+    has_prev: boolean;
+  };
+}
 
 export default function CaseStudiesShowcaseQuality() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [blogTitles, setBlogTitles] = useState<[string | null, string | null]>([
+    null,
+    null,
+  ]);
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
@@ -18,6 +40,22 @@ export default function CaseStudiesShowcaseQuality() {
       });
     }
   };
+
+  useEffect(() => {
+    const fetchBlogTitles = async () => {
+      try {
+        const response = await fetch("http://pex-sooty.vercel.app/api/blogs/non-monthly/2");
+        const data: BlogApiResponse = await response.json();
+        if (data.success && data.data.length >= 2) {
+          setBlogTitles([data.data[0].title, data.data[1].title]);
+        }
+      } catch (error) {
+        console.error("Error fetching blog titles:", error);
+      }
+    };
+
+    fetchBlogTitles();
+  }, []);
 
   return (
     <>
@@ -93,7 +131,7 @@ export default function CaseStudiesShowcaseQuality() {
                     src="/Asset 21.svg"
                     alt="Background Decoration"
                   />
-                </div>
+                </div>            
                 <div className="absolute bottom-3 left-10">
                   <p className="text-sm ml-10 text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
@@ -106,12 +144,11 @@ export default function CaseStudiesShowcaseQuality() {
                   alt="Background Decoration"
                   className="absolute top-12 left-40"
                 />
-                <div className="absolute top-30 left-20">
-                  <p className="text-lg text-yellow-400">&quot;It is a</p>
-                  <p className="text-lg text-yellow-400">Game Changer&quot;</p>
-                  <p className="text-sm text-white"> says             </p>
-                  <p className="text-sm text-white"> General Manager     </p>
-                  <p className="text-sm text-white">  EBC   </p>
+                <div className="absolute top-30 left-20 max-w-[150px]">
+                  <p className="text-lg text-yellow-400 mb-1">The ERP Trap:</p>
+                  <p className="text-sm text-white">
+                    Why Digital Transformation Fails without Business Process Re-engineering.
+                  </p>
                 </div>
               </motion.div>
               {/* center card */}
@@ -129,18 +166,17 @@ export default function CaseStudiesShowcaseQuality() {
                   alt="Background Decoration"
                 />
                 <div className="absolute top-20 left-8">
-                  <div className="mb-8 ml-6 text-left text-lg text-white">
-                    <p>&quot;Our teams are </p>
-                    <p>more confident,</p>
-                    <p>more accountable,</p>
-                    <p>and better equipped </p>
-                    <p>to meet standards&quot; - </p>
-                    <p>A diversified Company</p>
+                  <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
+                    {blogTitles[0] ? (
+                      <p>{blogTitles[0].slice(0, 45) + " ..."}</p>
+                    ) : (
+                      <p>A blog post has not been added yet.</p>
+                    )}
                   </div>
                   <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                     <p className="text-sm text-yellow-400">CASE STUDY</p>
                     <motion.button
-                      className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300 mr-5"
+                      className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => router.push("/blog")}
@@ -167,10 +203,12 @@ export default function CaseStudiesShowcaseQuality() {
                   src="/Asset 20.svg"
                   alt="Background Decoration"
                 />
-                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
-                  <p> Be Audit-Ready:</p>
-                  <p>How PEx Software</p>
-                  <p>Simplifies ISO Audits.</p>
+                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
+                  {blogTitles[1] ? (
+                    <p>{blogTitles[1].slice(0, 45) + " ..."}</p>
+                  ) : (
+                    <p>A blog post has not been added yet.</p>
+                  )}
                 </div>
                 <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
                   <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -225,12 +263,9 @@ export default function CaseStudiesShowcaseQuality() {
                 <div
                   className="absolute  top-3 left-3 from-[#0e685b] to-[#05423b] rounded-md p-2 py-6 px-3"
                 >
-                  <p className="text-lg font- text-yellow-400">&quot;It is a Game Changer&quot;</p>
-                  <p className="text-[8px] text-white leading-tight">
-                  says 
-                  </p>
-                  <p className="text-[8px] text-white leading-tight">
-                  General Manager EBC
+                  <p className="text-lg font- text-yellow-400 mb-1">The ERP Trap:</p>
+                  <p className="text-[8px] text-white leading-tight max-w-[100px]">
+                    Why Digital Transformation Fails without Business Process Re-engineering.
                   </p>
                 </div>
 
@@ -245,9 +280,9 @@ export default function CaseStudiesShowcaseQuality() {
               {/* Right side - Title and Images */}
               <div className="flex-1 flex flex-col justify-between h-full pt-2">
                 <div className="text-2xl text-teal-700">
-
-                  Businesses that have grown with us
-
+                 
+                    Businesses that have grown with us
+                 
                 </div>
 
                 {/* Scrollable Image Grid - Horizontal Row */}
@@ -327,8 +362,14 @@ export default function CaseStudiesShowcaseQuality() {
               </motion.button>
 
               <div className="p-4">
-                <h3 className="text-white text-md mb-2">
-                &quot;Our teams are more confident, more accountable, and better equipped to meet standards&quot; - A diversified Company
+                <h3 className="text-white text-2xl mb-2">
+                  {blogTitles[0] ? (
+                    blogTitles[0].slice(0, 20) + "..."
+                  ) : (
+                    <>
+                      A blog post has not been added yet.
+                    </>
+                  )}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -347,6 +388,7 @@ export default function CaseStudiesShowcaseQuality() {
               </div>
             </motion.div>
 
+            {/* Third Card - PEx Solution Card */}
             <motion.div
               className="relative bg-[#4a5568] rounded-3xl p-8 pb-10"
               initial={{ opacity: 0, y: 30 }}
@@ -364,7 +406,7 @@ export default function CaseStudiesShowcaseQuality() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                Be Audit-Ready: How PEx Software Simplifies ISO Audits.
+                  {blogTitles[1] || "Blog post is not added yet."}
                 </h3>
 
                 <div className="flex flex-col gap-3">

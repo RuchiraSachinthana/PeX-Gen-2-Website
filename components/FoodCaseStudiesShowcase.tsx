@@ -5,11 +5,33 @@ import { motion } from "framer-motion"; // Import motion
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
+interface Blog {
+  _id: string;
+  title: string;
+}
+
+interface BlogApiResponse {
+  success: boolean;
+  data: Blog[];
+  pagination: {
+    current_page: number;
+    total_pages: number;
+    total_blogs: number;
+    per_page: number;
+    has_next: boolean;
+    has_prev: boolean;
+  };
+}
 
 export default function FoodCaseStudiesShowcase() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [blogTitles, setBlogTitles] = useState<[string | null, string | null]>([
+    null,
+    null,
+  ]);
   
     const scrollRight = () => {
       if (scrollContainerRef.current) {
@@ -19,6 +41,22 @@ export default function FoodCaseStudiesShowcase() {
         });
       }
     };
+
+  useEffect(() => {
+    const fetchBlogTitles = async () => {
+      try {
+        const response = await fetch("http://pex-sooty.vercel.app/api/blogs/non-monthly/1");
+        const data: BlogApiResponse = await response.json();
+        if (data.success && data.data.length >= 2) {
+          setBlogTitles([data.data[0].title, data.data[1].title]);
+        }
+      } catch (error) {
+        console.error("Error fetching blog titles:", error);
+      }
+    };
+
+    fetchBlogTitles();
+  }, []);
   
   return (
    <>
@@ -127,12 +165,13 @@ export default function FoodCaseStudiesShowcase() {
                   src="/Asset 73.svg"
                   alt="Background Decoration"
                 />
-                <div className="absolute top-20 left-8">
-                  <div className="mb-16 ml-7 text-left text-3xl text-white">
-                    <p>Can a small</p>
-                    <p>company get</p>
-                    <p>ISO 9001</p>
-                    <p>certification?</p>
+              <div className="absolute top-20 left-8">
+                  <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
+                    {blogTitles[0] ? (
+                      <p>{blogTitles[0].slice(0, 45) + " ..."}</p>
+                    ) : (
+                      <p>A blog post has not been added yet.</p>
+                    )}
                   </div>
                   <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                     <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -164,10 +203,12 @@ export default function FoodCaseStudiesShowcase() {
                   src="/Asset 72.svg"
                   alt="Background Decoration"
                 />
-                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
-                  <p>How PEx solution</p>
-                  <p>saved 1.6 million</p>
-                  <p>in the first quarter</p>
+                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
+                  {blogTitles[1] ? (
+                    <p>{blogTitles[1].slice(0, 45) + " ..."}</p>
+                  ) : (
+                    <p>A blog post has not been added yet.</p>
+                  )}
                 </div>
                 <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
                   <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -334,7 +375,7 @@ export default function FoodCaseStudiesShowcase() {
 
               <div className="p-4">
                 <h3 className="text-white text-2xl mb-2">
-                  Can a small company get ISO 9001 certification?
+                  {blogTitles[0] || "A blog post has not been added yet."}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -371,7 +412,7 @@ export default function FoodCaseStudiesShowcase() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                  How PEx solution saved 1.6 million in the first quarter
+                  {blogTitles[1] || "A blog post has not been added yet."}
                 </h3>
 
                 <div className="flex flex-col gap-3">

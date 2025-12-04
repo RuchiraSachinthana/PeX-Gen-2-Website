@@ -4,11 +4,33 @@ import { motion } from "framer-motion"; // Import motion
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
+interface Blog {
+  _id: string;
+  title: string;
+}
+
+interface BlogApiResponse {
+  success: boolean;
+  data: Blog[];
+  pagination: {
+    current_page: number;
+    total_pages: number;
+    total_blogs: number;
+    per_page: number;
+    has_next: boolean;
+    has_prev: boolean;
+  };
+}
 
 export default function CaseStudiesShowcase() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [blogTitles, setBlogTitles] = useState<[string | null, string | null]>([
+    null,
+    null,
+  ]);
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
@@ -18,6 +40,22 @@ export default function CaseStudiesShowcase() {
       });
     }
   };
+
+  useEffect(() => {
+    const fetchBlogTitles = async () => {
+      try {
+        const response = await fetch("http://pex-sooty.vercel.app/api/blogs/non-monthly/0");
+        const data: BlogApiResponse = await response.json();
+        if (data.success && data.data.length >= 2) {
+          setBlogTitles([data.data[0].title, data.data[1].title]);
+        }
+      } catch (error) {
+        console.error("Error fetching blog titles:", error);
+      }
+    };
+
+    fetchBlogTitles();
+  }, []);
 
   return (
     <>
@@ -129,7 +167,11 @@ export default function CaseStudiesShowcase() {
                 />
                 <div className="absolute top-20 left-8">
                   <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
-                    <p>Sanju - Compliance Manager Her Story</p>
+                    {blogTitles[0] ? (
+                      <p>{blogTitles[0].slice(0, 45) + " ..."}</p>
+                    ) : (
+                      <p>A blog post has not been added yet.</p>
+                    )}
                   </div>
                   <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                     <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -162,7 +204,11 @@ export default function CaseStudiesShowcase() {
                   alt="Background Decoration"
                 />
                 <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
-                  <p>Be Audit-Ready: How PEx Software Simplifies ISO Audits.</p>
+                  {blogTitles[1] ? (
+                    <p>{blogTitles[1].slice(0, 45) + " ..."}</p>
+                  ) : (
+                    <p>A blog post has not been added yet.</p>
+                  )}
                 </div>
                 <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
                   <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -317,8 +363,13 @@ export default function CaseStudiesShowcase() {
 
               <div className="p-4">
                 <h3 className="text-white text-2xl mb-2">
-                Sanju - Compliance Manager.<br />
-                Her Story
+                  {blogTitles[0] ? (
+                    blogTitles[0].slice(0, 20) + "..."
+                  ) : (
+                    <>
+                      A blog post has not been added yet.
+                    </>
+                  )}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -355,7 +406,7 @@ export default function CaseStudiesShowcase() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                Be Audit-Ready: How PEx Software Simplifies ISO Audits.
+                  {blogTitles[1] || "Blog post is not added yet."}
                 </h3>
 
                 <div className="flex flex-col gap-3">
