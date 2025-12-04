@@ -166,9 +166,26 @@ export default function CaseStudiesShowcaseQuality() {
                   height={0}
                   src="/Asset 20.svg"
                   alt="Background Decoration"
-                  className="invisible"
                 />
-      
+                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
+                  <p> Be Audit-Ready:</p>
+                  <p>How PEx Software</p>
+                  <p>Simplifies ISO Audits.</p>
+                </div>
+                <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
+                  <p className="text-sm text-yellow-400">CASE STUDY</p>
+                  <motion.button
+                    className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => router.push("/blog")}
+                  >
+                    <div className="flex">
+                      Read More &nbsp;{" "}
+                      <ArrowRight className="w-5 h-5 text-black" />
+                    </div>
+                  </motion.button>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -330,8 +347,7 @@ export default function CaseStudiesShowcaseQuality() {
               </div>
             </motion.div>
 
-            {/* Third Card - PEx Solution Card */}
-            {/* <motion.div
+            <motion.div
               className="relative bg-[#4a5568] rounded-3xl p-8 pb-10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -348,7 +364,7 @@ export default function CaseStudiesShowcaseQuality() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                  How PEx solution saved 1.6 million in the first quarter
+                Be Audit-Ready: How PEx Software Simplifies ISO Audits.
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -365,7 +381,7 @@ export default function CaseStudiesShowcaseQuality() {
                   </motion.button>
                 </div>
               </div>
-            </motion.div> */}
+            </motion.div>
           </div>
         </div>
       </div>
