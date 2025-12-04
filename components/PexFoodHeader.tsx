@@ -35,7 +35,9 @@ export default function PexFoodHeader() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {String(t("pexFoodHeaderDesc1"))}
+                AUTOMATED
+
+
               </motion.p>
               <motion.p
                 className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold  sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -43,7 +45,7 @@ export default function PexFoodHeader() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                {String(t("pexFoodHeaderDesc2"))}
+               FOOD SAFETY MANGEMENT
               </motion.p>
               <motion.p
                 className="text-md  sm:text-md md:text-2xl lg:text-3xl  sm:mb-3 text-white drop-shadow-lg uppercase"
@@ -51,7 +53,7 @@ export default function PexFoodHeader() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-                   {String(t("pexFoodHeaderDesc3"))}   {String(t("pexFoodHeaderDesc4"))}
+                  PEx Software™ for FOOD SAFETY
             
               </motion.p>
              
