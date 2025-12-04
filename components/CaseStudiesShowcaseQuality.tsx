@@ -44,7 +44,7 @@ export default function CaseStudiesShowcaseQuality() {
   useEffect(() => {
     const fetchBlogTitles = async () => {
       try {
-        const response = await fetch("http://pex-sooty.vercel.app/api/blogs/non-monthly/2");
+        const response = await fetch("https://pex-sooty.vercel.app/api/blogs/non-monthly/2");
         const data: BlogApiResponse = await response.json();
         if (data.success && data.data.length >= 2) {
           setBlogTitles([data.data[0].title, data.data[1].title]);
