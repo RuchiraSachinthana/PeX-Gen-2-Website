@@ -106,14 +106,11 @@ export default function CaseStudiesShowcase() {
                   alt="Background Decoration"
                   className="absolute top-12 left-40"
                 />
-                <div className="absolute top-30 left-20">
-                  <p className="text-lg text-yellow-400">The ERP Trap:</p>
-                  <p className="text-sm text-white"> Why Digital </p>
-                  <p className="text-sm text-white"> Transformation    </p>
-                  <p className="text-sm text-white">  Fails   </p>
-                  <p className="text-sm text-white"> without Business  </p>
-                  <p className="text-sm text-white"> Process </p>
-                  <p className="text-sm text-white"> Re-engineering.</p>
+                <div className="absolute top-30 left-20 max-w-[150px]">
+                  <p className="text-lg text-yellow-400 mb-1">The ERP Trap:</p>
+                  <p className="text-sm text-white">
+                    Why Digital Transformation Fails without Business Process Re-engineering.
+                  </p>
                 </div>
               </motion.div>
               {/* center card */}
@@ -131,11 +128,8 @@ export default function CaseStudiesShowcase() {
                   alt="Background Decoration"
                 />
                 <div className="absolute top-20 left-8">
-                  <div className="mb-16 ml-7 text-left text-3xl text-white">
-                    <p>Sanju -</p>
-                    <p>Compliance</p>
-                    <p>Manager</p>
-                    <p>Her Story</p>
+                  <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
+                    <p>Sanju - Compliance Manager Her Story</p>
                   </div>
                   <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                     <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -167,10 +161,8 @@ export default function CaseStudiesShowcase() {
                   src="/Asset 20.svg"
                   alt="Background Decoration"
                 />
-                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
-                  <p> Be Audit-Ready:</p>
-                  <p>How PEx Software</p>
-                  <p>Simplifies ISO Audits.</p>
+                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
+                  <p>Be Audit-Ready: How PEx Software Simplifies ISO Audits.</p>
                 </div>
                 <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
                   <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -225,13 +217,9 @@ export default function CaseStudiesShowcase() {
                 <div
                   className="absolute  top-3 left-3 from-[#0e685b] to-[#05423b] rounded-md p-2 py-6 px-3"
                 >
-                  <p className="text-lg font- text-yellow-400">The ERP Trap:</p>
-                  <p className="text-[8px] text-white leading-tight">
-                  Why Digital <br />Transformation <br />Fails without 
-
-                  </p>
-                  <p className="text-[8px] text-white leading-tight">
-                  Business Process <br />Re-engineering.
+                  <p className="text-lg font- text-yellow-400 mb-1">The ERP Trap:</p>
+                  <p className="text-[8px] text-white leading-tight max-w-[100px]">
+                    Why Digital Transformation Fails without Business Process Re-engineering.
                   </p>
                 </div>
 
