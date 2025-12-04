@@ -675,7 +675,8 @@ export default function Footer() {
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <p className="text-white/80 text-sm">
-          © {new Date().getFullYear()} PEx Software Solutions. All rights reserved.
+          {/* © {new Date().getFullYear()} PEx Software Solutions. All rights reserved. */}
+          © 2026 PEx Software Solutions. All rights reserved.
         </p>
       </motion.div>
 
