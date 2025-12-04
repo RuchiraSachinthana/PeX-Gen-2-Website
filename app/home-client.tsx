@@ -20,6 +20,7 @@ import SocialsSection from "@/components/SocialSection";
 import WhatIsPexSection from "@/components/WhatIsPexSection";
 import { fetchBlogs } from "@/store/blogSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import PexGenTestamonialsSectionNew from "@/components/PexGenTestamonialsSectionNew";
 
 export default function HomePageClient() {
   const dispatch = useAppDispatch();
@@ -43,7 +44,8 @@ export default function HomePageClient() {
       <PexGenExploreSection />
       <ExperienceStatsSection />
       <PexGenManagementSection />
-      <PexGenTestamonialsSection />
+      {/* <PexGenTestamonialsSection /> */}
+       <PexGenTestamonialsSectionNew />
       <PexGenPartners />
       <CaseStudiesShowcase />
       <PexGenWhoWeAreSection />
