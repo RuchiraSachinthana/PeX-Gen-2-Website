@@ -13,7 +13,7 @@ export default function PexFoodHeader() {
         <div
           className="absolute inset-0 w-full md:h-full h-130 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/pex_food_header.webp')",
+            backgroundImage: "url('/PEX-Website---Food.jpg')",
             backgroundAttachment: "scroll",
           }}
         />

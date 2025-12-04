@@ -11,7 +11,7 @@ export default function PexQualityHeader() {
       <div
         className="absolute inset-0 w-full md:h-full h-130 bg-cover bg-no-repeat"
         style={{
-          backgroundImage: "url('/PEX-Quality-Header.webp')",
+          backgroundImage: "url('/PEX-Quality-Header.jpg')",
           backgroundAttachment: "scroll",
           backgroundPosition: typeof window !== 'undefined' && window.innerWidth < 768 ? "30% center" : "50% center",
         }}
