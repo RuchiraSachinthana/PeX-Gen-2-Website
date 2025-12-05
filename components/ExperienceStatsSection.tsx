@@ -102,7 +102,7 @@ export const ExperienceStatsSection: FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <motion.button
+                {/* <motion.button
                   className="bg-cyan-500 text-black py-2.5 px-6 rounded-full flex items-center gap-2 text-md hover:bg-cyan-600 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -110,8 +110,8 @@ export const ExperienceStatsSection: FC = () => {
                 >
                   <span>{buttons.readMore}</span>
                   <ArrowRight className="w-5 h-5 text-black" />
-                </motion.button>
-                <motion.button
+                </motion.button> */}
+                {/* <motion.button
                   className="bg-yellow-400 text-black py-2.5 px-6 rounded-full flex items-center gap-2 text-md hover:bg-yellow-500 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -120,7 +120,7 @@ export const ExperienceStatsSection: FC = () => {
                   <span>{buttons.learnMore}</span>
                   <ArrowRight className="w-5 h-5 text-black" />
                 </motion.button>
-                <span className="text-yellow-400 text-sm">{promoText}</span>
+                 */}
               </motion.div>
             </motion.div>
 
@@ -139,7 +139,7 @@ export const ExperienceStatsSection: FC = () => {
             >
               <ReusableShape
                 width={320}
-                height={170}
+                height={200}
                 cutoutWidth={80}
                 cutoutHeight={80}
                 cutoutRadius={16}
@@ -180,6 +180,7 @@ export const ExperienceStatsSection: FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.7, duration: 0.5 }}
                 >
+                 
                   <h3 className="text-3xl text-teal-700 mb-2">
                     {demoCard.titleLines.map((line: string, index: number) => (
                       <Fragment key={index}>
@@ -192,7 +193,7 @@ export const ExperienceStatsSection: FC = () => {
 
                 {/* CTA row */}
                 <motion.div
-                  className="flex items-center gap-4"
+                  className="flex items-center gap-8 justify-end"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -224,8 +225,17 @@ export const ExperienceStatsSection: FC = () => {
                         d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                       />
                     </svg>
+                    
                   </motion.button>
                 </motion.div>
+                
+                {/* Promo text below button */}
+                <div className="text-right  mt-2">
+                  <span className="text-teal-700 text-sm flex items-center justify-end gap-1">
+                    {promoText}
+                    <ArrowRight className="w-5 h-5" />
+                  </span>
+                </div>
               </ReusableShape>
             </motion.div>
           </div>
@@ -300,7 +310,7 @@ export const ExperienceStatsSection: FC = () => {
                 </h3>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-4">
                 <span className="text-teal-700 uppercase text-[9px] ">
                   {demoCard.connectLabel}
                 </span>
@@ -316,11 +326,19 @@ export const ExperienceStatsSection: FC = () => {
                   <ArrowRight className="w-3 h-3" />
                 </motion.button>
               </div>
+              
+              {/* Promo text below button - Mobile */}
+              <div className="text-right mt-2">
+                <span className="text-teal-700 text-[10px] flex items-center justify-end gap-1">
+                  {promoText}
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
             </div>
           </motion.div>
 
           {/* Bottom Buttons - ONE LINE, SMALLER */}
-          <motion.div
+          {/* <motion.div
             className="flex items-center gap-2 flex-nowrap"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -348,7 +366,7 @@ export const ExperienceStatsSection: FC = () => {
             <span className="text-yellow-400 text-[9px] font-medium whitespace-nowrap">
               ← {promoText}
             </span>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
     </>
