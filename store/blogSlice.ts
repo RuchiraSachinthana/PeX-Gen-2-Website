@@ -109,6 +109,13 @@ const blogSlice = createSlice({
       state.error = null;
       state.lastFetchedAt = null;
     },
+    addBlog(state, action) {
+      const blog = action.payload;
+      // Only add if it doesn't already exist
+      if (!state.items.find((b) => b._id === blog._id)) {
+        state.items.push(blog);
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -135,6 +142,6 @@ const blogSlice = createSlice({
   },
 });
 
-export const { setCurrentPage, clearBlogs } = blogSlice.actions;
+export const { setCurrentPage, clearBlogs, addBlog } = blogSlice.actions;
 export default blogSlice.reducer;
 

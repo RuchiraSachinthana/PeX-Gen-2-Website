@@ -11,6 +11,11 @@ interface Blog {
   title: string;
 }
 
+interface BlogInfo {
+  id: string | null;
+  title: string | null;
+}
+
 interface BlogApiResponse {
   success: boolean;
   data: Blog[];
@@ -27,9 +32,9 @@ interface BlogApiResponse {
 export default function CaseStudiesShowcase() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [blogTitles, setBlogTitles] = useState<[string | null, string | null]>([
-    null,
-    null,
+  const [blogInfo, setBlogInfo] = useState<[BlogInfo, BlogInfo]>([
+    { id: null, title: null },
+    { id: null, title: null },
   ]);
 
   const scrollRight = () => {
@@ -47,9 +52,12 @@ export default function CaseStudiesShowcase() {
         const response = await fetch("https://pex-sooty.vercel.app/api/blogs/non-monthly/0");
         const data: BlogApiResponse = await response.json();
         if (data.success && data.data.length > 0) {
-          const firstTitle = data.data[0]?.title || null;
-          const secondTitle = data.data[1]?.title || null;
-          setBlogTitles([firstTitle, secondTitle]);
+          const firstBlog = data.data[0];
+          const secondBlog = data.data[1];
+          setBlogInfo([
+            { id: firstBlog?._id || null, title: firstBlog?.title || null },
+            { id: secondBlog?._id || null, title: secondBlog?.title || null },
+          ]);
         }
       } catch (error) {
         console.error("Error fetching blog titles:", error);
@@ -169,8 +177,8 @@ export default function CaseStudiesShowcase() {
                 />
                 <div className="absolute top-20 left-8">
                   <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
-                    {blogTitles[0] ? (
-                      <p>{blogTitles[0].slice(0, 45) + " ..."}</p>
+                    {blogInfo[0].title ? (
+                      <p>{blogInfo[0].title.length > 45 ? blogInfo[0].title.slice(0, 45) + "..." : blogInfo[0].title}</p>
                     ) : (
                       <p>A blog post has not been added yet.</p>
                     )}
@@ -181,7 +189,7 @@ export default function CaseStudiesShowcase() {
                       className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => router.push("/blog")}
+                      onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
                     >
                       <div className="flex">
                         Read More &nbsp;
@@ -206,8 +214,8 @@ export default function CaseStudiesShowcase() {
                   alt="Background Decoration"
                 />
                 <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
-                  {blogTitles[1] ? (
-                    <p>{blogTitles[1].slice(0, 45) + " ..."}</p>
+                  {blogInfo[1].title ? (
+                    <p>{blogInfo[1].title.length > 45 ? blogInfo[1].title.slice(0, 45) + "..." : blogInfo[1].title}</p>
                   ) : (
                     <p>A blog post has not been added yet.</p>
                   )}
@@ -218,7 +226,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
                   >
                     <div className="flex">
                       Read More &nbsp;{" "}
@@ -365,8 +373,8 @@ export default function CaseStudiesShowcase() {
 
               <div className="p-4">
                 <h3 className="text-white text-2xl mb-2">
-                  {blogTitles[0] ? (
-                    blogTitles[0].slice(0, 20) + "..."
+                  {blogInfo[0].title ? (
+                    blogInfo[0].title.length > 20 ? blogInfo[0].title.slice(0, 20) + "..." : blogInfo[0].title
                   ) : (
                     <>
                       A blog post has not been added yet.
@@ -382,7 +390,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
                   >
                     Read More
                   </motion.button>
@@ -408,7 +416,7 @@ export default function CaseStudiesShowcase() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                  {blogTitles[1] || "Blog post is not added yet."}
+                  {blogInfo[1].title || "Blog post is not added yet."}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -419,7 +427,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
                   >
                     Read More
                   </motion.button>
