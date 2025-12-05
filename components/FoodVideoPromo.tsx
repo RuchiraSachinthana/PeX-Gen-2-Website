@@ -46,7 +46,7 @@ export default function FoodVideoPromoSection() {
 
           {/* Video - Mobile */}
           <motion.div
-            className="relative w-full h-64 bg-emerald-400 rounded-3xl p-1 shadow-2xl z-0"
+            className="relative w-full h-64 rounded-3xl p-1 shadow-2xl z-0 bg-[linear-gradient(to_bottom_right,#0e685b,#10b981,#0e685b)]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
