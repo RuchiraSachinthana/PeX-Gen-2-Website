@@ -52,7 +52,7 @@ export default function SocialSection() {
           alt="Layer background"
           width={1500}
           height={0}
-          className="absolute right-[-800px] top-0 z-0 object-cover"
+          className="absolute right-[-800px] top-[-10px] z-0 object-cover"
         />
 
         {/* Content with relative positioning to stay above the background layer */}
