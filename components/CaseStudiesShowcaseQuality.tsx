@@ -46,8 +46,10 @@ export default function CaseStudiesShowcaseQuality() {
       try {
         const response = await fetch("https://pex-sooty.vercel.app/api/blogs/non-monthly/2");
         const data: BlogApiResponse = await response.json();
-        if (data.success && data.data.length >= 2) {
-          setBlogTitles([data.data[0].title, data.data[1].title]);
+        if (data.success && data.data.length > 0) {
+          const firstTitle = data.data[0]?.title || null;
+          const secondTitle = data.data[1]?.title || null;
+          setBlogTitles([firstTitle, secondTitle]);
         }
       } catch (error) {
         console.error("Error fetching blog titles:", error);

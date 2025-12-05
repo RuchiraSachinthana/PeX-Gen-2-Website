@@ -47,8 +47,10 @@ export default function FoodCaseStudiesShowcase() {
       try {
         const response = await fetch("https://pex-sooty.vercel.app/api/blogs/non-monthly/1");
         const data: BlogApiResponse = await response.json();
-        if (data.success && data.data.length >= 2) {
-          setBlogTitles([data.data[0].title, data.data[1].title]);
+        if (data.success && data.data.length > 0) {
+          const firstTitle = data.data[0]?.title || null;
+          const secondTitle = data.data[1]?.title || null;
+          setBlogTitles([firstTitle, secondTitle]);
         }
       } catch (error) {
         console.error("Error fetching blog titles:", error);
@@ -168,7 +170,7 @@ export default function FoodCaseStudiesShowcase() {
               <div className="absolute top-20 left-8">
                   <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
                     {blogTitles[0] ? (
-                      <p>{blogTitles[0].slice(0, 45) + " ..."}</p>
+                      <p>{blogTitles[0].length > 45 ? blogTitles[0].slice(0, 45) + "..." : blogTitles[0]}</p>
                     ) : (
                       <p>A blog post has not been added yet.</p>
                     )}
@@ -205,7 +207,7 @@ export default function FoodCaseStudiesShowcase() {
                 />
                 <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
                   {blogTitles[1] ? (
-                    <p>{blogTitles[1].slice(0, 45) + " ..."}</p>
+                    <p>{blogTitles[1].length > 45 ? blogTitles[1].slice(0, 45) + "..." : blogTitles[1]}</p>
                   ) : (
                     <p>A blog post has not been added yet.</p>
                   )}
