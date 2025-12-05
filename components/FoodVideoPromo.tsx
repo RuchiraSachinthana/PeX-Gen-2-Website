@@ -286,7 +286,7 @@ export default function FoodVideoPromoSection() {
           </motion.div>
           {/* right section */}
           <motion.div
-            className="relative w-3/7 h-90 bg-emerald-400 rounded-3xl p-2 shadow-2xl "
+            className="relative w-3/7 h-90 rounded-3xl p-2 shadow-2xl bg-[linear-gradient(to_bottom_right,#0e685b,#10b981,#0e685b)] "
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
