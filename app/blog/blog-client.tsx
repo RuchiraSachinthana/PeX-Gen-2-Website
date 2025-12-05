@@ -10,6 +10,7 @@ import BlogContentSection from "../../components/BlogContentSection";
 import BlogContentSectionDynamic from "../../components/BlogContentSectionDynamic";
 import { fetchBlogs, addBlog } from "@/store/blogSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import BlogCaseStudiesShowcase from "@/components/BlogCaseStudiesShowcase";
 
 export default function BlogPageClient() {
   const dispatch = useAppDispatch();
@@ -119,7 +120,7 @@ export default function BlogPageClient() {
         <BlogContentSection />
       )}
 
-      <CaseStudiesShowcase />
+      <BlogCaseStudiesShowcase />
       <SocialsSection />
       <Footer />
     </div>
