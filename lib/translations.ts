@@ -221,7 +221,7 @@ export const translations = {
         learnMore: "Learn more",
         bookNow: "Book now"
       },
-      promoText: "← Free seminar",
+      promoText: "Free seminar",
       demoCard: {
         titleLines: ["Request", "demo"],
         connectLabel: "LET'S CONNECT"
