@@ -9,6 +9,13 @@ const PexGenTestamonialsSectionNew = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
+     {
+      image: "/Leader (6).png",
+      message:
+        "PEx Software has added significant value to our Food Safety Management program. We have found PEx Software to be an excellent tool for managing food safety in a completely paperless environment, thereby improving efficiency in our processes.",
+      name: "Mangala Hemananda",
+      designation: "Executive Manager - Radisson Hotel Kandy",
+    },
     {
       image: "/Leader (1).png",
       message:
@@ -19,7 +26,7 @@ const PexGenTestamonialsSectionNew = () => {
     {
       image: "/Leader (3).png",
       message:
-        "The dedication and professionalism demonstrated by all members of the team from Swiss Advantage Systems is highly commendable and has helped our organization achieve a high level of standardization through the introduction of best practices in management systems via PEx Software™ system.",
+        "We are happy to inform that PEx Software solution has fully met with our requirements to our entire satisfaction. Even the external compliance auditors have been delighted with this system and have commended it’s benefits in meeting with ISO compliance requirements.",
       name: "Sarath Ranasinghe",
       designation: "General Manager - E B Creasy - Denta Tooth Brush Factory",
     },
@@ -33,16 +40,23 @@ const PexGenTestamonialsSectionNew = () => {
     {
       image: "/Leader (4).png",
       message:
-        "The introduction of the PEx Software Solution developed and implemented by Swiss Advantage Systems has greatly contributed to enhancing our EHS and Quality culture throughout our organization in a paperless environment. We have no hesitation in recommending their products and services to any organization.",
+        "The introduction of the PEx Software Solution greatly contributed to enhance our EHS and Quality culture throughout our organization in a paperless environment.",
       name: "Ricky Barnett",
       designation: "Director - Hayleys Energy Services Lanka (Pvt) Ltd.",
     },
     {
       image: "/Leader (5).png",
       message:
-        "The ISO Certification Auditors were fully satisfied and commended on the excellent features of the PEx Software system. We consider our decision to invest on the PEx Software is well worth and in the right direction our organization is taking in automating all our business and manufacturing processes.",
+        "We consider our decision to invest in the PEx Software Solution is well worth, and the right direction our organization is taking in automating all our business and manufacturing processes.",
       name: "Randy Roche",
       designation: "Director / General Manager - Packwell Lanka (Pvt) Ltd",
+    },
+    {
+      image: "/Leader (7).png",
+      message:
+        "We have found the Pex Software to be an excellent solution to our total quality management system. It is very user friendly and helped us reduce our paper work to a great extent.",
+      name: "Hemani Gunathileke",
+      designation: "Head of Quality Assurance – Serendib Flour Mills",
     },
   ];
 
