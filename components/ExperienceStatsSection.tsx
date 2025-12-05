@@ -310,7 +310,7 @@ export const ExperienceStatsSection: FC = () => {
                 </h3>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-4">
                 <span className="text-teal-700 uppercase text-[9px] ">
                   {demoCard.connectLabel}
                 </span>
@@ -326,11 +326,19 @@ export const ExperienceStatsSection: FC = () => {
                   <ArrowRight className="w-3 h-3" />
                 </motion.button>
               </div>
+              
+              {/* Promo text below button - Mobile */}
+              <div className="text-right mt-2">
+                <span className="text-teal-700 text-[10px] flex items-center justify-end gap-1">
+                  {promoText}
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
             </div>
           </motion.div>
 
           {/* Bottom Buttons - ONE LINE, SMALLER */}
-          <motion.div
+          {/* <motion.div
             className="flex items-center gap-2 flex-nowrap"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -358,7 +366,7 @@ export const ExperienceStatsSection: FC = () => {
             <span className="text-yellow-400 text-[9px] font-medium whitespace-nowrap">
               ← {promoText}
             </span>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
     </>
