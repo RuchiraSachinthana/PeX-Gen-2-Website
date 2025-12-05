@@ -99,7 +99,7 @@ export const FoodExperienceStatsSection: FC = () => {
                 </div>
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 className="flex items-center gap-3"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }} // CHANGED
@@ -125,7 +125,7 @@ export const FoodExperienceStatsSection: FC = () => {
                   <ArrowRight className="w-5 h-5 text-black" />
                 </motion.button>
                 <span className="text-yellow-400 text-sm ">{promoText}</span>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
 
             {/* Middle Section - Person Image (empty for now) */}
@@ -147,7 +147,7 @@ export const FoodExperienceStatsSection: FC = () => {
                 viewport={{ once: true }} // ADDED
                 transition={{ delay: 0.7, duration: 0.5 }}
               >
-                <h3 className="text-3xl top-40 right-55 absolute text-teal-700 mb-2">
+                <h3 className="text-3xl top-28 right-55 absolute text-teal-700 mb-2">
                   {demoCard.titleLines.map((line: string, index: number) => (
                     <Fragment key={index}>
                       {line}
@@ -159,7 +159,7 @@ export const FoodExperienceStatsSection: FC = () => {
 
               {/* CTA row */}
               <motion.div
-                className="flex items-center absolute top-60 right-20 gap-4"
+                className="flex items-center absolute top-47 right-20 gap-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }} // CHANGED
                 viewport={{ once: true }} // ADDED
@@ -177,6 +177,7 @@ export const FoodExperienceStatsSection: FC = () => {
                   data-cal-config='{"layout":"month_view"}'
                 >
                   <span className="text-md">{buttons.bookNow}</span>
+                  
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -192,7 +193,16 @@ export const FoodExperienceStatsSection: FC = () => {
                     />
                   </svg>
                 </motion.button>
+                
               </motion.div>
+              
+              {/* Promo text below button - Desktop */}
+              <div className="absolute top-60 right-20 text-right">
+                <span className="text-teal-700 text-sm flex items-center justify-end gap-1">
+                  {promoText}
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
               <Image
                 src="/Asset 47.svg"
                 alt="Avatar 1"
@@ -292,38 +302,18 @@ export const FoodExperienceStatsSection: FC = () => {
                   <ArrowRight className="w-3 h-3" />
                 </motion.button>
               </div>
+              
+              {/* Promo text below button - Mobile */}
+              <div className="text-right mr-1 mt-2">
+                <span className="text-teal-700 text-[10px] flex items-center justify-end gap-1">
+                  {promoText}
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
             </div>
           </motion.div>
 
-          {/* Bottom Buttons - ONE LINE, SMALLER */}
-          <motion.div
-            className="flex items-center gap-2 flex-nowrap"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <motion.button
-              className="bg-cyan-500 text-black py-1.5 px-3 rounded-full flex items-center gap-1 text-[10px] font-medium whitespace-nowrap"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => router.push("/blog")}
-            >
-              <span>{buttons.readMore}</span>
-              <ArrowRight className="w-3 h-3" />
-            </motion.button>
-            <motion.button
-              className="bg-yellow-400 text-black py-1.5 px-3 rounded-full flex items-center gap-1 text-[10px] font-medium whitespace-nowrap"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>{buttons.learnMore}</span>
-              <ArrowRight className="w-3 h-3" />
-            </motion.button>
-            <span className="text-yellow-400 text-[9px] font-medium whitespace-nowrap">
-              ← {promoText}
-            </span>
-          </motion.div>
+         
         </div>
       </section>
     </>

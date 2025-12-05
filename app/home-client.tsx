@@ -21,6 +21,7 @@ import WhatIsPexSection from "@/components/WhatIsPexSection";
 import { fetchBlogs } from "@/store/blogSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import PexGenTestamonialsSectionNew from "@/components/PexGenTestamonialsSectionNew";
+import BlogCaseStudiesShowcase from "@/components/BlogCaseStudiesShowcase";
 
 export default function HomePageClient() {
   const dispatch = useAppDispatch();
@@ -47,7 +48,8 @@ export default function HomePageClient() {
       {/* <PexGenTestamonialsSection /> */}
        <PexGenTestamonialsSectionNew />
       <PexGenPartners />
-      <CaseStudiesShowcase />
+      {/* <CaseStudiesShowcase /> */}
+        <BlogCaseStudiesShowcase />
       <PexGenWhoWeAreSection />
       <PexGenPhilosopySection />
       <PexGenMeetLeaders />
