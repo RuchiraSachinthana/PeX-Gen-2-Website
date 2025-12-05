@@ -1,6 +1,7 @@
 "use client";
 
 import AdditionalContentSection from "@/components/AdditionalContentSection";
+import BlogCaseStudiesShowcase from "@/components/BlogCaseStudiesShowcase";
 import FAQSectionFood from "@/components/FAQSectionFood";
 import FoodCaseStudiesShowcase from "@/components/FoodCaseStudiesShowcase";
 import { FoodExperienceStatsSection } from "@/components/FoodExperienceStatsSection";
@@ -20,7 +21,8 @@ export default function PexFoodPageClient() {
       <FoodVideoPromoSection />
       <SevenWaysBenefits />
       <LinkedInFollowSection />
-      <FoodCaseStudiesShowcase />
+      {/* <FoodCaseStudiesShowcase /> */}
+      <BlogCaseStudiesShowcase />
       <FoodThreeKeyPointsIntroSection />
       <FoodExperienceStatsSection />
       <FAQSectionFood   />

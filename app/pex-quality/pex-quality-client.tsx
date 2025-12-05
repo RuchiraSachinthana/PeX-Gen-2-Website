@@ -9,6 +9,7 @@ import KeyPointsIntroSection from "@/components/KeyPointsIntroSection";
 import SocialsSection from "@/components/SocialSection";
 import VideoPromoSection from "@/components/VideoPromoSection";
 import PexQualityHeader from "./../../components/PexQualityHeader";
+import BlogCaseStudiesShowcase from "@/components/BlogCaseStudiesShowcase";
 
 export default function PexQualityPageClient() {
   return (
@@ -16,7 +17,8 @@ export default function PexQualityPageClient() {
       <PexQualityHeader />
       <VideoPromoSection />
       <BusinessImprovementSlider />
-      <CaseStudiesShowcaseQuality />
+      {/* <CaseStudiesShowcaseQuality /> */}
+      <BlogCaseStudiesShowcase/>
       <KeyPointsIntroSection />
       <ExperienceStatsSection />
       <FAQSection />

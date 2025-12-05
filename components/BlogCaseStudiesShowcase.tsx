@@ -24,7 +24,7 @@ export default function BlogCaseStudiesShowcase() {
       {/* Desktop Version - Hidden on mobile */}
       <div
         style={{
-          backgroundImage: 'url("/Asset 18.svg")',
+          backgroundImage: 'url("/Asset 23.webp")',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -93,7 +93,7 @@ export default function BlogCaseStudiesShowcase() {
                         
                 <div className="absolute bottom-3 left-10">
                   
-                  <p className="text-[10px] mb-5 ml-10 text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                  <p className="text-[10px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
