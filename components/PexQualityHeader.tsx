@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import { useTranslation } from "../context/LanguageProvider";
 import HeroHeader from "./HeroHeader";
 
 export default function PexQualityHeader() {
-  const { t } = useTranslation();
-
   return (
     <div className="relative w-full md:min-h-screen flex items-center py-5 md:py-0 justify-center overflow-hidden">
       {/* Background Image - Fixed and Responsive */}

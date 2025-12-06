@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import BlogHeader from "@/components/BlogHeader";
-import CaseStudiesShowcase from "@/components/CaseStudiesShowcase";
 import Footer from "@/components/Footer";
 import SocialsSection from "@/components/SocialSection";
 import BlogContentSection from "../../components/BlogContentSection";

@@ -1,10 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTranslation } from "../context/LanguageProvider";
 import HeroHeader from "./HeroHeader";
 
 export default function PexFoodHeader() {
-  const { t } = useTranslation();
   return (
     <>
       {/* Hero Section with Background Image */}

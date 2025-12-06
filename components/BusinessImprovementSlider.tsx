@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import type { FC } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReusableShape from "./ReusableShape";
 import { useRouter } from "next/navigation";
 

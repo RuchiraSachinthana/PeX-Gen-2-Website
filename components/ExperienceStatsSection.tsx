@@ -7,11 +7,9 @@ import { Fragment, useEffect } from "react";
 import { useTranslation } from "../context/LanguageProvider";
 import { getCalApi } from "@calcom/embed-react";
 import ReusableShape from "./ReusableShape";
-import { useRouter } from "next/navigation";
 
 export const ExperienceStatsSection: FC = () => {
   const { t } = useTranslation();
-  const router = useRouter();
 
   // Initialize Cal.com
   useEffect(() => {

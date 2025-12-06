@@ -12,16 +12,13 @@ import PexGenManagementSection from "@/components/PexGenManagementSection";
 import PexGenMeetLeaders from "@/components/PexGenMeetLeaders";
 import PexGenPartners from "@/components/PexGenPartners";
 import PexGenPhilosopySection from "@/components/PexGenPhilosopySection";
-import PexGenTestamonialsSection from "@/components/PexGenTestamonialsSection";
 import PexGenVideoSection from "@/components/PexGenVideoSection";
 import PexGenWhoWeAreSection from "@/components/PexGenWhoWeAreSection";
-import PexGenWhyMattersSection from "@/components/PexGenWhyMattersSection";
 import SocialsSection from "@/components/SocialSection";
 import WhatIsPexSection from "@/components/WhatIsPexSection";
 import { fetchBlogs } from "@/store/blogSlice";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import PexGenTestamonialsSectionNew from "@/components/PexGenTestamonialsSectionNew";
-import BlogCaseStudiesShowcase from "@/components/BlogCaseStudiesShowcase";
 
 export default function HomePageClient() {
   const dispatch = useAppDispatch();

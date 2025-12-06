@@ -5,12 +5,10 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Fragment, type FC, useEffect } from "react";
 import { useTranslation } from "../context/LanguageProvider";
-import { useRouter } from "next/navigation";
 import { getCalApi } from "@calcom/embed-react";
 
 export const FoodExperienceStatsSection: FC = () => {
   const { t } = useTranslation();
-  const router = useRouter();
   
   // Initialize Cal.com
   useEffect(() => {
