@@ -24,7 +24,7 @@ export default function CaseStudiesShowcase() {
       {/* Desktop Version - Hidden on mobile */}
       <div
         style={{
-          backgroundImage: 'url("/Asset 18.svg")',
+          backgroundImage: 'url("/Asset 23.webp")',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -78,40 +78,48 @@ export default function CaseStudiesShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.3 }}
+                className="relative"
               >
                 <Image
                   width={440}
                   height={0}
-                  src="/qs4 (4).webp"
+                  src="/Asset 81.png"
                   alt="Background Decoration"
+                  className="border-4 border-teal-700 rounded-4xl opacity-80"
                 />
-                {/* transparent image */}
-                <div className="absolute top-10 left-10 transparent opacity-20">
-                  <Image
-                    width={190}
-                    height={0}
-                    src="/Asset 21.svg"
-                    alt="Background Decoration"
-                  />
-                </div>            
+                
+                {/* Green gradient overlay from bottom to half */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-4xl pointer-events-none" />
+                        
                 <div className="absolute bottom-3 left-10">
-                  <p className="text-sm ml-10 text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                  
+                  <p className="text-[10px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
-                <Image
-                  width={60}
-                  height={0}
-                  src="/Asset 22.svg"
-                  alt="Background Decoration"
-                  className="absolute top-12 left-40"
-                />
-                <div className="absolute top-30 left-20 max-w-[150px]">
-                  <p className="text-lg text-yellow-400 mb-1">The ERP Trap:</p>
-                  <p className="text-sm text-white">
-                    Why Digital Transformation Fails without Business Process Re-engineering.
+                
+                <div className="absolute top-5 left-5 max-w-[170px] bg-teal-700 p-4 rounded-2xl">
+                  
+                  <p className="text-xl text-white">
+                    First time in her whole career she felt relieved from work stress...
                   </p>
+                  <div className="mt-5 text-white">
+                    <p className="text-md">Sanju</p>
+                    <p className="text-[8px] text-white">
+                    quality and compliance officer 
+                  </p></div>
+                  
                 </div>
+                
+                {/* Yellow arrow button at bottom right */}
+                <motion.button
+                  className="absolute bottom-3 right-3 bg-yellow-400 p-3 rounded-2xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push("/blog")}
+                >
+                  <ArrowRight className="w-7 h-7 text-black -rotate-45" />
+                </motion.button>
               </motion.div>
               {/* center card */}
               <motion.div
@@ -189,7 +197,7 @@ export default function CaseStudiesShowcase() {
         {/* First Card with Background Image */}
         <div
           style={{
-            backgroundImage: 'url("/Asset 18.svg")',
+            backgroundImage: 'url("/Asset 23.webp")',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
@@ -209,26 +217,43 @@ export default function CaseStudiesShowcase() {
                 <Image
                   width={180}
                   height={0}
-                  src="/qs4 (4).webp"
+                  src="/Asset 81.png"
                   alt="Success Story"
-                  className="w-full h-auto rounded-2xl"
+                  className="w-full h-auto rounded-2xl border-2 border-teal-700 opacity-80"
                 />
-                {/* 90% Badge */}
-                <div
-                  className="absolute  top-3 left-3 from-[#0e685b] to-[#05423b] rounded-md p-2 py-6 px-3"
-                >
-                  <p className="text-lg font- text-yellow-400 mb-1">The ERP Trap:</p>
-                  <p className="text-[8px] text-white leading-tight max-w-[100px]">
-                    Why Digital Transformation Fails without Business Process Re-engineering.
+                
+                {/* Green gradient overlay from bottom to half */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-2xl pointer-events-none" />
+                
+                {/* Testimonial content box */}
+                <div className="absolute top-2 left-2 max-w-[80px] bg-teal-700 p-2 rounded-xl">
+                  <p className="text-[8px] text-white">
+                    First time in her whole career she felt relieved from work stress...
                   </p>
+                  <div className="mt-2 text-white">
+                    <p className="text-[10px] font-medium">Sanju</p>
+                    <p className="text-[4px] text-white">
+                      quality and compliance officer 
+                    </p>
+                  </div>
                 </div>
 
                 {/* Small label at bottom */}
-                <div className="absolute bottom-3 left-3">
-                  <p className="text-[8px] text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                <div className="absolute bottom-2 left-2">
+                  <p className="text-[5px] text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
+                
+                {/* Yellow arrow button at bottom right */}
+                <motion.button
+                  className="absolute bottom-2 right-2 bg-yellow-400 p-2 rounded-md"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push("/blog")}
+                >
+                  <ArrowRight className="w-4 h-4 text-black -rotate-45" />
+                </motion.button>
               </div>
 
               {/* Right side - Title and Images */}
