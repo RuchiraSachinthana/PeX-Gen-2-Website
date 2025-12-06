@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import BlogPageClient from "./blog-client";
 
 export const metadata: Metadata = {
@@ -46,5 +47,9 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  return <BlogPageClient />;
+  return (
+    <Suspense fallback={<div className="w-full min-h-screen flex items-center justify-center">Loading...</div>}>
+      <BlogPageClient />
+    </Suspense>
+  );
 }

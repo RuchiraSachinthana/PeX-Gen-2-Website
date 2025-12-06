@@ -4,11 +4,38 @@ import { motion } from "framer-motion"; // Import motion
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
+interface Blog {
+  _id: string;
+  title: string;
+}
+
+interface BlogInfo {
+  id: string | null;
+  title: string | null;
+}
+
+interface BlogApiResponse {
+  success: boolean;
+  data: Blog[];
+  pagination: {
+    current_page: number;
+    total_pages: number;
+    total_blogs: number;
+    per_page: number;
+    has_next: boolean;
+    has_prev: boolean;
+  };
+}
 
 export default function CaseStudiesShowcase() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [blogInfo, setBlogInfo] = useState<[BlogInfo, BlogInfo]>([
+    { id: null, title: null },
+    { id: null, title: null },
+  ]);
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
@@ -18,6 +45,27 @@ export default function CaseStudiesShowcase() {
       });
     }
   };
+
+  useEffect(() => {
+    const fetchBlogTitles = async () => {
+      try {
+        const response = await fetch("https://pex-sooty.vercel.app/api/blogs/non-monthly/0");
+        const data: BlogApiResponse = await response.json();
+        if (data.success && data.data.length > 0) {
+          const firstBlog = data.data[0];
+          const secondBlog = data.data[1];
+          setBlogInfo([
+            { id: firstBlog?._id || null, title: firstBlog?.title || null },
+            { id: secondBlog?._id || null, title: secondBlog?.title || null },
+          ]);
+        }
+      } catch (error) {
+        console.error("Error fetching blog titles:", error);
+      }
+    };
+
+    fetchBlogTitles();
+  }, []);
 
   return (
     <>
@@ -137,7 +185,11 @@ export default function CaseStudiesShowcase() {
                 />
                 <div className="absolute top-20 left-8">
                   <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
-                    <p>Sanju - Compliance Manager Her Story</p>
+                    {blogInfo[0].title ? (
+                      <p>{blogInfo[0].title.length > 45 ? blogInfo[0].title.slice(0, 45) + "..." : blogInfo[0].title}</p>
+                    ) : (
+                      <p>A blog post has not been added yet.</p>
+                    )}
                   </div>
                   <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                     <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -145,7 +197,7 @@ export default function CaseStudiesShowcase() {
                       className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => router.push("/blog")}
+                      onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
                     >
                       <div className="flex">
                         Read More &nbsp;
@@ -170,7 +222,11 @@ export default function CaseStudiesShowcase() {
                   alt="Background Decoration"
                 />
                 <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
-                  <p>Be Audit-Ready: How PEx Software Simplifies ISO Audits.</p>
+                  {blogInfo[1].title ? (
+                    <p>{blogInfo[1].title.length > 45 ? blogInfo[1].title.slice(0, 45) + "..." : blogInfo[1].title}</p>
+                  ) : (
+                    <p>A blog post has not been added yet.</p>
+                  )}
                 </div>
                 <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
                   <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -178,7 +234,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
                   >
                     <div className="flex">
                       Read More &nbsp;{" "}
@@ -342,8 +398,13 @@ export default function CaseStudiesShowcase() {
 
               <div className="p-4">
                 <h3 className="text-white text-2xl mb-2">
-                Sanju - Compliance Manager.<br />
-                Her Story
+                  {blogInfo[0].title ? (
+                    blogInfo[0].title.length > 20 ? blogInfo[0].title.slice(0, 20) + "..." : blogInfo[0].title
+                  ) : (
+                    <>
+                      A blog post has not been added yet.
+                    </>
+                  )}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -354,7 +415,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
                   >
                     Read More
                   </motion.button>
@@ -380,7 +441,7 @@ export default function CaseStudiesShowcase() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                Be Audit-Ready: How PEx Software Simplifies ISO Audits.
+                  {blogInfo[1].title || "Blog post is not added yet."}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -391,7 +452,7 @@ export default function CaseStudiesShowcase() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
                   >
                     Read More
                   </motion.button>

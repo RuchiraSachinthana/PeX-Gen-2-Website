@@ -7,7 +7,7 @@ export const translations = {
     navBlog: "Blog",
     navContact: "Contact",
     navPex: "PEX Solutions",
-    navPexGen: "PEX Gen",
+    navPexGen: "Home",
     navPexQuality: "PEX Quality",
     navPexFood: "PEX Food",
 

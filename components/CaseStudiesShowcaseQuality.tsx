@@ -4,11 +4,38 @@ import { motion } from "framer-motion"; // Import motion
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+
+interface Blog {
+  _id: string;
+  title: string;
+}
+
+interface BlogInfo {
+  id: string | null;
+  title: string | null;
+}
+
+interface BlogApiResponse {
+  success: boolean;
+  data: Blog[];
+  pagination: {
+    current_page: number;
+    total_pages: number;
+    total_blogs: number;
+    per_page: number;
+    has_next: boolean;
+    has_prev: boolean;
+  };
+}
 
 export default function CaseStudiesShowcaseQuality() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [blogInfo, setBlogInfo] = useState<[BlogInfo, BlogInfo]>([
+    { id: null, title: null },
+    { id: null, title: null },
+  ]);
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
@@ -18,6 +45,27 @@ export default function CaseStudiesShowcaseQuality() {
       });
     }
   };
+
+  useEffect(() => {
+    const fetchBlogTitles = async () => {
+      try {
+        const response = await fetch("https://pex-sooty.vercel.app/api/blogs/non-monthly/2");
+        const data: BlogApiResponse = await response.json();
+        if (data.success && data.data.length > 0) {
+          const firstBlog = data.data[0];
+          const secondBlog = data.data[1];
+          setBlogInfo([
+            { id: firstBlog?._id || null, title: firstBlog?.title || null },
+            { id: secondBlog?._id || null, title: secondBlog?.title || null },
+          ]);
+        }
+      } catch (error) {
+        console.error("Error fetching blog titles:", error);
+      }
+    };
+
+    fetchBlogTitles();
+  }, []);
 
   return (
     <>
@@ -87,28 +135,33 @@ export default function CaseStudiesShowcaseQuality() {
                   alt="Background Decoration"
                   className="border-4 border-teal-700 rounded-4xl opacity-80"
                 />
-                
-                {/* Green gradient overlay from bottom to half */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-4xl pointer-events-none" />
-                        
+                {/* transparent image */}
+                <div className="absolute top-10 left-10 transparent opacity-20">
+                  <Image
+                    width={190}
+                    height={0}
+                    src="/Asset 21.svg"
+                    alt="Background Decoration"
+                  />
+                </div>            
                 <div className="absolute bottom-3 left-10">
                   
                   <p className="text-[10px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
-                
-                <div className="absolute top-5 left-5 max-w-[170px] bg-teal-700 p-4 rounded-2xl">
-                  
-                  <p className="text-xl text-white">
-                    First time in her whole career she felt relieved from work stress...
+                <Image
+                  width={60}
+                  height={0}
+                  src="/Asset 22.svg"
+                  alt="Background Decoration"
+                  className="absolute top-12 left-40"
+                />
+                <div className="absolute top-30 left-20 max-w-[150px]">
+                  <p className="text-lg text-yellow-400 mb-1">The ERP Trap:</p>
+                  <p className="text-sm text-white">
+                    Why Digital Transformation Fails without Business Process Re-engineering.
                   </p>
-                  <div className="mt-5 text-white">
-                    <p className="text-md">Sanju</p>
-                    <p className="text-[8px] text-white">
-                    quality and compliance officer 
-                  </p></div>
-                  
                 </div>
                 
                 {/* Yellow arrow button at bottom right */}
@@ -136,21 +189,20 @@ export default function CaseStudiesShowcaseQuality() {
                   alt="Background Decoration"
                 />
                 <div className="absolute top-20 left-8">
-                  <div className="mb-8 ml-6 text-left text-lg text-white">
-                    <p>&quot;Our teams are </p>
-                    <p>more confident,</p>
-                    <p>more accountable,</p>
-                    <p>and better equipped </p>
-                    <p>to meet standards&quot; - </p>
-                    <p>A diversified Company</p>
+                  <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
+                    {blogInfo[0].title ? (
+                      <p>{blogInfo[0].title.length > 45 ? blogInfo[0].title.slice(0, 45) + "..." : blogInfo[0].title}</p>
+                    ) : (
+                      <p>A blog post has not been added yet.</p>
+                    )}
                   </div>
                   <div className="flex flex-row justify-between align-middle items-center gap-4 ">
                     <p className="text-sm text-yellow-400">CASE STUDY</p>
                     <motion.button
-                      className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300 mr-5"
+                      className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => router.push("/blog")}
+                      onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
                     >
                       <div className="flex">
                         Read More &nbsp;
@@ -174,10 +226,12 @@ export default function CaseStudiesShowcaseQuality() {
                   src="/Asset 20.svg"
                   alt="Background Decoration"
                 />
-                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white">
-                  <p> Be Audit-Ready:</p>
-                  <p>How PEx Software</p>
-                  <p>Simplifies ISO Audits.</p>
+                <div className="mb-10 absolute top-7 left-12 text-left text-2xl text-white max-w-[250px]">
+                  {blogInfo[1].title ? (
+                    <p>{blogInfo[1].title.length > 45 ? blogInfo[1].title.slice(0, 45) + "..." : blogInfo[1].title}</p>
+                  ) : (
+                    <p>A blog post has not been added yet.</p>
+                  )}
                 </div>
                 <div className="flex absolute top-35 left-28 flex-row justify-between items-center gap-4">
                   <p className="text-sm text-yellow-400">CASE STUDY</p>
@@ -185,7 +239,7 @@ export default function CaseStudiesShowcaseQuality() {
                     className="bg-yellow-400 text-black p-2 px-4 text-sm rounded-full cursor-pointer transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
                   >
                     <div className="flex">
                       Read More &nbsp;{" "}
@@ -228,14 +282,13 @@ export default function CaseStudiesShowcaseQuality() {
                   alt="Success Story"
                   className="w-full h-auto rounded-2xl border-2 border-teal-700 opacity-80"
                 />
-                
-                {/* Green gradient overlay from bottom to half */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-2xl pointer-events-none" />
-                
-                {/* Testimonial content box */}
-                <div className="absolute top-2 left-2 max-w-[80px] bg-teal-700 p-2 rounded-xl">
-                  <p className="text-[8px] text-white">
-                    First time in her whole career she felt relieved from work stress...
+                {/* 90% Badge */}
+                <div
+                  className="absolute  top-3 left-3 from-[#0e685b] to-[#05423b] rounded-md p-2 py-6 px-3"
+                >
+                  <p className="text-lg font- text-yellow-400 mb-1">The ERP Trap:</p>
+                  <p className="text-[8px] text-white leading-tight max-w-[100px]">
+                    Why Digital Transformation Fails without Business Process Re-engineering.
                   </p>
                   <div className="mt-2 text-white">
                     <p className="text-[10px] font-medium">Sanju</p>
@@ -266,9 +319,9 @@ export default function CaseStudiesShowcaseQuality() {
               {/* Right side - Title and Images */}
               <div className="flex-1 flex flex-col justify-between h-full pt-2">
                 <div className="text-2xl text-teal-700">
-
-                  Businesses that have grown with us
-
+                 
+                    Businesses that have grown with us
+                 
                 </div>
 
                 {/* Scrollable Image Grid - Horizontal Row */}
@@ -348,8 +401,14 @@ export default function CaseStudiesShowcaseQuality() {
               </motion.button>
 
               <div className="p-4">
-                <h3 className="text-white text-md mb-2">
-                &quot;Our teams are more confident, more accountable, and better equipped to meet standards&quot; - A diversified Company
+                <h3 className="text-white text-2xl mb-2">
+                  {blogInfo[0].title ? (
+                    blogInfo[0].title.length > 20 ? blogInfo[0].title.slice(0, 20) + "..." : blogInfo[0].title
+                  ) : (
+                    <>
+                      A blog post has not been added yet.
+                    </>
+                  )}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -360,7 +419,7 @@ export default function CaseStudiesShowcaseQuality() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
                   >
                     Read More
                   </motion.button>
@@ -368,6 +427,7 @@ export default function CaseStudiesShowcaseQuality() {
               </div>
             </motion.div>
 
+            {/* Third Card - PEx Solution Card */}
             <motion.div
               className="relative bg-[#4a5568] rounded-3xl p-8 pb-10"
               initial={{ opacity: 0, y: 30 }}
@@ -385,7 +445,7 @@ export default function CaseStudiesShowcaseQuality() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                Be Audit-Ready: How PEx Software Simplifies ISO Audits.
+                  {blogInfo[1].title || "Blog post is not added yet."}
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -396,7 +456,7 @@ export default function CaseStudiesShowcaseQuality() {
                     className="bg-yellow-400 text-black py-3 px-6 rounded-full font-medium text-sm w-full"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    onClick={() => router.push("/blog")}
+                    onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
                   >
                     Read More
                   </motion.button>

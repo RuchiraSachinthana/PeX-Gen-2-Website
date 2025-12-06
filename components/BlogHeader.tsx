@@ -352,7 +352,8 @@
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import HeroHeader from "./HeroHeader";
 
 interface Blog {
@@ -373,22 +374,34 @@ interface BlogHeaderProps {
 }
 
 const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   // State to track the sliding window offset for right panel
   const [slideIndex, setSlideIndex] = useState(0);
-  const [loadingBlogId, setLoadingBlogId] = useState<string | null>(null);
-  const prevBlogDataLengthRef = useRef<number>(0);
 
-  // Reset slide index when blogData length changes
+  // Get blog ID from URL
+  const blogIdFromUrl = searchParams.get("id");
+
+  // Update slideIndex based on URL blog ID and blogData
   useEffect(() => {
-    const currentLength = blogData?.length || 0;
-    if (currentLength !== prevBlogDataLengthRef.current) {
-      prevBlogDataLengthRef.current = currentLength;
-      // Use setTimeout to avoid synchronous setState in effect
-      setTimeout(() => {
+    const updateSlideIndex = () => {
+      if (blogIdFromUrl && blogData && blogData.length > 0) {
+        const blogIndex = blogData.findIndex((blog) => blog._id === blogIdFromUrl);
+        if (blogIndex !== -1) {
+          // slideIndex = blogIndex + 1 (because slideIndex 1 shows blog[0])
+          setSlideIndex(blogIndex + 1);
+          return;
+        }
+      }
+      // If no blog ID in URL or blog not found, reset to initial state (show hardcoded blog)
+      if (!blogIdFromUrl) {
         setSlideIndex(0);
-      }, 0);
-    }
-  }, [blogData]);
+      }
+    };
+
+    // Use setTimeout to avoid synchronous setState in effect
+    setTimeout(updateSlideIndex, 0);
+  }, [blogIdFromUrl, blogData]);
 
   const formatDateShort = (dateString: string) => {
     const date = new Date(dateString);
@@ -510,23 +523,10 @@ const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
     }
   };
 
-  // Handle blog item click
+  // Handle blog item click - navigate to blog page with ID
   const handleBlogClick = (blog: Blog) => {
-    const blogIndex = blogData.findIndex(b => b._id === blog._id);
-    if (blogIndex === -1) return;
-
-    // Set loading state
-    setLoadingBlogId(blog._id);
-
-    // Calculate the slideIndex needed to show this blog in left panel
-    // slideIndex = blogIndex + 1 (because slideIndex 1 shows blog[0])
-    const targetSlideIndex = blogIndex + 1;
-
-    // Simulate loading delay (you can remove this if not needed)
-    setTimeout(() => {
-      setSlideIndex(targetSlideIndex);
-      setLoadingBlogId(null);
-    }, 300); // 300ms loading delay
+    // Navigate to blog page with the blog ID as query parameter
+    router.push(`/blog?id=${blog._id}`);
   };
 
   // Notify parent when slideIndex changes (including initial state)
@@ -599,7 +599,7 @@ const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
         <div className="flex gap-4 md:gap-6 lg:gap-8">
           {/* Left Side - Main Featured Article */}
           <motion.div className="w-1/2">
-            <div className="">
+            <div className={featuredBlog ? "cursor-pointer" : ""} onClick={featuredBlog ? () => handleBlogClick(featuredBlog) : undefined}>
               {featuredBlog ? (
                 <>
                   {/* Featured Image from API */}
@@ -609,7 +609,7 @@ const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
                       alt={featuredBlog.title}
                       width={600}
                       height={400}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg transition-opacity hover:opacity-90"
                     />
                   </div>
 
@@ -618,7 +618,7 @@ const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
                     {splitTitle(featuredBlog.title).map((line, index) => (
                       <h2
                         key={index}
-                        className="text-xl md:text-2xl lg:text-3xl text-teal-700 leading-relaxed"
+                        className="text-xl md:text-2xl lg:text-3xl text-teal-700 leading-relaxed hover:text-teal-600 transition-colors"
                       >
                         {line}
                       </h2>
@@ -659,33 +659,23 @@ const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
             <div className="space-y-3 md:space-y-4">
               {rightPanelBlogs.length > 0 ? (
                 rightPanelBlogs.map((blog, index) => {
-                  const isLoading = loadingBlogId === blog._id;
                   return (
                     <motion.div
                       key={blog._id}
                       onClick={() => handleBlogClick(blog)}
-                      className={`flex gap-2 md:gap-3 lg:gap-4 rounded-lg transition-all cursor-pointer hover:bg-teal-50 relative ${
-                        isLoading ? "opacity-60 pointer-events-none" : ""
-                      }`}
+                      className="flex gap-2 md:gap-3 lg:gap-4 rounded-lg transition-all cursor-pointer hover:bg-teal-50"
                       variants={fadeInRight}
                       initial="hidden"
                       animate="visible"
                       transition={{ delay: index * 0.1 }}
                     >
-                      {isLoading && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-lg z-10">
-                          <div className="animate-spin rounded-full h-6 w-6 md:h-7 md:w-7 lg:h-8 lg:w-8 border-b-2 border-teal-700"></div>
-                        </div>
-                      )}
                       <div className="w-40 md:w-48 lg:w-60 flex-shrink-0">
                         <Image
                           src={blog.hero_img}
                           alt={blog.title}
                           width={240}
                           height={160}
-                          className={`w-full h-full object-cover rounded transition-all ${
-                            isLoading ? "opacity-50" : ""
-                          }`}
+                          className="w-full h-full object-cover rounded transition-all"
                         />
                       </div>
                       <div className="flex-1 flex items-center">
@@ -772,81 +762,73 @@ const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
         <div className="space-y-6">
           {/* Left Side - Main Featured Article (Row 1) */}
           <motion.div variants={fadeInUp}>
-            {featuredBlog ? (
-              <>
-                <div className="w-full">
-                  <Image
-                    src={featuredBlog.hero_img}
-                    alt={featuredBlog.title}
-                    width={370}
-                    height={250}
-                    className="w-full h-auto object-cover rounded-lg"
-                  />
-                </div>
-                <div className="mt-3">
-                  <h2 className="text-xl text-teal-700 mb-2 font-bold leading-tight">
-                    {featuredBlog.title}
-                  </h2>
-                  <p className="text-xs text-gray-700">
-                    {formatDate(featuredBlog.created_at)}
-                  </p>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="w-full">
-                  <Image
-                    src="/Asset 9.webp"
-                    alt="Featured Article"
-                    width={370}
-                    height={250}
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-                <div className="mt-3">
-                  <h2 className="text-xl text-teal-700 mb-2 font-bold">
-                    The ERP Trap:
-                  </h2>
-                  <h3 className="text-lg text-teal-700 leading-relaxed">
-                    Why Digital Transformation Fails Without Business Process
-                    Re-engineering
-                  </h3>
-                </div>
-              </>
-            )}
+            <div className={featuredBlog ? "cursor-pointer" : ""} onClick={featuredBlog ? () => handleBlogClick(featuredBlog) : undefined}>
+              {featuredBlog ? (
+                <>
+                  <div className="w-full">
+                    <Image
+                      src={featuredBlog.hero_img}
+                      alt={featuredBlog.title}
+                      width={370}
+                      height={250}
+                      className="w-full h-auto object-cover rounded-lg transition-opacity hover:opacity-90"
+                    />
+                  </div>
+                  <div className="mt-3">
+                    <h2 className="text-xl text-teal-700 mb-2 font-bold leading-tight hover:text-teal-600 transition-colors">
+                      {featuredBlog.title}
+                    </h2>
+                    <p className="text-xs text-gray-700">
+                      {formatDate(featuredBlog.created_at)}
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="w-full">
+                    <Image
+                      src="/Asset 9.webp"
+                      alt="Featured Article"
+                      width={370}
+                      height={250}
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </div>
+                  <div className="mt-3">
+                    <h2 className="text-xl text-teal-700 mb-2 font-bold">
+                      The ERP Trap:
+                    </h2>
+                    <h3 className="text-lg text-teal-700 leading-relaxed">
+                      Why Digital Transformation Fails Without Business Process
+                      Re-engineering
+                    </h3>
+                  </div>
+                </>
+              )}
+            </div>
           </motion.div>
 
           {/* Right Side - Article List (Small Tiles - Horizontal Scroll for Mobile) */}
           <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
             {rightPanelBlogs.length > 0 ? (
               rightPanelBlogs.map((blog, index) => {
-                const isLoading = loadingBlogId === blog._id;
                 return (
                   <motion.div
                     key={blog._id}
                     onClick={() => handleBlogClick(blog)}
-                    className={`flex-shrink-0 w-[160px] flex flex-col gap-1.5 p-2 rounded-lg transition-all bg-white/90 backdrop-blur-sm shadow-sm cursor-pointer hover:bg-teal-50 relative ${
-                      isLoading ? "opacity-60 pointer-events-none" : ""
-                    }`}
+                    className="flex-shrink-0 w-[160px] flex flex-col gap-1.5 p-2 rounded-lg transition-all bg-white/90 backdrop-blur-sm shadow-sm cursor-pointer hover:bg-teal-50"
                     variants={fadeInUp}
                     initial="hidden"
                     animate="visible"
                     transition={{ delay: index * 0.1 }}
                   >
-                    {isLoading && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-lg z-10">
-                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-teal-700"></div>
-                      </div>
-                    )}
                     <div className="w-full h-24 flex-shrink-0">
                       <Image
                         src={blog.hero_img}
                         alt={blog.title}
                         width={160}
                         height={96}
-                        className={`w-full h-full object-cover rounded transition-all ${
-                          isLoading ? "opacity-50" : ""
-                        }`}
+                        className="w-full h-full object-cover rounded transition-all"
                       />
                     </div>
                     <div className="flex-1">

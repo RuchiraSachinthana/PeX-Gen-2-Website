@@ -308,9 +308,9 @@ export default function SevenWaysBenefits() {
                     <div>&quot;compliance burden&quot; into a strategic</div>
                     <div>advantage. By integrating ISO 22000 into</div>
                     <div>daily operations, hotel owners can</div>
-                    <div>demonstrate excellence, win guest trust, and</div>
-                    <div>differentiate their brand in a competitive</div>
-                    <div>marketplace.</div>
+                    <div>demonstrate excellence, win guest trust, </div>
+                    <div>and differentiate their brand in a </div>
+                    <div>competitive marketplace.</div>
                   </div>
                 </div>
               </div>
