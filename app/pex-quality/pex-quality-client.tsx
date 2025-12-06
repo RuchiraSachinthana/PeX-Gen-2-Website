@@ -17,8 +17,7 @@ export default function PexQualityPageClient() {
       <PexQualityHeader />
       <VideoPromoSection />
       <BusinessImprovementSlider />
-      {/* <CaseStudiesShowcaseQuality /> */}
-      <BlogCaseStudiesShowcase/>
+      <CaseStudiesShowcaseQuality />
       <KeyPointsIntroSection />
       <ExperienceStatsSection />
       <FAQSection />

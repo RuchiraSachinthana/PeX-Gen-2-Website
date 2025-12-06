@@ -10,49 +10,49 @@ const PexGenTestamonialsSectionNew = () => {
 
   const testimonials = [
      {
-      image: "/Leader (6).png",
+      image: "/Leader (6).webp",
       message:
         "PEx Software has added significant value to our Food Safety Management program. We have found PEx Software to be an excellent tool for managing food safety in a completely paperless environment, thereby improving efficiency in our processes.",
       name: "Mangala Hemananda",
       designation: "Executive Manager - Radisson Hotel Kandy",
     },
     {
-      image: "/Leader (1).png",
+      image: "/Leader (1).webp",
       message:
         "We invested in the purchase of the PEx Software™ Solution, which has added a great value to our company to automate our business processes and maintain a paperless work environment. We have found PEx Software to be an excellent tool for managing our quality management system with a high efficiency.",
       name: "Rakitha De silva",
       designation: "Head of Heyleys - Advantis Freight",
     },
     {
-      image: "/Leader (3).png",
+      image: "/Leader (3).webp",
       message:
         "We are happy to inform that PEx Software solution has fully met with our requirements to our entire satisfaction. Even the external compliance auditors have been delighted with this system and have commended it’s benefits in meeting with ISO compliance requirements.",
       name: "Sarath Ranasinghe",
       designation: "General Manager - E B Creasy - Denta Tooth Brush Factory",
     },
     {
-      image: "/Leader (2).png",
+      image: "/Leader (2).webp",
       message:
         "I have no hesitation whatsoever in recommending PEx Software solution which was implemented to manage our integrated management system which has greatly helped us maintain compliance and continual improvement of our business.",
       name: "Sujeewa Walisundara",
       designation: "Director Marketing",
     },
     {
-      image: "/Leader (4).png",
+      image: "/Leader (4).webp",
       message:
         "The introduction of the PEx Software Solution greatly contributed to enhance our EHS and Quality culture throughout our organization in a paperless environment.",
       name: "Ricky Barnett",
       designation: "Director - Hayleys Energy Services Lanka (Pvt) Ltd.",
     },
     {
-      image: "/Leader (5).png",
+      image: "/Leader (5).webp",
       message:
         "We consider our decision to invest in the PEx Software Solution is well worth, and the right direction our organization is taking in automating all our business and manufacturing processes.",
       name: "Randy Roche",
       designation: "Director / General Manager - Packwell Lanka (Pvt) Ltd",
     },
     {
-      image: "/Leader (7).png",
+      image: "/Leader (7).webp",
       message:
         "We have found the Pex Software to be an excellent solution to our total quality management system. It is very user friendly and helped us reduce our paper work to a great extent.",
       name: "Hemani Gunathileke",

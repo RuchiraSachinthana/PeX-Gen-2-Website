@@ -72,7 +72,7 @@ export default function CaseStudiesShowcaseQuality() {
       {/* Desktop Version - Hidden on mobile */}
       <div
         style={{
-          backgroundImage: 'url("/Asset 18.svg")',
+          backgroundImage: 'url("/Asset 23.webp")',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -126,12 +126,14 @@ export default function CaseStudiesShowcaseQuality() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.3 }}
+                className="relative"
               >
                 <Image
                   width={440}
                   height={0}
-                  src="/qs4 (4).webp"
+                  src="/Asset 81.png"
                   alt="Background Decoration"
+                  className="border-4 border-teal-700 rounded-4xl opacity-80"
                 />
                 {/* transparent image */}
                 <div className="absolute top-10 left-10 transparent opacity-20">
@@ -143,7 +145,8 @@ export default function CaseStudiesShowcaseQuality() {
                   />
                 </div>            
                 <div className="absolute bottom-3 left-10">
-                  <p className="text-sm ml-10 text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                  
+                  <p className="text-[10px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
@@ -160,6 +163,16 @@ export default function CaseStudiesShowcaseQuality() {
                     Why Digital Transformation Fails without Business Process Re-engineering.
                   </p>
                 </div>
+                
+                {/* Yellow arrow button at bottom right */}
+                <motion.button
+                  className="absolute bottom-3 right-3 bg-yellow-400 p-3 rounded-2xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push("/blog")}
+                >
+                  <ArrowRight className="w-7 h-7 text-black -rotate-45" />
+                </motion.button>
               </motion.div>
               {/* center card */}
               <motion.div
@@ -245,7 +258,7 @@ export default function CaseStudiesShowcaseQuality() {
         {/* First Card with Background Image */}
         <div
           style={{
-            backgroundImage: 'url("/Asset 18.svg")',
+            backgroundImage: 'url("/Asset 23.webp")',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
@@ -265,9 +278,9 @@ export default function CaseStudiesShowcaseQuality() {
                 <Image
                   width={180}
                   height={0}
-                  src="/qs4 (4).webp"
+                  src="/Asset 81.png"
                   alt="Success Story"
-                  className="w-full h-auto rounded-2xl"
+                  className="w-full h-auto rounded-2xl border-2 border-teal-700 opacity-80"
                 />
                 {/* 90% Badge */}
                 <div
@@ -277,14 +290,30 @@ export default function CaseStudiesShowcaseQuality() {
                   <p className="text-[8px] text-white leading-tight max-w-[100px]">
                     Why Digital Transformation Fails without Business Process Re-engineering.
                   </p>
+                  <div className="mt-2 text-white">
+                    <p className="text-[10px] font-medium">Sanju</p>
+                    <p className="text-[4px] text-white">
+                      quality and compliance officer 
+                    </p>
+                  </div>
                 </div>
 
                 {/* Small label at bottom */}
-                <div className="absolute bottom-3 left-3">
-                  <p className="text-[8px] text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                <div className="absolute bottom-2 left-2">
+                  <p className="text-[5px] text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
+                
+                {/* Yellow arrow button at bottom right */}
+                <motion.button
+                  className="absolute bottom-2 right-2 bg-yellow-400 p-2 rounded-md"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push("/blog")}
+                >
+                  <ArrowRight className="w-4 h-4 text-black -rotate-45" />
+                </motion.button>
               </div>
 
               {/* Right side - Title and Images */}

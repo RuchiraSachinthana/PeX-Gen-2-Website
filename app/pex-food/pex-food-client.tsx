@@ -21,8 +21,7 @@ export default function PexFoodPageClient() {
       <FoodVideoPromoSection />
       <SevenWaysBenefits />
       <LinkedInFollowSection />
-      {/* <FoodCaseStudiesShowcase /> */}
-      <BlogCaseStudiesShowcase />
+      <FoodCaseStudiesShowcase />
       <FoodThreeKeyPointsIntroSection />
       <FoodExperienceStatsSection />
       <FAQSectionFood   />

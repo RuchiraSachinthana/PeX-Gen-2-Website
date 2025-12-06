@@ -105,7 +105,7 @@ export default function BlogCaseStudiesShowcase() {
                   </p>
                   <div className="mt-5 text-white">
                     <p className="text-md">Sanju</p>
-                    <p className="text-[10px] text-white">
+                    <p className="text-[8px] text-white">
                     quality and compliance officer 
                   </p></div>
                   
@@ -198,7 +198,7 @@ export default function BlogCaseStudiesShowcase() {
         {/* First Card with Background Image */}
         <div
           style={{
-            backgroundImage: 'url("/Asset 18.svg")',
+            backgroundImage: 'url("/Asset 23.webp")',
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
@@ -233,7 +233,7 @@ export default function BlogCaseStudiesShowcase() {
                   </p>
                   <div className="mt-2 text-white">
                     <p className="text-[10px] font-medium">Sanju</p>
-                    <p className="text-[8px] text-white">
+                    <p className="text-[4px] text-white">
                       quality and compliance officer 
                     </p>
                   </div>
@@ -241,7 +241,7 @@ export default function BlogCaseStudiesShowcase() {
 
                 {/* Small label at bottom */}
                 <div className="absolute bottom-2 left-2">
-                  <p className="text-[5px] text-yellow-400 px-2 py-1 rounded-full whitespace-nowrap">
+                  <p className="text-[5px] text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>

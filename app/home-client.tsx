@@ -41,15 +41,13 @@ export default function HomePageClient() {
       <WhatIsPexSection />
       <PexGenKeyCapabilitiesSection />
       {/* <PexGenWhyMattersSection /> */}
-      
       <PexGenExploreSection />
       <ExperienceStatsSection />
       <PexGenManagementSection />
       {/* <PexGenTestamonialsSection /> */}
        <PexGenTestamonialsSectionNew />
       <PexGenPartners />
-      {/* <CaseStudiesShowcase /> */}
-        <BlogCaseStudiesShowcase />
+      <CaseStudiesShowcase />
       <PexGenWhoWeAreSection />
       <PexGenPhilosopySection />
       <PexGenMeetLeaders />
