@@ -41,7 +41,7 @@ export default function HomePageClient() {
       <PexGenExploreSection />
       <ExperienceStatsSection />
       <PexGenManagementSection />
-      {/* <PexGenTestamonialsSection /> */}
+    
        <PexGenTestamonialsSectionNew />
       <PexGenPartners />
       <CaseStudiesShowcase />

@@ -142,7 +142,7 @@ export default function FoodCaseStudiesShowcase() {
                         
                 <div className="absolute bottom-3 left-10">
                   
-                  <p className="text-[10px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
+                  <p className="text-[12px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
@@ -154,7 +154,7 @@ export default function FoodCaseStudiesShowcase() {
                   </p>
                   <div className="mt-5 text-white">
                     <p className="text-md">Sanju</p>
-                    <p className="text-[8px] text-white">
+                    <p className="text-[12px] text-white">
                     quality and compliance officer 
                   </p></div>
                   

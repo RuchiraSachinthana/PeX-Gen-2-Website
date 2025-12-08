@@ -29,7 +29,7 @@ export default function PexGenPageClient() {
       <PexGenWhyMattersSection />
       <PexGenExploreSection />
       <PexGenManagementSection />
-      <PexGenTestamonialsSection />
+      {/* <PexGenTestamonialsSection /> */}
       <PexGenTestamonialsSectionNew />
       <PexGenPartners />
       <CaseStudiesShowcase />     
