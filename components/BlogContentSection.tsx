@@ -181,7 +181,7 @@ const BlogContentSection = () => {
         Measurable ROI <br />• A smoother, more effective ERP rollout
       </motion.div>
       <motion.div
-        className="w-full max-w-4xl md:max-w-5xl lg:max-w-6xl bg-white leading-relaxed mt-4 md:mt-6 lg:mt-8 flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-6 md:justify-between z-10 mx-auto"
+        className="w-full max-w-4xl md:max-w-5xl lg:max-w-6xl bg-white leading-relaxed mt-4 md:mt-6 lg:mt-8 flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-2 md:justify-between z-10 mx-auto"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
@@ -195,23 +195,23 @@ const BlogContentSection = () => {
           <br /> in an ERP, invest in understanding and improving your
           processes. <br /> PEx Software™ helps you do exactly that.
         </div>
-        <div className="bg-[#d2edb9] p-4 md:p-6 lg:p-8 py-6 md:py-12 lg:py-16 text-xs md:text-sm rounded-xl md:rounded-2xl lg:rounded-3xl">
-          <p className="text-xs md:text-sm mb-2 font-bold">
-            {" "}
-            About the Author{" "}
+        <div className="bg-[#d2edb9] max-w-xl p-4 md:p-6 lg:p-8 py-6 md:py-12 text-xs md:text-[16px] leading-relaxed rounded-xl md:rounded-2xl lg:rounded-3xl">
+          <p className="mb-2 font-bold">
+       
+            About the Author
           </p>
           Malik Perera is a transformation architect, executive coach, and CEO
-          of Swiss <br />
+          of Swiss 
           Advantage Systems. With 30 years consulting experience across 150+
-          client <br />
+          client 
           projects and training over 10,000 employees, he specializes in
-          business process <br />
+          business process
           re-engineering, ISO compliance, and digital innovation. Malik is also
-          the creator <br />
+          the creator 
           of PEx Software™ – a BPMS designed to help organizations maintain
-          compliance <br />
-          to best management standards and achieve continual improvement in all{" "}
-          <br />
+          compliance 
+          to best management standards and achieve continual improvement in all
+    
           operations.
         </div>
       </motion.div> 
