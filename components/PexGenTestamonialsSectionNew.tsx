@@ -19,23 +19,23 @@ const PexGenTestamonialsSectionNew = () => {
     {
       image: "/Leader (1).webp",
       message:
-        "We invested in the purchase of the PEx Software™ Solution, which has added a great value to our company to automate our business processes and maintain a paperless work environment. We have found PEx Software to be an excellent tool for managing our quality management system with a high efficiency.",
+        "Our investment in PEx Software system has added a great value to our company, to automate our business processes and maintain a paperless work environment. We have found PEx Software to be an excellent tool for managing our QMS with a high efficiency.",
       name: "Rakitha De silva",
-      designation: "Head of Heyleys - Advantis Freight",
+      designation: "General Manager – Hayleys Advantis Freight",
     },
     {
       image: "/Leader (3).webp",
       message:
-        "We are happy to inform that PEx Software solution has fully met with our requirements to our entire satisfaction. Even the external compliance auditors have been delighted with this system and have commended it’s benefits in meeting with ISO compliance requirements.",
+        "We are happy to inform that PEx Software solution has fully met with our requirements to our entire satisfaction. Even the external compliance auditors have been delighted with this system and have commended it's benefits in meeting with ISO compliance requirements.",
       name: "Sarath Ranasinghe",
-      designation: "General Manager - E B Creasy - Denta Tooth Brush Factory",
+      designation: "General Manager – E B Creasy, Denta & BIC manufacturing Plant",
     },
     {
       image: "/Leader (2).webp",
       message:
         "I have no hesitation whatsoever in recommending PEx Software solution which was implemented to manage our integrated management system which has greatly helped us maintain compliance and continual improvement of our business.",
-      name: "Sujeewa Walisundara",
-      designation: "Director Marketing",
+      name: "Puneet Dutta",
+      designation: "General Manager – Hotel Amari Galle",
     },
     {
       image: "/Leader (4).webp",
