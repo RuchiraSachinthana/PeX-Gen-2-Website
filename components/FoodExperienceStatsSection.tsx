@@ -266,7 +266,7 @@ export const FoodExperienceStatsSection: FC = () => {
             <div className="relative bg-yellow-400 rounded-xl p-3 w-52">
               {/* Top-right arrow box */}
               <motion.div
-                className="absolute -top-1 -right-1 bg-yellow-400 p-2 rounded-lg shadow-lg"
+                className="absolute top-0 right-0 bg-yellow-400 p-2 rounded-lg shadow-lg"
                 whileHover={{ scale: 1.1, rotate: 10 }}
                 whileTap={{ scale: 0.9 }}
               >
