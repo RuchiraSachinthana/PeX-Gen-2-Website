@@ -189,11 +189,11 @@ const BlogContentSection = () => {
       >
         <div className="text-sm md:text-base lg:text-lg p-3 md:p-4 lg:p-6">
           <p className="uppercase mb-2 md:mb-3 lg:mb-4 font-bold text-sm md:text-base">Final Thought</p>
-          Digital transformation isn&apos;t just about technology — <br />
-          it&apos;s about process clarity, people empowerment, and <br />
+          Digital transformation isn&apos;t just about technology — 
+          it&apos;s about process clarity, people empowerment, and 
           strategic alignment. Before you invest
-          <br /> in an ERP, invest in understanding and improving your
-          processes. <br /> PEx Software™ helps you do exactly that.
+           in an ERP, invest in understanding and improving your
+          processes.PEx Software™ helps you do exactly that.
         </div>
         <div className="bg-[#d2edb9] max-w-xl p-4 md:p-6 lg:p-8 py-6 md:py-12 text-xs md:text-[16px] leading-relaxed rounded-xl md:rounded-2xl lg:rounded-3xl">
           <p className="mb-2 font-bold">
