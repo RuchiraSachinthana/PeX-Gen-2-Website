@@ -253,7 +253,7 @@ export default function KeyPointsIntroSection() {
                 </div>
 
                 <h3 className="text-white text-xl font-semibold mb-2 leading-tight">
-                  Documentation br <br />Overload
+                  Documentation <br />Overload
                 </h3>
 
                 <div className="mb-6">
