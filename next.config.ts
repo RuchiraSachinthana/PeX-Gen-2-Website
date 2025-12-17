@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: 'standalone', // Enable standalone output for server deployment
   // Domain configuration for pexsoftwaresolutions.com
   images: {
     domains: ['pexsoftwaresolutions.com', 'pex-sooty.vercel.app'],
