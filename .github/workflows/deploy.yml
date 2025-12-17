@@ -32,15 +32,16 @@ jobs:
           cp -r public .next/standalone/public
           cp -r .next/static .next/standalone/.next/static
 
-      # Deploy standalone folder
-      - name: Deploy Standalone to Server
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.SFTP_USERNAME }}
-          server: ${{ secrets.SFTP_HOST }}
-          port: ${{ secrets.SFTP_PORT }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: './.next/standalone/*'
-          remote_path: ${{ secrets.SFTP_REMOTE_PATH }}
-          sftp_only: true
-          delete_remote_files: true
+      # Install lftp for pure SFTP transfer
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      # Deploy using lftp (pure SFTP, no SSH required)
+      - name: Deploy to Server via SFTP
+        run: |
+          lftp -u ${{ secrets.SFTP_USERNAME }},${{ secrets.SFTP_PASSWORD }} sftp://${{ secrets.SFTP_HOST }}:${{ secrets.SFTP_PORT }} << EOF
+          set sftp:auto-confirm yes
+          set ssl:verify-certificate no
+          mirror -R --verbose --delete .next/standalone/ ${{ secrets.SFTP_REMOTE_PATH }}/
+          bye
+          EOF
