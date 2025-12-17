@@ -44,18 +44,3 @@ jobs:
           remote_path: ${{ secrets.SFTP_REMOTE_PATH }}
           sftp_only: true
           delete_remote_files: true
-
-      # Restart the Node.js application on server (optional - using SSH)
-      - name: Restart Application
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }}
-          script: |
-            cd ${{ secrets.SFTP_REMOTE_PATH }}
-            # Install production dependencies if needed
-            npm install --omit=dev 2>/dev/null || true
-            # Restart PM2 process (if using PM2)
-            pm2 restart pex-website 2>/dev/null || pm2 start server.js --name pex-website 2>/dev/null || echo "PM2 not configured"
