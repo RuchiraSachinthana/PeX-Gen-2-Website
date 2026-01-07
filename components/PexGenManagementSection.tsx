@@ -113,16 +113,16 @@ const PexGenManagementSection = () => {
   return (
     <div id="management-section" className="relative">
       {/* Section Title */}
-     
+
 
       {/* Desktop Version */}
-      <div className="hidden mb-10 md:block w-full  py-20 items-center justify-center">
+      <div className="hidden mb-10 lg:block w-full py-20 items-center justify-center">
         <div className="max-w-7xl mx-auto">
-           <div className="w-full text-center mb-10 ">
-        <h2 className="text-3xl md:text-4xl  text-[#0B5B52] ">
-          Management tools for you
-        </h2>
-      </div>
+          <div className="w-full text-center mb-10 ">
+            <h2 className="text-3xl md:text-4xl  text-[#0B5B52] ">
+              Management tools for you
+            </h2>
+          </div>
           {/* Category Headers */}
           <div className="grid grid-cols-3 gap-4 mb-8">
             {categories.map((category, index) => (
@@ -229,15 +229,129 @@ const PexGenManagementSection = () => {
         </div>
       </div>
 
+      {/* Tablet Version */}
+      <div className="hidden md:block lg:hidden w-full py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="w-full text-center mb-8">
+            <h2 className="text-2xl md:text-3xl text-[#0B5B52]">
+              Management tools for you
+            </h2>
+          </div>
+          {/* Category Headers */}
+          <div className="grid grid-cols-3 gap-3 mb-6">
+            {categories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                className="text-white z-10 flex items-center justify-center relative"
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
+              >
+                <Image
+                  src={category.svgPath}
+                  alt={category.title}
+                  width={180}
+                  height={70}
+                  className="w-full max-w-xs h-auto object-contain"
+                />
+                <motion.div
+                  className="absolute text-lg p-4 left-0 top-0 whitespace-pre-line font-bold w-full leading-tight"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                >
+                  {category.title}
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Cards Grid - 3 columns like desktop */}
+          <div className="grid grid-cols-3 gap-4 items-start">
+            {cards.map((card, index) => {
+              const isExpanded = expandedId === card.id;
+
+              return (
+                <motion.div
+                  layout
+                  key={index}
+                  className="bg-[#d1ecb8] rounded-2xl relative overflow-hidden flex flex-col min-h-[240px]"
+                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    layout: { duration: 0.3, type: "spring", bounce: 0 },
+                    opacity: { duration: 0.5 },
+                  }}
+                >
+                  <motion.div layout className="p-5">
+                    <motion.h4
+                      layout="position"
+                      className="text-lg font-extrabold text-black whitespace-pre-line mb-2"
+                    >
+                      {card.title}
+                    </motion.h4>
+                    <motion.p
+                      layout="position"
+                      className="text-gray-700 font-semibold text-sm leading-relaxed whitespace-pre-line"
+                    >
+                      {card.description}
+                    </motion.p>
+
+                    {/* Expandable Content */}
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="h-px w-full bg-black/10 my-3" />
+                          <p className="text-gray-800 text-sm leading-relaxed">
+                            {card.detailedContent}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Button Area */}
+                  <div className="flex justify-end mt-auto">
+                    <motion.button
+                      layout="position"
+                      onClick={() => toggleExpand(card.id)}
+                      className="bg-yellow-400 text-gray-900 px-3 py-1.5 rounded-full text-xs flex items-center justify-center hover:bg-yellow-500 transition-colors z-20"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {isExpanded ? "Show less" : "Read more"}{" "}
+                      {isExpanded ? (
+                        <ChevronUp className="w-4 h-4 ml-1" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 ml-1" />
+                      )}
+                    </motion.button>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+
       {/* Mobile Version */}
       <div className="md:hidden w-full py-8 px-4">
         <div className="max-w-[370px] mx-auto space-y-8">
           {/* Group 1 */}
           <div className="w-full text-center mb-5 ">
-        <h2 className="text-xl text-[#0B5B52] ">
-          Management tools for you
-        </h2>
-      </div>
+            <h2 className="text-xl text-[#0B5B52] ">
+              Management tools for you
+            </h2>
+          </div>
           <div>
             <SectionHeader title="OPERATIONS\nSUPPORT" />
             <div className="space-y-4">
@@ -377,6 +491,102 @@ const SectionHeader = ({ title }: { title: string }) => (
       className="w-full h-auto object-contain"
     />
     <motion.div className="absolute text-lg p-6  left-3 top-0 font-bold text-left w-full leading-tight">
+      {title.split("\\n").map((line, index, array) => (
+        <span key={index}>
+          {line}
+          {index < array.length - 1 && <br />}
+        </span>
+      ))}
+    </motion.div>
+  </motion.div>
+);
+// Helper for Tablet Cards
+const TabletCard = ({
+  card,
+  index,
+  isExpanded,
+  onToggle,
+}: {
+  card: CardData;
+  index: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}) => (
+  <motion.div
+    layout
+    className="bg-[#d1ecb8] rounded-2xl relative overflow-hidden flex flex-col min-h-[220px]"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+  >
+    <motion.div layout className="p-5">
+      <motion.h4
+        layout="position"
+        className="text-xl font-extrabold text-black mb-2"
+      >
+        {card.title.replace(/\n/g, " ")}
+      </motion.h4>
+      <motion.p
+        layout="position"
+        className="text-gray-700 font-semibold text-sm leading-relaxed"
+      >
+        {card.description.replace(/\n/g, " ")}
+      </motion.p>
+
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="h-px w-full bg-black/10 my-3" />
+            <p className="text-gray-800 text-sm leading-relaxed">
+              {card.detailedContent}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+
+    <div className="flex justify-end mt-auto">
+      <motion.button
+        layout="position"
+        onClick={onToggle}
+        className="bg-yellow-400 text-gray-900 px-3 py-1.5 rounded-full text-xs flex items-center justify-center hover:bg-yellow-500 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        {isExpanded ? "Show less" : "Read more"}{" "}
+        {isExpanded ? (
+          <ChevronUp className="w-4 h-4 ml-1" />
+        ) : (
+          <ChevronDown className="w-4 h-4 ml-1" />
+        )}
+      </motion.button>
+    </div>
+  </motion.div>
+);
+
+// Helper for Tablet Header
+const TabletSectionHeader = ({ title }: { title: string }) => (
+  <motion.div
+    className="text-white z-10 flex items-center justify-center relative mb-4"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    <Image
+      src="/Asset 74.svg"
+      alt={title.replace(/\n/g, " ")}
+      width={200}
+      height={80}
+      className="w-full max-w-md h-auto object-contain"
+    />
+    <motion.div className="absolute text-xl p-6 left-3 top-0 font-bold text-left w-full leading-tight">
       {title.split("\\n").map((line, index, array) => (
         <span key={index}>
           {line}

@@ -178,7 +178,7 @@ export const ExperienceStatsSection: FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.7, duration: 0.5 }}
                 >
-                 
+
                   <h3 className="text-3xl text-teal-700 mb-2">
                     {demoCard.titleLines.map((line: string, index: number) => (
                       <Fragment key={index}>
@@ -223,10 +223,10 @@ export const ExperienceStatsSection: FC = () => {
                         d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
                       />
                     </svg>
-                    
+
                   </motion.button>
                 </motion.div>
-                
+
                 {/* Promo text below button */}
                 <div className="text-right  mt-2">
                   <span className="text-teal-700 text-sm flex items-center justify-end gap-1">
@@ -240,9 +240,177 @@ export const ExperienceStatsSection: FC = () => {
         </div>
       </section>
 
+      {/* Tablet Version */}
+      <section
+        className="hidden md:block lg:hidden w-full bg-cover bg-center bg-no-repeat relative overflow-hidden"
+        style={{ backgroundImage: "url('/office_promo_bg.webp')" }}
+      >
+        <div className="max-w-3xl mx-auto h-full px-6 py-16 relative z-10">
+          <div className="h-full grid grid-cols-2 gap-6 items-center">
+            {/* Left Section - Stats Card */}
+            <motion.div
+              className="flex flex-col gap-4"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.div
+                className="p-5 rounded-2xl bg-black/50 backdrop-blur-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+              >
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <motion.div
+                      className="text-4xl text-white mb-2"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6, duration: 0.5 }}
+                    >
+                      <p className="text-yellow-400">{stats.years.value}</p>
+                    </motion.div>
+                    <div className="text-lg text-white uppercase tracking-wide">
+                      {stats.years.labelLine1}
+                      <br />
+                      {stats.years.labelLine2}
+                    </div>
+                  </div>
+                  <div>
+                    <motion.div
+                      className="text-4xl text-white mb-2"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.7, duration: 0.5 }}
+                    >
+                      <p className="text-yellow-400">{stats.clients.value}</p>
+                    </motion.div>
+                    <div className="text-lg text-white uppercase tracking-wide">
+                      {stats.clients.label}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Section - Request Demo Card */}
+            <motion.div
+              className="w-full flex justify-end"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <ReusableShape
+                width={280}
+                height={180}
+                cutoutWidth={70}
+                cutoutHeight={70}
+                cutoutRadius={14}
+                cutoutBgColor="#00aaa4"
+                cutoutPosition="top-right"
+                color="#facc15"
+                radius={20}
+                className="relative text-gray-900 flex flex-col justify-between"
+              >
+                {/* Top-right arrow box */}
+                <motion.div
+                  className="absolute top-0 right-0 bg-yellow-400 p-4 rounded-xl"
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  whileHover={{ scale: 1.1, rotate: 10 }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                    />
+                  </svg>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
+                >
+                  <h3 className="text-2xl text-teal-700 mb-2">
+                    {demoCard.titleLines.map((line: string, index: number) => (
+                      <Fragment key={index}>
+                        {line}
+                        <br />
+                      </Fragment>
+                    ))}
+                  </h3>
+                </motion.div>
+
+                {/* CTA row */}
+                <motion.div
+                  className="flex items-center gap-6 justify-end"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.9, duration: 0.5 }}
+                >
+                  <span className="text-teal-700 uppercase text-xs">
+                    {demoCard.connectLabel}
+                  </span>
+                  <motion.button
+                    className="bg-teal-700 text-white py-2.5 px-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-teal-800 transition-colors text-xs"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    data-cal-namespace="15min"
+                    data-cal-link="pexsoftwaresolutions/15min"
+                    data-cal-config='{"layout":"month_view"}'
+                  >
+                    <span>{buttons.bookNow}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2.5}
+                      stroke="currentColor"
+                      className="w-3.5 h-3.5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </motion.button>
+                </motion.div>
+
+                {/* Promo text below button */}
+                <div className="text-right mt-2">
+                  <span className="text-teal-700 text-xs flex items-center justify-end gap-1">
+                    {promoText}
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </ReusableShape>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Mobile Version */}
       <section
-        className="lg:hidden w-full bg-cover  bg-no-repeat relative overflow-hidden min-h-[500px]"
+        className="md:hidden w-full bg-cover  bg-no-repeat relative overflow-hidden min-h-[500px]"
         style={{
           backgroundImage: "url('/office_promo_bg.webp')",
           backgroundPosition: "45% center",
@@ -324,7 +492,7 @@ export const ExperienceStatsSection: FC = () => {
                   <ArrowRight className="w-3 h-3" />
                 </motion.button>
               </div>
-              
+
               {/* Promo text below button - Mobile */}
               <div className="text-right mt-2">
                 <span className="text-teal-700 text-[10px] flex items-center justify-end gap-1">

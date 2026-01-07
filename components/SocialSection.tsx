@@ -236,8 +236,180 @@ export default function SocialSection() {
         </div>
       </section>
 
+      {/* Tablet Version */}
+      <section className="hidden md:block lg:hidden w-full py-8 px-4 bg-white relative overflow-hidden">
+        <div className="relative z-10 max-w-3xl mx-auto">
+          {/* Title */}
+          <motion.div
+            className="text-center text-2xl mb-6 text-emerald-900"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {String(t("socialSection.title"))}
+          </motion.div>
+
+          <div className="flex flex-row items-end justify-center gap-4">
+            {/* Carousel */}
+            <motion.div
+              className="flex items-center relative gap-2"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <motion.button
+                onClick={() => scroll("left")}
+                className="p-2 rounded-full hover:bg-emerald-50"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronLeft className="text-emerald-700" size={36} />
+              </motion.button>
+
+              <div
+                ref={scrollRef}
+                className="flex overflow-x-auto gap-3 scroll-smooth no-scrollbar w-[400px]"
+              >
+                {posts.map((post, index) => (
+                  <motion.div
+                    key={post.id}
+                    className="overflow-hidden shadow-md hover:shadow-lg transition flex-shrink-0"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Image
+                      src={post.img}
+                      alt={`Social Post ${post.id}`}
+                      width={180}
+                      height={180}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.button
+                onClick={() => scroll("right")}
+                className="p-2 rounded-full hover:bg-emerald-50"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronRight className="text-emerald-700" size={36} />
+              </motion.button>
+            </motion.div>
+
+            {/* Partner Card */}
+            <motion.div
+              className="text-left flex flex-col"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <ReusableShape
+                width={200}
+                height={220}
+                color="#0e685b"
+                radius={24}
+                cutoutWidth={80}
+                cutoutHeight={80}
+                cutoutPosition="top-right"
+                cutoutRadius={14}
+                className="relative flex items-center justify-start"
+              >
+                {/* Rocket */}
+                <motion.div
+                  className="absolute top-0 right-5"
+                  initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.6, type: "spring" }}
+                >
+                  <Image
+                    src="/Asset 27.svg"
+                    alt="Rocket icon"
+                    width={0}
+                    height={0}
+                    className="w-12 h-12"
+                  />
+                </motion.div>
+
+                {/* Content wrapper */}
+                <motion.div
+                  className="flex flex-col items-start max-w-4xl gap-1 text-left"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  <div>
+                    <p className="text-yellow-300 text-secondary text-base">
+                      {String(t("socialSection.partnerSection.title1"))}
+                    </p>
+                    <p className="text-yellow-300 text-secondary text-base">
+                      {String(t("socialSection.partnerSection.title2"))}
+                    </p>
+                    <p className="text-yellow-300 text-secondary text-base">
+                      {String(t("socialSection.partnerSection.title3"))}
+                    </p>
+                    <p className="text-white text-xs mt-2">
+                      {String(t("socialSection.partnerSection.followUs"))}
+                    </p>
+                  </div>
+
+                  <a href="https://web.facebook.com/Pexsolutions" target="_blank" rel="noopener noreferrer">
+                    <motion.button
+                      className="bg-yellow-400 px-2 mt-1 hover:bg-yellow-500 text-gray-900 py-1.5 rounded-full shadow-lg transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="flex justify-between text-xs px-1 items-center gap-1">
+                        {String(t("socialSection.partnerSection.linkedinButton.platform"))}
+                        <span className="font-semibold">
+                          {String(t("socialSection.partnerSection.linkedinButton.followersCount"))}
+                        </span>
+                        {String(t("socialSection.partnerSection.linkedinButton.followersText"))}
+                      </div>
+                    </motion.button>
+                  </a>
+
+                  <motion.div
+                    className="flex gap-1 mt-3"
+                    variants={avatarContainerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    {[1, 2, 3, 4, 5].map((num) => (
+                      <motion.div
+                        key={num}
+                        className="w-7 h-7 rounded-full bg-gray-300 overflow-hidden"
+                        variants={avatarItemVariants}
+                      >
+                        <Image
+                          src={`/user (${num}).png`}
+                          alt={`Avatar ${num}`}
+                          width={28}
+                          height={28}
+                          className="w-full h-full object-cover"
+                        />
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </ReusableShape>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Mobile Version */}
-      <section className="lg:hidden w-full py-8 px-4 bg-white">
+      <section className="md:hidden w-full py-8 px-4 bg-white">
         <div className="max-w-md mx-auto">
           {/* Title */}
           <motion.h2

@@ -256,9 +256,9 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-0 grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] lg:grid-cols-2 gap-8 md:gap-8 lg:gap-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-0 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap-8 lg:gap-12 relative z-10">
         {/* Left Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-20 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-20 justify-center">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -514,155 +514,155 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
 
-          <form className="space-y-3 lg:space-y-2" onSubmit={handleSubmit}>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
-              <label className="text-white text-sm w-full sm:w-20 shrink-0">
-                {String(t("footer.contactForm.placeholders.company"))}
-              </label>
-              <input
-                type="text"
-                name="company"
-                value={formData.company}
-                onChange={handleChange("company")}
-                required
-                autoComplete="organization"
-                className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
-              <label className="text-white text-sm w-full sm:w-20 shrink-0">
-                {String(t("footer.contactForm.placeholders.name"))}
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange("name")}
-                required
-                autoComplete="name"
-                className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
-              <label className="text-white text-sm w-full sm:w-20 shrink-0">
-                {String(t("footer.contactForm.placeholders.email"))}
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange("email")}
-                required
-                autoComplete="email"
-                className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
-              <label className="text-white text-sm w-full sm:w-20 shrink-0">
-                {String(t("footer.contactForm.placeholders.country"))}
-              </label>
-              <div className="relative flex-1">
-                <select
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange("country")}
+            <form className="space-y-3 lg:space-y-2" onSubmit={handleSubmit}>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+                <label className="text-white text-sm w-full sm:w-20 shrink-0">
+                  {String(t("footer.contactForm.placeholders.company"))}
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange("company")}
                   required
-                  className="w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 appearance-none"
-                >
-                  <option value="Sri Lanka">
-                    {String(t("footer.contactForm.countries.sriLanka"))}
-                  </option>
-                  <option value="India">
-                    {String(t("footer.contactForm.countries.india"))}
-                  </option>
-                  <option value="Singapore">
-                    {String(t("footer.contactForm.countries.singapore"))}
-
-                  </option>
-                  <option value="Other">
-                    {String(t("footer.contactForm.countries.other"))}
-                  </option>
-                </select>
-                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                  <svg
-                    className="w-5 h-5 text-yellow-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  autoComplete="organization"
+                  className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+                <label className="text-white text-sm w-full sm:w-20 shrink-0">
+                  {String(t("footer.contactForm.placeholders.name"))}
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange("name")}
+                  required
+                  autoComplete="name"
+                  className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+                <label className="text-white text-sm w-full sm:w-20 shrink-0">
+                  {String(t("footer.contactForm.placeholders.email"))}
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange("email")}
+                  required
+                  autoComplete="email"
+                  className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+                <label className="text-white text-sm w-full sm:w-20 shrink-0">
+                  {String(t("footer.contactForm.placeholders.country"))}
+                </label>
+                <div className="relative flex-1">
+                  <select
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange("country")}
+                    required
+                    className="w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 appearance-none"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
+                    <option value="Sri Lanka">
+                      {String(t("footer.contactForm.countries.sriLanka"))}
+                    </option>
+                    <option value="India">
+                      {String(t("footer.contactForm.countries.india"))}
+                    </option>
+                    <option value="Singapore">
+                      {String(t("footer.contactForm.countries.singapore"))}
+
+                    </option>
+                    <option value="Other">
+                      {String(t("footer.contactForm.countries.other"))}
+                    </option>
+                  </select>
+                  <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                    <svg
+                      className="w-5 h-5 text-yellow-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1">
-              <label className="text-white text-sm w-full sm:w-20 shrink-0">
-                {String(t("footer.contactForm.placeholders.phone"))}
-              </label>
-              <div className="flex-1">
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange("phone")}
-                  required
-                  autoComplete="tel"
-                  className={`flex-1 w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 ${phoneError
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+                <label className="text-white text-sm w-full sm:w-20 shrink-0">
+                  {String(t("footer.contactForm.placeholders.phone"))}
+                </label>
+                <div className="flex-1">
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange("phone")}
+                    required
+                    autoComplete="tel"
+                    className={`flex-1 w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 ${phoneError
                       ? "focus:ring-red-400 ring-2 ring-red-400"
                       : "focus:ring-yellow-400"
-                    }`}
-                />
-                {phoneError && (
-                  <p className="text-red-200 text-xs mt-1 ml-4">
-                    {phoneError}
-                  </p>
-                )}
+                      }`}
+                  />
+                  {phoneError && (
+                    <p className="text-red-200 text-xs mt-1 ml-4">
+                      {phoneError}
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-start gap-1">
-              <label className="text-white text-sm w-full sm:w-20 shrink-0 pt-2 sm:pt-1">
-                {String(t("footer.contactForm.placeholders.message"))}
-              </label>
-              <textarea
-                name="message"
-                rows={3}
-                value={formData.message}
-                onChange={handleChange("message")}
-                required
-                className="flex-1 px-4 py-3 rounded-3xl bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none"
-                placeholder={String(t("footer.contactForm.placeholders.message"))}
-              />
-            </div>
+              <div className="flex flex-col sm:flex-row sm:items-start gap-1">
+                <label className="text-white text-sm w-full sm:w-20 shrink-0 pt-2 sm:pt-1">
+                  {String(t("footer.contactForm.placeholders.message"))}
+                </label>
+                <textarea
+                  name="message"
+                  rows={3}
+                  value={formData.message}
+                  onChange={handleChange("message")}
+                  required
+                  className="flex-1 px-4 py-3 rounded-3xl bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 resize-none"
+                  placeholder={String(t("footer.contactForm.placeholders.message"))}
+                />
+              </div>
 
-            <motion.button // --- ADDED motion ---
-              type="submit"
-              className="ml-auto flex items-center justify-center gap-2 bg-yellow-400 text-emerald-900 py-2 px-6 rounded-full hover:bg-yellow-300 transition font-medium disabled:opacity-70 disabled:cursor-not-allowed"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              disabled={isSubmitting}
-              aria-busy={isSubmitting}
-            >
-              {isSubmitting ? sendingLabel : submitLabel}
-              <ArrowRight size={18} />
-            </motion.button>
-            {status.type !== "idle" && (
-              <p
-                className={`text-sm ${status.type === "success" ? "text-emerald-200" : "text-red-200"
-                  }`}
-                role="status"
-                aria-live="polite"
+              <motion.button // --- ADDED motion ---
+                type="submit"
+                className="ml-auto flex items-center justify-center gap-2 bg-yellow-400 text-emerald-900 py-2 px-6 rounded-full hover:bg-yellow-300 transition font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                disabled={isSubmitting}
+                aria-busy={isSubmitting}
               >
-                {status.message}
-              </p>
-            )}
-          </form>
-        </motion.div>
+                {isSubmitting ? sendingLabel : submitLabel}
+                <ArrowRight size={18} />
+              </motion.button>
+              {status.type !== "idle" && (
+                <p
+                  className={`text-sm ${status.type === "success" ? "text-emerald-200" : "text-red-200"
+                    }`}
+                  role="status"
+                  aria-live="polite"
+                >
+                  {status.message}
+                </p>
+              )}
+            </form>
+          </motion.div>
         </div>
       </div>
 

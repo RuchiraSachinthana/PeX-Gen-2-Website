@@ -135,30 +135,30 @@ export default function CaseStudiesShowcase() {
                   alt="Background Decoration"
                   className="border-4 border-teal-700 rounded-4xl opacity-80"
                 />
-                
+
                 {/* Green gradient overlay from bottom to half */}
                 <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-4xl pointer-events-none" />
-                        
+
                 <div className="absolute bottom-3 left-10">
-                  
+
                   <p className="text-[12px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
-                
+
                 <div className="absolute top-5 left-5 max-w-[170px] bg-teal-700 p-4 rounded-2xl">
-                  
+
                   <p className="text-xl text-white">
                     First time in her whole career she felt relieved from work stress...
                   </p>
                   <div className="mt-5 text-white">
                     <p className="text-md">Sanju</p>
                     <p className="text-[12px] text-white">
-                    quality and compliance officer 
-                  </p></div>
-                  
+                      quality and compliance officer
+                    </p></div>
+
                 </div>
-                
+
                 {/* Yellow arrow button at bottom right */}
                 <motion.button
                   className="absolute bottom-3 right-3 bg-yellow-400 p-3 rounded-2xl"
@@ -248,8 +248,198 @@ export default function CaseStudiesShowcase() {
         </div>
       </div>
 
+      {/* Tablet Version */}
+      <div
+        style={{
+          backgroundImage: 'url("/Asset 23.webp")',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="hidden md:block lg:hidden w-full py-10 relative overflow-hidden"
+      >
+        <div className="max-w-2xl mx-auto px-6 relative z-10">
+          {/* Top Row - Title + Images + Success Story Card */}
+          <div className="flex gap-4 items-start mb-6">
+            {/* Left - Success Story Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="relative flex-shrink-0"
+            >
+              <Image
+                width={220}
+                height={0}
+                src="/Asset 81.png"
+                alt="Success Story"
+                className="border-3 border-teal-700 rounded-2xl opacity-80"
+              />
+
+              {/* Green gradient overlay */}
+              <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-2xl pointer-events-none" />
+
+              <div className="absolute bottom-2 left-4">
+                <p className="text-[8px] mb-2 text-white px-1 py-0.5 rounded-full whitespace-nowrap">
+                  THIS MONTH&apos;S SUCCESS STORY
+                </p>
+              </div>
+
+              <div className="absolute top-2 left-2 max-w-[100px] bg-teal-700 p-2 rounded-lg">
+                <p className="text-[10px] text-white leading-tight">
+                  First time in her whole career she felt relieved from work stress...
+                </p>
+                <div className="mt-2 text-white">
+                  <p className="text-xs font-medium">Sanju</p>
+                  <p className="text-[8px] text-white">
+                    quality and compliance officer
+                  </p>
+                </div>
+              </div>
+
+              {/* Yellow arrow button */}
+              <motion.button
+                className="absolute bottom-2 right-2 bg-yellow-400 p-1.5 rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => router.push("/blog")}
+              >
+                <ArrowRight className="w-4 h-4 text-black -rotate-45" />
+              </motion.button>
+            </motion.div>
+
+            {/* Right - Title and Images */}
+            <div className="flex-1 flex flex-col justify-between">
+              <motion.div
+                className="text-[#0e685b] text-2xl mb-4"
+                initial={{ opacity: 0, y: -30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <p>Businesses that have</p>
+                <p>grown with us</p>
+              </motion.div>
+
+              {/* Image grid */}
+              <motion.div
+                className="flex flex-row gap-2"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Image
+                  width={80}
+                  height={0}
+                  src="/qs4 (1).webp"
+                  alt="Client 1"
+                  className="rounded-lg"
+                />
+                <Image
+                  width={80}
+                  height={0}
+                  src="/qs4 (2).webp"
+                  alt="Client 2"
+                  className="rounded-lg"
+                />
+                <Image
+                  width={80}
+                  height={0}
+                  src="/qs4 (3).webp"
+                  alt="Client 3"
+                  className="rounded-lg"
+                />
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Bottom Row - Two Case Study Cards Side by Side */}
+          <div className="flex gap-4">
+            {/* First Blog Card */}
+            <motion.div
+              className="relative flex-1 bg-[#0e685b] rounded-2xl p-5"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <motion.button
+                className="absolute top-[-4px] right-[-4px] bg-[#0e685b] p-2 border-4 border-white rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowRight className="w-4 h-4 text-yellow-400 -rotate-45" />
+              </motion.button>
+
+              <h3 className="text-white text-lg mb-3 pr-8">
+                {blogInfo[0].title ? (
+                  blogInfo[0].title.length > 40 ? blogInfo[0].title.slice(0, 40) + "..." : blogInfo[0].title
+                ) : (
+                  "A blog post has not been added yet."
+                )}
+              </h3>
+
+              <div className="flex flex-col gap-2">
+                <p className="text-yellow-400 text-xs tracking-wider">
+                  CASE STUDY
+                </p>
+                <motion.button
+                  className="bg-yellow-400 text-black py-2 px-4 rounded-full font-medium text-xs w-full"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
+                >
+                  Read More
+                </motion.button>
+              </div>
+            </motion.div>
+
+            {/* Second Blog Card */}
+            <motion.div
+              className="relative flex-1 bg-[#4a5568] rounded-2xl p-5"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <motion.button
+                className="absolute top-[-4px] right-[-4px] bg-[#4a5568] p-2 border-4 border-white rounded-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowRight className="w-4 h-4 text-yellow-400 -rotate-45" />
+              </motion.button>
+
+              <h3 className="text-white text-lg mb-3 pr-8">
+                {blogInfo[1].title ? (
+                  blogInfo[1].title.length > 40 ? blogInfo[1].title.slice(0, 40) + "..." : blogInfo[1].title
+                ) : (
+                  "A blog post has not been added yet."
+                )}
+              </h3>
+
+              <div className="flex flex-col gap-2">
+                <p className="text-yellow-400 text-xs tracking-wider">
+                  CASE STUDY
+                </p>
+                <motion.button
+                  className="bg-yellow-400 text-black py-2 px-4 rounded-full font-medium text-xs w-full"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
+                >
+                  Read More
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+
       {/* Mobile Version - Visible only on mobile */}
-      <div className="lg:hidden  mx-auto w-full">
+      <div className="md:hidden  mx-auto w-full">
         {/* First Card with Background Image */}
         <div
           style={{
@@ -277,10 +467,10 @@ export default function CaseStudiesShowcase() {
                   alt="Success Story"
                   className="w-full h-auto rounded-2xl border-2 border-teal-700 opacity-80"
                 />
-                
+
                 {/* Green gradient overlay from bottom to half */}
                 <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-2xl pointer-events-none" />
-                
+
                 {/* Testimonial content box */}
                 <div className="absolute top-2 left-2 max-w-[80px] bg-teal-700 p-2 rounded-xl">
                   <p className="text-[8px] text-white">
@@ -289,7 +479,7 @@ export default function CaseStudiesShowcase() {
                   <div className="mt-2 text-white">
                     <p className="text-[10px] font-medium">Sanju</p>
                     <p className="text-[4px] text-white">
-                      quality and compliance officer 
+                      quality and compliance officer
                     </p>
                   </div>
                 </div>
@@ -300,7 +490,7 @@ export default function CaseStudiesShowcase() {
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
-                
+
                 {/* Yellow arrow button at bottom right */}
                 <motion.button
                   className="absolute bottom-2 right-2 bg-yellow-400 p-2 rounded-md"
@@ -315,9 +505,9 @@ export default function CaseStudiesShowcase() {
               {/* Right side - Title and Images */}
               <div className="flex-1 flex flex-col justify-between h-full pt-2">
                 <div className="text-2xl text-teal-700">
-                 
-                    Businesses that have grown with us
-                 
+
+                  Businesses that have grown with us
+
                 </div>
 
                 {/* Scrollable Image Grid - Horizontal Row */}

@@ -21,11 +21,11 @@ const PexGenPartners = () => {
 
       {/* Marquee Container */}
       <div className="relative flex overflow-hidden group">
-        
+
 
         {/* Scrolling Track */}
         <motion.div
-          className="flex gap-12 md:gap-24 items-center flex-nowrap"
+          className="flex gap-8 md:gap-16 lg:gap-24 items-center flex-nowrap"
           animate={{
             x: ["0%", "-50%"],
           }}
@@ -43,7 +43,7 @@ const PexGenPartners = () => {
           {[...partners, ...partners].map((src, index) => (
             <div
               key={index}
-              className="relative w-[120px] md:w-[150px] flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+              className="relative w-[100px] md:w-[130px] lg:w-[150px] flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
             >
               <Image
                 src={src}
