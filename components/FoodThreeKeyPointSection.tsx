@@ -195,9 +195,198 @@ export default function FoodThreeKeyPointsIntroSection() {
       </div>
 
       {/* ========================================== */}
+      {/* Tablet Version - 768px to 1023px */}
+      {/* ========================================== */}
+      <div className="hidden md:block lg:hidden w-full bg-white pt-20 pb-140 relative overflow-hidden">
+        <div id="food-three-key-points-tablet" className="max-w-4xl mx-auto p-4 relative px-4 mb-80 z-10">
+          <motion.div
+            className="absolute left-10 text-[#0e685b] top-0 w-full h-full"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className="text-left text-2xl justify-center leading-8">
+              <p>Three key points why</p>
+              <p>you need to consider</p>
+              <p>PEx Software™</p>
+              <p>as a solution for</p>
+              <p>food safety</p>
+              <Image
+                src="/Asset 17.svg"
+                alt="Background Decoration"
+                width={150}
+                height={0}
+                className="mt-4"
+              />
+            </div>
+          </motion.div>
+          {/* first card */}
+          <motion.div
+            className="right-10 top-0 absolute"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <Image
+              src="/Asset 46.svg"
+              alt="Background Decoration"
+              width={500}
+              height={0}
+              className=""
+            />
+            <div className="absolute top-8 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">Pain Point</p>
+              <div className="text-xl font-semibold text-white">
+                <p>Heavy</p>
+                <p>Documentation</p>
+              </div>
+            </div>
+            <div className="absolute top-28 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                Traditional Challenge
+              </p>
+              <div className="text-lg text-white">
+                <p>Staff overwhelmed</p>
+                <p>with HACCP/</p>
+                <p>ISO 22000</p>
+                <p>paperword</p>
+              </div>
+            </div>
+            <div className="absolute top-28 left-56 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                How PEx Solves It
+              </p>
+              <div className="text-lg text-white">
+                <p>Automated processes</p>
+                <p>reduce paper documentation</p>
+                <p>by 90%</p>
+              </div>
+            </div>
+          </motion.div>
+          {/* line 1 */}
+          <motion.div
+            className="absolute right-[-1px] top-36"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <Image
+              src="/Asset 13.svg"
+              alt="Background Decoration"
+              width={650}
+              height={0}
+              className=""
+            />
+          </motion.div>
+          {/* 2nd card */}
+          <motion.div
+            className="absolute left-5 z-10 top-80"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <Image
+              src="/Asset 44.svg"
+              alt="Background Decoration"
+              width={360}
+              height={0}
+              className=""
+            />
+            <div className="absolute top-8 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">Pain Point</p>
+              <div className="text-xl font-semibold text-white">
+                <p>Manual</p>
+                <p>Monitoring</p>
+              </div>
+            </div>
+            <div className="absolute top-24 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                Traditional Challenge
+              </p>
+              <div className="text-lg text-white">
+                <p>Temperature checks and logs</p>
+                <p>done by hand are prone to errors</p>
+              </div>
+            </div>
+            <div className="absolute top-56 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                How PEx Solves It
+              </p>
+              <div className="text-lg text-white">
+                <p>IOT devices capture and</p>
+                <p>record data in real time</p>
+              </div>
+            </div>
+          </motion.div>
+          {/* line 2 */}
+          <motion.div
+            className="absolute left-90 z-1 top-88"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Image
+              src="/Asset 15.svg"
+              alt="Background Decoration"
+              width={280}
+              height={0}
+              className=""
+            />
+          </motion.div>
+          {/* 3rd card */}
+          <motion.div
+            className="absolute z-10 left-115 top-100"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <Image
+              src="/Asset 45.svg"
+              alt="Background Decoration"
+              width={280}
+              height={0}
+              className=""
+            />
+            <div className="absolute top-8 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">Pain Point</p>
+              <div className="text-xl font-semibold text-white">
+                <p>Compliance</p>
+                <p>Burden</p>
+              </div>
+            </div>
+            <div className="absolute top-26 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                Traditional Challenge
+              </p>
+              <div className="text-lg text-white">
+                <p>Audits and inspection cause</p>
+                <p>stress and extra workload</p>
+              </div>
+            </div>
+            <div className="absolute top-52 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                How PEx Solves It
+              </p>
+              <div className="text-lg text-white">
+                <p>AI dashboards provide</p>
+                <p>instant compliance visibility</p>
+                <p>and audit-ready reports</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* ========================================== */}
       {/* Mobile Version - Following KeyPointsIntroSection pattern */}
       {/* ========================================== */}
-      <div id="food-three-key-points" className="lg:hidden w-full bg-white py-12 px-4">
+      <div id="food-three-key-points" className="md:hidden w-full bg-white py-12 px-4">
         <div className="max-w-[350px] mx-auto flex flex-col items-center">
           {/* Title */}
           <motion.div

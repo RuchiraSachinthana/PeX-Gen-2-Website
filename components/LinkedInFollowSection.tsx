@@ -11,10 +11,10 @@ export default function LinkedInFollowSection() {
     <div className="w-full bg-white py-4 md:py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* =========================================
-            MOBILE VIEW (Visible on screens < 1024px)
+            MOBILE VIEW (Visible on screens < 768px)
             Recreated using CSS to look like the image
            ========================================= */}
-        <div className="lg:hidden max-w-[380px] mx-auto">
+        <div className="md:hidden max-w-[380px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -99,6 +99,89 @@ export default function LinkedInFollowSection() {
                 </div>
               </div>
             </div>
+          </motion.div>
+        </div>
+
+        {/* =========================================
+            TABLET VIEW (Visible on screens 768px - 1023px)
+           ========================================= */}
+        <div className="hidden md:block lg:hidden">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="absolute top-0 left-4 w-full z-10 pointer-events-none">
+              <h4 className="text-left text-2xl text-yellow-400 drop-shadow-lg mt-4">
+                {String(t("linkedInFollowSection.title"))}
+              </h4>
+            </div>
+            <Image
+              src="/section_5_image.svg"
+              alt={String(t("linkedInFollowSection.alt"))}
+              width={1000}
+              height={180}
+              className="w-full h-auto"
+            />
+
+            <div className="absolute bottom-4 left-40 flex gap-1.5 z-20">
+              <div className="w-10 h-10 relative rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                <Image
+                  src="/user (1).png"
+                  alt="Avatar 1"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute top-3 left-[-100px] text-white text-sm">
+                FOLLOW US
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                <Image
+                  src="/user (2).png"
+                  alt="Avatar 2"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                <Image
+                  src="/user (3).png"
+                  alt="Avatar 3"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                <Image
+                  src="/user (4).png"
+                  alt="Avatar 4"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gray-200">
+                <Image
+                  src="/user (5).png"
+                  alt="Avatar 5"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+              <button className="absolute bottom-4 right-6 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-2 text-sm rounded-full shadow-lg z-20 cursor-pointer">
+                Linkedin <span className="font-semibold">&nbsp;1000+</span>
+                &nbsp;followers
+              </button>
+            </a>
           </motion.div>
         </div>
 

@@ -62,9 +62,9 @@ export default function SevenWaysBenefits() {
         </div>
 
         {/* =========================================
-            MOBILE VIEW (Visible on screens < 1024px)
+            MOBILE VIEW (Visible on screens < 768px)
            ========================================= */}
-        <div className="lg:hidden max-w-[380px] mx-auto flex flex-col gap-4 pb-10">
+        <div className="md:hidden max-w-[380px] mx-auto flex flex-col gap-4 pb-10">
           {benefitsData.map((item, index) => (
             <motion.div
               key={index}
@@ -76,9 +76,8 @@ export default function SevenWaysBenefits() {
             >
               {/* The Green Card */}
               <div
-                className={`rounded-3xl p-8 text-left shadow-lg relative z-10 ${
-                  parseInt(item.id) % 2 === 1 ? "bg-teal-800" : "bg-teal-600"
-                }`}
+                className={`rounded-3xl p-8 text-left shadow-lg relative z-10 ${parseInt(item.id) % 2 === 1 ? "bg-teal-800" : "bg-teal-600"
+                  }`}
               >
                 {/* The Yellow Number Badge (Matches Screenshot) */}
                 <div className="absolute -top-2 -right-2 bg-yellow-400 text-black text-2xl  w-16 h-16 flex items-center justify-center rounded-xl z-20 border-4 border-white">
@@ -95,6 +94,250 @@ export default function SevenWaysBenefits() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* =========================================
+            TABLET VIEW (Visible on screens 768px - 1023px)
+           ========================================= */}
+        <div className="hidden md:block lg:hidden relative w-full h-[1400px]">
+          {/* --- Card 01 --- */}
+          <motion.div
+            className="absolute top-[-50px] right-10 w-[45%]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="relative ">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src="/1.svg"
+                  alt={String(t("sevenWaysBenefits.benefits.0.title"))}
+                  width={280}
+                  height={180}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 p-4 z-10 flex flex-col top-2 items-left text-left">
+                  <div className="text-yellow-400 text-lg mb-2">
+                    <div>Safeguards Brand </div>
+                    <div>Reputation in the</div>
+                    <div>Social Media Era</div>
+                  </div>
+                  <div className="text-white text-base">
+                    <div>In today&apos;s world, a single food</div>
+                    <div>safety lapse can go viral within</div>
+                    <div>minutes. PEX Software™</div>
+                    <div>ensures every process is</div>
+                    <div>monitored, documented, and</div>
+                    <div>verified—preventing hotels from</div>
+                    <div>reputational damage.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* --- Card 02 --- */}
+          <motion.div
+            className="absolute top-[250px] left-0 w-[55%]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src="/2.svg"
+                  alt={String(t("sevenWaysBenefits.benefits.1.title"))}
+                  width={0}
+                  height={0}
+                  className="w-full h-auto"
+                />
+                <div className="absolute top-14 inset-0 p-4 z-10 flex flex-col justify-center items-left text-left">
+                  <div className="text-yellow-400 absolute top-[-55px] left-15 text-lg mb-2">
+                    <div>Reduces Paperwork <br /> by 90%</div>
+                  </div>
+                  <div className="text-white text-base">
+                    <div>Traditional HACCP / ISO 22000</div>
+                    <div>systems demand heavy documentation.</div>
+                    <div>PEX digitizes and automates compliance</div>
+                    <div>records, cutting paperwork by up to 90%</div>
+                    <div>and freeing staff to focus on service.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* --- Card 03 --- */}
+          <motion.div
+            className="absolute top-[400px] right-[-20px] w-[50%]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src="/3.svg"
+                  alt={String(t("sevenWaysBenefits.benefits.2.title"))}
+                  width={250}
+                  height={180}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute left-8 text-yellow-400 inset-0 p-4 z-10 flex flex-col justify-center items-right text-left">
+                  <div className="text-yellow-400 text-lg ml-40 mb-2">
+                    <div>Automates</div>
+                    <div>Monitoring</div>
+                    <div>with IoT Devices</div>
+                  </div>
+                  <div className="text-white text-base">
+                    <div>Temperature checks, food traceability</div>
+                    <div>logs, and other critical control points</div>
+                    <div>are automatically captured through</div>
+                    <div>IoT sensors. This eliminates manual</div>
+                    <div>errors and ensures accuracy.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* --- Card 04 --- */}
+          <motion.div
+            className="absolute top-[550px] left-[-20px] w-[50%]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src="/4.svg"
+                  alt={String(t("sevenWaysBenefits.benefits.3.title"))}
+                  width={250}
+                  height={180}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 p-4 z-10 flex flex-col justify-center items-left text-left">
+                  <div className="text-yellow-400 text-lg mb-2">
+                    <div>Empowers Chefs and Hygiene Managers</div>
+                  </div>
+                  <div className="text-white text-base">
+                    <div>Instead of being burdened with compliance</div>
+                    <div>paperwork, chefs and hygiene managers</div>
+                    <div>can rely on visual dashboards and alerts.</div>
+                    <div>This allows them to focus on delivering</div>
+                    <div>safe, high-quality food effortlessly.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* --- Card 05 --- */}
+          <motion.div
+            className="absolute top-[780px] right-5 w-[45%]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className="relative ">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src="/5.svg"
+                  alt={String(t("sevenWaysBenefits.benefits.4.title"))}
+                  width={250}
+                  height={180}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 p-4 left-4 z-10 flex flex-col justify-center items-left text-left">
+                  <div className="text-yellow-400 text-lg mb-2">
+                    <div>Streamlines Audit Readiness</div>
+                  </div>
+                  <div className="text-white text-base">
+                    <div>Preparing for audits is often</div>
+                    <div>stressful and time-consuming.</div>
+                    <div>With PEX, all compliance data is</div>
+                    <div>centralized, digital and instantly</div>
+                    <div>retrievable making audits smooth.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* --- Card 06 --- */}
+          <motion.div
+            className="absolute top-[980px] left-0 w-[50%]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src="/6.svg"
+                  alt={String(t("sevenWaysBenefits.benefits.5.title"))}
+                  width={250}
+                  height={180}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 left-8 p-4 z-10 flex flex-col justify-center items-left text-left">
+                  <div className="text-yellow-400 text-lg ml-8 mb-2">
+                    <div>Aligns Food Safety with</div>
+                    <div>Business Strategy</div>
+                  </div>
+                  <div className="text-white text-base">
+                    <div>PEX transforms food safety from a</div>
+                    <div>&quot;compliance burden&quot; into a strategic</div>
+                    <div>advantage. By integrating ISO 22000</div>
+                    <div>into daily operations, hotel owners</div>
+                    <div>can demonstrate excellence.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* --- Card 07 --- */}
+          <motion.div
+            className="absolute top-[1120px] right-5 w-[40%]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg">
+                <Image
+                  src="/7.svg"
+                  alt={String(t("sevenWaysBenefits.benefits.6.title"))}
+                  width={250}
+                  height={180}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 p-4 z-10 flex flex-col justify-center items-left text-left">
+                  <div className="text-yellow-400 text-lg mb-2">
+                    <div>Drives Continuous</div>
+                    <div>Improvement</div>
+                  </div>
+                  <div className="text-white text-base">
+                    <div>With AI insights and</div>
+                    <div>performance analytics, PEX</div>
+                    <div>helps hotels identify trends,</div>
+                    <div>predict risks, and implement</div>
+                    <div>proactive improvements.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* =========================================

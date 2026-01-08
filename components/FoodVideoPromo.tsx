@@ -14,15 +14,15 @@ export default function FoodVideoPromoSection() {
     })();
   }, []);
   return (
-  <div
-  style={{
-    backgroundImage: 'url("/Asset 24.webp")',
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-  }}
-  className="w-full md:pt-20 md:pb-20 py-10 relative overflow-hidden"
->
-  <style jsx>{`
+    <div
+      style={{
+        backgroundImage: 'url("/Asset 24.webp")',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+      className="w-full md:pt-20 md:pb-20 py-10 relative overflow-hidden"
+    >
+      <style jsx>{`
     @media (max-width: 767px) {
       div[style] {
         background-image: none !important;
@@ -30,11 +30,13 @@ export default function FoodVideoPromoSection() {
     }
   `}</style>
       <div className="max-w-6xl mx-auto relative  px-4">
-        {/* Mobile Layout */}
-        <div className="flex lg:hidden max-w-[370px] mx-auto flex-col gap-3 items-center">
+        {/* ========================================== */}
+        {/* Mobile Layout - Below 768px */}
+        {/* ========================================== */}
+        <div className="flex md:hidden max-w-[370px] mx-auto flex-col gap-3 items-center">
           {/* Title - Mobile */}
           <motion.h2
-            className="text-xl sm:text-3xl text-[#0e685b] text-center mb-2"
+            className="text-xl text-[#0e685b] text-center mb-2"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -89,7 +91,7 @@ export default function FoodVideoPromoSection() {
             >
               <p>Get the Latest Updates</p>
             </motion.div>
-            
+
             <motion.div
               className="flex items-center absolute top-16 left-10 right-12 justify-between"
               initial={{ opacity: 0, x: -30 }}
@@ -162,6 +164,149 @@ export default function FoodVideoPromoSection() {
                 </div>
               </motion.button>
             </motion.div>
+          </motion.div>
+        </div>
+
+        {/* ========================================== */}
+        {/* Tablet Layout - 768px to 1023px (Same as Desktop) */}
+        {/* ========================================== */}
+        <div className="hidden md:flex lg:hidden gap-2 justify-between">
+          {/* left section */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.h2
+              className="text-2xl text-[#0e685b] text-left mb-4"
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <p>Watch video how PEx Software™</p>
+              <p>can Automate Food safety </p>
+              <p>management</p>
+            </motion.h2>
+            <motion.div
+              className="flex relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Image
+                width={220}
+                height={0}
+                src="/Asset 25.svg"
+                alt="PEx Software Video Thumbnail"
+              />
+
+              <motion.div
+                className="text-xl left-5 top-5 absolute text-yellow-400"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <p>Get the</p>
+                <p>Latest Updates</p>
+              </motion.div>
+              <motion.div
+                className="flex absolute justify-between gap-2 items-baseline left-5 top-20"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
+                <p className="text-[10px] text-white">GET NOTIFICATION</p>
+                <motion.button
+                  className="bg-yellow-400 hover:bg-yellow-500 text-black py-1 px-1.5 text-xs rounded-full cursor-pointer transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const footer = document.getElementById("footer");
+                    if (footer) {
+                      footer.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
+                >
+                  <div className="flex ">
+                    <p className="text-[11px]"> Sign Up </p>
+                    <ArrowRight className="w-4 h-4 text-black -rotate-45" />
+                  </div>
+                </motion.button>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <Image
+                  width={220}
+                  height={0}
+                  src="/Asset 26.svg"
+                  alt="PEx Software Video Thumbnail"
+                  className="absolute left-56 top-12"
+                />
+              </motion.div>
+              <motion.div
+                className="text-xl left-62 top-20 absolute text-yellow-400"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+              >
+                <p>Request</p>
+                <p>Demo</p>
+              </motion.div>
+              <motion.div
+                className="flex absolute w-full gap-2 items-baseline left-62 top-35"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.0 }}
+              >
+                <p className="text-[10px] text-white">LETS CONNECT</p>
+                <motion.button
+                  className="bg-yellow-400 hover:bg-yellow-500 text-black py-1 px-1.5 text-xs rounded-full cursor-pointer transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  data-cal-namespace="15min"
+                  data-cal-link="pexsoftwaresolutions/15min"
+                  data-cal-config='{"layout":"month_view"}'
+                >
+                  <div className="flex ">
+                    <p className="text-[11px]"> Book now </p>
+                    <ArrowRight className="w-4 h-4 text-black -rotate-45" />
+                  </div>
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+          {/* right section */}
+          <motion.div
+            className="relative w-2/5 h-72 rounded-3xl p-1.5 shadow-2xl bg-[linear-gradient(to_bottom_right,#0e685b,#10b981,#0e685b)]"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <iframe
+              className="top-0 left-0 w-full h-full rounded-2xl"
+              src={
+                "https://www.youtube.com/embed/9RjT0j7LtrY?si=run9EXq-vCZfCc6a"
+              }
+              title={"YouTube video player"}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+            {/* Absolute frame around the video */}
+            <div className="absolute inset-0 rounded-3xl mb-10 pointer-events-none"></div>
           </motion.div>
         </div>
 
