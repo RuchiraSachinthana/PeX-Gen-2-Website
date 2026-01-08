@@ -9,7 +9,7 @@ import { getCalApi } from "@calcom/embed-react";
 
 export const FoodExperienceStatsSection: FC = () => {
   const { t } = useTranslation();
-  
+
   // Initialize Cal.com
   useEffect(() => {
     (async function () {
@@ -175,7 +175,7 @@ export const FoodExperienceStatsSection: FC = () => {
                   data-cal-config='{"layout":"month_view"}'
                 >
                   <span className="text-md">{buttons.bookNow}</span>
-                  
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -191,9 +191,9 @@ export const FoodExperienceStatsSection: FC = () => {
                     />
                   </svg>
                 </motion.button>
-                
+
               </motion.div>
-              
+
               {/* Promo text below button - Desktop */}
               <div className="absolute top-60 right-20 text-right">
                 <span className="text-teal-700 text-sm flex items-center justify-end gap-1">
@@ -214,10 +214,159 @@ export const FoodExperienceStatsSection: FC = () => {
       </section>
 
       {/* ========================================== */}
+      {/* Tablet Version - 768px to 1023px */}
+      {/* ========================================== */}
+      <section
+        className="hidden md:block lg:hidden w-full bg-cover bg-no-repeat relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/food_expirence_bg.webp')",
+          backgroundPosition: "70% center",
+        }}
+      >
+        <div className="max-w-4xl mx-auto h-full px-4 py-16 relative z-10">
+          <div className="h-full grid grid-cols-[auto_1fr_auto] gap-6 items-center">
+            {/* Left Section - Stats Card */}
+            <motion.div
+              className="flex flex-col gap-3"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.div
+                className="p-4 rounded-2xl bg-black/40"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+              >
+                <div className="grid grid-cols-2 p-3 gap-6">
+                  <div>
+                    <motion.div
+                      className="text-4xl text-white mb-1"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6, duration: 0.5 }}
+                    >
+                      <p className="text-yellow-400">{stats.years.value}</p>
+                    </motion.div>
+                    <div className="text-lg text-white uppercase tracking-wide">
+                      {stats.years.labelLine1}
+                      <br />
+                      {stats.years.labelLine2}
+                    </div>
+                  </div>
+                  <div>
+                    <motion.div
+                      className="text-4xl text-white mb-1"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.7, duration: 0.5 }}
+                    >
+                      <p className="text-yellow-400">{stats.clients.value}</p>
+                    </motion.div>
+                    <div className="text-lg text-white uppercase tracking-wide">
+                      {stats.clients.label}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Middle Section - Empty space */}
+            <div className="hidden md:flex h-full">
+              {/* Person image will be positioned here */}
+            </div>
+
+            {/* Right Section - Request Demo Card */}
+            <motion.div
+              className="w-full md:w-[280px]"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+              >
+                <h3 className="text-2xl top-20 right-40 absolute text-teal-700 mb-2">
+                  {demoCard.titleLines.map((line: string, index: number) => (
+                    <Fragment key={index}>
+                      {line}
+                      <br />
+                    </Fragment>
+                  ))}
+                </h3>
+              </motion.div>
+
+              {/* CTA row */}
+              <motion.div
+                className="flex items-center absolute top-36 right-16 gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.9, duration: 0.5 }}
+              >
+                <span className="text-teal-700 uppercase text-xs">
+                  {demoCard.connectLabel}
+                </span>
+                <motion.button
+                  className="bg-teal-700 text-white py-2 px-3 rounded-full flex items-center justify-center gap-2 hover:bg-teal-800 transition-colors text-xs"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  data-cal-namespace="15min"
+                  data-cal-link="pexsoftwaresolutions/15min"
+                  data-cal-config='{"layout":"month_view"}'
+                >
+                  <span className="text-sm">{buttons.bookNow}</span>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2.5}
+                    stroke="currentColor"
+                    className="w-3 h-3"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
+                    />
+                  </svg>
+                </motion.button>
+
+              </motion.div>
+
+              {/* Promo text below button */}
+              <div className="absolute top-48 right-16 text-right">
+                <span className="text-teal-700 text-xs flex items-center justify-end gap-1">
+                  {promoText}
+                  <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
+              <Image
+                src="/Asset 47.svg"
+                alt="Avatar 1"
+                width={35}
+                height={35}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================== */}
       {/* Mobile Version - Following ExperienceStatsSection pattern */}
       {/* ========================================== */}
       <section
-        className="lg:hidden w-full bg-cover bg-no-repeat relative overflow-hidden min-h-[500px]"
+        className="md:hidden w-full bg-cover bg-no-repeat relative overflow-hidden min-h-[500px]"
         style={{
           backgroundImage: "url('/food_expirence_bg.webp')",
           backgroundPosition: "60% center",
@@ -250,7 +399,7 @@ export const FoodExperienceStatsSection: FC = () => {
                 <p className="text-sm text-white uppercase font-medium">
                   {stats.clients.label}
                 </p>
-                
+
               </div>
             </div>
           </motion.div>
@@ -300,7 +449,7 @@ export const FoodExperienceStatsSection: FC = () => {
                   <ArrowRight className="w-3 h-3" />
                 </motion.button>
               </div>
-              
+
               {/* Promo text below button - Mobile */}
               <div className="text-right mr-1 mt-2">
                 <span className="text-teal-700 text-[10px] flex items-center justify-end gap-1">
@@ -311,7 +460,7 @@ export const FoodExperienceStatsSection: FC = () => {
             </div>
           </motion.div>
 
-         
+
         </div>
       </section>
     </>
