@@ -87,30 +87,30 @@ export default function BlogCaseStudiesShowcase() {
                   alt="Background Decoration"
                   className="border-4 border-teal-700 rounded-4xl opacity-80"
                 />
-                
+
                 {/* Green gradient overlay from bottom to half */}
                 <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-4xl pointer-events-none" />
-                        
+
                 <div className="absolute bottom-3 left-10">
-                  
+
                   <p className="text-[12px] mb-5 ml-10 text-white px-2 py-1 rounded-full whitespace-nowrap">
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
-                
+
                 <div className="absolute top-5 left-5 max-w-[170px] bg-teal-700 p-4 rounded-2xl">
-                  
+
                   <p className="text-xl text-white">
                     First time in her whole career she felt relieved from work stress...
                   </p>
                   <div className="mt-5 text-white">
                     <p className="text-md">Sanju</p>
                     <p className="text-[12px] text-white">
-                    quality and compliance officer 
-                  </p></div>
-                  
+                      quality and compliance officer
+                    </p></div>
+
                 </div>
-                
+
                 {/* Yellow arrow button at bottom right */}
                 <motion.button
                   className="absolute bottom-3 right-3 bg-yellow-400 p-3 rounded-2xl"
@@ -134,7 +134,7 @@ export default function BlogCaseStudiesShowcase() {
                   height={0}
                   src="/Asset 19.svg"
                   alt="Background Decoration"
-                  
+
                 />
                 <div className="absolute top-20 left-8">
                   <div className="mb-16 ml-7 text-left text-3xl text-white max-w-[200px]">
@@ -193,8 +193,177 @@ export default function BlogCaseStudiesShowcase() {
         </div>
       </div>
 
-      {/* Mobile Version - Visible only on mobile */}
-      <div className="lg:hidden  mx-auto w-full">
+      {/* Tablet Version - Like desktop but scaled down */}
+      <div
+        style={{
+          backgroundImage: 'url("/Asset 23.webp")',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="hidden md:block lg:hidden w-full py-16 relative overflow-hidden"
+      >
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <div>
+            <div className="flex flex-row justify-between gap-4 items-end">
+              <motion.div
+                className="absolute top-0 text-[#0e685b] text-xl left-1/2 transform -translate-x-1/2"
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <p>Businesses that have</p>
+                <p>grown with us</p>
+              </motion.div>
+              {/* image grid */}
+              <motion.div
+                className="absolute right-10 top-20 items-left text-left"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="flex flex-row gap-1.5">
+                  <Image
+                    width={70}
+                    height={0}
+                    src="/qs4 (1).webp"
+                    alt="Background Decoration"
+                  />
+                  <Image
+                    width={70}
+                    height={0}
+                    src="/qs4 (2).webp"
+                    alt="Background Decoration"
+                  />
+                  <Image
+                    width={70}
+                    height={0}
+                    src="/qs4 (3).webp"
+                    alt="Background Decoration"
+                  />
+                </div>
+              </motion.div>
+              {/* left card */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="relative"
+              >
+                <Image
+                  width={300}
+                  height={0}
+                  src="/Asset 81.png"
+                  alt="Background Decoration"
+                  className="border-3 border-teal-700 rounded-3xl opacity-80"
+                />
+
+                {/* Green gradient overlay */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-3xl pointer-events-none" />
+
+                <div className="absolute bottom-2 left-6">
+                  <p className="text-[10px] mb-3 ml-6 text-white px-2 py-1 rounded-full whitespace-nowrap">
+                    THIS MONTH&apos;S SUCCESS STORY
+                  </p>
+                </div>
+
+                <div className="absolute top-3 left-3 max-w-[120px] bg-teal-700 p-3 rounded-xl">
+                  <p className="text-sm text-white">
+                    First time in her whole career she felt relieved from work stress...
+                  </p>
+                  <div className="mt-3 text-white">
+                    <p className="text-xs">Sanju</p>
+                    <p className="text-[10px] text-white">
+                      quality and compliance officer
+                    </p>
+                  </div>
+                </div>
+
+                {/* Yellow arrow button */}
+                <motion.button
+                  className="absolute bottom-2 right-2 bg-yellow-400 p-2 rounded-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push("/blog")}
+                >
+                  <ArrowRight className="w-5 h-5 text-black -rotate-45" />
+                </motion.button>
+              </motion.div>
+              {/* center card */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+              >
+                <Image
+                  width={240}
+                  height={0}
+                  src="/Asset 19.svg"
+                  alt="Background Decoration"
+                />
+                <div className="absolute top-14 left-5">
+                  <div className="mb-10 ml-5 text-left text-xl text-white max-w-[150px]">
+                    <p>Sanju - Compliance Manager Her Story</p>
+                  </div>
+                  <div className="flex flex-row justify-between align-middle items-center gap-2">
+                    <p className="text-xs text-yellow-400">CASE STUDY</p>
+                    <motion.button
+                      className="bg-yellow-400 text-black p-1.5 px-3 text-xs rounded-full cursor-pointer transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => router.push("/blog")}
+                    >
+                      <div className="flex">
+                        Read More &nbsp;
+                        <ArrowRight className="w-4 h-4 text-black" />
+                      </div>
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+              {/* right card */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.7 }}
+              >
+                <Image
+                  width={300}
+                  height={0}
+                  src="/Asset 20.svg"
+                  alt="Background Decoration"
+                />
+                <div className="mb-8 absolute top-5 left-8 text-left text-lg text-white max-w-[180px]">
+                  <p>Be Audit-Ready: How PEx Software Simplifies ISO Audits.</p>
+                </div>
+                <div className="flex absolute top-24 left-20 flex-row justify-between items-center gap-2">
+                  <p className="text-xs text-yellow-400">CASE STUDY</p>
+                  <motion.button
+                    className="bg-yellow-400 text-black p-1.5 px-3 text-xs rounded-full cursor-pointer transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => router.push("/blog")}
+                  >
+                    <div className="flex">
+                      Read More &nbsp;
+                      <ArrowRight className="w-4 h-4 text-black" />
+                    </div>
+                  </motion.button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Version - Visible only below 768px */}
+      <div className="md:hidden mx-auto w-full">
         {/* First Card with Background Image */}
         <div
           style={{
@@ -222,10 +391,10 @@ export default function BlogCaseStudiesShowcase() {
                   alt="Success Story"
                   className="w-full h-auto rounded-2xl border-2 border-teal-700 opacity-80"
                 />
-                
+
                 {/* Green gradient overlay from bottom to half */}
                 <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-2xl pointer-events-none" />
-                
+
                 {/* Testimonial content box */}
                 <div className="absolute top-2 left-2 max-w-[80px] bg-teal-700 p-2 rounded-xl">
                   <p className="text-[8px] text-white">
@@ -234,7 +403,7 @@ export default function BlogCaseStudiesShowcase() {
                   <div className="mt-2 text-white">
                     <p className="text-[10px] font-medium">Sanju</p>
                     <p className="text-[4px] text-white">
-                      quality and compliance officer 
+                      quality and compliance officer
                     </p>
                   </div>
                 </div>
@@ -245,7 +414,7 @@ export default function BlogCaseStudiesShowcase() {
                     THIS MONTH&apos;S SUCCESS STORY
                   </p>
                 </div>
-                
+
                 {/* Yellow arrow button at bottom right */}
                 <motion.button
                   className="absolute bottom-2 right-2 bg-yellow-400 p-2 rounded-md"
@@ -260,9 +429,9 @@ export default function BlogCaseStudiesShowcase() {
               {/* Right side - Title and Images */}
               <div className="flex-1 flex flex-col justify-between h-full pt-2">
                 <div className="text-2xl text-teal-700">
-                 
-                    Businesses that have grown with us
-                 
+
+                  Businesses that have grown with us
+
                 </div>
 
                 {/* Scrollable Image Grid - Horizontal Row */}
@@ -343,8 +512,8 @@ export default function BlogCaseStudiesShowcase() {
 
               <div className="p-4">
                 <h3 className="text-white text-2xl mb-2">
-                Sanju - Compliance Manager.<br />
-                Her Story
+                  Sanju - Compliance Manager.<br />
+                  Her Story
                 </h3>
 
                 <div className="flex flex-col gap-3">
@@ -381,7 +550,7 @@ export default function BlogCaseStudiesShowcase() {
 
               <div className="mt-4">
                 <h3 className="text-white text-2xl leading-tight pt-2 mb-4">
-                Be Audit-Ready: How PEx Software Simplifies ISO Audits.
+                  Be Audit-Ready: How PEx Software Simplifies ISO Audits.
                 </h3>
 
                 <div className="flex flex-col gap-3">
