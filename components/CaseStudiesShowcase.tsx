@@ -248,71 +248,21 @@ export default function CaseStudiesShowcase() {
         </div>
       </div>
 
-      {/* Tablet Version */}
+      {/* Tablet Version - Like desktop but scaled down */}
       <div
         style={{
           backgroundImage: 'url("/Asset 23.webp")',
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-        className="hidden md:block lg:hidden w-full py-10 relative overflow-hidden"
+        className="hidden md:block lg:hidden w-full py-16 relative overflow-hidden"
       >
-        <div className="max-w-2xl mx-auto px-6 relative z-10">
-          {/* Top Row - Title + Images + Success Story Card */}
-          <div className="flex gap-4 items-start mb-6">
-            {/* Left - Success Story Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="relative flex-shrink-0"
-            >
-              <Image
-                width={220}
-                height={0}
-                src="/Asset 81.png"
-                alt="Success Story"
-                className="border-3 border-teal-700 rounded-2xl opacity-80"
-              />
-
-              {/* Green gradient overlay */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-2xl pointer-events-none" />
-
-              <div className="absolute bottom-2 left-4">
-                <p className="text-[8px] mb-2 text-white px-1 py-0.5 rounded-full whitespace-nowrap">
-                  THIS MONTH&apos;S SUCCESS STORY
-                </p>
-              </div>
-
-              <div className="absolute top-2 left-2 max-w-[100px] bg-teal-700 p-2 rounded-lg">
-                <p className="text-[10px] text-white leading-tight">
-                  First time in her whole career she felt relieved from work stress...
-                </p>
-                <div className="mt-2 text-white">
-                  <p className="text-xs font-medium">Sanju</p>
-                  <p className="text-[8px] text-white">
-                    quality and compliance officer
-                  </p>
-                </div>
-              </div>
-
-              {/* Yellow arrow button */}
-              <motion.button
-                className="absolute bottom-2 right-2 bg-yellow-400 p-1.5 rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => router.push("/blog")}
-              >
-                <ArrowRight className="w-4 h-4 text-black -rotate-45" />
-              </motion.button>
-            </motion.div>
-
-            {/* Right - Title and Images */}
-            <div className="flex-1 flex flex-col justify-between">
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <div>
+            <div className="flex flex-row justify-between gap-4 items-end">
               <motion.div
-                className="text-[#0e685b] text-2xl mb-4"
-                initial={{ opacity: 0, y: -30 }}
+                className="absolute top-0 text-[#0e685b] text-xl left-1/2 transform -translate-x-1/2"
+                initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -320,119 +270,157 @@ export default function CaseStudiesShowcase() {
                 <p>Businesses that have</p>
                 <p>grown with us</p>
               </motion.div>
-
-              {/* Image grid */}
+              {/* image grid */}
               <motion.div
-                className="flex flex-row gap-2"
+                className="absolute right-10 top-20 items-left text-left"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
+                <div className="flex flex-row gap-1.5">
+                  <Image
+                    width={70}
+                    height={0}
+                    src="/qs4 (1).webp"
+                    alt="Background Decoration"
+                  />
+                  <Image
+                    width={70}
+                    height={0}
+                    src="/qs4 (2).webp"
+                    alt="Background Decoration"
+                  />
+                  <Image
+                    width={70}
+                    height={0}
+                    src="/qs4 (3).webp"
+                    alt="Background Decoration"
+                  />
+                </div>
+              </motion.div>
+              {/* left card */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="relative"
+              >
                 <Image
-                  width={80}
+                  width={300}
                   height={0}
-                  src="/qs4 (1).webp"
-                  alt="Client 1"
-                  className="rounded-lg"
+                  src="/Asset 81.png"
+                  alt="Background Decoration"
+                  className="border-3 border-teal-700 rounded-3xl opacity-80"
                 />
+
+                {/* Green gradient overlay */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-green-600/80 to-transparent rounded-b-3xl pointer-events-none" />
+
+                <div className="absolute bottom-2 left-6">
+                  <p className="text-[10px] mb-3 ml-6 text-white px-2 py-1 rounded-full whitespace-nowrap">
+                    THIS MONTH&apos;S SUCCESS STORY
+                  </p>
+                </div>
+
+                <div className="absolute top-3 left-3 max-w-[120px] bg-teal-700 p-3 rounded-xl">
+                  <p className="text-sm text-white">
+                    First time in her whole career she felt relieved from work stress...
+                  </p>
+                  <div className="mt-3 text-white">
+                    <p className="text-xs">Sanju</p>
+                    <p className="text-[10px] text-white">
+                      quality and compliance officer
+                    </p>
+                  </div>
+                </div>
+
+                {/* Yellow arrow button */}
+                <motion.button
+                  className="absolute bottom-2 right-2 bg-yellow-400 p-2 rounded-xl"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push("/blog")}
+                >
+                  <ArrowRight className="w-5 h-5 text-black -rotate-45" />
+                </motion.button>
+              </motion.div>
+              {/* center card */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+              >
                 <Image
-                  width={80}
+                  width={240}
                   height={0}
-                  src="/qs4 (2).webp"
-                  alt="Client 2"
-                  className="rounded-lg"
+                  src="/Asset 19.svg"
+                  alt="Background Decoration"
                 />
+                <div className="absolute top-14 left-5">
+                  <div className="mb-10 ml-5 text-left text-xl text-white max-w-[150px]">
+                    {blogInfo[0].title ? (
+                      <p>{blogInfo[0].title.length > 40 ? blogInfo[0].title.slice(0, 40) + "..." : blogInfo[0].title}</p>
+                    ) : (
+                      <p>A blog post has not been added yet.</p>
+                    )}
+                  </div>
+                  <div className="flex flex-row justify-between align-middle items-center gap-2">
+                    <p className="text-xs text-yellow-400">CASE STUDY</p>
+                    <motion.button
+                      className="bg-yellow-400 text-black p-1.5 px-3 text-xs rounded-full cursor-pointer transition-colors duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
+                    >
+                      <div className="flex">
+                        Read More &nbsp;
+                        <ArrowRight className="w-4 h-4 text-black" />
+                      </div>
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+              {/* right card */}
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.7 }}
+              >
                 <Image
-                  width={80}
+                  width={300}
                   height={0}
-                  src="/qs4 (3).webp"
-                  alt="Client 3"
-                  className="rounded-lg"
+                  src="/Asset 20.svg"
+                  alt="Background Decoration"
                 />
+                <div className="mb-8 absolute top-5 left-8 text-left text-lg text-white max-w-[180px]">
+                  {blogInfo[1].title ? (
+                    <p>{blogInfo[1].title.length > 40 ? blogInfo[1].title.slice(0, 40) + "..." : blogInfo[1].title}</p>
+                  ) : (
+                    <p>A blog post has not been added yet.</p>
+                  )}
+                </div>
+                <div className="flex absolute top-24 left-20 flex-row justify-between items-center gap-2">
+                  <p className="text-xs text-yellow-400">CASE STUDY</p>
+                  <motion.button
+                    className="bg-yellow-400 text-black p-1.5 px-3 text-xs rounded-full cursor-pointer transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
+                  >
+                    <div className="flex">
+                      Read More &nbsp;
+                      <ArrowRight className="w-4 h-4 text-black" />
+                    </div>
+                  </motion.button>
+                </div>
               </motion.div>
             </div>
-          </div>
-
-          {/* Bottom Row - Two Case Study Cards Side by Side */}
-          <div className="flex gap-4">
-            {/* First Blog Card */}
-            <motion.div
-              className="relative flex-1 bg-[#0e685b] rounded-2xl p-5"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <motion.button
-                className="absolute top-[-4px] right-[-4px] bg-[#0e685b] p-2 border-4 border-white rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ArrowRight className="w-4 h-4 text-yellow-400 -rotate-45" />
-              </motion.button>
-
-              <h3 className="text-white text-lg mb-3 pr-8">
-                {blogInfo[0].title ? (
-                  blogInfo[0].title.length > 40 ? blogInfo[0].title.slice(0, 40) + "..." : blogInfo[0].title
-                ) : (
-                  "A blog post has not been added yet."
-                )}
-              </h3>
-
-              <div className="flex flex-col gap-2">
-                <p className="text-yellow-400 text-xs tracking-wider">
-                  CASE STUDY
-                </p>
-                <motion.button
-                  className="bg-yellow-400 text-black py-2 px-4 rounded-full font-medium text-xs w-full"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => router.push(blogInfo[0].id ? `/blog?id=${blogInfo[0].id}` : "/blog")}
-                >
-                  Read More
-                </motion.button>
-              </div>
-            </motion.div>
-
-            {/* Second Blog Card */}
-            <motion.div
-              className="relative flex-1 bg-[#4a5568] rounded-2xl p-5"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <motion.button
-                className="absolute top-[-4px] right-[-4px] bg-[#4a5568] p-2 border-4 border-white rounded-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ArrowRight className="w-4 h-4 text-yellow-400 -rotate-45" />
-              </motion.button>
-
-              <h3 className="text-white text-lg mb-3 pr-8">
-                {blogInfo[1].title ? (
-                  blogInfo[1].title.length > 40 ? blogInfo[1].title.slice(0, 40) + "..." : blogInfo[1].title
-                ) : (
-                  "A blog post has not been added yet."
-                )}
-              </h3>
-
-              <div className="flex flex-col gap-2">
-                <p className="text-yellow-400 text-xs tracking-wider">
-                  CASE STUDY
-                </p>
-                <motion.button
-                  className="bg-yellow-400 text-black py-2 px-4 rounded-full font-medium text-xs w-full"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => router.push(blogInfo[1].id ? `/blog?id=${blogInfo[1].id}` : "/blog")}
-                >
-                  Read More
-                </motion.button>
-              </div>
-            </motion.div>
           </div>
         </div>
       </div>

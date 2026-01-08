@@ -199,9 +199,202 @@ export default function KeyPointsIntroSection() {
       </div>
 
       {/* ========================================== */}
-      {/* Mobile Version - HARDCODED (No components) */}
+      {/* Tablet Version - 768px to 1023px */}
       {/* ========================================== */}
-      <div id="pex-quality-key-points" className="lg:hidden w-full bg-white py-12 px-4">
+      <div className="hidden md:block lg:hidden w-full bg-white pt-20 pb-140 relative overflow-hidden">
+        <div id="pex-quality-key-points-tablet" className="max-w-4xl mx-auto p-4 relative px-4 mb-80 z-10">
+          <motion.div
+            className="absolute left-10 text-[#0e685b] top-0 w-full h-full"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className="text-left text-2xl justify-center leading-8">
+              <p>Three key points why</p>
+              <p>you need to consider</p>
+              <p>PEx Software™</p>
+              <p>as a solution for</p>
+              <p>your business</p>
+              <Image
+                src="/Asset 17.svg"
+                alt="Background Decoration"
+                width={150}
+                height={0}
+                className="mt-4"
+              />
+            </div>
+          </motion.div>
+          {/* first card */}
+          <motion.div
+            className="right-10 top-0 absolute"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <Image
+              src="/Asset 12.svg"
+              alt="Background Decoration"
+              width={500}
+              height={0}
+              className=""
+            />
+            <div className="absolute top-8 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">Pain Point</p>
+              <div className="text-xl font-semibold text-white">
+                <p>Documentation</p>
+                <p>Overload</p>
+              </div>
+            </div>
+            <div className="absolute top-28 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                Traditional Challenge
+              </p>
+              <div className="text-lg text-white">
+                <p>Paper-heavy,</p>
+                <p>time-consuming,</p>
+                <p>error-prone</p>
+                <p>compliance records</p>
+              </div>
+            </div>
+            <div className="absolute top-28 left-64 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                How PEx Solves It
+              </p>
+              <div className="text-lg text-white">
+                <p>Automated and</p>
+                <p>Ai powered paperless</p>
+                <p>workflows to</p>
+                <p>manage compliance</p>
+              </div>
+            </div>
+          </motion.div>
+          {/* line 1 */}
+          <motion.div
+            className="absolute right-[-1px] top-36"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <Image
+              src="/Asset 13.svg"
+              alt="Background Decoration"
+              width={650}
+              height={0}
+              className=""
+            />
+          </motion.div>
+          {/* 2nd card */}
+          <motion.div
+            className="absolute left-5 z-10 top-80"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <Image
+              src="/Asset 14.svg"
+              alt="Background Decoration"
+              width={360}
+              height={0}
+              className=""
+            />
+            <div className="absolute top-8 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">Pain Point</p>
+              <div className="text-xl font-semibold text-white">
+                <p>Lack of</p>
+                <p>Strategic value</p>
+              </div>
+            </div>
+            <div className="absolute top-24 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                Traditional Challenge
+              </p>
+              <div className="text-lg text-white">
+                <p>ISO seen as a &quot;tick-box&quot; exercise,</p>
+                <p>disconnected from business goals</p>
+              </div>
+            </div>
+            <div className="absolute top-52 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                How PEx Solves It
+              </p>
+              <div className="text-lg text-white">
+                <p>Includes management tools</p>
+                <p>for CEO&apos;s for planning and</p>
+                <p>monitoring strategic direction</p>
+                <p>of business</p>
+              </div>
+            </div>
+          </motion.div>
+          {/* line 2 */}
+          <motion.div
+            className="absolute left-90 z-1 top-88"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Image
+              src="/Asset 15.svg"
+              alt="Background Decoration"
+              width={280}
+              height={0}
+              className=""
+            />
+          </motion.div>
+          {/* 3rd card */}
+          <motion.div
+            className="absolute z-10 left-115 top-100"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <Image
+              src="/Asset 16.svg"
+              alt="Background Decoration"
+              width={280}
+              height={0}
+              className=""
+            />
+            <div className="absolute top-8 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">Pain Point</p>
+              <div className="text-xl font-semibold text-white">
+                <p>Time consuming</p>
+                <p>to maintain</p>
+              </div>
+            </div>
+            <div className="absolute top-24 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                Traditional Challenge
+              </p>
+              <div className="text-lg text-white">
+                <p>Manual documentation,</p>
+                <p>missing records,</p>
+                <p>last-minute scrambling</p>
+              </div>
+            </div>
+            <div className="absolute top-52 left-8 text-left text-base justify-center leading-6">
+              <p className="text-yellow-500 text-xs font-bold">
+                How PEx Solves It
+              </p>
+              <div className="text-lg text-white">
+                <p>Removes unproductive</p>
+                <p>documentation work</p>
+                <p>and waste activities</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* ========================================== */}
+      {/* Mobile Version - below 768px */}
+      {/* ========================================== */}
+      <div id="pex-quality-key-points" className="md:hidden w-full bg-white py-12 px-4">
         <div className="max-w-[350px] mx-auto flex flex-col items-center">
           {/* Title */}
           <motion.div
@@ -249,7 +442,7 @@ export default function KeyPointsIntroSection() {
                       </span>
                     </div>
                   </div>
-             
+
                 </div>
 
                 <h3 className="text-white text-xl font-semibold mb-2 leading-tight">
@@ -268,7 +461,7 @@ export default function KeyPointsIntroSection() {
 
               {/* Bottom Section (Inner Card) */}
               <div className="relative bottom-4  flex flex-col justify-center">
-                
+
                 <p className="text-[#fbbf24] text-xs font-bold ">
                   How PEx Solves It
                 </p>
@@ -337,11 +530,11 @@ export default function KeyPointsIntroSection() {
                       </span>
                     </div>
                   </div>
-                
+
                 </div>
 
                 <h3 className="text-white text-xl font-bold mb-2 ">
-                  Lack of <br/>Strategic Value
+                  Lack of <br />Strategic Value
                 </h3>
 
                 <div className="mb-4">
@@ -357,7 +550,7 @@ export default function KeyPointsIntroSection() {
 
               {/* Bottom Section (Inner Card) */}
               <div className=" relativeflex flex-col justify-center">
-            
+
                 <p className="text-[#fbbf24] text-xs font-bold mb-1">
                   How PEx Solves It
                 </p>
@@ -426,7 +619,7 @@ export default function KeyPointsIntroSection() {
                       </span>
                     </div>
                   </div>
-                 
+
                 </div>
 
                 <h3 className="text-white text-xl font-semibold mb-2">
@@ -446,7 +639,7 @@ export default function KeyPointsIntroSection() {
 
               {/* Bottom Section (Inner Card) */}
               <div className=" relative flex flex-col justify-center">
-                
+
                 <p className="text-[#fbbf24] text-xs font-bold mb-1">
                   How PEx Solves It
                 </p>

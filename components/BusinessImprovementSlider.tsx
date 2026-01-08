@@ -15,16 +15,16 @@ const BusinessImprovementSlider: FC = () => {
   // Get slides from translations
   const slidesData = t("businessImprovementSlider.slides");
 
-  
+
 
   const slides = Array.isArray(slidesData)
     ? slidesData.map(
-        (slide: { id: string; title: string; content: string }) => ({
-          id: slide.id,
-          title: slide.title,
-          content: slide.content,
-        })
-      )
+      (slide: { id: string; title: string; content: string }) => ({
+        id: slide.id,
+        title: slide.title,
+        content: slide.content,
+      })
+    )
     : [];
 
   const handlePrevious = () => {
@@ -289,11 +289,10 @@ const BusinessImprovementSlider: FC = () => {
                     <button
                       key={index}
                       onClick={() => setCurrentSlide(index)}
-                      className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
-                        currentSlide === index
+                      className={`w-3 h-3 rounded-full transition-all cursor-pointer ${currentSlide === index
                           ? "w-8 opacity-100"
                           : "opacity-50"
-                      }`}
+                        }`}
                       style={{ backgroundColor: "#0e685b" }}
                     />
                   ))}
@@ -304,8 +303,212 @@ const BusinessImprovementSlider: FC = () => {
         </div>
       </div>
 
-      {/* Mobile Version */}
-      <div className="lg:hidden max-w-[370px] mx-auto px-1">
+      {/* Tablet Version - 768px to 1023px */}
+      <div className="hidden md:block lg:hidden max-w-4xl mx-auto py-6 px-4">
+        <div className="flex flex-row justify-between items-center gap-4">
+          {/* Card section */}
+          <motion.div
+            className="text-left flex flex-col"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <ReusableShape
+              width={200}
+              height={240}
+              color="#0e685b"
+              radius={24}
+              cutoutWidth={60}
+              cutoutHeight={60}
+              cutoutBgColor="#ffffff"
+              cutoutPosition="top-right"
+              cutoutRadius={8}
+              className="relative flex items-center justify-start"
+            >
+              {/* Rocket */}
+              <div className="absolute top-[-5px] right-[20px]">
+                <Image
+                  src="/Asset 5.svg"
+                  alt="Rocket icon"
+                  width={0}
+                  height={0}
+                  className="w-14 h-14"
+                />
+              </div>
+
+              {/* Content wrapper */}
+              <div className="flex flex-col items-start gap-1.5 text-left">
+                <div>
+                  <p className="text-white text-secondary text-lg">
+                    {String(t("socialSection.partnerSection.title1"))}
+                  </p>
+                  <p className="text-white text-secondary text-lg">
+                    {String(t("socialSection.partnerSection.title2"))}
+                  </p>
+                  <p className="text-white text-secondary text-lg">
+                    {String(t("socialSection.partnerSection.title3"))}
+                  </p>
+                </div>
+
+                {/* Follow Us text */}
+                <p className="text-white text-xs mt-2">
+                  {String(t("socialSection.partnerSection.followUs"))}
+                </p>
+
+                {/* LinkedIn button */}
+                <a href="https://www.linkedin.com/company/pex-software-solutions" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-yellow-400 px-3 hover:bg-yellow-500 text-gray-900 py-1.5 rounded-full shadow-lg transition-colors cursor-pointer">
+                    <div className="flex justify-between text-xs items-center gap-1">
+                      Linkedin
+                      <span className="font-semibold">
+                        {String(t("socialSection.partnerSection.linkedinButton.followersCount"))}
+                      </span>
+                      {String(t("socialSection.partnerSection.linkedinButton.followersText"))}
+                    </div>
+                  </button>
+                </a>
+
+                {/* Avatars */}
+                <div className="flex gap-1">
+                  {[1, 2, 3, 4, 5].map((num) => (
+                    <div key={num} className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                      <Image
+                        src={`/user (${num}).png`}
+                        alt={`Avatar ${num}`}
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ReusableShape>
+          </motion.div>
+
+          {/* Slider section */}
+          <motion.div
+            className="w-full flex-1 text-center flex flex-col gap-3"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div
+              className="bg-white rounded-2xl shadow-md bg-cover bg-center bg-no-repeat min-h-72 relative"
+              style={{
+                backgroundImage: "url('/image_navigator_background.webp')",
+              }}
+            >
+              <div className="absolute left-12 top-8 border-[#00EEFF] border-2 w-[calc(100%-6rem)] h-[calc(100%-5rem)] rounded-xl"></div>
+
+              {/* Yellow Button */}
+              <motion.button
+                className="bg-yellow-400 absolute top-[-15px] left-1/2 transform -translate-x-1/2 text-sm px-4 py-1 rounded-full shadow-lg hover:bg-yellow-500 z-10 cursor-pointer whitespace-nowrap"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {String(t("businessImprovementSlider.topButton"))}
+              </motion.button>
+
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex-1 flex flex-col mt-8 px-8">
+                  <div className="text-center mb-4">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentSlide}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <h3 className="text-yellow-500 text-xl mb-2 text-primary">
+                          {currentSlideData.title}
+                        </h3>
+                        <p className="text-xl text-white mb-4">
+                          {currentSlideData.content}
+                        </p>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Read More Button */}
+                  <motion.button
+                    className="absolute bottom-14 left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-gray-900 px-4 py-2 rounded-full shadow-lg transition-colors hover:opacity-100 cursor-pointer"
+                    style={{ backgroundColor: "#04afbc" }}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.8, duration: 0.5 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => router.push("/blog")}
+                  >
+                    <span className="text-xs text-white">
+                      {String(t("businessImprovementSlider.readMoreButton"))}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </motion.button>
+                </div>
+              </div>
+
+              {/* Left Arrow */}
+              <motion.button
+                onClick={handlePrevious}
+                className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full p-2 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
+                style={{ backgroundColor: "#0e685b" }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.0, duration: 0.5 }}
+                whileHover={{ x: -3 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronLeft className="w-6 h-6 hover:text-yellow-400 text-white" />
+              </motion.button>
+
+              {/* Right Arrow */}
+              <motion.button
+                onClick={handleNext}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-2 shadow-lg hover:opacity-100 transition-opacity z-20 cursor-pointer"
+                style={{ backgroundColor: "#0e685b" }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.0, duration: 0.5 }}
+                whileHover={{ x: 3 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ChevronRight className="w-6 h-6 hover:text-yellow-400 text-white" />
+              </motion.button>
+
+              {/* Navigation Dots */}
+              <motion.div
+                className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+              >
+                <div className="flex justify-center gap-2">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all cursor-pointer ${currentSlide === index
+                          ? "w-6 opacity-100"
+                          : "opacity-50"
+                        }`}
+                      style={{ backgroundColor: "#0e685b" }}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Mobile Version - below 768px */}
+      <div className="md:hidden max-w-[370px] mx-auto px-1">
         {/* Slider Card with teal background container */}
         <motion.div
           className="mb-6  rounded-[2.5rem] "
@@ -400,11 +603,10 @@ const BusinessImprovementSlider: FC = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      currentSlide === index
+                    className={`h-2 rounded-full transition-all ${currentSlide === index
                         ? "w-6 bg-[#0e685b]"
                         : "w-2 bg-[#0e685b]/50"
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
