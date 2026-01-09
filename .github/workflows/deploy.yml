@@ -3,7 +3,7 @@ name: Build and Deploy to Server
 on:
   push:
     branches:
-      - main
+      - main-dev-tst
   workflow_dispatch: # Allows manual trigger from GitHub Actions UI
 
 jobs:
