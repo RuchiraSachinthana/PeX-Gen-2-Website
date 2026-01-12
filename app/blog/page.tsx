@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import BlogPageClient from "./blog-client";
+import BlogPageWrapper from "./blog-page-wrapper";
 
 export const metadata: Metadata = {
   title: "Blog - Compliance, Quality Management & Performance Insights",
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <Suspense fallback={<div className="w-full min-h-screen flex items-center justify-center">Loading...</div>}>
-      <BlogPageClient />
+    <Suspense fallback={<div></div>}>
+      <BlogPageWrapper />
     </Suspense>
   );
 }

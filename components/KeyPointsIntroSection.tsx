@@ -71,7 +71,7 @@ export default function KeyPointsIntroSection() {
               </p>
               <div className="text-2xl text-white">
                 <p>Automated and</p>
-                <p>Ai powered paperless</p>
+                <p>AI powered paperless</p>
                 <p>workflows to</p>
                 <p>manage compliance</p>
               </div>
@@ -273,7 +273,7 @@ export default function KeyPointsIntroSection() {
                   How PEx Solves It
                 </p>
                 <p className="text-white text-sm  pr-8 pb-2">
-                  Automated and Ai powered paperless workflows to manage
+                  Automated and AI powered paperless workflows to manage
                   compliance
                 </p>
               </div>

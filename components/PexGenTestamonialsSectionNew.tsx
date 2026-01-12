@@ -9,7 +9,14 @@ const PexGenTestamonialsSectionNew = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
-     {
+       {
+      image: "/Leader (5).webp",
+      message:
+        "We consider our decision to invest in the PEx Software Solution is well worth, and the right direction our organization is taking in automating all our business and manufacturing processes.",
+      name: "Randy Roche",
+      designation: "Director / General Manager - Packwell Lanka (Pvt) Ltd",
+    }, 
+    {
       image: "/Leader (6).webp",
       message:
         "PEx Software has added significant value to our Food Safety Management program. We have found PEx Software to be an excellent tool for managing food safety in a completely paperless environment, thereby improving efficiency in our processes.",
@@ -44,13 +51,7 @@ const PexGenTestamonialsSectionNew = () => {
       name: "Ricky Barnett",
       designation: "Director - Hayleys Energy Services Lanka (Pvt) Ltd.",
     },
-    {
-      image: "/Leader (5).webp",
-      message:
-        "We consider our decision to invest in the PEx Software Solution is well worth, and the right direction our organization is taking in automating all our business and manufacturing processes.",
-      name: "Randy Roche",
-      designation: "Director / General Manager - Packwell Lanka (Pvt) Ltd",
-    },
+ 
     {
       image: "/Leader (7).webp",
       message:

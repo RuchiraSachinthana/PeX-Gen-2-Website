@@ -26,9 +26,9 @@ export default function PexFoodHeader() {
 
           {/* Main Content - Centered */}
           <div className="flex items-end justify-start min-h-100 md:min-h-[60vh] sm:min-h-[70vh]">
-            <div className="text-left sm:ml-0 ml-5 max-w-4xl">
+            <div className="text-left sm:ml-0 ml-5 max-w-4xl ">
               <motion.p
-                className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold sm:mb-3 text-white drop-shadow-lg uppercase"
+                className="text-xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold sm:mb-3 text-white drop-shadow-lg uppercase  "
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -43,7 +43,7 @@ export default function PexFoodHeader() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
-               FOOD SAFETY MANGEMENT
+               FOOD SAFETY MANAGEMENT
               </motion.p>
               <motion.p
                 className="text-md  sm:text-md md:text-2xl lg:text-3xl  sm:mb-3 text-white drop-shadow-lg uppercase"

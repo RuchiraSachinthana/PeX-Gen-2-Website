@@ -62,7 +62,7 @@ export default function FoodThreeKeyPointsIntroSection() {
                 <p>Staff overwhelmed</p>
                 <p>with HACCP/</p>
                 <p>ISO 22000</p>
-                <p>paperword</p>
+                <p>paperwork</p>
               </div>
             </div>
             <div className="absolute top-40 left-80 text-left text-lg justify-center leading-8">

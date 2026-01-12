@@ -10,6 +10,33 @@ const partners = [
   "/partner (4).png",
   "/partner (5).png",
   "/partner (6).png",
+  "/partner (7).png",
+  "/partner (8).png",
+  "/partner (9).png",
+  "/partner (10).png",
+  "/partner (11).png",
+  "/partner (12).png",
+  "/partner (13).png",
+  "/partner (14).png",
+  "/partner (15).png",
+  "/partner (16).png",
+  "/partner (17).png",
+  "/partner (18).png",
+  "/partner (19).png",
+  "/partner (20).png",
+  "/partner (21).png",
+  "/partner (22).png",
+  "/partner (23).png",
+  "/partner (24).png",
+  "/partner (25).png",
+  "/partner (26).png",
+  "/partner (27).png",
+  "/partner (28).png",
+  "/partner (29).png",
+  "/partner (30).png",
+
+
+
 ];
 
 const PexGenPartners = () => {
@@ -43,7 +70,7 @@ const PexGenPartners = () => {
           {[...partners, ...partners].map((src, index) => (
             <div
               key={index}
-              className="relative w-[120px] md:w-[150px] flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+              className="relative w-[120px] md:w-[150px] flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-1000 opacity-70 hover:opacity-100"
             >
               <Image
                 src={src}
