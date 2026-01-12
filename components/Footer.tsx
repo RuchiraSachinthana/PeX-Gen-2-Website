@@ -353,7 +353,7 @@ export default function Footer() {
                       <WhatsAppIcon size={16} className="text-yellow-300" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/malik-pex"
+                      href="https://lk.linkedin.com/in/malik-perera-0a21815"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-70 transition-opacity"
@@ -386,7 +386,7 @@ export default function Footer() {
                       <WhatsAppIcon size={16} className="text-yellow-300" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/dinusha-pex"
+                      href="https://lk.linkedin.com/in/dinusha-wijegunasekera-b36b591a"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-70 transition-opacity"

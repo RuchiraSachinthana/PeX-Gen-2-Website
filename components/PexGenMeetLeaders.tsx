@@ -11,7 +11,7 @@ export default function PexGenMeetLeaders() {
       title: "CEO & Transformation Architect.",
       experience: "+30 years experience.",
       image: "/men.webp",
-      linkedinUrl: "#",
+      linkedinUrl: "https://lk.linkedin.com/in/malik-perera-0a21815",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ export default function PexGenMeetLeaders() {
       title: "Director of Operations, Compliance and Audits.",
       experience: "+20 years experience.",
       image: "/girl.webp",
-      linkedinUrl: "#",
+      linkedinUrl: "https://lk.linkedin.com/in/dinusha-wijegunasekera-b36b591a",
     },
   ];
 

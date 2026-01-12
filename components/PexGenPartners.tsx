@@ -33,10 +33,6 @@ const partners = [
   "/partner (27).png",
   "/partner (28).png",
   "/partner (29).png",
-  "/partner (30).png",
-
-
-
 ];
 
 const PexGenPartners = () => {
