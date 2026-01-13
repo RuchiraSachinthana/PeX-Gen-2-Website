@@ -328,7 +328,7 @@ const BlogHeader = ({ blogData = [], onBlogSelect }: BlogHeaderProps) => {
                           alt={blog.title}
                           width={240}
                           height={160}
-                          className="w-full h-full object-cover rounded transition-all"
+                          className="w-full h-40 object-cover rounded transition-all"
                         />
                       </div>
                       <div className="flex-1 flex items-center">

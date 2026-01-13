@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import { useTranslation } from "../context/LanguageProvider";
+import { getCalApi } from "@calcom/embed-react";
 
 // Phone Icon Component (Custom filled design)
 const PhoneIcon = ({
@@ -131,6 +132,19 @@ export default function Footer() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Initialize Cal.com embed
+  useEffect(() => {
+    (async function () {
+      // Initialize Pex Training namespace
+      const calPexTraining = await getCalApi({ namespace: "15min-copy-copy" });
+      calPexTraining("ui", { hideEventTypeDetails: false, layout: "month_view" });
+      
+      // Initialize ISO Training namespace
+      const calIsoTraining = await getCalApi({ namespace: "15min-copy" });
+      calIsoTraining("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
   }, []);
 
   const scrollToTop = () => {
@@ -266,7 +280,10 @@ export default function Footer() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recipientEmail: "malik@swissadvantage.net",
+        }),
       });
 
       const data = await response.json();
@@ -468,24 +485,30 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <motion.li variants={itemVariants}>
-                <motion.a // --- ADDED motion ---
-                  href="#"
-                  className="hover:text-yellow-400"
+                <motion.button // Changed from motion.a to motion.button for Cal.com
+                  type="button"
+                  className="hover:text-yellow-400 cursor-pointer"
                   whileHover={{ x: 5, color: "#facc15" }} // Tailwind yellow-400
                   whileTap={{ scale: 0.95 }}
+                  data-cal-namespace="15min-copy-copy"
+                  data-cal-link="pexsoftwaresolutions/15min-pex"
+                  data-cal-config='{"layout":"month_view"}'
                 >
                   {String(t("footer.explore.pexTraining"))}
-                </motion.a>
+                </motion.button>
               </motion.li>
               <motion.li variants={itemVariants}>
-                <motion.a // --- ADDED motion ---
-                  href="#"
-                  className="hover:text-yellow-400"
+                <motion.button // Changed from motion.a to motion.button for Cal.com
+                  type="button"
+                  className="hover:text-yellow-400 cursor-pointer"
                   whileHover={{ x: 5, color: "#facc15" }}
                   whileTap={{ scale: 0.95 }}
+                  data-cal-namespace="15min-copy"
+                  data-cal-link="pexsoftwaresolutions/15min-iso"
+                  data-cal-config='{"layout":"month_view"}'
                 >
                   {String(t("footer.explore.isoTraining"))}
-                </motion.a>
+                </motion.button>
               </motion.li>
             </motion.ul>
           </motion.div>

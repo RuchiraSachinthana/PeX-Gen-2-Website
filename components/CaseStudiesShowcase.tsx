@@ -29,6 +29,18 @@ interface BlogApiResponse {
   };
 }
 
+interface MonthlyBlogData {
+  _id: string;
+  title: string;
+  hero_img: string;
+  about_the_author: string;
+}
+
+interface MonthlyBlogApiResponse {
+  success: boolean;
+  data: MonthlyBlogData;
+}
+
 export default function CaseStudiesShowcase() {
   const router = useRouter();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -36,6 +48,7 @@ export default function CaseStudiesShowcase() {
     { id: null, title: null },
     { id: null, title: null },
   ]);
+  const [monthlyBlog, setMonthlyBlog] = useState<MonthlyBlogData | null>(null);
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
@@ -44,6 +57,31 @@ export default function CaseStudiesShowcase() {
         behavior: "smooth",
       });
     }
+  };
+
+  // Helper function to parse author info from about_the_author field
+  const parseAuthorInfo = (aboutAuthor: string | undefined) => {
+    if (!aboutAuthor) return { name: "", role: "" };
+    
+    // Try to extract name before "is" or "is a"
+    const isMatch = aboutAuthor.match(/^([^i]+?)\s+is\s+(.+)$/i);
+    if (isMatch) {
+      return {
+        name: isMatch[1].trim(),
+        role: isMatch[2].trim(),
+      };
+    }
+    
+    // Fallback: use first part as name, rest as role
+    const parts = aboutAuthor.split(/\s+/);
+    if (parts.length > 2) {
+      return {
+        name: parts.slice(0, 2).join(" "),
+        role: parts.slice(2).join(" "),
+      };
+    }
+    
+    return { name: aboutAuthor, role: "" };
   };
 
   useEffect(() => {
@@ -64,7 +102,20 @@ export default function CaseStudiesShowcase() {
       }
     };
 
+    const fetchMonthlyBlog = async () => {
+      try {
+        const response = await fetch("https://pex-sooty.vercel.app/api/blogs/monthly/latest?category=0");
+        const data: MonthlyBlogApiResponse = await response.json();
+        if (data.success && data.data) {
+          setMonthlyBlog(data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching monthly blog:", error);
+      }
+    };
+
     fetchBlogTitles();
+    fetchMonthlyBlog();
   }, []);
 
   return (
@@ -130,10 +181,10 @@ export default function CaseStudiesShowcase() {
               >
                 <Image
                   width={440}
-                  height={0}
-                  src="/Asset 81.png"
+                  height={500}
+                  src={ monthlyBlog?.hero_img || "/Asset 81.png"}
                   alt="Background Decoration"
-                  className="border-4 border-teal-700 rounded-4xl opacity-80"
+             className="border-4 border-teal-700 rounded-4xl opacity-80 h-[500px] object-cover"
                 />
                 
                 {/* Green gradient overlay from bottom to half */}
@@ -149,13 +200,14 @@ export default function CaseStudiesShowcase() {
                 <div className="absolute top-5 left-5 max-w-[170px] bg-teal-700 p-4 rounded-2xl">
                   
                   <p className="text-xl text-white">
-                    First time in her whole career she felt relieved from work stress...
+                    {monthlyBlog?.title ? (monthlyBlog.paragraph_1.length > 60 ? monthlyBlog.paragraph_1.slice(0, 60) + "..." : monthlyBlog.paragraph_1) : "Not Found"}
                   </p>
                   <div className="mt-5 text-white">
-                    <p className="text-md">Sanju</p>
+                    <p className="text-md">{monthlyBlog?.about_the_author ? parseAuthorInfo(monthlyBlog.about_the_author).name : "Not Found"}</p>
                     <p className="text-[12px] text-white">
-                    quality and compliance officer 
-                  </p></div>
+                      {monthlyBlog?.about_the_author ? parseAuthorInfo(monthlyBlog.about_the_author).role : "Not Found"}
+                    </p>
+                  </div>
                   
                 </div>
                 
@@ -164,11 +216,13 @@ export default function CaseStudiesShowcase() {
                   className="absolute bottom-3 right-3 bg-yellow-400 p-3 rounded-2xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => router.push("/blog")}
+                  onClick={() => router.push(monthlyBlog?._id ? `/blog?id=${monthlyBlog._id}` : "/blog")}
                 >
                   <ArrowRight className="w-7 h-7 text-black -rotate-45" />
                 </motion.button>
               </motion.div>
+
+              
               {/* center card */}
               <motion.div
                 className="relative"
@@ -284,12 +338,12 @@ export default function CaseStudiesShowcase() {
                 {/* Testimonial content box */}
                 <div className="absolute top-2 left-2 max-w-[80px] bg-teal-700 p-2 rounded-xl">
                   <p className="text-[8px] text-white">
-                    First time in her whole career she felt relieved from work stress...
+                    {monthlyBlog?.title ? (monthlyBlog.title.length > 40 ? monthlyBlog.title.slice(0, 40) + "..." : monthlyBlog.title) : "First time in her whole career she felt relieved from work stress..."}
                   </p>
                   <div className="mt-2 text-white">
-                    <p className="text-[10px] font-medium">Sanju</p>
+                    <p className="text-[10px] font-medium">{monthlyBlog?.about_the_author ? parseAuthorInfo(monthlyBlog.about_the_author).name : "Sanju"}</p>
                     <p className="text-[4px] text-white">
-                      quality and compliance officer 
+                      {monthlyBlog?.about_the_author ? parseAuthorInfo(monthlyBlog.about_the_author).role : "quality and compliance officer"}
                     </p>
                   </div>
                 </div>
@@ -306,7 +360,7 @@ export default function CaseStudiesShowcase() {
                   className="absolute bottom-2 right-2 bg-yellow-400 p-2 rounded-md"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => router.push("/blog")}
+                  onClick={() => router.push(monthlyBlog?._id ? `/blog?id=${monthlyBlog._id}` : "/blog")}
                 >
                   <ArrowRight className="w-4 h-4 text-black -rotate-45" />
                 </motion.button>

@@ -1,18 +1,14 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import BlogPageClient from "./blog-client";
 import BlogSkeleton from "@/components/BlogSkeleton";
 
 export default function BlogPageWrapper() {
   const [showContent, setShowContent] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
-  const initialized = useRef(false);
 
   useEffect(() => {
-    if (initialized.current) return;
-    initialized.current = true;
-
     // Check if this is the first load by checking sessionStorage
     const hasLoadedBefore = sessionStorage.getItem("blogPageLoaded");
     
@@ -27,14 +23,18 @@ export default function BlogPageWrapper() {
       return () => clearTimeout(timer);
     } else {
       // Not first load - show content immediately
-      // Use requestAnimationFrame to defer state update
-      requestAnimationFrame(() => {
+      // Use setTimeout to defer state update and avoid synchronous setState
+      const timer = setTimeout(() => {
         setIsFirstLoad(false);
         setShowContent(true);
-      });
+      }, 0);
+
+      return () => clearTimeout(timer);
     }
   }, []);
 
+  // Always show BlogPageClient - it handles its own loading state
+  // Only show skeleton on first load before timeout
   if (!showContent && isFirstLoad) {
     return <BlogSkeleton />;
   }

@@ -18,6 +18,8 @@ export default function PexGenExploreSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            onClick={() => window.location.href = "/pex-quality"}
+
           >
             <Link href="/pex-quality">
               <div className="flex flex-col items-start md:items-end z-10 flex-1 text-left md:text-right">
@@ -73,6 +75,7 @@ export default function PexGenExploreSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            onClick={() => window.location.href = "/pex-food"}
           >
             <Link href="/pex-food">
               <div className="flex flex-col  items-start z-10 ">
