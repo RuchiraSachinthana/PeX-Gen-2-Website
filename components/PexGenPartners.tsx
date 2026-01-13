@@ -56,7 +56,7 @@ const PexGenPartners = () => {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30, // Adjust speed here (higher = slower)
+              duration: 100, // Adjust speed here (higher = slower)
               ease: "linear",
             },
           }}
@@ -66,13 +66,13 @@ const PexGenPartners = () => {
           {[...partners, ...partners].map((src, index) => (
             <div
               key={index}
-              className="relative w-[120px] md:w-[150px] flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-1000 opacity-70 hover:opacity-100"
+              className="relative w-[150px] md:w-[200px] flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-1000 opacity-70 hover:opacity-100"
             >
               <Image
                 src={src}
                 alt={`Partner ${index + 1}`}
-                width={150}
-                height={80}
+                width={200}
+                height={107}
                 className="object-contain w-full h-auto"
               />
             </div>

@@ -52,11 +52,11 @@ export default function FoodVideoPromoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
             whileHover={{ scale: 1.02 }}
-          >
+          >            
             <iframe
               className="top-0 left-0 w-full h-full rounded-2xl"
               src={
-                "https://www.youtube.com/embed/9RjT0j7LtrY?si=run9EXq-vCZfCc6a"
+                "https://www.youtube.com/embed/8Dk3kAPwAZg?si=6OgXxxYQY1-1pIw9"
               }
               title={"YouTube video player"}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -296,7 +296,7 @@ export default function FoodVideoPromoSection() {
             <iframe
               className=" top-0 left-0 w-full h-full rounded-2xl "
               src={
-                "https://www.youtube.com/embed/9RjT0j7LtrY?si=run9EXq-vCZfCc6a"
+                 "https://www.youtube.com/embed/8Dk3kAPwAZg?si=6OgXxxYQY1-1pIw9"
               }
               title={"YouTube video player"}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
