@@ -10,7 +10,6 @@ import PexGenManagementSection from "@/components/PexGenManagementSection";
 import PexGenMeetLeaders from "@/components/PexGenMeetLeaders";
 import PexGenPartners from "@/components/PexGenPartners";
 import PexGenPhilosopySection from "@/components/PexGenPhilosopySection";
-import PexGenTestamonialsSection from "@/components/PexGenTestamonialsSection";
 import PexGenTestamonialsSectionNew from "@/components/PexGenTestamonialsSectionNew";
 import PexGenVideoSection from "@/components/PexGenVideoSection";
 import PexGenWhoWeAreSection from "@/components/PexGenWhoWeAreSection";
