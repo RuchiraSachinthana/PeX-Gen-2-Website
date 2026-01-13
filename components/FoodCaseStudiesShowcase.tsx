@@ -201,7 +201,7 @@ export default function FoodCaseStudiesShowcase() {
                 <div className="absolute top-5 left-5 max-w-[170px] bg-teal-700 p-4 rounded-2xl">
                   
                   <p className="text-xl text-white">
-                    {monthlyBlog?.title ? (monthlyBlog.paragraph_1.length > 60 ? monthlyBlog.paragraph_1.slice(0, 60) + "..." : monthlyBlog.paragraph_1) : "Not Found"}
+                    {monthlyBlog?.title ? (monthlyBlog.title.length > 60 ? monthlyBlog.title.slice(0, 60) + "..." : monthlyBlog.title) : "Not Found"}
                   </p>
                   <div className="mt-5 text-white">
                     <p className="text-md">{monthlyBlog?.about_the_author ? parseAuthorInfo(monthlyBlog.about_the_author).name : "Not Found"}</p>
