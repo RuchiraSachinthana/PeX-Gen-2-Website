@@ -8,8 +8,8 @@ export const translations = {
     navContact: "Contact",
     navPex: "PEX Solutions",
     navPexGen: "Home",
-    navPexQuality: "PEX Quality",
-    navPexFood: "PEX Food",
+    navPexQuality: "PEx for Quality Management",
+    navPexFood: "PEx for Food Safety Management",
 
     // PexQualityHeader Component translations
     pexQualityHeader: {

@@ -119,6 +119,7 @@ export default function Footer() {
     message?: string;
   }>({ type: "idle" });
   const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   // Handle scroll visibility for back to top button
@@ -143,6 +144,38 @@ export default function Footer() {
   const errorFallback = String(t("footer.contactForm.errorMessage"));
   const submitLabel = String(t("footer.contactForm.submitButton"));
   const sendingLabel = String(t("footer.contactForm.sending"));
+
+  // Email validation function
+  const validateEmail = (email: string): string | null => {
+    if (!email.trim()) {
+      return "Email address is required";
+    }
+
+    // Basic email format validation using regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address";
+    }
+
+    // Check for common email issues
+    if (email.includes("..")) {
+      return "Email address cannot contain consecutive dots";
+    }
+
+    // Check length (reasonable limits)
+    if (email.length > 254) {
+      return "Email address is too long";
+    }
+
+    // Check for valid domain (at least one dot after @)
+    const parts = email.split("@");
+    if (parts.length !== 2 || !parts[1].includes(".")) {
+      return "Please enter a valid email address";
+    }
+
+    return null;
+  };
 
   // Phone number validation function
   const validatePhone = (phone: string): string | null => {
@@ -189,10 +222,27 @@ export default function Footer() {
           const error = validatePhone(value);
           setPhoneError(error);
         }
+
+        // Validate email in real-time
+        if (field === "email") {
+          const error = validateEmail(value);
+          setEmailError(error);
+        }
       };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Validate email before submission
+    const emailValidationError = validateEmail(formData.email);
+    if (emailValidationError) {
+      setEmailError(emailValidationError);
+      setStatus({
+        type: "error",
+        message: emailValidationError,
+      });
+      return;
+    }
 
     // Validate phone number before submission
     const phoneValidationError = validatePhone(formData.phone);
@@ -207,6 +257,7 @@ export default function Footer() {
 
     setIsSubmitting(true);
     setStatus({ type: "idle" });
+    setEmailError(null);
     setPhoneError(null);
 
     try {
@@ -230,6 +281,7 @@ export default function Footer() {
       });
 
       setFormData(() => ({ ...initialFormState }));
+      setEmailError(null);
       setPhoneError(null);
     } catch (error) {
       setStatus({
@@ -301,7 +353,7 @@ export default function Footer() {
                       <WhatsAppIcon size={16} className="text-yellow-300" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/malik-pex"
+                      href="https://lk.linkedin.com/in/malik-perera-0a21815"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-70 transition-opacity"
@@ -334,7 +386,7 @@ export default function Footer() {
                       <WhatsAppIcon size={16} className="text-yellow-300" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/dinusha-pex"
+                      href="https://lk.linkedin.com/in/dinusha-wijegunasekera-b36b591a"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:opacity-70 transition-opacity"
@@ -459,7 +511,7 @@ export default function Footer() {
             >
               <motion.li variants={itemVariants}>
                 <motion.a // --- ADDED motion ---
-                  href="#"
+                  href="/blog"
                   className="hover:text-yellow-400"
                   whileHover={{ x: 5, color: "#facc15" }}
                   whileTap={{ scale: 0.95 }}
@@ -469,7 +521,7 @@ export default function Footer() {
               </motion.li>
               <motion.li variants={itemVariants}>
                 <motion.a // --- ADDED motion ---
-                  href="#"
+                  href="/#what-is-pex-gen"
                   className="hover:text-yellow-400"
                   whileHover={{ x: 5, color: "#facc15" }}
                   whileTap={{ scale: 0.95 }}
@@ -479,7 +531,7 @@ export default function Footer() {
               </motion.li>
               <motion.li variants={itemVariants}>
                 <motion.a // --- ADDED motion ---
-                  href="#"
+                  href="/#management-section"
                   className="hover:text-yellow-400"
                   whileHover={{ x: 5, color: "#facc15" }}
                   whileTap={{ scale: 0.95 }}
@@ -547,15 +599,25 @@ export default function Footer() {
               <label className="text-white text-sm w-full sm:w-20 shrink-0">
                 {String(t("footer.contactForm.placeholders.email"))}
               </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange("email")}
-                required
-                autoComplete="email"
-                className="flex-1 px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-              />
+              <div className="flex-1">
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange("email")}
+                  required
+                  autoComplete="email"
+                  className={`flex-1 w-full px-4 py-3 rounded-full bg-[#0e685b] text-white text-sm placeholder-gray-300 focus:outline-none focus:ring-2 ${emailError
+                      ? "focus:ring-red-400 ring-2 ring-red-400"
+                      : "focus:ring-yellow-400"
+                    }`}
+                />
+                {emailError && (
+                  <p className="text-red-200 text-xs mt-1 ml-4">
+                    {emailError}
+                  </p>
+                )}
+              </div>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1">
               <label className="text-white text-sm w-full sm:w-20 shrink-0">

@@ -101,7 +101,7 @@ const BlogContentSection = () => {
           {[
             {
               number: 1,
-              text: "Top management's lack awareness about what Business Process Re-engineering (BPR) truly means.",
+              text: "Top management's lack of awareness about what Business Process Re-engineering (BPR) truly means.",
             },
             {
               number: 2,
