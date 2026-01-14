@@ -42,7 +42,7 @@ const PexGenTestamonialsSectionNew = () => {
       message:
         "I have no hesitation whatsoever in recommending PEx Software solution which was implemented to manage our integrated management system which has greatly helped us maintain compliance and continual improvement of our business.",
       name: "Puneet Dutta",
-      designation: "General Manager – Hotel Amari Galle",
+      designation: "Radisson Blu Resort, Galle (Amari Hotel)",
     },
     {
       image: "/Leader (4).webp",
