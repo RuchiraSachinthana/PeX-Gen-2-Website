@@ -25,7 +25,6 @@ const partners = [
   "/partner (19).png",
   "/partner (20).png",
   "/partner (21).png",
-  "/partner (22).png",
   "/partner (23).png",
   "/partner (24).png",
   "/partner (25).png",
