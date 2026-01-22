@@ -34,7 +34,21 @@ interface MonthlyBlogData {
   title: string;
   hero_img: string;
   about_the_author: string;
+  paragraph_1?: string;
+  sub_title_1?: string;
+  paragraph_2?: string;
+  sub_title_2?: string;
+  paragraph_3?: string;
+  sub_title_3?: string;
+  final_thought?: string;
+  img_url_2?: string;
+  is_month_story?: boolean;
+  category?: number;
+  created_at?: string;
+  updated_at?: string;
+  __v?: number;
 }
+
 
 interface MonthlyBlogApiResponse {
   success: boolean;
@@ -200,7 +214,7 @@ export default function CaseStudiesShowcaseQuality() {
                 <div className="absolute top-5 left-5 max-w-[170px] bg-teal-700 p-4 rounded-2xl">
                   
                   <p className="text-xl text-white">
-                    {monthlyBlog?.title ? (monthlyBlog.title.length > 60 ? monthlyBlog.title.slice(0, 60) + "..." : monthlyBlog.title) : "Not Found"}
+                    {monthlyBlog?.paragraph_1 ? (monthlyBlog.paragraph_1.length > 60 ? monthlyBlog.paragraph_1.slice(0, 60) + "..." : monthlyBlog.paragraph_1) : "Not Found"}
                   </p>
                   <div className="mt-5 text-white">
                     <p className="text-md">{monthlyBlog?.about_the_author ? parseAuthorInfo(monthlyBlog.about_the_author).name : "Not Found"}</p>
