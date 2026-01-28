@@ -207,9 +207,9 @@ export default function HomeNavbar() {
     [t]
   );
 
-  const allPages = useMemo(
+  const solutionsDropdownItems = useMemo(
     () => [
-      { key: "home", label: String(t("navPexGen")), href: "/" },
+      // { key: "home", label: String(t("navPexGen")), href: "/" },
       { key: "pexFood", label: String(t("navPexFood")), href: "/pex-food" },
       {
         key: "pexQuality",
@@ -218,19 +218,6 @@ export default function HomeNavbar() {
       },
     ],
     [t]
-  );
-
-  const currentPageName = useMemo(
-    () =>
-      allPages.find((page) => page.href === pathname)?.label ||
-      allPages[0]?.label ||
-      "",
-    [pathname, allPages]
-  );
-
-  const dropdownItems = useMemo(
-    () => allPages.filter((page) => page.href !== pathname),
-    [allPages, pathname]
   );
 
   const isBlogPage = pathname === "/blog";
@@ -245,14 +232,14 @@ export default function HomeNavbar() {
         className={`flex items-center h-11 rounded-full border shadow-lg px-3 sm:px-5 ${navbarBorderColor} ${navbarBgColor}`}
       >
         <div className="flex items-center space-x-3 sm:space-x-6">
-          {/* Page Selector Dropdown */}
+          {/* Solutions Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <button className="relative text-sm text-white hover:text-yellow-400 transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5 cursor-pointer">
-              {String(currentPageName)}
+              {String(t("navPexGen"))}
               <motion.svg
                 className="w-4 h-4 ml-1.5"
                 fill="none"
@@ -279,7 +266,7 @@ export default function HomeNavbar() {
                   transition={{ duration: 0.2 }}
                   className="absolute top-full right-0 mt-2 w-48 bg-[#9bd4aa] text-[#0e685b]  rounded-md  py-1 z-50  overflow-hidden"
                 >
-                  {dropdownItems.map((item) => (
+                  {solutionsDropdownItems.map((item) => (
                     <Link
                       key={item.key}
                       href={item.href}
@@ -292,6 +279,7 @@ export default function HomeNavbar() {
               )}
             </AnimatePresence>
           </div>
+
 
           {/* Other Nav Items - Hidden on small screens */}
           <div className="hidden md:flex md:items-center md:space-x-6">
