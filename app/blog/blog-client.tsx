@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import BlogCaseStudiesShowcase from "@/components/BlogCaseStudiesShowcase";
 
 export default function BlogPageClient() {
+
   const dispatch = useAppDispatch();
   const searchParams = useSearchParams();
   const { items: blogData, currentPage, status, error } = useAppSelector(
@@ -24,7 +25,7 @@ export default function BlogPageClient() {
 
   const hasData = blogData.length > 0;
   const blogIdFromUrl = searchParams.get("id");
-
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   // Fetch blogs list if needed
   useEffect(() => {
     if (!hasData && status === "idle") {
@@ -52,7 +53,7 @@ export default function BlogPageClient() {
       try {
         // Try fetching from the main blogs endpoint first
         let response = await fetch(
-          `https://pex-sooty.vercel.app/api/blogs/${blogIdFromUrl}`
+          `${BASE_URL}/api/blogs/${blogIdFromUrl}`
         );
         
         if (!response.ok) {
@@ -60,7 +61,7 @@ export default function BlogPageClient() {
           const categories = [0, 1, 2];
           for (const category of categories) {
             response = await fetch(
-              `https://pex-sooty.vercel.app/api/blogs/non-monthly/${category}`
+              `${BASE_URL}/api/blogs/non-monthly/${category}`
             );
             if (response.ok) {
               const data = await response.json();
