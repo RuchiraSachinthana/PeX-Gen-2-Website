@@ -2,7 +2,7 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const BLOGS_ENDPOINT = `${BASE_URL}/api/blogs`;
 
 export interface Blog {
