@@ -2,7 +2,8 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const BLOGS_ENDPOINT = "https://pex-sooty.vercel.app/api/blogs";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const BLOGS_ENDPOINT = `${BASE_URL}/api/blogs`;
 
 export interface Blog {
   _id: string;
