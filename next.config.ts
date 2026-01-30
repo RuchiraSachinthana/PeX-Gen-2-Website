@@ -5,19 +5,14 @@ const nextConfig: NextConfig = {
   output: 'standalone', // Enable standalone output for server deployment
   // Domain configuration for pexsoftwaresolutions.com
   images: {
-    domains: ['pexsoftwaresolutions.com', 'pex-sooty.vercel.app'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'pexsoftwaresolutions.com',
+        hostname: '**',
       },
       {
-        protocol: "https",
-        hostname: "pex-sooty.vercel.app",
-      },
-      {
-        protocol: "http",
-        hostname: "pex-sooty.vercel.app",
+        protocol: 'http',
+        hostname: '**',
       },
     ],
   },
