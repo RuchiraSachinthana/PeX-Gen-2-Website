@@ -96,8 +96,8 @@ const BlogContentSectionDynamic = ({ blogData }: BlogContentSectionDynamicProps)
             src={blogData.img_url_2}
             alt="blog_image 2"
             width={1000}
-            height={40}
-            className="w-full h-full object-cover rounded-xl md:rounded-2xl lg:rounded-3xl"
+            height={400}
+            className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-xl md:rounded-2xl lg:rounded-3xl"
           />
         </motion.div>
       )}

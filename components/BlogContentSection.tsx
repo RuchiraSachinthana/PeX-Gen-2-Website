@@ -153,10 +153,10 @@ const BlogContentSection = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <Image
-            src="https://pex-sooty.vercel.app/api/images/6921fa5556430a2e1b25c81f"
-            alt="blog_image 2"
-            width={1000}
-            height={40}
+            src="/Asset 9.webp"
+            alt="Business Process Re-engineering"
+            width={500}
+            height={200}
             className="w-full h-full object-cover rounded-xl md:rounded-2xl lg:rounded-3xl"
           />
         </motion.div>
