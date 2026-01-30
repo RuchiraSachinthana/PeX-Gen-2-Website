@@ -239,7 +239,7 @@ export default function HomeNavbar() {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <button className="relative text-sm text-white hover:text-yellow-400 transition-colors duration-300 flex items-center px-2 sm:px-3 py-1.5 cursor-pointer">
-              {String(t("navPexGen"))}
+              <Link href="/">{String(t("navPexGen"))}</Link>
               <motion.svg
                 className="w-4 h-4 ml-1.5"
                 fill="none"
